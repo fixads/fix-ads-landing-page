@@ -1,2 +1,4 @@
-User-agent: *
+User-Agent: *
 Allow: /
+
+Sitemap: https://fixads.biz/sitemap.xml
