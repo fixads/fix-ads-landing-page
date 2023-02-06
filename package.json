@@ -1,14 +1,15 @@
 {
-  "name": "tailwind-css-landing-page",
+  "name": "fixads.biz",
   "version": "1.0.0",
-  "description": "A simple landing page built with Tailwind CSS and Flowbite",
+  "description": "Fix ads landing page",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/themesberg/tailwind-css-landing-page.git"
+    "url": "git+git@github.com:fixads/fix-ads-landing-page.git"
   },
   "keywords": [
     "tailwind",
@@ -20,16 +21,23 @@
     "html",
     "responsive"
   ],
-  "author": "https://github.com/themesberg/",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/themesberg/tailwind-css-landing-page/issues"
-  },
-  "homepage": "https://github.com/themesberg/tailwind-css-landing-page#readme",
+  "author": "https://github.com/fixads/",
+  "license": "MIT",
   "dependencies": {
     "flowbite": "^1.4.7"
   },
   "devDependencies": {
-    "tailwindcss": "^3.1.4"
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^4.2.2",
+    "html-webpack-plugin": "^5.5.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-webp": "^8.0.0",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "style-loader": "^3.3.1",
+    "tailwindcss": "^3.1.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   }
 }
