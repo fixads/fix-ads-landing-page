@@ -64,6 +64,7 @@ module.exports = {
         { from: 'src/favicon.ico', to: 'favicon.ico' },
         { from: 'src/robots.txt', to: 'robots.txt' },
         { from: 'src/sitemap.xml', to: 'sitemap.xml' },
+        { from: 'src/faq/index.html', to : 'faq/index.html'}
       ],
     }),
   ],

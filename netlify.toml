@@ -1,0 +1,4 @@
+[[redirects]]
+from = "/faq"
+to = "/faq/index.html"
+status = 200
