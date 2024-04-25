@@ -1,15 +1,33 @@
+
+Certainly! Here's a refined and complete version of your HTML document that includes both Google Analytics and Google Ads tracking codes properly set up. This version corrects any redundancy and ensures that the script tags are properly placed for efficient loading.
+
+html
+Copy code
 <!DOCTYPE html>
- <html lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FixAds</title>
     <meta name="description" content="Discover the power of digital innovation with FixAds, a leading digital agency. Our team of experts leverages the latest technology and strategies to drive success for your business. From website design to online marketing, we offer a comprehensive range of services to help you reach your goals and grow your brand online. Contact us today to learn how we can help you unleash the full potential of the digital world.">
-    <!-- <link href="./index.css" rel="stylesheet"> -->
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
+
+    <!-- Google tag (gtag.js) for Google Analytics and Google Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11453654058"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        // Configurations for Google Ads and Google Analytics
+        gtag('config', 'AW-11453654058'); // Google Ads tracking ID
+        gtag('config', 'G-8Y3008ZK7V'); // Google Analytics tracking ID
+    </script>
+</head>
+ <script defer src="main.31d6cfe0d16ae931b73c.js"></script>
 </head>
 <body>
     <header class="sticky">
@@ -212,17 +230,17 @@
 <script src="js/glowCookies.min.js"></script>
 <script>
     glowCookies.start('en', {
-        style: 1, // Banner style
-        analytics: 'G-FH87DE17XF', // Google Analytics tracking code
-        facebookPixel: '990955817632355', // Facebook Pixel code
-        policyLink: 'https://fixads.xyz/cookies', // URL to your cookie policy
-        bannerBackground: '#000', // Optional: Customize banner background color
-        bannerColor: '#fff', // Optional: Customize text color
-        acceptBtnBackground: 'green', // Optional: Customize accept button color
-        acceptBtnText: 'Accept', // Optional: Text for the accept button
-        rejectBtnBackground: 'red', // Optional: Customize reject button color
-        rejectBtnText: 'Reject' // Optional: Text for the reject button
-    });
+            style: 1, // Banner style
+            analytics: 'G-FH87DE17XF', // Google Analytics tracking code
+            facebookPixel: '990955817632355', // Facebook Pixel code
+            policyLink: 'https://fixads.xyz/cookies', // URL to your cookie policy
+            bannerBackground: '#000', // Optional: Customize banner background color
+            bannerColor: '#fff', // Optional: Customize text color
+            acceptBtnBackground: 'green', // Optional: Customize accept button color
+            acceptBtnText: 'Accept', // Optional: Text for the accept button
+            rejectBtnBackground: 'red', // Optional: Customize reject button color
+            rejectBtnText: 'Reject' // Optional: Text for the reject button
+        });
 </script>
 </body>
 </html>
