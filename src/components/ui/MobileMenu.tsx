@@ -66,7 +66,7 @@ const MobileMenu = ({ isOpen, onClose, scrollToSection }: MobileMenuProps) => {
             className="p-2 hover:bg-gray-100 rounded-full transition-colors"
             aria-label="Close menu"
           >
-            <X className="w-6 h-6" />
+            {/* <X className="w-6 h-6" /> */}
           </button>
         </div>
 
