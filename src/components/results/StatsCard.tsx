@@ -20,9 +20,9 @@ const StatsCard = ({ value, label, index = 0 }: StatsCardProps) => {
   const colorScheme = colorSchemes[index % colorSchemes.length];
 
   return (
-    <div className={`p-6 rounded-xl transform hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm border ${colorScheme} hover:scale-105`}>
+    <div className={`p-6 rounded-xl transform hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm border ${colorScheme} hover:scale-105 w-full max-w-xs h-32 flex flex-col justify-center`}>
       <div className="text-3xl font-bold text-white mb-2">{value}</div>
-      <div className="text-gray-200">{label}</div>
+      <div className="text-gray-200 text-center leading-tight">{label}</div>
     </div>
   );
 };
