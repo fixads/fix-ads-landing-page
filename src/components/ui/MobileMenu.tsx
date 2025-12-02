@@ -35,6 +35,14 @@ const MobileMenu = ({ isOpen, onClose, scrollToSection }: MobileMenuProps) => {
       action: () => scrollToSection('solutions')
     },
     {
+      icon: <MessageSquare className="w-5 h-5" />,
+      label: 'App API',
+      action: () => {
+        navigate('/app-api');
+        onClose();
+      }
+    },
+    {
       icon: <HelpCircle className="w-5 h-5" />,
       label: 'FAQ',
       action: () => {

@@ -72,6 +72,7 @@ const Header = () => {
             <div className="flex items-center space-x-8">
               <NavLink onClick={handleHomeClick}>Home</NavLink>
               <NavLink onClick={() => scrollToSection('solutions')}>Solutions</NavLink>
+              <NavLink to="/app-api">App API</NavLink>
               <NavLink onClick={() => scrollToSection('results')}>About</NavLink>
               <NavLink to="/faq">FAQ</NavLink>
             </div>
