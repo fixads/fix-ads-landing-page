@@ -73,6 +73,7 @@ const Header = () => {
               <NavLink onClick={handleHomeClick}>Home</NavLink>
               <NavLink onClick={() => scrollToSection('solutions')}>Solutions</NavLink>
               <NavLink to="/app-api">App API</NavLink>
+              <NavLink to="/live-video">Live Video</NavLink>
               <NavLink onClick={() => scrollToSection('results')}>About</NavLink>
               <NavLink to="/faq">FAQ</NavLink>
             </div>

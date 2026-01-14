@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Home, Lightbulb, HelpCircle, MessageSquare, X } from 'lucide-react';
+import { Home, Lightbulb, HelpCircle, MessageSquare, Video, X } from 'lucide-react';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -39,6 +39,14 @@ const MobileMenu = ({ isOpen, onClose, scrollToSection }: MobileMenuProps) => {
       label: 'App API',
       action: () => {
         navigate('/app-api');
+        onClose();
+      }
+    },
+    {
+      icon: <Video className="w-5 h-5" />,
+      label: 'Live Video',
+      action: () => {
+        navigate('/live-video');
         onClose();
       }
     },

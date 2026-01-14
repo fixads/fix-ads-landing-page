@@ -10,6 +10,7 @@ import Contact from './pages/Contact';
 import HebrewContact from './pages/HebrewContact';
 import FAQ from './pages/FAQ';
 import AppAPI from './pages/AppAPI';
+import LiveVideo from './pages/LiveVideo';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Cookies from './pages/Cookies';
@@ -53,6 +54,7 @@ const App = () => {
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/contact/he" element={<HebrewContact />} />
                   <Route path="/app-api" element={<AppAPI />} />
+                  <Route path="/live-video" element={<LiveVideo />} />
                   <Route path="/faq" element={<FAQ />} />
                   <Route path="/privacy" element={<Privacy />} />
                   <Route path="/terms" element={<Terms />} />
