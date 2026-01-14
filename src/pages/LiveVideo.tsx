@@ -230,13 +230,13 @@ const LiveVideo = () => {
       />
 
       <div className="min-h-screen bg-white">
-        <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white py-20">
+        <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white py-12 md:py-20">
           <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-center mb-8">
               <div className="inline-flex rounded-lg bg-white/10 p-1">
                 <button
                   onClick={() => setLanguage('en')}
-                  className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
+                  className={`px-4 sm:px-6 py-2 rounded-md text-sm font-medium transition-colors ${
                     language === 'en' ? 'bg-white text-blue-600' : 'text-white hover:bg-white/10'
                   }`}
                 >
@@ -244,7 +244,7 @@ const LiveVideo = () => {
                 </button>
                 <button
                   onClick={() => setLanguage('de')}
-                  className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
+                  className={`px-4 sm:px-6 py-2 rounded-md text-sm font-medium transition-colors ${
                     language === 'de' ? 'bg-white text-blue-600' : 'text-white hover:bg-white/10'
                   }`}
                 >
@@ -254,47 +254,47 @@ const LiveVideo = () => {
             </div>
 
             <div className="text-center max-w-4xl mx-auto">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-6">
-                <Video className="w-8 h-8 text-white" />
+              <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-white/10 rounded-full mb-6">
+                <Video className="w-7 h-7 md:w-8 md:h-8 text-white" />
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">
                 {currentContent.title}
               </h1>
-              <p className="text-xl text-blue-100 mb-4 leading-relaxed">
+              <p className="text-lg sm:text-xl text-blue-100 mb-4 leading-relaxed">
                 {currentContent.subtitle}
               </p>
-              <p className="text-lg text-blue-50 leading-relaxed">
+              <p className="text-base sm:text-lg text-blue-50 leading-relaxed">
                 {currentContent.description}
               </p>
             </div>
           </div>
         </div>
 
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <section className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+          <section className="mb-16 md:mb-20">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center px-4">
               {currentContent.whatYouGet.title}
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
               {currentContent.whatYouGet.items.map((item, index) => (
-                <div key={index} className="bg-gray-50 rounded-xl p-8 border border-gray-100">
+                <div key={index} className="bg-gray-50 rounded-xl p-6 md:p-8 border border-gray-100 hover:shadow-lg transition-shadow">
                   <div className="flex items-start space-x-3 mb-4">
                     <div className="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mt-1">
                       <CheckCircle2 className="w-6 h-6 text-blue-600" />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                      <p className="text-gray-700 mb-4">{item.description}</p>
-                      <ul className="space-y-2">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 break-words">{item.title}</h3>
+                      <p className="text-gray-700 mb-4 text-sm sm:text-base">{item.description}</p>
+                      <ul className="space-y-2.5">
                         {item.points.map((point, idx) => (
                           <li key={idx} className="flex items-start space-x-2">
-                            <span className="text-blue-600 mt-1">•</span>
-                            <span className="text-gray-600 leading-relaxed">{point}</span>
+                            <span className="text-blue-600 mt-1 flex-shrink-0">•</span>
+                            <span className="text-gray-600 leading-relaxed text-sm sm:text-base">{point}</span>
                           </li>
                         ))}
                       </ul>
                       {item.footer && (
-                        <p className="text-gray-700 mt-4 font-medium">{item.footer}</p>
+                        <p className="text-gray-700 mt-4 font-medium text-sm sm:text-base border-t border-gray-200 pt-4">{item.footer}</p>
                       )}
                     </div>
                   </div>
@@ -303,50 +303,55 @@ const LiveVideo = () => {
             </div>
           </section>
 
-          <section className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+          <section className="mb-16 md:mb-20">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center px-4">
               {currentContent.howItWorks.title}
             </h2>
-            <div className="grid md:grid-cols-5 gap-6">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
               {currentContent.howItWorks.steps.map((step, index) => (
                 <div key={index} className="relative">
-                  <div className="bg-white rounded-xl p-6 border-2 border-blue-100 hover:border-blue-300 transition-colors h-full">
-                    <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">
+                  <div className="bg-white rounded-xl p-6 border-2 border-blue-100 hover:border-blue-300 hover:shadow-lg transition-all h-full flex flex-col">
+                    <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4 flex-shrink-0">
                       {index + 1}
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">{step.title}</h3>
+                    <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3">{step.title}</h3>
                     {step.description && (
-                      <p className="text-gray-700 mb-3 text-sm">{step.description}</p>
+                      <p className="text-gray-700 mb-3 text-sm leading-relaxed">{step.description}</p>
                     )}
                     {step.items && (
-                      <ul className="space-y-2">
+                      <ul className="space-y-2.5 flex-grow">
                         {step.items.map((item, idx) => (
                           <li key={idx} className="flex items-start space-x-2">
-                            <span className="text-blue-600 text-xs mt-1">•</span>
-                            <span className="text-gray-600 text-sm leading-relaxed">{item}</span>
+                            <span className="text-blue-600 text-xs mt-1 flex-shrink-0">•</span>
+                            <span className="text-gray-600 text-xs sm:text-sm leading-relaxed">{item}</span>
                           </li>
                         ))}
                       </ul>
                     )}
                   </div>
+                  {index < currentContent.howItWorks.steps.length - 1 && (
+                    <div className="hidden xl:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
+                      <div className="w-6 h-0.5 bg-blue-200"></div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
           </section>
 
-          <section className="mb-20">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
+          <section className="mb-16 md:mb-20">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 sm:p-8 md:p-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-6 text-center px-4">
                 {currentContent.whoFor.title}
               </h2>
-              <p className="text-lg text-gray-700 mb-6 text-center max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-700 mb-6 md:mb-8 text-center max-w-3xl mx-auto px-4">
                 {currentContent.whoFor.description}
               </p>
-              <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+              <div className="grid gap-4 sm:grid-cols-2 max-w-4xl mx-auto">
                 {currentContent.whoFor.points.map((point, index) => (
-                  <div key={index} className="flex items-start space-x-3 bg-white rounded-lg p-4">
-                    <CheckCircle2 className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 leading-relaxed">{point}</span>
+                  <div key={index} className="flex items-start space-x-3 bg-white rounded-lg p-4 md:p-5 hover:shadow-md transition-shadow">
+                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700 leading-relaxed text-sm sm:text-base">{point}</span>
                   </div>
                 ))}
               </div>
@@ -354,32 +359,32 @@ const LiveVideo = () => {
           </section>
 
           <section>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center px-4">
               {currentContent.faq.title}
             </h2>
-            <div className="max-w-4xl mx-auto space-y-6">
+            <div className="max-w-4xl mx-auto space-y-4 md:space-y-6">
               {currentContent.faq.items.map((item, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 border border-gray-200 hover:border-blue-300 transition-colors">
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">{item.q}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.a}</p>
+                <div key={index} className="bg-white rounded-xl p-5 md:p-6 border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all">
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3 leading-snug">{item.q}</h3>
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{item.a}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          <div className="mt-16 text-center">
-            <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-12">
-              <h2 className="text-3xl font-bold text-white mb-4">
+          <div className="mt-12 md:mt-16 text-center">
+            <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-8 md:p-12">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
                 {language === 'en' ? 'Ready to Start?' : 'Bereit zu starten?'}
               </h2>
-              <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl text-blue-100 mb-8 max-w-2xl mx-auto px-4">
                 {language === 'en'
                   ? 'Book a short call with FixAds. We will define your first live plan and send a concept for approval.'
                   : 'Vereinbaren Sie einen kurzen Call mit FixAds. Wir planen den ersten Live und senden ein Konzept zur Freigabe.'}
               </p>
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-blue-600 bg-white rounded-lg hover:bg-gray-50 transition-colors"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium text-blue-600 bg-white rounded-lg hover:bg-gray-50 transition-colors shadow-lg hover:shadow-xl"
               >
                 {language === 'en' ? 'Contact Us' : 'Kontakt aufnehmen'}
               </a>
