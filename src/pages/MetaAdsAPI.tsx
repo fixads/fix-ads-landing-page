@@ -21,7 +21,7 @@ const MetaAdsAPI = () => {
                 PRIVACY POLICY
               </h1>
               <p className="text-lg sm:text-xl text-blue-100">
-                Last Updated: [Date]
+                Last Updated: February 7, 2026
               </p>
             </div>
           </div>
@@ -43,14 +43,14 @@ const MetaAdsAPI = () => {
           <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
             <section className="mb-8 md:mb-12">
               <p className="text-gray-600 mb-4">
-                <strong>Effective Date:</strong> [Date]
+                <strong>Effective Date:</strong> February 7, 2026
               </p>
             </section>
 
             <section className="mb-8 md:mb-12">
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 md:mb-6">1. Introduction</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Welcome to <strong>Meet Pads API</strong> ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website [Insert Website URL] and use our services.
+                Welcome to <strong>FixAds</strong> ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website https://fixads.xyz and use our services.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 We are committed to collecting and utilizing data to the fullest extent permitted by applicable laws, including the <strong>General Data Protection Regulation (GDPR)</strong> and United States privacy laws (including the <strong>CCPA</strong> and <strong>CPRA</strong>).
@@ -255,11 +255,11 @@ const MetaAdsAPI = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2 mt-1">•</span>
-                  <span><strong>Transaction Data:</strong> Retained for [Insert Number, e.g., 7] years for tax and accounting purposes.</span>
+                  <span><strong>Transaction Data:</strong> Retained for 10 years for tax and accounting purposes in compliance with German tax law.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2 mt-1">•</span>
-                  <span><strong>Technical Data:</strong> Retained for [Insert Number, e.g., 24] months for security logs.</span>
+                  <span><strong>Technical Data:</strong> Retained for 24 months for security logs.</span>
                 </li>
               </ul>
             </section>
@@ -278,9 +278,10 @@ const MetaAdsAPI = () => {
               </p>
               <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
                 <ul className="space-y-2 text-gray-600">
-                  <li><strong>Company Name:</strong> Meet Pads API</li>
-                  <li><strong>Email:</strong> [Insert Email Address]</li>
-                  <li><strong>Address:</strong> [Insert Physical Address]</li>
+                  <li><strong>Company Name:</strong> FixAds (Anton Goldberg)</li>
+                  <li><strong>Email:</strong> <a href="mailto:info@fixads.xyz" className="text-blue-600 hover:text-blue-800">info@fixads.xyz</a></li>
+                  <li><strong>Phone:</strong> <a href="tel:+4917478107350" className="text-blue-600 hover:text-blue-800">+49 174 7810735</a></li>
+                  <li><strong>Address:</strong> Schönhauser Allee 108, 10439 Berlin, Germany</li>
                 </ul>
               </div>
             </section>
