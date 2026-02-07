@@ -38,6 +38,7 @@ const Footer = () => {
             <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Legal</h4>
             <ul className="space-y-3">
               <li><FooterLink to="/privacy">Privacy Policy</FooterLink></li>
+              <li><FooterLink to="/metaadsapi">Meta Ads API Policy</FooterLink></li>
               <li><FooterLink to="/terms">Terms of Service</FooterLink></li>
               <li><FooterLink to="/cookies">Cookie Policy</FooterLink></li>
               <li><FooterLink to="/impressum">Impressum</FooterLink></li>

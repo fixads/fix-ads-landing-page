@@ -16,6 +16,7 @@ import Terms from './pages/Terms';
 import Cookies from './pages/Cookies';
 import Address from './pages/Address';
 import Impressum from './pages/Impressum';
+import MetaAdsAPI from './pages/MetaAdsAPI';
 import CookieConsent from './components/cookie/CookieConsent';
 import ScrollToTop from './components/utils/ScrollToTop';
 
@@ -61,6 +62,7 @@ const App = () => {
                   <Route path="/cookies" element={<Cookies />} />
                   <Route path="/address" element={<Address />} />
                   <Route path="/impressum" element={<Impressum />} />
+                  <Route path="/metaadsapi" element={<MetaAdsAPI />} />
                 </Routes>
               </main>
               <Footer />
