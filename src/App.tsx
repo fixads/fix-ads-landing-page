@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { HelmetProvider } from 'react-helmet-async';
 import { CookieConsentProvider } from './contexts/CookieConsentContext';
 import GeoBlocker from './components/GeoBlocker';
+import GermanGeoBlocker from './components/GermanGeoBlocker';
+import ArabicGeoBlocker from './components/ArabicGeoBlocker';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -17,6 +19,7 @@ import Cookies from './pages/Cookies';
 import Address from './pages/Address';
 import Impressum from './pages/Impressum';
 import MetaAdsAPI from './pages/MetaAdsAPI';
+import SaudiArabia from './pages/SaudiArabia';
 import CookieConsent from './components/cookie/CookieConsent';
 import ScrollToTop from './components/utils/ScrollToTop';
 
@@ -43,33 +46,53 @@ const App = () => {
   return (
     <HelmetProvider>
       <CookieConsentProvider>
-        <GeoBlocker>
-          <Router>
-            <ScrollToTop />
-            <ScrollToSection />
-            <div className="min-h-screen bg-white flex flex-col">
-              <Header />
-              <main className="flex-grow">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/contact/he" element={<HebrewContact />} />
-                  <Route path="/app-api" element={<AppAPI />} />
-                  <Route path="/live-video" element={<LiveVideo />} />
-                  <Route path="/faq" element={<FAQ />} />
-                  <Route path="/privacy" element={<Privacy />} />
-                  <Route path="/terms" element={<Terms />} />
-                  <Route path="/cookies" element={<Cookies />} />
-                  <Route path="/address" element={<Address />} />
-                  <Route path="/impressum" element={<Impressum />} />
-                  <Route path="/metaadsapi" element={<MetaAdsAPI />} />
-                </Routes>
-              </main>
-              <Footer />
-              <CookieConsent />
-            </div>
-          </Router>
-        </GeoBlocker>
+        <Router>
+          <ScrollToTop />
+          <ScrollToSection />
+          <Routes>
+            <Route path="/sa" element={
+              <ArabicGeoBlocker>
+                <SaudiArabia />
+              </ArabicGeoBlocker>
+            } />
+            <Route path="/impressum" element={
+              <GermanGeoBlocker>
+                <div className="min-h-screen bg-white flex flex-col">
+                  <Header />
+                  <main className="flex-grow">
+                    <Impressum />
+                  </main>
+                  <Footer />
+                  <CookieConsent />
+                </div>
+              </GermanGeoBlocker>
+            } />
+            <Route path="*" element={
+              <GeoBlocker>
+                <div className="min-h-screen bg-white flex flex-col">
+                  <Header />
+                  <main className="flex-grow">
+                    <Routes>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/contact" element={<Contact />} />
+                      <Route path="/contact/he" element={<HebrewContact />} />
+                      <Route path="/app-api" element={<AppAPI />} />
+                      <Route path="/live-video" element={<LiveVideo />} />
+                      <Route path="/faq" element={<FAQ />} />
+                      <Route path="/privacy" element={<Privacy />} />
+                      <Route path="/terms" element={<Terms />} />
+                      <Route path="/cookies" element={<Cookies />} />
+                      <Route path="/address" element={<Address />} />
+                      <Route path="/metaadsapi" element={<MetaAdsAPI />} />
+                    </Routes>
+                  </main>
+                  <Footer />
+                  <CookieConsent />
+                </div>
+              </GeoBlocker>
+            } />
+          </Routes>
+        </Router>
       </CookieConsentProvider>
     </HelmetProvider>
   );

@@ -13,6 +13,36 @@ const ALLOWED_COUNTRIES = new Set([
   'AU','NZ','JP','KR','SG','HK'
 ]);
 
+// German-speaking countries for Impressum access
+const GERMAN_SPEAKING_COUNTRIES = new Set([
+  'DE', // Germany
+  'AT', // Austria
+  'CH', // Switzerland
+  'LI', // Liechtenstein
+]);
+
+// Arabic-speaking countries for /sa page
+const ARABIC_SPEAKING_COUNTRIES = new Set([
+  'SA', // Saudi Arabia
+  'AE', // United Arab Emirates
+  'KW', // Kuwait
+  'QA', // Qatar
+  'BH', // Bahrain
+  'OM', // Oman
+  'JO', // Jordan
+  'LB', // Lebanon
+  'EG', // Egypt
+  'IQ', // Iraq
+  'YE', // Yemen
+  'SY', // Syria
+  'MA', // Morocco
+  'DZ', // Algeria
+  'TN', // Tunisia
+  'LY', // Libya
+  'SD', // Sudan
+  'PS', // Palestine
+]);
+
 export interface GeoLocation {
   country?: string;
   region?: string;
@@ -103,10 +133,34 @@ export const isCountryAllowed = (countryCode: string | null): boolean => {
     // If we can't determine the country, allow access (fail open)
     return true;
   }
-  
+
   return ALLOWED_COUNTRIES.has(countryCode.toUpperCase());
 };
 
+export const isGermanSpeakingCountry = (countryCode: string | null): boolean => {
+  if (!countryCode) {
+    return false;
+  }
+
+  return GERMAN_SPEAKING_COUNTRIES.has(countryCode.toUpperCase());
+};
+
+export const isArabicSpeakingCountry = (countryCode: string | null): boolean => {
+  if (!countryCode) {
+    return false;
+  }
+
+  return ARABIC_SPEAKING_COUNTRIES.has(countryCode.toUpperCase());
+};
+
 export const getBlockedMessage = (countryCode: string | null): string => {
-  return `Sorry, this service is not available in your region${countryCode ? ` (${countryCode})` : ''} 🛑`;
+  return `Sorry, this service is not available in your region${countryCode ? ` (${countryCode})` : ''}`;
+};
+
+export const getBlockedMessageArabic = (countryCode: string | null): string => {
+  return `عذراً، هذه الخدمة غير متاحة في منطقتك${countryCode ? ` (${countryCode})` : ''}`;
+};
+
+export const getBlockedMessageGerman = (countryCode: string | null): string => {
+  return `Entschuldigung, dieser Dienst ist in Ihrer Region nicht verfügbar${countryCode ? ` (${countryCode})` : ''}`;
 };
