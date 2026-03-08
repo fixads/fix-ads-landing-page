@@ -21,7 +21,7 @@ const GERMAN_SPEAKING_COUNTRIES = new Set([
   'LI', // Liechtenstein
 ]);
 
-// Arabic-speaking countries for /sa page
+// Arabic-speaking countries for /sa page (plus Germany and Israel)
 const ARABIC_SPEAKING_COUNTRIES = new Set([
   'SA', // Saudi Arabia
   'AE', // United Arab Emirates
@@ -41,6 +41,8 @@ const ARABIC_SPEAKING_COUNTRIES = new Set([
   'LY', // Libya
   'SD', // Sudan
   'PS', // Palestine
+  'DE', // Germany
+  'IL', // Israel
 ]);
 
 export interface GeoLocation {

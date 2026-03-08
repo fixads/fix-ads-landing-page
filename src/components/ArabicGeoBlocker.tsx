@@ -68,7 +68,7 @@ const ArabicGeoBlocker: React.FC<ArabicGeoBlockerProps> = ({ children }) => {
               </span>
             </div>
             <p className="text-xs text-gray-500">
-              هذه الصفحة متاحة فقط للدول الناطقة باللغة العربية
+              هذه الصفحة متاحة فقط للدول الناطقة باللغة العربية وألمانيا وإسرائيل
             </p>
           </div>
 
