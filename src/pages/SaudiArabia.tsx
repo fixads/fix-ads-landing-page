@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SEO from '../components/layout/SEO';
-import { ArrowLeft, Mail, Phone, TrendingUp, Users, Award, CheckCircle, Zap, Target, BarChart3 } from 'lucide-react';
+import { ArrowLeft, Mail, TrendingUp, Users, Award, CheckCircle, Zap, Target, BarChart3 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const SaudiArabia = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkDevice = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkDevice();
+    window.addEventListener('resize', checkDevice);
+    return () => window.removeEventListener('resize', checkDevice);
+  }, []);
+
+  // Extract video IDs from URLs
+  const mobileVideoId = 'wCcNrVndCg8'; // From shorts URL
+  const desktopVideoId = '9N6Wk3x9w_8'; // From regular URL
+
+  const currentVideoId = isMobile ? mobileVideoId : desktopVideoId;
+
   return (
     <>
       <SEO
@@ -38,13 +56,21 @@ const SaudiArabia = () => {
                   <Mail className="w-5 h-5 ml-2" />
                   احصل على استشارة مجانية
                 </a>
-                <a
-                  href="tel:+966XXXXXXXXX"
-                  className="inline-flex items-center px-8 py-4 bg-blue-800 text-white rounded-lg font-semibold hover:bg-blue-900 transition-all shadow-lg"
-                >
-                  <Phone className="w-5 h-5 ml-2" />
-                  اتصل بنا الآن
-                </a>
+              </div>
+            </div>
+
+            {/* YouTube Video */}
+            <div className="relative z-20 w-full max-w-4xl mx-auto mb-12">
+              <div className={`relative ${isMobile ? 'aspect-[9/16]' : 'aspect-video'} rounded-lg overflow-hidden shadow-2xl`}>
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${currentVideoId}?autoplay=1&mute=1&loop=1&playlist=${currentVideoId}&controls=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
+                  title="FixAds Marketing Video"
+                  className="absolute inset-0 w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
               </div>
             </div>
 
@@ -214,13 +240,6 @@ const SaudiArabia = () => {
               >
                 <Mail className="w-5 h-5 ml-2" />
                 sari@fixads.xyz
-              </a>
-              <a
-                href="tel:+966XXXXXXXXX"
-                className="inline-flex items-center px-8 py-4 bg-blue-900 text-white rounded-lg font-semibold hover:bg-blue-950 transition-all shadow-lg"
-              >
-                <Phone className="w-5 h-5 ml-2" />
-                اتصل الآن
               </a>
             </div>
           </div>
