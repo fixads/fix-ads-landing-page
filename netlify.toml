@@ -6,18 +6,6 @@ publish = "dist"
 NODE_VERSION = "18"
 
 [[redirects]]
-from = "/transparency"
-to = "https://li-vela-transparency-dashboard-ng6c7ig76a-ue.a.run.app/transparency"
-status = 200
-force = true
-
-[[redirects]]
-from = "/transparency/*"
-to = "https://li-vela-transparency-dashboard-ng6c7ig76a-ue.a.run.app/transparency/:splat"
-status = 200
-force = true
-
-[[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200
