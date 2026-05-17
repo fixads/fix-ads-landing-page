@@ -6,6 +6,16 @@ publish = "dist"
 NODE_VERSION = "18"
 
 [[redirects]]
+from = "/transparency"
+to = "/transparency/index.html"
+status = 200
+
+[[redirects]]
+from = "/transparency/*"
+to = "/transparency/index.html"
+status = 200
+
+[[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200
