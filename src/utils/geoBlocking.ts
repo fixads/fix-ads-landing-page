@@ -71,12 +71,12 @@ export const getUserCountry = async (): Promise<string | null> => {
   }
 
   try {
-    // Method 2: Fallback to ip-api.com
-    const response = await fetch('http://ip-api.com/json/?fields=countryCode');
-    
+    // Method 2: Fallback to ipwho.is (HTTPS-compatible free service)
+    const response = await fetch('https://ipwho.is/?fields=country_code');
+
     if (response.ok) {
       const data = await response.json();
-      return data.countryCode || null;
+      return data.country_code || null;
     }
   } catch (error) {
     console.warn('Fallback geo service failed');
@@ -141,7 +141,8 @@ export const isCountryAllowed = (countryCode: string | null): boolean => {
 
 export const isGermanSpeakingCountry = (countryCode: string | null): boolean => {
   if (!countryCode) {
-    return false;
+    // If we can't determine the country, allow access (fail open)
+    return true;
   }
 
   return GERMAN_SPEAKING_COUNTRIES.has(countryCode.toUpperCase());
@@ -149,7 +150,8 @@ export const isGermanSpeakingCountry = (countryCode: string | null): boolean => 
 
 export const isArabicSpeakingCountry = (countryCode: string | null): boolean => {
   if (!countryCode) {
-    return false;
+    // If we can't determine the country, allow access (fail open)
+    return true;
   }
 
   return ARABIC_SPEAKING_COUNTRIES.has(countryCode.toUpperCase());
