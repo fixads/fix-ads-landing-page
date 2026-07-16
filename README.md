@@ -827,6 +827,7 @@ Every implementation change must be checked against the relevant items below:
 - Used initial draft `6a58b40542053026248e9453` to reject an insufficient alias-only approach without publishing it.
 - Verified corrected draft `6a58b47b1e5c0b2db1603c79`, then published production recovery deploy `6a58b49c1b6c6829944fdfb1`.
 - Confirmed the protected HTML, JavaScript, and CSS retained their exact existing SHA-1 hashes while the bundles returned the correct JavaScript and CSS MIME types.
+- Confirmed in a JavaScript-capable headless browser that the live React application rendered the FixAds transparency sign-in interface instead of a blank page.
 - Confirmed `/transparency`, a descendant route, all three locale pages, root country routing, SEO files, legal redirects, both Netlify forms, the empty function set, and the existing edge function remained operational after publication.
 
 ### 2026-07-16 — Marketing source and living README synchronized to GitHub

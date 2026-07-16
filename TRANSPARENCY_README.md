@@ -62,4 +62,5 @@ All other production files, the root-only country router, legal redirects, forms
 - Prohibited any change to transparency content, layout, styling, logic, authentication, data, APIs, or features.
 - Verified corrected draft `6a58b47b1e5c0b2db1603c79` before production: HTML remained at SHA-1 `81689e69934c48149151198e98fc69d9256d92fe`, JavaScript returned `application/javascript` at SHA-1 `f7f468c5953baa8c3526b396be6494e22001574c`, and CSS returned `text/css` at SHA-1 `343d85e9cec30a307c45bd5a550c28b7b6633398`.
 - Published production recovery deploy `6a58b49c1b6c6829944fdfb1` and repeated the same hash and MIME-type checks on `https://www.fixads.xyz`.
+- Loaded the live page in a JavaScript-capable headless browser and confirmed the React application rendered the FixAds transparency sign-in interface instead of an empty root element.
 - Confirmed `/transparency`, `/transparency/dashboard`, `/en/`, `/de/`, `/he/`, root country routing, `robots.txt`, `sitemap.xml`, Impressum, Privacy, Terms, both Netlify forms, the empty function set, and the existing edge function all remained operational.
