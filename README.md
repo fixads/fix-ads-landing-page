@@ -29,7 +29,7 @@ Mandatory boundaries:
 - Build output, catch-all routes, geographic redirects, language redirects, and country blocking must be configured so they do not accidentally overwrite or intercept the protected area.
 - This README cannot authorize changes to transparency content or functionality. A change beyond the footer requires explicit instructions in a separate README dedicated to the transparency area.
 - The **shared footer is the only exception**: a footer change governed by this README may also be reflected on protected transparency pages, but the change must remain strictly confined to the footer and must not affect any other transparency content, layout, styling, scripts, assets, routes, or behavior.
-- If a separate transparency README exists, it is the source of truth for that area and takes precedence over this README for every route matching `/transparency` and `/transparency/**`.
+- The dedicated [`TRANSPARENCY_README.md`](TRANSPARENCY_README.md) exists and is the source of truth for that area. It takes precedence over this README for every route matching `/transparency` and `/transparency/**`.
 
 Before any deployment, verify that the protected transparency route and representative descendant routes remain available and unchanged except for an explicitly authorized shared-footer update.
 
@@ -743,6 +743,8 @@ Known repository and hosting state on 2026-07-16:
 - Production integration reuses those exact immutable transparency file hashes and maps the same HTML to `/transparency/index.html`; `/transparency` and `/transparency/**` rewrite only to that identical file. No transparency HTML, CSS, JavaScript, text, layout, feature, or asset content is edited.
 - The validated Netlify draft deploy is `6a588c6faebae3f21df391b1` at `https://6a588c6faebae3f21df391b1--fix-ads.netlify.app`.
 - The resulting production deploy is `6a588dc10dbc293982fead10` at `https://6a588dc10dbc293982fead10--fix-ads.netlify.app`, serving the canonical production domain `https://www.fixads.xyz`.
+- A later availability audit found that the forced `/transparency/*` fallback intercepted the protected HTML's JavaScript and CSS URLs and returned the HTML shell for both assets. The dedicated `TRANSPARENCY_README.md` authorized the smallest recovery: two exact asset rewrites to the existing immutable bundles, without changing transparency HTML, JavaScript, CSS, content, layout, logic, data, authentication, or features.
+- The corrected draft is `6a58b47b1e5c0b2db1603c79`; the current production recovery deploy is `6a58b49c1b6c6829944fdfb1` at `https://6a58b49c1b6c6829944fdfb1--fix-ads.netlify.app`.
 - The draft returned byte-identical SHA-256 hashes for `/transparency`, a representative descendant `/transparency/dashboard`, and both transparency assets when compared with the then-current production deployment.
 - The newer production baseline contained no Netlify Functions. The integration preserves that exact empty function set instead of restoring or assuming functions from an older deploy.
 - `/impressum`, `/privacy`, and `/terms` temporarily redirect to their existing immutable legacy Netlify deployment until permanent, reviewed legal pages are integrated on the canonical production host. The Impressum destination remains German.
@@ -814,6 +816,18 @@ Every implementation change must be checked against the relevant items below:
 - [ ] The Change Log contains an entry for the change.
 
 ## Change Log
+
+### 2026-07-16 — Transparency availability recovered and documented
+
+- Re-read this complete living specification before preparing any recovery action.
+- Added the dedicated `TRANSPARENCY_README.md` required to govern the protected area after the owner explicitly instructed that the non-loading page be fixed.
+- Diagnosed the forced `/transparency/*` fallback as the reason JavaScript and CSS requests returned the HTML shell and left the page blank.
+- Limited the authorized repair to two exact Netlify asset rewrites using the JavaScript and CSS hashes already present in production.
+- Prohibited changes to transparency content, layout, styling, application logic, authentication, data, APIs, routes, and features.
+- Used initial draft `6a58b40542053026248e9453` to reject an insufficient alias-only approach without publishing it.
+- Verified corrected draft `6a58b47b1e5c0b2db1603c79`, then published production recovery deploy `6a58b49c1b6c6829944fdfb1`.
+- Confirmed the protected HTML, JavaScript, and CSS retained their exact existing SHA-1 hashes while the bundles returned the correct JavaScript and CSS MIME types.
+- Confirmed `/transparency`, a descendant route, all three locale pages, root country routing, SEO files, legal redirects, both Netlify forms, the empty function set, and the existing edge function remained operational after publication.
 
 ### 2026-07-16 — Marketing source and living README synchronized to GitHub
 
