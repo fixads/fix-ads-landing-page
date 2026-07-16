@@ -17,6 +17,10 @@ const assetFiles = [
   "assets/hero-team.jpg",
   "assets/ecommerce-growth.jpg",
   "assets/hvac-leads.jpg",
+  "assets/platforms/meta.svg",
+  "assets/platforms/google-ads.svg",
+  "assets/platforms/yelp.svg",
+  "assets/platforms/amazon-ads.png",
 ];
 
 const textEntries = await Promise.all(
@@ -39,6 +43,10 @@ const MIME_TYPES = {
   "/assets/hero-team.jpg": "image/jpeg",
   "/assets/ecommerce-growth.jpg": "image/jpeg",
   "/assets/hvac-leads.jpg": "image/jpeg",
+  "/assets/platforms/meta.svg": "image/svg+xml",
+  "/assets/platforms/google-ads.svg": "image/svg+xml",
+  "/assets/platforms/yelp.svg": "image/svg+xml",
+  "/assets/platforms/amazon-ads.png": "image/png",
 };
 
 function response(body, init = {}) {

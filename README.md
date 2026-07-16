@@ -35,7 +35,7 @@ Before any deployment, verify that the protected transparency route and represen
 
 ## Project status
 
-The multilingual design was approved by the project owner and published to `https://www.fixads.xyz` on 2026-07-16 after a protected Netlify draft passed verification.
+The multilingual design was approved by the project owner and published to `https://www.fixads.xyz` on 2026-07-16 after protected Netlify drafts passed verification. The current production deploy is `6a58f689b735fb8e7bf59d17`.
 
 - The animated multilingual website source exists in `preview-site/` and remains available as a separate review build at `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site`.
 - Direct review paths are `/en/`, `/de/`, and `/he/`; the review root uses available edge country information to send Israel to Hebrew, Germany to German, and other visitors to English.
@@ -702,6 +702,7 @@ The implemented preview includes:
 - Responsive layouts for desktop and mobile, including a true Hebrew RTL document and mirrored navigation behavior.
 - Three original website photographs in `preview-site/assets/`: `hero-team.jpg`, `ecommerce-growth.jpg`, and `hvac-leads.jpg`.
 - The existing 72 × 72 FixAds logo saved unchanged as `preview-site/assets/fixads-logo.png`.
+- A platform ticker that keeps the existing continuous marquee motion while showing compact, transparent Meta, Google Ads, Yelp, and Amazon Ads brand marks beside or within their names. The cropped vector viewboxes remove unused wordmark space without redrawing the marks, and the Amazon Ads asset uses Amazon's official transparent press lockup. These third-party marks are used only to identify the advertising platforms and remain the property of their respective owners.
 - Temporary text wordmarks for clients because official client logo files and approved destination URLs have not yet been supplied.
 - A phone-first layout tested from 320px through 430px widths, with safe-area support for modern notched devices, compact mobile data visuals, shorter vertical spacing, and typography that accommodates long German words and Hebrew RTL text without horizontal overflow.
 - Mobile controls with at least 44–48px practical touch targets, 16px form text to prevent unwanted iOS input zoom, a scroll-safe full-screen menu with contained keyboard focus, and a localized contact dock that disappears whenever an existing page call to action is substantially visible or the contact section or footer is reached.
@@ -724,6 +725,7 @@ Known repository and hosting state on 2026-07-16:
 - Rendering: dependency-light static HTML, CSS, and JavaScript.
 - Localized content source: `preview-site/content.js`.
 - Shared interface and interactions: `preview-site/app.js` and `preview-site/styles.css`.
+- Platform-mark assets: `preview-site/assets/platforms/`. Meta, Google Ads, and Yelp are transparent SVGs cropped through their viewboxes; Amazon Ads is the official transparent PNG lockup. All four appear in the English, German, and Hebrew ticker, with the second repeated rail hidden from assistive technology.
 - Stable preview paths: `/en/`, `/de/`, and `/he/`, with static rewrite rules in `preview-site/_redirects`.
 - Geographic entry routing: `preview-site/netlify/edge-functions/locale-router.ts` handles only `GET /` and redirects `IL` to `/he/`, `DE` to `/de/`, and every other allowed country to `/en/`.
 - The geographic edge function does not match `/transparency` or any descendant route, so it cannot intercept the protected area.
@@ -735,7 +737,7 @@ Known repository and hosting state on 2026-07-16:
 ### Netlify production integration
 
 - `preview-site/scripts/build-netlify.mjs` creates a marketing-only package in `preview-site/netlify-dist/` with physical `/en/`, `/de/`, and `/he/` HTML documents plus shared JavaScript, localized content, styles, logo, photographs, `robots.txt`, and `sitemap.xml`.
-- The production root uses `preview-site/netlify/edge-functions/locale-router.ts` and Netlify edge country context: `IL` redirects to `/he/`, `DE` redirects to `/de/`, and every other visitor redirects to `/en/`.
+- The current production root uses three ordered, root-only Netlify redirects with country conditions: `IL` redirects to `/he/`, `DE` redirects to `/de/`, and every other visitor redirects to `/en/`. Direct locale URLs remain stable. The source edge implementation in `preview-site/netlify/edge-functions/locale-router.ts` remains available, but the current function-bearing production baseline is intentionally deployed without an edge function.
 - The edge function matches only `GET /`. It cannot run for `/transparency`, `/transparency/**`, legal pages, assets, form submissions, or locale pages.
 - The deployment process begins from the exact currently published Netlify file map and adds only the marketing files, localized routes, SEO/GEO files, and root locale edge bundle.
 - The production state changed concurrently during preparation. The safety check stopped before upload, re-read the new baseline deploy `6a588b70762e6e3374058da1`, and used that newer deployment as the source of truth.
@@ -744,9 +746,11 @@ Known repository and hosting state on 2026-07-16:
 - The validated Netlify draft deploy is `6a588c6faebae3f21df391b1` at `https://6a588c6faebae3f21df391b1--fix-ads.netlify.app`.
 - The resulting production deploy is `6a588dc10dbc293982fead10` at `https://6a588dc10dbc293982fead10--fix-ads.netlify.app`, serving the canonical production domain `https://www.fixads.xyz`.
 - A later availability audit found that the forced `/transparency/*` fallback intercepted the protected HTML's JavaScript and CSS URLs and returned the HTML shell for both assets. The dedicated `TRANSPARENCY_README.md` authorized the smallest recovery: two exact asset rewrites to the existing immutable bundles, without changing transparency HTML, JavaScript, CSS, content, layout, logic, data, authentication, or features.
-- The corrected draft is `6a58b47b1e5c0b2db1603c79`; the current production recovery deploy is `6a58b49c1b6c6829944fdfb1` at `https://6a58b49c1b6c6829944fdfb1--fix-ads.netlify.app`.
+- The corrected recovery draft was `6a58b47b1e5c0b2db1603c79`; the resulting recovery production deploy was `6a58b49c1b6c6829944fdfb1` at `https://6a58b49c1b6c6829944fdfb1--fix-ads.netlify.app`.
 - The draft returned byte-identical SHA-256 hashes for `/transparency`, a representative descendant `/transparency/dashboard`, and both transparency assets when compared with the then-current production deployment.
-- The newer production baseline contained no Netlify Functions. The integration preserves that exact empty function set instead of restoring or assuming functions from an older deploy.
+- That earlier production baseline contained no Netlify Functions, so the first integration preserved its empty function set. A later external production change published function-bearing baseline `6a53a7965efe486aecdb4b14` with nine live Functions, three schedules, 29 redirects, and a newer protected transparency bundle.
+- The platform-mark release merged the multilingual marketing files into that exact newer baseline. Verified draft `6a58f5f69b3f3a8b822b78ea` and current production deploy `6a58f689b735fb8e7bf59d17` both preserve all nine Functions, all three schedules, their custom API routes, the existing non-marketing files, and the expanded set of 32 redirect rules.
+- The protected transparency files in the current baseline remain byte-identical at SHA-1 `e2b26552c5fe4671ff5c7e12900d3a1ed63fc9a5` for `/transparency/index.html`, `571ed211e6fa4cfef8f9efc4c7caff95c29521c9` for `/transparency/assets/index-hCM2TRqE.js`, and `b5221647142c086c7607feac0a02ba0cfbfbdd9b` for `/transparency/assets/index-BsuIzkgE.css`.
 - `/impressum`, `/privacy`, and `/terms` temporarily redirect to their existing immutable legacy Netlify deployment until permanent, reviewed legal pages are integrated on the canonical production host. The Impressum destination remains German.
 - `/accessibility` remains pending because approved accessibility-statement content has not been supplied; no legal text was invented.
 
@@ -816,6 +820,20 @@ Every implementation change must be checked against the relevant items below:
 - [ ] The Change Log contains an entry for the change.
 
 ## Change Log
+
+### 2026-07-16 — Official advertising-platform marks added to the moving ticker
+
+- Re-read this complete living specification before changing the marketing website.
+- Replaced the plain Meta Ads, Google Ads, Yelp Ads, and Amazon Ads ticker entries with compact original brand marks and names while preserving the existing marquee speed, direction, duplication, and reduced-motion behavior.
+- Used transparent assets without white cards or added backgrounds; cropped unused SVG wordmark space through viewboxes without redrawing the Meta, Google Ads, or Yelp marks, and used Amazon's official transparent Amazon Ads press lockup.
+- Added Yelp Ads to the Hebrew ticker so the same four paid-media platforms appear in English, German, and Hebrew.
+- Sized the marks at text-like visual scale and retained the existing RTL animation direction and phone-first layout.
+- Marked the repeated accessibility copy as decorative so screen readers announce each ticker entry only once.
+- Added the platform assets only under `preview-site/assets/platforms/`; no `/transparency` route, file, bundle, content, style, or behavior was changed.
+- Detected that production had changed to function-bearing deploy `6a53a7965efe486aecdb4b14` and stopped the initial upload path before it could replace that newer state.
+- Rebuilt the release from the newer baseline, retaining its nine Functions, three schedules, custom API routes, non-marketing files, and current protected transparency bundle while adding only the multilingual marketing output and three root-only locale redirects.
+- Verified protected draft `6a58f5f69b3f3a8b822b78ea`, then published production deploy `6a58f689b735fb8e7bf59d17`.
+- Confirmed live English, German, and Hebrew routes, all four platform assets, German root routing from Germany, 390px no-overflow rendering, RTL reverse motion, zero marketing-page console errors, 32 processed redirects, nine Functions, three schedules, and exact current transparency HTML, JavaScript, and CSS hashes.
 
 ### 2026-07-16 — Transparency availability recovered and documented
 

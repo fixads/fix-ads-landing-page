@@ -587,7 +587,7 @@ export const content = {
       signal: "מערכת צמיחה מחוברת",
       metrics: ["פרסום", "מסע לקוח", "אוטומציה", "אנליטיקה"],
     },
-    ticker: ["Meta Ads", "Google Ads", "Amazon Ads", "Klaviyo", "Shopify", "Odoo", "אוטומציות", "אנליטיקה"],
+    ticker: ["Meta Ads", "Google Ads", "Yelp Ads", "Amazon Ads", "Klaviyo", "Shopify", "Odoo", "אוטומציות", "אנליטיקה"],
     servicesHeading: {
       eyebrow: "השירותים שלנו",
       title: "כל המערכת הדיגיטלית, מחוברת לצמיחה.",

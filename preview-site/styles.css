@@ -778,7 +778,7 @@ html[lang="de"] .hero-title {
   animation-direction: reverse;
 }
 
-.ticker-track span {
+.ticker-item {
   display: inline-flex;
   align-items: center;
   gap: 38px;
@@ -789,9 +789,63 @@ html[lang="de"] .hero-title {
   text-transform: uppercase;
 }
 
-.ticker-track i {
+.ticker-label {
+  white-space: nowrap;
+}
+
+.ticker-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+}
+
+.ticker-brand--lockup {
+  line-height: 0;
+}
+
+.ticker-logo {
+  display: block;
+  flex: 0 0 auto;
+  width: auto;
+  height: 18px;
+  object-fit: contain;
+}
+
+.ticker-logo--meta {
+  width: 27px;
+}
+
+.ticker-logo--google {
+  width: 20px;
+  height: 20px;
+}
+
+.ticker-logo--yelp {
+  width: 15px;
+  height: 20px;
+}
+
+.ticker-logo--amazon {
+  width: 79px;
+  height: 20px;
+  filter: brightness(0);
+}
+
+.ticker-label--sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.ticker-item > i {
   width: 7px;
   height: 7px;
+  flex: 0 0 auto;
   transform: rotate(45deg);
   background: var(--red);
 }

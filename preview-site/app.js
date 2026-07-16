@@ -43,6 +43,51 @@ const linkList = (links, className = "") =>
     )
     .join("");
 
+const platformMarks = {
+  "Meta Ads": {
+    src: "/assets/platforms/meta.svg",
+    className: "ticker-logo--meta",
+    width: 290,
+    height: 191,
+  },
+  "Google Ads": {
+    src: "/assets/platforms/google-ads.svg",
+    className: "ticker-logo--google",
+    width: 251,
+    height: 230,
+  },
+  "Yelp Ads": {
+    src: "/assets/platforms/yelp.svg",
+    className: "ticker-logo--yelp",
+    width: 40,
+    height: 53,
+  },
+  "Amazon Ads": {
+    src: "/assets/platforms/amazon-ads.png",
+    className: "ticker-logo--amazon",
+    width: 4496,
+    height: 1134,
+    lockup: true,
+  },
+};
+
+const tickerItem = (item, hidden = false) => {
+  const mark = platformMarks[item];
+  const content = mark
+    ? `<span class="ticker-brand${mark.lockup ? " ticker-brand--lockup" : ""}">
+        <img class="ticker-logo ${mark.className}" src="${mark.src}" alt="" aria-hidden="true" width="${mark.width}" height="${mark.height}" decoding="async" />
+        ${mark.lockup ? `<span class="ticker-label--sr">${item}</span>` : `<span class="ticker-label">${item}</span>`}
+      </span>`
+    : `<span class="ticker-label">${item}</span>`;
+
+  return `<span class="ticker-item${mark ? " ticker-item--platform" : ""}"${hidden ? ' aria-hidden="true"' : ""}>${content}<i aria-hidden="true"></i></span>`;
+};
+
+const tickerRail = [
+  ...page.ticker.map((item) => tickerItem(item)),
+  ...page.ticker.map((item) => tickerItem(item, true)),
+].join("");
+
 const serviceCards = page.services
   .map(
     (service, index) => `
@@ -171,7 +216,7 @@ app.innerHTML = `
 
     <section class="ticker" aria-label="Platforms and capabilities">
       <div class="ticker-track">
-        ${[...page.ticker, ...page.ticker].map((item) => `<span>${item}<i></i></span>`).join("")}
+        ${tickerRail}
       </div>
     </section>
 
