@@ -35,7 +35,7 @@ Before any deployment, verify that the protected transparency route and represen
 
 ## Project status
 
-The multilingual design was approved by the project owner and published to `https://www.fixads.xyz` on 2026-07-16 after protected Netlify drafts passed verification. The Kimi K3-assisted mobile refinement was published on 2026-07-19. The current production deploy is `6a5cb412187ccd596c3f298c`.
+The multilingual design was approved by the project owner and published to `https://www.fixads.xyz` on 2026-07-16 after protected Netlify drafts passed verification. The Kimi K3-assisted mobile refinement and screenshot-based visual polish were published on 2026-07-19. The current production deploy is `6a5cbddd68d958737bc7bf3d`.
 
 - The animated multilingual website source exists in `preview-site/` and remains available as a separate review build at `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site`.
 - Direct review paths are `/en/`, `/de/`, and `/he/`; the review root uses available edge country information to send Israel to Hebrew, Germany to German, and other visitors to English.
@@ -712,6 +712,7 @@ The implemented preview includes:
 - A compact floating contact action that is hidden in the initial HTML/CSS state and becomes available only after the real hero actions have scrolled above the viewport. It remains hidden while the mobile menu, closing action, contact section, or footer is present, preventing startup flashes and CTA collisions.
 - A denser one-column phone form that keeps every field visible and preserves validation, autofill, mixed-direction values, 16px control text, 44px minimum controls, and a vertically resizable message field while reducing unnecessary empty space.
 - Purposeful mobile motion instead of one uniform long reveal: shorter section transitions, softer card/process entrances, a single final-word hero marker sweep, press and arrow feedback, and automatic pausing of both moving rails when offscreen or when the browser tab is hidden.
+- A screenshot-based Kimi K3 visual pass using the rendered English, German, Hebrew RTL, mobile-menu, services, and contact states. The accepted refinements keep the floating contact action from covering readable content, strengthen visual separation between phone form fields, present required markers as neutral instructions until a real validation error exists, and soften the platform rail at the viewport edges without changing its content or motion.
 
 ## Technical baseline
 
@@ -755,7 +756,7 @@ Known repository and hosting state on 2026-07-16:
 - That earlier production baseline contained no Netlify Functions, so the first integration preserved its empty function set. A later external production change published function-bearing baseline `6a53a7965efe486aecdb4b14` with nine live Functions, three schedules, 29 redirects, and a newer protected transparency bundle.
 - The platform-mark release merged the multilingual marketing files into that exact newer baseline. Verified draft `6a58f5f69b3f3a8b822b78ea` and production deploy `6a58f689b735fb8e7bf59d17` preserved all nine Functions, all three schedules, their custom API routes, the existing non-marketing files, and the expanded set of 32 redirect rules.
 - The protected transparency files in the current baseline remain byte-identical at SHA-1 `e2b26552c5fe4671ff5c7e12900d3a1ed63fc9a5` for `/transparency/index.html`, `571ed211e6fa4cfef8f9efc4c7caff95c29521c9` for `/transparency/assets/index-hCM2TRqE.js`, and `b5221647142c086c7607feac0a02ba0cfbfbdd9b` for `/transparency/assets/index-BsuIzkgE.css`.
-- The mobile refinement used verified draft `6a5cb3c606d5211df159dfbf` before publishing current production deploy `6a5cb412187ccd596c3f298c`. It retains the same nine Functions, three schedules, 32 redirects, non-marketing files, and protected transparency hashes while updating only the multilingual marketing source and form transport.
+- The mobile refinement used verified draft `6a5cb3c606d5211df159dfbf` before publishing deploy `6a5cb412187ccd596c3f298c`. The screenshot-based visual polish then used verified draft `6a5cbd3d714d142c4f0df5e3` before publishing current production deploy `6a5cbddd68d958737bc7bf3d`. It retains the same nine Functions, three schedules, 32 redirects, non-marketing files, and protected transparency hashes while updating only the multilingual marketing presentation and interaction behavior.
 - `/impressum`, `/privacy`, and `/terms` temporarily redirect to their existing immutable legacy Netlify deployment until permanent, reviewed legal pages are integrated on the canonical production host. The Impressum destination remains German.
 - `/accessibility` remains pending because approved accessibility-statement content has not been supplied; no legal text was invented.
 
@@ -827,6 +828,22 @@ Every implementation change must be checked against the relevant items below:
 - [ ] The Change Log contains an entry for the change.
 
 ## Change Log
+
+### 2026-07-19 — Kimi K3 screenshot-based phone visual review
+
+- Re-read this complete living specification before preparing any visual change.
+- Captured six real 390 × 844 production screenshots: English, German, and Hebrew RTL heroes; the English mobile menu; the first English service card with the floating contact action; and the English contact form.
+- Sent those exact screenshots to Kimi K3 as vision input so the second review was based on rendered hierarchy, spacing, overlap, RTL balance, and form grouping instead of measurements or source code alone.
+- Preserved the heroes, logo, headline scale, CTA hierarchy, menu typography, German wrapping, Hebrew alignment, approved content, and section sequence because Kimi judged those areas visually successful and advised against further redesign.
+- Accepted the concrete visual findings: prevent the floating contact action from covering readable page content, increase separation after each phone form underline, restyle required markers as neutral instructions before validation, and visually soften unavoidable moving-rail cropping at the viewport edges.
+- Verified that the mobile Client Login control already has a 48px hit area, that the Hebrew metric numerals already occupy the leading RTL grid column, and that the platform rail already contains two complete copies. Those suggested changes therefore require no source modification.
+- Identified the apparent second progress strip in the contact capture as page content passing beneath the translucent fixed header during smooth scrolling, not a duplicate progress component; no extra progress UI was added or removed.
+- Rejected Netlify draft `6a5cbd05be39941374344e1c` because it contained the nine Function bundles but did not register their three schedules; it was not published.
+- Rebuilt the draft from the Function source and verified protected draft `6a5cbd3d714d142c4f0df5e3`: all three locales, assets, SEO files, localized form POSTs, 32 redirects, nine Functions, and three schedules passed; the protected transparency HTML, descendant route, JavaScript, and CSS retained their exact current hashes.
+- Repeated the rendered phone checks against that draft at 320–430px, including English, German, Hebrew RTL, reduced motion, menu target sizing, form spacing, dock collision sampling, and browser console output. No horizontal overflow, readable-content overlap, console error, or warning remained.
+- Published production deploy `6a5cbddd68d958737bc7bf3d` to `https://www.fixads.xyz`.
+- Repeated the live checks after publication: the three locale routes and assets return 200; all localized form POSTs return 200; HTTP, HTTPS, apex, `www`, and Germany routing remain correct; English, German, and Hebrew remain overflow-free at 320px with their primary actions reachable; the dock stays clear of service text and contact; phone form styling matches the verified draft; marketing console output remains clean; all nine Functions, three schedules, and 32 redirects remain registered; and the protected transparency hashes remain exact.
+- Kept the protected `/transparency` and `/transparency/**` application outside the visual review and made no change to it.
 
 ### 2026-07-19 — Kimi K3-assisted mobile usability and motion refinement
 
