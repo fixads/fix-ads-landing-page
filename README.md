@@ -35,7 +35,7 @@ Before any deployment, verify that the protected transparency route and represen
 
 ## Project status
 
-The multilingual design was approved by the project owner and published to `https://www.fixads.xyz` on 2026-07-16 after protected Netlify drafts passed verification. The current production deploy is `6a58f689b735fb8e7bf59d17`.
+The multilingual design was approved by the project owner and published to `https://www.fixads.xyz` on 2026-07-16 after protected Netlify drafts passed verification. The Kimi K3-assisted mobile refinement was published on 2026-07-19. The current production deploy is `6a5cb412187ccd596c3f298c`.
 
 - The animated multilingual website source exists in `preview-site/` and remains available as a separate review build at `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site`.
 - Direct review paths are `/en/`, `/de/`, and `/he/`; the review root uses available edge country information to send Israel to Hebrew, Germany to German, and other visitors to English.
@@ -708,6 +708,10 @@ The implemented preview includes:
 - Mobile controls with at least 44–48px practical touch targets, 16px form text to prevent unwanted iOS input zoom, a scroll-safe full-screen menu with contained keyboard focus, and a localized contact dock that disappears whenever an existing page call to action is substantially visible or the contact section or footer is reached.
 - Mobile form fields use appropriate phone keyboards and next-action hints; email, URL, and telephone values remain left-to-right inside the Hebrew experience while names, companies, and messages automatically follow the entered script.
 - Touch-device performance rules that remove desktop hover states and hero parallax while retaining purposeful lightweight motion and the existing reduced-motion mode.
+- A Kimi K3-assisted mobile refinement that keeps the real hero call to action reachable earlier by using a smaller locale-aware title scale, tighter phone spacing, 16px primary hero copy, and a shorter version of the existing connected-system panel.
+- A compact floating contact action that is hidden in the initial HTML/CSS state and becomes available only after the real hero actions have scrolled above the viewport. It remains hidden while the mobile menu, closing action, contact section, or footer is present, preventing startup flashes and CTA collisions.
+- A denser one-column phone form that keeps every field visible and preserves validation, autofill, mixed-direction values, 16px control text, 44px minimum controls, and a vertically resizable message field while reducing unnecessary empty space.
+- Purposeful mobile motion instead of one uniform long reveal: shorter section transitions, softer card/process entrances, a single final-word hero marker sweep, press and arrow feedback, and automatic pausing of both moving rails when offscreen or when the browser tab is hidden.
 
 ## Technical baseline
 
@@ -749,8 +753,9 @@ Known repository and hosting state on 2026-07-16:
 - The corrected recovery draft was `6a58b47b1e5c0b2db1603c79`; the resulting recovery production deploy was `6a58b49c1b6c6829944fdfb1` at `https://6a58b49c1b6c6829944fdfb1--fix-ads.netlify.app`.
 - The draft returned byte-identical SHA-256 hashes for `/transparency`, a representative descendant `/transparency/dashboard`, and both transparency assets when compared with the then-current production deployment.
 - That earlier production baseline contained no Netlify Functions, so the first integration preserved its empty function set. A later external production change published function-bearing baseline `6a53a7965efe486aecdb4b14` with nine live Functions, three schedules, 29 redirects, and a newer protected transparency bundle.
-- The platform-mark release merged the multilingual marketing files into that exact newer baseline. Verified draft `6a58f5f69b3f3a8b822b78ea` and current production deploy `6a58f689b735fb8e7bf59d17` both preserve all nine Functions, all three schedules, their custom API routes, the existing non-marketing files, and the expanded set of 32 redirect rules.
+- The platform-mark release merged the multilingual marketing files into that exact newer baseline. Verified draft `6a58f5f69b3f3a8b822b78ea` and production deploy `6a58f689b735fb8e7bf59d17` preserved all nine Functions, all three schedules, their custom API routes, the existing non-marketing files, and the expanded set of 32 redirect rules.
 - The protected transparency files in the current baseline remain byte-identical at SHA-1 `e2b26552c5fe4671ff5c7e12900d3a1ed63fc9a5` for `/transparency/index.html`, `571ed211e6fa4cfef8f9efc4c7caff95c29521c9` for `/transparency/assets/index-hCM2TRqE.js`, and `b5221647142c086c7607feac0a02ba0cfbfbdd9b` for `/transparency/assets/index-BsuIzkgE.css`.
+- The mobile refinement used verified draft `6a5cb3c606d5211df159dfbf` before publishing current production deploy `6a5cb412187ccd596c3f298c`. It retains the same nine Functions, three schedules, 32 redirects, non-marketing files, and protected transparency hashes while updating only the multilingual marketing source and form transport.
 - `/impressum`, `/privacy`, and `/terms` temporarily redirect to their existing immutable legacy Netlify deployment until permanent, reviewed legal pages are integrated on the canonical production host. The Impressum destination remains German.
 - `/accessibility` remains pending because approved accessibility-statement content has not been supplied; no legal text was invented.
 
@@ -769,6 +774,7 @@ Known repository and hosting state on 2026-07-16:
 - `preview-site/.openai/hosting.json` binds the review source to the Sites project. `preview-site/scripts/build-sites.mjs` packages the shared HTML, localized content, CSS, JavaScript, exact logo, and review photographs into the Sites worker output under `preview-site/dist/`.
 - `npm run build` and `npm run build:sites` create the same Sites review package. Generated `preview-site/dist/` output is not source content and may be removed or regenerated.
 - The Sites review root mirrors the intended country fallback using hosting-edge country data when available. Stable locale paths remain the authoritative way to inspect a specific language.
+- The Sites review worker accepts test submissions on `/en/`, `/de/`, and `/he/` and returns a review-only success response; it does not deliver leads. Production lead delivery remains the responsibility of the Netlify Forms workflow on `fixads.xyz`.
 - No country blocklist is active in the review deployment because the approved ISO country list is still pending.
 - The review deployment serves only the marketing preview and its assets. Transparency and client-login links leave the review site and open the existing protected `https://www.fixads.xyz/transparency` application; no `/transparency` route or content was copied, changed, intercepted, or deployed.
 - Contact form validation and localized success states can be tested in Sites, but review submissions are acknowledged without delivery or storage. Real delivery remains reserved for the later approved Netlify production deployment and notification setup.
@@ -780,6 +786,7 @@ Known repository and hosting state on 2026-07-16:
 - Captured fields: full name, company, phone, email, company website, requested service, message, locale, consent, and honeypot.
 - Required fields: full name, email, service, message, and contact consent.
 - The static HTML contains Netlify's form-detection schema and a honeypot; the visible form submits URL-encoded data without navigating away.
+- The visible form posts to its active physical locale route (`/en/`, `/de/`, or `/he/`) so the root country redirects cannot intercept the POST before Netlify Forms processes it.
 - The live project currently has a separate existing `fixads-lead` form. The preview intentionally uses a different form name so current chat leads are not disrupted.
 - Netlify recognized the new `fixads-contact` form from the protected draft on 2026-07-16 with all ten expected fields and honeypot protection. A synthetic draft submission returned the localized success state.
 - The existing `fixads-lead` form remains separately registered with its historical submissions.
@@ -820,6 +827,24 @@ Every implementation change must be checked against the relevant items below:
 - [ ] The Change Log contains an entry for the change.
 
 ## Change Log
+
+### 2026-07-19 — Kimi K3-assisted mobile usability and motion refinement
+
+- Re-read this complete living specification before changing the marketing website.
+- Used Kimi K3 as an independent mobile UX reviewer, supplied only non-sensitive live measurements and relevant interface constraints, and used its successful findings as the implementation specification.
+- Prioritized the five issues identified by Kimi: the floating/contact CTA collision, real hero actions below the first small-phone viewport, excessive locale-dependent hero height, unnecessary form length, and slow repetitive motion with continuously running marquees.
+- Tightened the phone hero with locale-aware headline sizing, reduced vertical gaps, 16px primary body copy, earlier real CTAs, and a compact version of the existing four-part connected-system panel without removing approved content.
+- Changed the floating contact action to a compact, initially hidden control that appears only after the real hero actions have scrolled above the viewport and hides around existing calls to action, the contact area, footer, and open menu.
+- Kept all localized form fields visible while reducing field spacing, preserving 16px controls, 44px touch targets, autofill, validation, localized submission, and a resizable message area.
+- Changed the browser form submission target from the country-routed root path to the active physical locale path so Netlify Forms receives English, German, and Hebrew POST requests directly instead of allowing the forced root redirect to intercept them.
+- Updated the separate Sites review worker to acknowledge test form submissions on the same physical locale routes; this keeps the public review copy testable without presenting its non-delivering preview response as production lead delivery.
+- Replaced the single 900ms fade-rise treatment with shorter section motion, softer non-translating card/process reveals, one hero marker sweep, touch/button feedback, and offscreen/background pausing for both platform and client rails.
+- Preserved the full reduced-motion mode, Hebrew RTL behavior, footer-only country/language selection, approved content and sequence, exact FixAds logo, contact form contract, SEO metadata, and existing locale routes.
+- Made no change to `/transparency`, `/transparency/**`, their files, bundles, content, layout, routing, assets, or behavior.
+- Rejected draft `6a5cb266b37b324993f64e37` because the locale directories were absent from its uploaded file map, and rejected draft `6a5cb2bd187ccd55bb3f28bf` because it retained an older root JavaScript entrypoint; neither draft was published.
+- Verified final protected draft `6a5cb3c606d5211df159dfbf`, including all marketing routes and assets, 320px phone behavior, Hebrew RTL, localized form transport and success UI, zero marketing-page console errors, nine Functions, three schedules, 32 redirects, and byte-identical transparency HTML, descendant HTML, JavaScript, and CSS.
+- Published production deploy `6a5cb412187ccd596c3f298c` to `https://www.fixads.xyz`.
+- Repeated live checks after publication: English, German, and Hebrew routes and assets return 200; Germany routes to German; the primary English action is fully visible at 320×568; the initial dock remains hidden; Hebrew remains RTL without overflow; production form POST returns 200; the protected transparency sign-in renders; all nine Functions and three schedules remain registered; and the protected hashes remain exact.
 
 ### 2026-07-16 — Official advertising-platform marks added to the moving ticker
 
