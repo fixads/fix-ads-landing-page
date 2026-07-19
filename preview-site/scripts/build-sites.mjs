@@ -78,7 +78,7 @@ export default {
     const url = new URL(request.url);
     const pathname = url.pathname;
 
-    if (request.method === "POST" && pathname === "/") {
+    if (request.method === "POST" && (pathname === "/" || /^\\/(en|de|he)\\/$/.test(pathname))) {
       return response(null, {
         status: 204,
         headers: { "x-fixads-review-form": "accepted-not-delivered" },
