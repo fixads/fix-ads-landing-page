@@ -91,7 +91,7 @@ const tickerRail = [
 const serviceCards = page.services
   .map(
     (service, index) => `
-      <article class="service-card reveal" data-accent="${service.accent}">
+      <article class="service-card reveal reveal-soft" data-accent="${service.accent}">
         <div class="service-card__top">
           <span class="service-number">${service.visual}</span>
           <span class="service-line" aria-hidden="true"></span>
@@ -118,7 +118,7 @@ const serviceCards = page.services
 const processItems = page.process.items
   .map(
     (item) => `
-      <article class="process-item reveal">
+      <article class="process-item reveal reveal-soft">
         <span class="process-number">${item.number}</span>
         <div>
           <h3>${item.title}</h3>
@@ -273,7 +273,7 @@ app.innerHTML = `
         <h2>${page.clients.title}</h2>
         <p>${page.clients.body}</p>
       </div>
-      <div class="client-rail" aria-label="Client names"><div>${clientRail}</div></div>
+      <div class="client-rail" aria-label="Client names"><div class="client-track">${clientRail}</div></div>
       <p class="shell client-note">${page.clients.note}</p>
     </section>
 
@@ -303,7 +303,7 @@ app.innerHTML = `
         <p class="eyebrow">${page.closing.eyebrow}</p>
         <h2>${page.closing.title}</h2>
         <p>${page.closing.body}</p>
-        <a class="button button--light" href="#contact">${page.closing.cta}${arrowIcon()}</a>
+        <a class="button button--light" href="#contact" data-dock-hide>${page.closing.cta}${arrowIcon()}</a>
       </div>
     </section>
 
@@ -342,7 +342,7 @@ app.innerHTML = `
     </section>
   </main>
 
-  <a class="mobile-contact-dock button button--primary" href="#contact">
+  <a class="mobile-contact-dock button button--primary" href="#contact" aria-hidden="true" tabindex="-1">
     ${page.headerCta}${arrowIcon()}
   </a>
 
@@ -387,6 +387,7 @@ const pageMain = document.querySelector("main");
 const siteFooter = document.querySelector(".site-footer");
 const mobileContactDock = document.querySelector(".mobile-contact-dock");
 let menuReturnFocus = null;
+let renderMobileDock = () => {};
 
 const setBackgroundInert = (inert) => {
   [pageMain, siteFooter, mobileContactDock].forEach((element) => {
@@ -399,6 +400,7 @@ const closeMenu = (restoreFocus = true) => {
   mobileMenu?.setAttribute("aria-hidden", "true");
   document.body.classList.remove("menu-open");
   setBackgroundInert(false);
+  renderMobileDock();
   if (restoreFocus && menuReturnFocus instanceof HTMLElement) menuReturnFocus.focus();
 };
 
@@ -414,6 +416,7 @@ menuButton?.addEventListener("click", () => {
   mobileMenu.setAttribute("aria-hidden", "false");
   document.body.classList.add("menu-open");
   setBackgroundInert(true);
+  renderMobileDock();
   window.setTimeout(() => mobileMenu.querySelector("a")?.focus({ preventScroll: true }), 120);
 });
 
@@ -438,35 +441,66 @@ window.addEventListener("keydown", (event) => {
   }
 });
 
-if (mobileContactDock && "IntersectionObserver" in window) {
+if (mobileContactDock) {
+  const heroActions = document.querySelector(".hero-actions");
   const dockBlockers = new Set();
-  const dockObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const isExistingCta = entry.target.matches(".hero-actions, .closing-inner .button");
-        const shouldBlock = entry.isIntersecting && (!isExistingCta || entry.intersectionRatio >= 0.75);
-        if (shouldBlock) dockBlockers.add(entry.target);
-        else dockBlockers.delete(entry.target);
-      });
-      mobileContactDock.classList.toggle("is-hidden", dockBlockers.size > 0);
-    },
-    { threshold: [0, 0.75] },
-  );
-  [
-    document.querySelector(".hero-actions"),
-    document.querySelector(".closing-inner .button"),
-    document.querySelector("#contact"),
-    siteFooter,
-  ]
-    .filter(Boolean)
-    .forEach((element) => dockObserver.observe(element));
+  let hasPassedHeroActions = false;
+
+  renderMobileDock = () => {
+    const isVisible =
+      hasPassedHeroActions &&
+      dockBlockers.size === 0 &&
+      !document.body.classList.contains("menu-open");
+    mobileContactDock.classList.toggle("is-visible", isVisible);
+    mobileContactDock.setAttribute("aria-hidden", String(!isVisible));
+    mobileContactDock.tabIndex = isVisible ? 0 : -1;
+  };
+
+  const updateHeroPosition = () => {
+    if (!heroActions) return;
+    hasPassedHeroActions = heroActions.getBoundingClientRect().bottom < 0;
+    renderMobileDock();
+  };
+
+  if ("IntersectionObserver" in window && heroActions) {
+    const heroActionObserver = new IntersectionObserver(
+      ([entry]) => {
+        hasPassedHeroActions = !entry.isIntersecting && entry.boundingClientRect.bottom < 0;
+        renderMobileDock();
+      },
+      { threshold: 0 },
+    );
+    heroActionObserver.observe(heroActions);
+
+    const dockBlockerObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) dockBlockers.add(entry.target);
+          else dockBlockers.delete(entry.target);
+        });
+        renderMobileDock();
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0 },
+    );
+
+    [document.querySelector("[data-dock-hide]"), document.querySelector("#contact"), siteFooter]
+      .filter(Boolean)
+      .forEach((element) => dockBlockerObserver.observe(element));
+  } else {
+    window.addEventListener("scroll", updateHeroPosition, { passive: true });
+  }
+
+  updateHeroPosition();
 }
 
 const splitTitle = document.querySelector("[data-split]");
 if (splitTitle) {
   const words = splitTitle.textContent.trim().split(/\s+/);
   splitTitle.innerHTML = words
-    .map((word, index) => `<span style="--word-index:${index}"><i>${word}</i></span>`)
+    .map(
+      (word, index) =>
+        `<span class="${index === words.length - 1 ? "hero-title__key" : ""}" style="--word-index:${index}"><i>${word}</i></span>`,
+    )
     .join(" ");
   requestAnimationFrame(() => splitTitle.classList.add("is-ready"));
 }
@@ -490,6 +524,35 @@ if (reducedMotion || !("IntersectionObserver" in window)) {
   );
   revealItems.forEach((item) => observer.observe(item));
 }
+
+const marqueeTracks = document.querySelectorAll(".ticker-track, .client-track");
+const updateMarquee = (track) => {
+  const shouldPause =
+    reducedMotion || document.hidden || track.dataset.inViewport !== "true";
+  track.classList.toggle("is-paused", shouldPause);
+};
+
+if ("IntersectionObserver" in window && !reducedMotion) {
+  const marqueeObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.dataset.inViewport = String(entry.isIntersecting);
+        updateMarquee(entry.target);
+      });
+    },
+    { rootMargin: "80px 0px", threshold: 0 },
+  );
+  marqueeTracks.forEach((track) => marqueeObserver.observe(track));
+} else {
+  marqueeTracks.forEach((track) => {
+    track.dataset.inViewport = "true";
+    updateMarquee(track);
+  });
+}
+
+document.addEventListener("visibilitychange", () => {
+  marqueeTracks.forEach(updateMarquee);
+});
 
 const header = document.querySelector("[data-header]");
 const progressBar = document.querySelector(".scroll-progress span");
@@ -551,7 +614,7 @@ contactForm?.addEventListener("submit", async (event) => {
 
   try {
     const data = new FormData(contactForm);
-    const response = await fetch("/", {
+    const response = await fetch(`/${page.locale}/`, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(data).toString(),
