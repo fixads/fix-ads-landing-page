@@ -444,13 +444,42 @@ window.addEventListener("keydown", (event) => {
 if (mobileContactDock) {
   const heroActions = document.querySelector(".hero-actions");
   const dockBlockers = new Set();
+  const dockCollisionSelector = "p, h1, h2, h3, h4, li, a, button, label, input, select, textarea, img, figure";
   let hasPassedHeroActions = false;
+  let dockRenderFrame = 0;
+
+  const dockWouldCoverContent = () => {
+    if (!window.matchMedia("(max-width: 620px)").matches) return false;
+    const style = window.getComputedStyle(mobileContactDock);
+    const width = mobileContactDock.offsetWidth || 170;
+    const height = mobileContactDock.offsetHeight || 48;
+    const bottom = Number.parseFloat(style.bottom) || 12;
+    const side = document.documentElement.dir === "rtl"
+      ? Number.parseFloat(style.left) || 14
+      : Number.parseFloat(style.right) || 14;
+    const left = document.documentElement.dir === "rtl" ? side : window.innerWidth - side - width;
+    const top = window.innerHeight - bottom - height;
+    const points = [
+      [left + 8, top + 8],
+      [left + width / 2, top + height / 2],
+      [left + width - 8, top + height - 8],
+    ];
+
+    return points.some(([x, y]) =>
+      document.elementsFromPoint(x, y).some((element) => {
+        if (element === mobileContactDock || mobileContactDock.contains(element)) return false;
+        return pageMain?.contains(element) && element.matches(dockCollisionSelector);
+      }),
+    );
+  };
 
   renderMobileDock = () => {
-    const isVisible =
+    const canShow =
+      window.matchMedia("(max-width: 620px)").matches &&
       hasPassedHeroActions &&
       dockBlockers.size === 0 &&
       !document.body.classList.contains("menu-open");
+    const isVisible = canShow && !dockWouldCoverContent();
     mobileContactDock.classList.toggle("is-visible", isVisible);
     mobileContactDock.setAttribute("aria-hidden", String(!isVisible));
     mobileContactDock.tabIndex = isVisible ? 0 : -1;
@@ -460,6 +489,14 @@ if (mobileContactDock) {
     if (!heroActions) return;
     hasPassedHeroActions = heroActions.getBoundingClientRect().bottom < 0;
     renderMobileDock();
+  };
+
+  const scheduleMobileDockRender = () => {
+    if (dockRenderFrame) return;
+    dockRenderFrame = window.requestAnimationFrame(() => {
+      dockRenderFrame = 0;
+      updateHeroPosition();
+    });
   };
 
   if ("IntersectionObserver" in window && heroActions) {
@@ -487,9 +524,11 @@ if (mobileContactDock) {
       .filter(Boolean)
       .forEach((element) => dockBlockerObserver.observe(element));
   } else {
-    window.addEventListener("scroll", updateHeroPosition, { passive: true });
+    window.addEventListener("scroll", scheduleMobileDockRender, { passive: true });
   }
 
+  window.addEventListener("scroll", scheduleMobileDockRender, { passive: true });
+  window.addEventListener("resize", scheduleMobileDockRender);
   updateHeroPosition();
 }
 
