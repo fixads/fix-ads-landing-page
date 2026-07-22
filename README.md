@@ -837,7 +837,7 @@ Known repository and hosting state on 2026-07-16:
 ### GitHub source backup
 
 - Production repository: `https://github.com/fixads/fix-ads-landing-page`.
-- The multilingual marketing source and this living specification are backed up in the dedicated branch `codex/fixads-multilingual-production`. The confirmed branch head after the legal-page release is `ee1da7bd90134891fab841aae7e55e5219f99bdd`.
+- The multilingual marketing source and this living specification are backed up in the dedicated branch `codex/fixads-multilingual-production`. The legal-page release record is commit `ee1da7bd90134891fab841aae7e55e5219f99bdd`; later recovery commits are recorded in the Change Log rather than treating that historical commit as the current branch head.
 - Marketing source remains isolated in `preview-site/`. The repository-root application, guarded `netlify.toml`, and every file under `public/transparency/` are intentionally unchanged.
 - This branch is a reviewed source backup and integration proposal; creating or updating it does not deploy the live website. Any later merge into the production branch must preserve the protected transparency area and use the verified production integration process documented above.
 - GitHub CLI `gh` is installed locally but currently has no authenticated GitHub session, and this local root repository has no configured remote. The connected GitHub app has repository write access and is the approved backup path while local CLI authentication remains unavailable.
