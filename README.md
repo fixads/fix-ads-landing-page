@@ -35,7 +35,7 @@ Before any deployment, verify that the protected transparency route and represen
 
 ## Project status
 
-The multilingual design was approved by the project owner and published to `https://www.fixads.xyz` on 2026-07-16 after protected Netlify drafts passed verification. The Kimi K3-assisted mobile refinement, screenshot-based visual polish, agency-motion pass, mobile-menu repair, real client-logo rail, and compact phone footer were published on 2026-07-19 as deploy `6a5cd9013cdc62cf3224c7b5`. A later CLI deployment, `6a5ce96568d9582068c7beec`, preserved a new Codex Meta MCP callback connection but unintentionally replaced the multilingual marketing files with the older assistant page. The owner authorized a protected recovery on 2026-07-20; verified production deploy `6a5e10227f04475923d79b23` is now live with the approved multilingual presentation, the newer callback, every existing production connection, and the protected transparency application unchanged.
+The multilingual design was approved by the project owner and published to `https://www.fixads.xyz` on 2026-07-16 after protected Netlify drafts passed verification. The permanent legal pages and shared English footer were first published as verified deploy `6a60a81d3f96ee114dee1b30` on 2026-07-22. Later that day, CRM authentication deploy `6a60d74ac87da5183901b4c9` correctly updated the `bluyacht-leads` and callback Functions but was built from the older assistant package, removing the locale and legal routes. The site was recovered from that newer CRM baseline and republished as verified production deploy `6a60dbca19befec4b5c3d812`: the current CRM Function digests remain active, all ten Functions and three schedules are present, all approved marketing and legal routes are restored, and the protected transparency files remain byte-identical.
 
 - The animated multilingual website source exists in `preview-site/` and remains available as a separate review build at `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site`.
 - Direct review paths are `/en/`, `/de/`, and `/he/`; the review root uses available edge country information to send Israel to Hebrew, Germany to German, and other visitors to English.
@@ -837,16 +837,16 @@ Known repository and hosting state on 2026-07-16:
 ### GitHub source backup
 
 - Production repository: `https://github.com/fixads/fix-ads-landing-page`.
-- The multilingual marketing source and this living specification are backed up in the dedicated branch `codex/fixads-multilingual-production`. The last confirmed remote head before the agency-motion pass was `f4949c463b03d0545f2129441a4022e72bbbad96`; the 2026-07-19 agency-motion update remains pending because both available authenticated GitHub paths failed during handoff.
+- The multilingual marketing source and this living specification are backed up in the dedicated branch `codex/fixads-multilingual-production`. The confirmed branch head after the legal-page release is `ee1da7bd90134891fab841aae7e55e5219f99bdd`.
 - Marketing source remains isolated in `preview-site/`. The repository-root application, guarded `netlify.toml`, and every file under `public/transparency/` are intentionally unchanged.
 - This branch is a reviewed source backup and integration proposal; creating or updating it does not deploy the live website. Any later merge into the production branch must preserve the protected transparency area and use the verified production integration process documented above.
-- GitHub CLI `gh` is installed locally but currently has no authenticated GitHub session, and this local root repository has no configured remote. The connected GitHub app recovered read access on 2026-07-20 and confirmed that the repository and `codex/fixads-multilingual-production` branch still exist, but the repository publishing workflow requires an authenticated local Git session for a scoped source commit and push. Do not report the 2026-07-19 agency-motion source or 2026-07-20 recovery README backup as complete until that authentication is restored and the branch/PR head is rechecked.
+- GitHub CLI `gh` is installed locally but currently has no authenticated GitHub session, and this local root repository has no configured remote. The connected GitHub app has repository write access and is the approved backup path while local CLI authentication remains unavailable.
 
 ### Sites review deployment
 
 - Public review URL: `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site`.
 - Direct review URLs: `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site/en/`, `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site/de/`, and `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site/he/`.
-- Current saved and published review release: Sites version 6, source commit `ccd9a621c3ba569f471dd6433858e6458828cec4`, deployment `appgdep_6a5cdaf888788191ae1888de962eb36a`.
+- Current saved and published review release: Sites version 7, source commit `4a6943163813e29b35a1fdd5038508951c4a6179`, deployment `appgdep_6a60a99f412481918084553452e4e439`.
 - The Sites review project is `appgprj_6a58733e0cbc81919c68610515ea07ca`; it is separate from the Netlify production project and does not deploy to or modify `fixads.xyz`.
 - `preview-site/.openai/hosting.json` binds the review source to the Sites project. `preview-site/scripts/build-sites.mjs` packages the shared HTML, localized content, CSS, JavaScript, exact logo, review photographs, advertising-platform marks, and all current client assets into the Sites worker output under `preview-site/dist/`; asset discovery is recursive so an approved asset added under `preview-site/assets/` is not silently omitted from the review build.
 - `npm run build` and `npm run build:sites` create the same Sites review package. Generated `preview-site/dist/` output is not source content and may be removed or regenerated.
@@ -909,6 +909,20 @@ Every implementation change must be checked against the relevant items below:
 - [ ] The Change Log contains an entry for the change.
 
 ## Change Log
+
+### 2026-07-22 — Recover multilingual and legal routes after the CRM authentication deploy
+
+- Re-read this complete living specification and the dedicated transparency specification after the owner reported that the live legal links showed no content.
+- Reproduced the failure in a real browser: `https://www.fixads.xyz/impressum/` redirected to the obsolete deployment `69adc38bf3c64000080241fa`, where it returned `404 Site not found`; `/privacy/` and `/terms/` followed the same stale redirects, `/accessibility/` returned 404, and all three locale routes returned 404.
+- Identified newer production deploy `6a60d74ac87da5183901b4c9`, titled `Fix CRM backup authentication`, as the source of the regression. It was published after the verified legal release and contains only the older 21-file assistant package.
+- Treat that newer deploy as the mandatory recovery baseline rather than rolling it back. Preserve its ten Function bundles, including its updated `bluyacht-leads` and callback digests, all three schedules, existing form registrations, non-marketing files, custom routes, domain state, and protected transparency files.
+- Restore only the approved multilingual marketing and permanent legal output plus the approved 29-rule routing set, using a protected draft and a production-ID recheck before publication.
+- Built protected draft `6a60dbca19befec4b5c3d812` from the exact CRM deployment file map, overlaid only the approved marketing/legal package, replaced the obsolete generated redirect configuration, and confirmed that the resulting deployment contains exactly 29 valid redirect rules, ten Functions, three schedules, and both registered forms (`fixads-contact` and `fixads-lead`).
+- Preserved the CRM authentication bundles exactly, including `bluyacht-leads` digest `8ddbfa0d8dc8f4e4aea104c1f3875c95546cd10054b5f09de9a956e413153f9f` and callback digest `1a0f64ff78e68e23c3561484cd7bda203a21ab566db3df953f27776dbd0a18f8`.
+- Verified the draft, rechecked that production was still `6a60d74ac87da5183901b4c9`, and then published that exact verified draft as production deploy `6a60dbca19befec4b5c3d812` at `2026-07-22T15:05:37.170Z`.
+- Repeated live checks on the custom domain: the root routes Germany to `/de/`; `/en/`, `/de/`, and `/he/` return `200`; the slashless legal paths normalize once with `301`; `/impressum/`, `/privacy/`, `/terms/`, and `/accessibility/` return `200`; the CRM leads endpoint remains protected with `401`; and HTTP/apex/`www` canonical connections are valid.
+- Repeated the 390 × 844 browser checks on live Hebrew and the German-only Impressum. Hebrew remains RTL with an English/LTR footer and zero horizontal overflow, the fixed mobile menu opens after deep scrolling, the Impressum remains `lang="de"`/LTR and contains the verified identity and W-IdNr., and the browser console is clear.
+- Reconfirmed the protected transparency hashes after publication: HTML `e2b26552c5fe4671ff5c7e12900d3a1ed63fc9a5`, JavaScript `571ed211e6fa4cfef8f9efc4c7caff95c29521c9`, and CSS `b5221647142c086c7607feac0a02ba0cfbfbdd9b`; both the root and a representative descendant return `200`.
 
 ### 2026-07-22 — Verified legal identity, permanent legal pages, and one English footer
 
