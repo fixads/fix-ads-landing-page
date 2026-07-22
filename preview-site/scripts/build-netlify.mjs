@@ -49,8 +49,13 @@ await Promise.all(
 
 await fs.writeFile(path.join(output, "index.html"), localizeHtml(template, content.en));
 await Promise.all(
-  ["app.js", "content.js", "styles.css", "robots.txt", "sitemap.xml"].map((file) =>
+  ["app.js", "content.js", "footer.js", "legal.js", "styles.css", "robots.txt", "sitemap.xml"].map((file) =>
     fs.copyFile(path.join(root, file), path.join(output, file)),
+  ),
+);
+await Promise.all(
+  ["impressum", "privacy", "terms", "accessibility"].map((directory) =>
+    fs.cp(path.join(root, directory), path.join(output, directory), { recursive: true }),
   ),
 );
 await fs.cp(path.join(root, "assets"), path.join(output, "assets"), { recursive: true });

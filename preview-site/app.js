@@ -1,4 +1,5 @@
 import { clients, content } from "./content.js";
+import { renderFooter } from "./footer.js";
 
 const localeMatch = window.location.pathname.match(/^\/(en|de|he)(?:\/|$)/);
 const locale = localeMatch?.[1] || document.documentElement.dataset.locale || "en";
@@ -128,9 +129,35 @@ const processItems = page.process.items
   )
   .join("");
 
-const clientRail = [...clients, ...clients]
-  .map((client) => `<span class="client-wordmark">${client}</span>`)
-  .join("");
+const clientSet = (hidden = false) => `
+  <div class="client-set" role="list"${hidden ? ' aria-hidden="true"' : ""}>
+    ${clients
+      .map(
+        (client) => `
+          <a
+            class="client-logo-link"
+            href="${client.href}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="${client.name}"
+            ${hidden ? 'tabindex="-1"' : ""}
+            role="listitem"
+          >
+            <img
+              class="client-logo${client.className ? ` ${client.className}` : ""}"
+              src="${client.logo}"
+              alt=""
+              width="${client.width}"
+              height="${client.height}"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>`,
+      )
+      .join("")}
+  </div>`;
+
+const clientRail = `${clientSet()}${clientSet(true)}`;
 
 const formOptions = page.form.options
   .map(
@@ -154,21 +181,23 @@ app.innerHTML = `
       <div class="header-actions">
         <a class="text-link desktop-only" href="https://www.fixads.xyz/transparency">${page.login}</a>
         <a class="button button--small button--light desktop-only" href="#contact">${page.headerCta}${arrowIcon()}</a>
-        <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu">
+        <button class="menu-button" type="button" aria-label="${page.menu}" aria-expanded="false" aria-controls="mobile-menu">
           <span>${page.menu}</span><i></i><i></i>
         </button>
       </div>
     </div>
-    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="${page.menu}" aria-hidden="true">
-      <div class="shell mobile-menu__inner">
-        <div class="mobile-menu__links">${linkList(page.nav, "mobile-nav-link")}</div>
-        <div class="mobile-menu__bottom">
-          <a href="https://www.fixads.xyz/transparency">${page.login}</a>
-          <a class="button button--light" href="#contact">${page.headerCta}${arrowIcon()}</a>
-        </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="${page.menu}" aria-hidden="true">
+    <div class="mobile-menu__visual" aria-hidden="true"><span></span><span></span><i></i></div>
+    <div class="shell mobile-menu__inner">
+      <div class="mobile-menu__links">${linkList(page.nav, "mobile-nav-link")}</div>
+      <div class="mobile-menu__bottom">
+        <a href="https://www.fixads.xyz/transparency">${page.login}</a>
+        <a class="button button--light" href="#contact">${page.headerCta}${arrowIcon()}</a>
       </div>
     </div>
-  </header>
+  </div>
 
   <main id="main-content">
     <section class="hero" id="home">
@@ -273,7 +302,7 @@ app.innerHTML = `
         <h2>${page.clients.title}</h2>
         <p>${page.clients.body}</p>
       </div>
-      <div class="client-rail" aria-label="Client names"><div class="client-track">${clientRail}</div></div>
+      <div class="client-rail" aria-label="${page.clients.eyebrow}"><div class="client-track">${clientRail}</div></div>
       <p class="shell client-note">${page.clients.note}</p>
     </section>
 
@@ -346,39 +375,7 @@ app.innerHTML = `
     ${page.headerCta}${arrowIcon()}
   </a>
 
-  <footer class="site-footer">
-    <div class="shell footer-main">
-      <div class="footer-brand">
-        <a class="brand" href="/${page.locale}/" aria-label="FixAds home">
-          <span class="brand-mark"><img src="/assets/fixads-logo.png" alt="" width="72" height="72" /></span>
-          <span class="brand-name">FixAds</span>
-        </a>
-        <p>${page.footer.statement}</p>
-        <a class="footer-email" href="mailto:info@fixads.xyz">info@fixads.xyz</a>
-      </div>
-      <nav class="footer-links" aria-label="${page.footer.company}">
-        <h2>${page.footer.company}</h2>
-        ${linkList(page.footer.links)}
-      </nav>
-      <nav class="footer-links" aria-label="${page.footer.legal}">
-        <h2>${page.footer.legal}</h2>
-        ${linkList(page.footer.legalLinks)}
-      </nav>
-      <div class="locale-control">
-        <h2>${page.footer.locale}</h2>
-        <details>
-          <summary><span>${page.footer.current}</span><i aria-hidden="true"></i></summary>
-          <div class="locale-options">
-            ${page.footer.locales.map(([label, href]) => `<a href="${href}"${href === `/${page.locale}/` ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
-          </div>
-        </details>
-      </div>
-    </div>
-    <div class="shell footer-bottom">
-      <span>${page.footer.rights}</span>
-      <a href="#home">${page.footer.top}${arrowIcon()}</a>
-    </div>
-  </footer>
+  ${renderFooter({ footer: page.footer, activeLocale: page.locale })}
 `;
 
 const menuButton = document.querySelector(".menu-button");
@@ -388,6 +385,7 @@ const siteFooter = document.querySelector(".site-footer");
 const mobileContactDock = document.querySelector(".mobile-contact-dock");
 let menuReturnFocus = null;
 let renderMobileDock = () => {};
+let lockedScrollY = 0;
 
 const setBackgroundInert = (inert) => {
   [pageMain, siteFooter, mobileContactDock].forEach((element) => {
@@ -395,10 +393,25 @@ const setBackgroundInert = (inert) => {
   });
 };
 
+const lockPageScroll = () => {
+  lockedScrollY = window.scrollY;
+  document.documentElement.style.overflow = "hidden";
+  document.body.style.overflow = "hidden";
+};
+
+const unlockPageScroll = () => {
+  document.documentElement.style.overflow = "";
+  document.body.style.overflow = "";
+  window.scrollTo(0, lockedScrollY);
+};
+
 const closeMenu = (restoreFocus = true) => {
+  const wasOpen = document.body.classList.contains("menu-open");
   menuButton?.setAttribute("aria-expanded", "false");
+  menuButton?.setAttribute("aria-label", page.menu);
   mobileMenu?.setAttribute("aria-hidden", "true");
   document.body.classList.remove("menu-open");
+  if (wasOpen) unlockPageScroll();
   setBackgroundInert(false);
   renderMobileDock();
   if (restoreFocus && menuReturnFocus instanceof HTMLElement) menuReturnFocus.focus();
@@ -413,7 +426,9 @@ menuButton?.addEventListener("click", () => {
 
   menuReturnFocus = document.activeElement;
   menuButton.setAttribute("aria-expanded", "true");
+  menuButton.setAttribute("aria-label", page.close);
   mobileMenu.setAttribute("aria-hidden", "false");
+  lockPageScroll();
   document.body.classList.add("menu-open");
   setBackgroundInert(true);
   renderMobileDock();
@@ -421,6 +436,11 @@ menuButton?.addEventListener("click", () => {
 });
 
 mobileMenu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 1180 && menuButton?.getAttribute("aria-expanded") === "true") {
+    closeMenu(false);
+  }
+});
 window.addEventListener("keydown", (event) => {
   const menuIsOpen = menuButton?.getAttribute("aria-expanded") === "true";
   if (event.key === "Escape" && menuIsOpen) {
@@ -541,7 +561,15 @@ if (splitTitle) {
         `<span class="${index === words.length - 1 ? "hero-title__key" : ""}" style="--word-index:${index}"><i>${word}</i></span>`,
     )
     .join(" ");
-  requestAnimationFrame(() => splitTitle.classList.add("is-ready"));
+  const startHeroTitle = () => requestAnimationFrame(() => splitTitle.classList.add("is-ready"));
+  if (
+    document.documentElement.classList.contains("loader-wanted") &&
+    !document.documentElement.classList.contains("loader-done")
+  ) {
+    window.addEventListener("fixads:ready", startHeroTitle, { once: true });
+  } else {
+    startHeroTitle();
+  }
 }
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -591,6 +619,22 @@ if ("IntersectionObserver" in window && !reducedMotion) {
 
 document.addEventListener("visibilitychange", () => {
   marqueeTracks.forEach(updateMarquee);
+});
+
+document.querySelectorAll(".client-rail").forEach((rail) => {
+  let resumeTimer = 0;
+  rail.addEventListener(
+    "pointerdown",
+    (event) => {
+      if (event.pointerType !== "touch") return;
+      const track = rail.querySelector(".client-track");
+      if (!track) return;
+      window.clearTimeout(resumeTimer);
+      track.classList.add("is-touch-paused");
+      resumeTimer = window.setTimeout(() => track.classList.remove("is-touch-paused"), 2400);
+    },
+    { passive: true },
+  );
 });
 
 const header = document.querySelector("[data-header]");

@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.fixads.xyz/en/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fixads.xyz/en/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.fixads.xyz/de/" />
     <xhtml:link rel="alternate" hreflang="he" href="https://www.fixads.xyz/he/" />
@@ -11,7 +11,7 @@
   </url>
   <url>
     <loc>https://www.fixads.xyz/de/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fixads.xyz/en/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.fixads.xyz/de/" />
     <xhtml:link rel="alternate" hreflang="he" href="https://www.fixads.xyz/he/" />
@@ -19,10 +19,26 @@
   </url>
   <url>
     <loc>https://www.fixads.xyz/he/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fixads.xyz/en/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://www.fixads.xyz/de/" />
     <xhtml:link rel="alternate" hreflang="he" href="https://www.fixads.xyz/he/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fixads.xyz/en/" />
+  </url>
+  <url>
+    <loc>https://www.fixads.xyz/impressum/</loc>
+    <lastmod>2026-07-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fixads.xyz/privacy/</loc>
+    <lastmod>2026-07-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fixads.xyz/terms/</loc>
+    <lastmod>2026-07-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fixads.xyz/accessibility/</loc>
+    <lastmod>2026-07-22</lastmod>
   </url>
 </urlset>

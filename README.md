@@ -35,14 +35,14 @@ Before any deployment, verify that the protected transparency route and represen
 
 ## Project status
 
-The multilingual design was approved by the project owner and published to `https://www.fixads.xyz` on 2026-07-16 after protected Netlify drafts passed verification. The Kimi K3-assisted mobile refinement and screenshot-based visual polish were published on 2026-07-19. The current production deploy is `6a5cbddd68d958737bc7bf3d`.
+The multilingual design was approved by the project owner and published to `https://www.fixads.xyz` on 2026-07-16 after protected Netlify drafts passed verification. The Kimi K3-assisted mobile refinement, screenshot-based visual polish, agency-motion pass, mobile-menu repair, real client-logo rail, and compact phone footer were published on 2026-07-19 as deploy `6a5cd9013cdc62cf3224c7b5`. A later CLI deployment, `6a5ce96568d9582068c7beec`, preserved a new Codex Meta MCP callback connection but unintentionally replaced the multilingual marketing files with the older assistant page. The owner authorized a protected recovery on 2026-07-20; verified production deploy `6a5e10227f04475923d79b23` is now live with the approved multilingual presentation, the newer callback, every existing production connection, and the protected transparency application unchanged.
 
 - The animated multilingual website source exists in `preview-site/` and remains available as a separate review build at `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site`.
 - Direct review paths are `/en/`, `/de/`, and `/he/`; the review root uses available edge country information to send Israel to Hebrew, Germany to German, and other visitors to English.
 - Hebrew website content has been supplied and is recorded verbatim in this README.
 - The project owner authorized publication of the market-adapted English and German versions on 2026-07-16; a native German language review remains recommended.
 - The preview uses the active FixAds brand and existing logo from `fixads.xyz`. The requested `myfixers.xyz` hostname did not resolve in DNS when checked on 2026-07-15, so it was not treated as the source site.
-- The approved country blocklist, real client logo assets and official URLs, final accessibility content, permanent legal-page integration, and final form notification setup remain pending.
+- The approved country blocklist and final form notification setup remain pending. The verified legal identity, German Impressum, bilingual Privacy Policy, Terms of Use, and Accessibility Statement were added to the source on 2026-07-22.
 - An additional application source folder, `acdt-source/`, exists and must not be assumed to be the production source until its role is confirmed.
 
 ## Product summary
@@ -81,7 +81,15 @@ Implementation requirements:
 
 ## Global footer and Impressum rules
 
-Every localized website—Hebrew, English, and German—must use the shared footer structure. The footer must include the applicable localized navigation and legal links, social links, client login, and the country/language control described above.
+Every localized website—Hebrew, English, and German—and every legal page must use the same English footer component. The footer is an explicit left-to-right English content island even inside the Hebrew right-to-left document. Only the current country/language summary changes to reflect the active locale.
+
+The shared footer contains:
+
+- English `Company`, `Legal`, and `Country & language` headings.
+- English links for Services, Clients, About, Contact, Client Login, Privacy Policy, Terms of Use, Accessibility Statement, and Impressum.
+- The same ordered locale choices: `International — English`, `Germany — German`, and `Israel — Hebrew`.
+- The existing FixAds logo, English positioning sentence, public email address, copyright line, and English Back to top action.
+- The only visible country/language control anywhere on the website.
 
 An `Impressum` link must appear in the footer of **all three localized websites**. This rule applies even when the surrounding footer is Hebrew or English.
 
@@ -92,8 +100,33 @@ The Impressum destination has special language behavior:
 - Never translate the Impressum page into Hebrew or English.
 - IP detection, automatic language routing, and a visitor's manual footer selection must not change the Impressum page language.
 - The Impressum document must use German language metadata (`lang="de"`) and left-to-right direction.
-- The exact Impressum route and legally reviewed content are still pending and must be approved before implementation.
+- The canonical route is `/impressum/`; Netlify normalizes `/impressum` to that directory route without changing the document language.
 - This rule concerns the shared footer and Impressum destination only; it does not grant permission to change any protected `/transparency` content.
+
+### Verified legal identity and legal pages
+
+The owner authorized a search of local business records on 2026-07-22. The publishable facts below were corroborated across official ELSTER material, FixAds invoices through 2026, the owner's CV, and a FixAds-billed communications record:
+
+- Trading name: `FixAds`.
+- Sole proprietor / operator: `Anton Goldberg`.
+- Business address: `Schönhauser Allee 108, 10439 Berlin, Germany`.
+- Public email: `info@fixads.xyz`.
+- Direct telephone: `+49 152 26215466`.
+- Wirtschafts-Identifikationsnummer: `DE419002120-00001`.
+- No commercial-register entry, corporate legal form, professional supervisory authority, or VAT identification number is asserted because the records do not establish one.
+
+Personal tax numbers, the personal tax identification number, bank details, client information, invoice data, passwords, and other private records must never be published in the repository or browser code. The German Impressum includes only the verified business identity, contact data, and Wirtschafts-Identifikationsnummer required for provider identification.
+
+The canonical legal pages are:
+
+- `/impressum/`: German only, with `lang="de"` and left-to-right direction.
+- `/privacy/`: English Privacy Policy followed by a complete German `Datenschutzerklärung`; it covers the current Netlify hosting, technical request logs, Netlify form processing, contact channels, retention principles, international transfers, rights, and Berlin supervisory authority.
+- `/terms/`: English public-website Terms of Use. It does not replace or invent client service terms, prices, or performance promises.
+- `/accessibility/`: English accessibility statement recording WCAG 2.1 AA as the design and testing target without claiming an independent certification.
+
+The legal-page scope is the multilingual marketing site and its legal pages. The protected client portal remains outside this README. No obsolete EU Online Dispute Resolution platform link is added because that platform was discontinued in 2025. No consumer-dispute-resolution participation statement is invented without an explicit owner decision.
+
+The current marketing and legal source has no analytics, advertising pixels, local storage, session storage, or cookies. The animated loader therefore runs without browser storage, respects reduced motion, and requires no consent solely for its presentation. If tracking or nonessential browser storage is added later, the Privacy Policy and consent mechanism must be updated in the same change before publication.
 
 ## Country access policy
 
@@ -703,9 +736,10 @@ The implemented preview includes:
 - Three original website photographs in `preview-site/assets/`: `hero-team.jpg`, `ecommerce-growth.jpg`, and `hvac-leads.jpg`.
 - The existing 72 × 72 FixAds logo saved unchanged as `preview-site/assets/fixads-logo.png`.
 - A platform ticker that keeps the existing continuous marquee motion while showing compact, transparent Meta, Google Ads, Yelp, and Amazon Ads brand marks beside or within their names. The cropped vector viewboxes remove unused wordmark space without redrawing the marks, and the Amazon Ads asset uses Amazon's official transparent press lockup. These third-party marks are used only to identify the advertising platforms and remain the property of their respective owners.
-- Temporary text wordmarks for clients because official client logo files and approved destination URLs have not yet been supplied.
+- A continuously moving client rail using the authentic logo assets and official destination URLs recorded in the Client logo rail section below. Logos are transparently cropped and presented directly on the dark canvas without white cards; the repeated accessibility copy is hidden from assistive technology.
 - A phone-first layout tested from 320px through 430px widths, with safe-area support for modern notched devices, compact mobile data visuals, shorter vertical spacing, and typography that accommodates long German words and Hebrew RTL text without horizontal overflow.
 - Mobile controls with at least 44–48px practical touch targets, 16px form text to prevent unwanted iOS input zoom, a scroll-safe full-screen menu with contained keyboard focus, and a localized contact dock that disappears whenever an existing page call to action is substantially visible or the contact section or footer is reached.
+- The phone navigation overlay is a direct body child rather than a descendant of the blurred fixed header. This prevents `backdrop-filter` from turning the header into the menu's containing block after scroll. The overlay stays viewport-sized at the top, middle, and bottom of the page, locks background overflow without moving the document, traps focus, closes with Escape, restores focus, and keeps the header logo and animated 48px menu toggle available above it.
 - Mobile form fields use appropriate phone keyboards and next-action hints; email, URL, and telephone values remain left-to-right inside the Hebrew experience while names, companies, and messages automatically follow the entered script.
 - Touch-device performance rules that remove desktop hover states and hero parallax while retaining purposeful lightweight motion and the existing reduced-motion mode.
 - A Kimi K3-assisted mobile refinement that keeps the real hero call to action reachable earlier by using a smaller locale-aware title scale, tighter phone spacing, 16px primary hero copy, and a shorter version of the existing connected-system panel.
@@ -713,6 +747,41 @@ The implemented preview includes:
 - A denser one-column phone form that keeps every field visible and preserves validation, autofill, mixed-direction values, 16px control text, 44px minimum controls, and a vertically resizable message field while reducing unnecessary empty space.
 - Purposeful mobile motion instead of one uniform long reveal: shorter section transitions, softer card/process entrances, a single final-word hero marker sweep, press and arrow feedback, and automatic pausing of both moving rails when offscreen or when the browser tab is hidden.
 - A screenshot-based Kimi K3 visual pass using the rendered English, German, Hebrew RTL, mobile-menu, services, and contact states. The accepted refinements keep the floating contact action from covering readable content, strengthen visual separation between phone form fields, present required markers as neutral instructions until a real validation error exists, and soften the platform rail at the viewport edges without changing its content or motion.
+- A short FixAds preloader uses the existing logo and brand name with a blue-to-red progress sweep. It runs only once per browser session on a direct locale page, bypasses hash deep links and reduced-motion visitors, remains hidden without JavaScript, begins leaving after the page loads and never waits longer than 900ms to leave.
+- The shared footer keeps the approved links, Client Login, legal destinations, German `Impressum`, and the only country/language control. On phones its company and legal links use compact two-column grids, all controls retain practical 44px targets, and a one-time connected signal line plus a low-opacity FixAds word backdrop add motion and depth without another ambient loop.
+
+### Client logo rail
+
+The project owner supplied the client names and explicitly authorized replacing the preview wordmarks with real linked logos on 2026-07-19. Each visible logo is an external link with an accessible company name. The logo itself remains a local, optimized, transparent asset so the rail does not depend on a client website being online at render time. The second visual copy exists only for the seamless animation and is hidden from assistive technology and keyboard navigation.
+
+| Client | Official website |
+| --- | --- |
+| Natasha Pet Store | `https://www.black-natasha.co.il/` |
+| Tool Eden | `https://tooleden.com/` |
+| Li Vela Beauty Spa | `https://livelabeauty.com/` |
+| Diamonds For All | `https://diamonds-4-all.com/` |
+| Mayer Jewelry | `https://www.mayerjewellery.com/` |
+| BluYacht Israel | `https://www.bluyacht.com/en/` |
+| The Justice Group | `https://www.justicegroup.co.il/` |
+| Shira Custom Wigs | `https://shiracustomwigsus.com/` |
+| GA Luxury Judaica | `https://www.galuxuryjudaica.com/` |
+| Lampari | `https://dynamic-lily-ad468e.netlify.app/` |
+| CB Fashion USA | `https://cbfashionusa.com/` |
+| HumanBeanz | `https://humanbeanz.com/` |
+| David Roytman Couture | `https://davidroytmancouture.com/` |
+| Flamingo Kosher | `https://flamingokosher.com/` |
+| RoofPax | `https://buyroofpax.com/` |
+
+The rail requirements are:
+
+- Use the authentic marks exposed by the client websites or their domain favicon source; do not redraw, generate, or restyle the logos.
+- Remove only empty canvas and solid white or black source backgrounds needed to make the original mark transparent.
+- Keep logos within a consistent visual height while allowing each mark's natural width.
+- Do not place a white card, pill, border, or invented brand color behind a client logo.
+- Pause movement when the rail is offscreen, the browser tab is hidden, the visitor hovers or focuses within it, or reduced motion is requested.
+- Keep every company name in accessible link text even when the displayed logo is decorative.
+
+Lampari's public custom domain redirected to HTTPS with a certificate that did not cover the domain when verified on 2026-07-19. Its link therefore uses the same live official site at the verified Netlify deployment hostname instead of sending visitors into a browser certificate warning.
 
 ## Technical baseline
 
@@ -730,18 +799,22 @@ Known repository and hosting state on 2026-07-16:
 - Rendering: dependency-light static HTML, CSS, and JavaScript.
 - Localized content source: `preview-site/content.js`.
 - Shared interface and interactions: `preview-site/app.js` and `preview-site/styles.css`.
+- Shared footer source: `preview-site/footer.js`, rendered from the single English `sharedFooter` model in `preview-site/content.js` on all marketing and legal pages.
+- Legal-page source: `preview-site/impressum/`, `preview-site/privacy/`, `preview-site/terms/`, `preview-site/accessibility/`, and `preview-site/legal.js`.
+- `npm run serve` uses normal static-directory routing rather than a single-page fallback so local legal-page requests resolve to their own documents instead of the marketing homepage.
 - Platform-mark assets: `preview-site/assets/platforms/`. Meta, Google Ads, and Yelp are transparent SVGs cropped through their viewboxes; Amazon Ads is the official transparent PNG lockup. All four appear in the English, German, and Hebrew ticker, with the second repeated rail hidden from assistive technology.
+- Client-mark assets: `preview-site/assets/clients/`. The 15 authentic SVG/PNG marks are local, transparently cropped, collectively about 264KB, and mapped to their verified destinations in `preview-site/content.js`. The visible links carry company-name accessibility labels; the repeated marquee copy is hidden and removed from keyboard order.
 - Stable preview paths: `/en/`, `/de/`, and `/he/`, with static rewrite rules in `preview-site/_redirects`.
 - Geographic entry routing: `preview-site/netlify/edge-functions/locale-router.ts` handles only `GET /` and redirects `IL` to `/he/`, `DE` to `/de/`, and every other allowed country to `/en/`.
 - The geographic edge function does not match `/transparency` or any descendant route, so it cannot intercept the protected area.
 - No speculative country blocklist is implemented because the exact approved ISO country list is still pending.
 - Footer language selection uses direct locale links and is not remembered between visits. The footer is the only location or language control.
 - All transparency and client-login links point to the existing protected `https://www.fixads.xyz/transparency` application without changing it.
-- All footers link to the existing German `https://www.fixads.xyz/impressum` destination using the unchanged label `Impressum`.
+- All footers link to the canonical German `https://www.fixads.xyz/impressum/` destination using the unchanged label `Impressum`.
 
 ### Netlify production integration
 
-- `preview-site/scripts/build-netlify.mjs` creates a marketing-only package in `preview-site/netlify-dist/` with physical `/en/`, `/de/`, and `/he/` HTML documents plus shared JavaScript, localized content, styles, logo, photographs, `robots.txt`, and `sitemap.xml`.
+- `preview-site/scripts/build-netlify.mjs` creates a marketing-and-legal package in `preview-site/netlify-dist/` with physical locale and legal HTML documents plus shared JavaScript, localized content, footer module, styles, logo, photographs, `robots.txt`, and `sitemap.xml`.
 - The current production root uses three ordered, root-only Netlify redirects with country conditions: `IL` redirects to `/he/`, `DE` redirects to `/de/`, and every other visitor redirects to `/en/`. Direct locale URLs remain stable. The source edge implementation in `preview-site/netlify/edge-functions/locale-router.ts` remains available, but the current function-bearing production baseline is intentionally deployed without an edge function.
 - The edge function matches only `GET /`. It cannot run for `/transparency`, `/transparency/**`, legal pages, assets, form submissions, or locale pages.
 - The deployment process begins from the exact currently published Netlify file map and adds only the marketing files, localized routes, SEO/GEO files, and root locale edge bundle.
@@ -756,23 +829,26 @@ Known repository and hosting state on 2026-07-16:
 - That earlier production baseline contained no Netlify Functions, so the first integration preserved its empty function set. A later external production change published function-bearing baseline `6a53a7965efe486aecdb4b14` with nine live Functions, three schedules, 29 redirects, and a newer protected transparency bundle.
 - The platform-mark release merged the multilingual marketing files into that exact newer baseline. Verified draft `6a58f5f69b3f3a8b822b78ea` and production deploy `6a58f689b735fb8e7bf59d17` preserved all nine Functions, all three schedules, their custom API routes, the existing non-marketing files, and the expanded set of 32 redirect rules.
 - The protected transparency files in the current baseline remain byte-identical at SHA-1 `e2b26552c5fe4671ff5c7e12900d3a1ed63fc9a5` for `/transparency/index.html`, `571ed211e6fa4cfef8f9efc4c7caff95c29521c9` for `/transparency/assets/index-hCM2TRqE.js`, and `b5221647142c086c7607feac0a02ba0cfbfbdd9b` for `/transparency/assets/index-BsuIzkgE.css`.
-- The mobile refinement used verified draft `6a5cb3c606d5211df159dfbf` before publishing deploy `6a5cb412187ccd596c3f298c`. The screenshot-based visual polish then used verified draft `6a5cbd3d714d142c4f0df5e3` before publishing current production deploy `6a5cbddd68d958737bc7bf3d`. It retains the same nine Functions, three schedules, 32 redirects, non-marketing files, and protected transparency hashes while updating only the multilingual marketing presentation and interaction behavior.
-- `/impressum`, `/privacy`, and `/terms` temporarily redirect to their existing immutable legacy Netlify deployment until permanent, reviewed legal pages are integrated on the canonical production host. The Impressum destination remains German.
-- `/accessibility` remains pending because approved accessibility-statement content has not been supplied; no legal text was invented.
+- The mobile refinement used verified draft `6a5cb3c606d5211df159dfbf` before publishing deploy `6a5cb412187ccd596c3f298c`. The screenshot-based visual polish then used verified draft `6a5cbd3d714d142c4f0df5e3` before publishing deploy `6a5cbddd68d958737bc7bf3d`. The agency-motion and phone-menu release used protected draft `6a5cd6b1d91a56c69235b77a` before publishing then-current production deploy `6a5cd9013cdc62cf3224c7b5`. It retained the same nine Functions, three schedules, 32 redirects, non-marketing files, and protected transparency hashes while updating only the multilingual marketing presentation and interaction behavior.
+- External deploy `6a5ce96568d9582068c7beec` later added a tenth Function for the Codex Meta MCP callback but replaced the approved locale documents. The protected recovery used that exact newer deployment as its baseline, rebuilt the callback with its existing custom route and runtime configuration, overlaid the previously approved marketing bytes, and retained the other nine Functions, three schedules, both Netlify form definitions, legacy files, and domain configuration. Corrected draft `6a5e0dec3cf3704ef174e93e` passed verification before production deploy `6a5e10227f04475923d79b23` was published to `https://www.fixads.xyz` with exactly 32 redirect rules and all ten Functions.
+- `www.fixads.xyz` remains the primary custom domain. The bare apex `fixads.xyz` is registered on the same Netlify project as a domain alias so HTTP and HTTPS requests can terminate safely and redirect to the canonical `www` host. Netlify DNS manages both hostnames; do not remove the apex alias when changing domain configuration.
+- The permanent legal-page source was added on 2026-07-22 using only business facts verified from the owner's records and the actual marketing-site data flow. Production integration must remove the three obsolete immutable-legacy redirects for `/impressum`, `/privacy`, and `/terms`, serve the four canonical local legal pages, and allow Netlify's directory routing to normalize non-trailing-slash requests without a competing explicit redirect rule or any interception of `/transparency`.
 
 ### GitHub source backup
 
 - Production repository: `https://github.com/fixads/fix-ads-landing-page`.
-- The complete multilingual marketing source and this living specification are synchronized in the dedicated branch `codex/fixads-multilingual-production`.
+- The multilingual marketing source and this living specification are backed up in the dedicated branch `codex/fixads-multilingual-production`. The last confirmed remote head before the agency-motion pass was `f4949c463b03d0545f2129441a4022e72bbbad96`; the 2026-07-19 agency-motion update remains pending because both available authenticated GitHub paths failed during handoff.
 - Marketing source remains isolated in `preview-site/`. The repository-root application, guarded `netlify.toml`, and every file under `public/transparency/` are intentionally unchanged.
 - This branch is a reviewed source backup and integration proposal; creating or updating it does not deploy the live website. Any later merge into the production branch must preserve the protected transparency area and use the verified production integration process documented above.
+- GitHub CLI `gh` is installed locally but currently has no authenticated GitHub session, and this local root repository has no configured remote. The connected GitHub app recovered read access on 2026-07-20 and confirmed that the repository and `codex/fixads-multilingual-production` branch still exist, but the repository publishing workflow requires an authenticated local Git session for a scoped source commit and push. Do not report the 2026-07-19 agency-motion source or 2026-07-20 recovery README backup as complete until that authentication is restored and the branch/PR head is rechecked.
 
 ### Sites review deployment
 
 - Public review URL: `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site`.
 - Direct review URLs: `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site/en/`, `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site/de/`, and `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site/he/`.
+- Current saved and published review release: Sites version 6, source commit `ccd9a621c3ba569f471dd6433858e6458828cec4`, deployment `appgdep_6a5cdaf888788191ae1888de962eb36a`.
 - The Sites review project is `appgprj_6a58733e0cbc81919c68610515ea07ca`; it is separate from the Netlify production project and does not deploy to or modify `fixads.xyz`.
-- `preview-site/.openai/hosting.json` binds the review source to the Sites project. `preview-site/scripts/build-sites.mjs` packages the shared HTML, localized content, CSS, JavaScript, exact logo, and review photographs into the Sites worker output under `preview-site/dist/`.
+- `preview-site/.openai/hosting.json` binds the review source to the Sites project. `preview-site/scripts/build-sites.mjs` packages the shared HTML, localized content, CSS, JavaScript, exact logo, review photographs, advertising-platform marks, and all current client assets into the Sites worker output under `preview-site/dist/`; asset discovery is recursive so an approved asset added under `preview-site/assets/` is not silently omitted from the review build.
 - `npm run build` and `npm run build:sites` create the same Sites review package. Generated `preview-site/dist/` output is not source content and may be removed or regenerated.
 - The Sites review root mirrors the intended country fallback using hosting-edge country data when available. Stable locale paths remain the authoritative way to inspect a specific language.
 - The Sites review worker accepts test submissions on `/en/`, `/de/`, and `/he/` and returns a review-only success response; it does not deliver leads. Production lead delivery remains the responsibility of the Netlify Forms workflow on `fixads.xyz`.
@@ -786,6 +862,7 @@ Known repository and hosting state on 2026-07-16:
 - Localized form labels, options, validation messages, consent text, success state, and failure state exist for English, Hebrew, and German.
 - Captured fields: full name, company, phone, email, company website, requested service, message, locale, consent, and honeypot.
 - Required fields: full name, email, service, message, and contact consent.
+- Every localized consent sentence links directly to `/privacy/` and explains that submitted details are used to answer the request.
 - The static HTML contains Netlify's form-detection schema and a honeypot; the visible form submits URL-encoded data without navigating away.
 - The visible form posts to its active physical locale route (`/en/`, `/de/`, or `/he/`) so the root country redirects cannot intercept the POST before Netlify Forms processes it.
 - The live project currently has a separate existing `fixads-lead` form. The preview intentionally uses a different form name so current chat leads are not disrupted.
@@ -801,7 +878,7 @@ Known repository and hosting state on 2026-07-16:
 - Open Graph and Twitter metadata use the canonical locale URL, localized title and description, the existing hero photograph, and the FixAds site name.
 - Crawler-visible JSON-LD identifies `FixAds` as an `Organization` and the multilingual property as a `WebSite`. Only visible and verified properties are included; no placeholder, review, rating, phone, address, or social-profile data is published.
 - `robots.txt` allows normal crawling and declares `https://www.fixads.xyz/sitemap.xml`. No AI-crawler-specific allow or block policy is added because the owner has not selected a training/retrieval stance.
-- `sitemap.xml` lists only the three canonical marketing locales with reciprocal `hreflang` alternates and the real 2026-07-16 modification date. Protected transparency routes are intentionally excluded and retain `noindex, nofollow`.
+- `sitemap.xml` lists the three canonical marketing locales with reciprocal `hreflang` alternates plus the four canonical legal pages, using the real 2026-07-22 modification date. Protected transparency routes are intentionally excluded and retain `noindex, nofollow`.
 - GEO improvements are limited to accurate entity markup, clear headings, direct service explanations, structured lists, and extractable market-specific descriptions. No sourced statistics or FAQ schema were invented.
 - Connection checks measured after publication confirmed: plain HTTP redirects to HTTPS, the HTTPS apex redirects to `https://www.fixads.xyz`, the `www` root redirects by country, and both apex and `www` are covered by the same valid Let's Encrypt certificate for `fixads.xyz` and `*.fixads.xyz` (valid through 2026-09-30).
 
@@ -819,8 +896,12 @@ Every implementation change must be checked against the relevant items below:
 - [ ] Israel, Germany, fallback, and blocked-country routing behaviors are covered when routing is affected.
 - [ ] Language routing does not loop or discard the requested path.
 - [ ] The footer is the only visible place where country or language can be viewed or changed.
-- [ ] Hebrew, English, and German footers all contain an `Impressum` link.
+- [ ] Hebrew, English, German, and legal-page footers use the same English labels, order, legal links, and locale choices; the active locale summary may differ.
+- [ ] The Hebrew footer is a left-to-right English island while the rest of the Hebrew page remains correctly mirrored RTL.
+- [ ] Every footer contains an `Impressum` link.
 - [ ] The Impressum destination always remains German with `lang="de"`, regardless of detected country or selected website language.
+- [ ] The Privacy Policy accurately describes the current hosting, form fields, browser storage, cookies, analytics, and recipient flow; no unimplemented tracking is described.
+- [ ] The repository contains no personal tax number, personal tax identification number, banking data, client records, invoice transactions, passwords, or other source-record contents.
 - [ ] `/transparency` and all `/transparency/**` routes remain untouched and operational; any authorized shared-footer update is confined to the footer.
 - [ ] Accessibility and keyboard behavior remain usable.
 - [ ] No secrets, private tokens, or personal data were added to browser code or the repository.
@@ -828,6 +909,60 @@ Every implementation change must be checked against the relevant items below:
 - [ ] The Change Log contains an entry for the change.
 
 ## Change Log
+
+### 2026-07-22 — Verified legal identity, permanent legal pages, and one English footer
+
+- Re-read this complete living specification and the dedicated transparency specification before changing the site.
+- Used the project owner's explicit authorization to inspect local business records and corroborated the publishable legal identity across official ELSTER material, FixAds invoices through 2026, the owner's CV, and a FixAds-billed communications record.
+- Added only the verified public business facts: Anton Goldberg trading as FixAds, Schönhauser Allee 108 in 10439 Berlin, `info@fixads.xyz`, direct telephone `+49 152 26215466`, and Wirtschafts-Identifikationsnummer `DE419002120-00001`.
+- Deliberately excluded the personal tax number, personal tax identification number, banking information, client records, invoice transactions, passwords, and unrelated personal documents.
+- Replaced the three localized footer models with one shared English footer component across English, German, Hebrew, and all legal pages. Kept it left-to-right inside Hebrew while leaving the Hebrew document and marketing layout right-to-left. The footer remains the only country/language control.
+- Added a German-only `/impressum/`, bilingual English/German `/privacy/`, English `/terms/`, and English `/accessibility/`, all with direct canonical routes and the same footer.
+- Draft verification confirmed Netlify's trailing-slash directory canonicalization; removed competing explicit legal redirects and aligned footer links, form consent links, canonical tags, and sitemap URLs so the legal routes cannot loop.
+- Updated all localized form-consent text to link to the Privacy Policy and explain the purpose of contact-data processing.
+- Removed the loader's nonessential session-storage access while preserving its visual behavior and reduced-motion bypass, leaving the current marketing and legal source without analytics, advertising pixels, cookies, local storage, or session storage.
+- Extended both packaging scripts and the sitemap to include the legal pages and their shared modules. The protected `/transparency` application, routes, files, bundles, styling, content, authentication, data, functions, and features were not modified.
+- Verified protected Netlify draft `6a60a81d3f96ee114dee1b30`, then published that exact deploy to `https://www.fixads.xyz`. The release has 29 valid redirects after removing the three obsolete external legal redirects, all ten existing Functions, all three schedules, and both registered Netlify forms.
+- Repeated the live 390 × 844 checks on Hebrew and the German-only Impressum: Hebrew remained RTL, the shared footer remained English/LTR, the legal identity was present, horizontal overflow stayed at zero, and the browser console remained clear. HTTP, HTTPS, apex, `www`, German root routing, all three locale URLs, and all four legal URLs passed.
+- Reconfirmed the protected transparency hashes after publication: HTML `e2b26552c5fe4671ff5c7e12900d3a1ed63fc9a5`, JavaScript `571ed211e6fa4cfef8f9efc4c7caff95c29521c9`, and CSS `b5221647142c086c7607feac0a02ba0cfbfbdd9b`; the root and a representative descendant both returned the protected application successfully.
+- Pushed the exact Sites source state at commit `4a6943163813e29b35a1fdd5038508951c4a6179`, saved Sites version 7 (`appgprj_6a58733e0cbc81919c68610515ea07ca~appgver_52ee901387e88191a24c11f1e0517d3f`), and published deployment `appgdep_6a60a99f412481918084553452e4e439` to `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site`. The three locales, four legal pages, and shared legal assets returned successfully there.
+- Prepared the public GitHub backup for branch `codex/fixads-multilingual-production` with only the website source and living specifications; no local source records, tax identifiers other than the published W-IdNr., financial data, client data, credentials, generated deployment bundles, or temporary PDF extracts are included.
+
+### 2026-07-20 — Approved multilingual site restored without removing the newer callback connection
+
+- Re-read this complete living specification and the separate `TRANSPARENCY_README.md` before preparing any production change.
+- Confirmed that production deploy `6a5ce96568d9582068c7beec` had replaced the approved English, German, and Hebrew marketing routes with the older FixAds assistant page while adding the `codex-meta-mcp-callback` Function.
+- Used that exact newer production deploy as the recovery baseline instead of rolling back to the earlier website release, so the callback Function, the existing nine Functions, three schedules, custom API routes, legacy pages, forms, domain connections, and non-marketing assets remain in scope.
+- Reused the previously verified marketing bytes from deploy `6a5cd9013cdc62cf3224c7b5` and the existing 32-rule routing set, which adds only the three root country redirects ahead of the protected and legacy rules.
+- Preserved the protected transparency files byte-for-byte at SHA-1 `e2b26552c5fe4671ff5c7e12900d3a1ed63fc9a5` for HTML, `571ed211e6fa4cfef8f9efc4c7caff95c29521c9` for JavaScript, and `b5221647142c086c7607feac0a02ba0cfbfbdd9b` for CSS.
+- Rejected incomplete drafts `6a5e0b8be25ab641ea192e6b` and `6a5e0bcd9686bf4759466621` before they became ready, then rejected ready draft `6a5e0dcd7f04474e48d79b8d` because it contained a duplicated 61-rule redirect set. None was published.
+- Verified corrected protected draft `6a5e0dec3cf3704ef174e93e`: `/en/`, `/de/`, `/he/`, the protected transparency root and representative descendant, SEO files, legacy page, all 15 client-logo assets, and the localized form transport returned successfully; the footer remained the only country/language control and retained `Impressum` in all locales.
+- Rechecked real 390 × 844 phone viewports before and after publication. English, German, and Hebrew had no horizontal overflow; the bottom-of-page mobile menu settled at the full 390 × 844 viewport with focus in the first menu link; Hebrew remained RTL while email and URL values stayed LTR.
+- Published production deploy `6a5e10227f04475923d79b23` to `https://www.fixads.xyz`. The live deployment has exactly 32 redirects, ten Functions, and three schedules; both `fixads-contact` and legacy `fixads-lead` remain registered with their existing field contracts and honeypots.
+- Verified the live custom-domain connections: `www.fixads.xyz` serves HTTPS, HTTP redirects to HTTPS, the bare `fixads.xyz` HTTP/HTTPS alias redirects to the canonical `www` host, the Germany root request routes to `/de/`, and all three explicit locale URLs return `200`.
+- Confirmed that the inherited immutable legal deployment now returns `404` for `/impressum`, `/privacy`, and `/terms`, while `/accessibility` remains pending. No unapproved legal content was created; permanent reviewed legal pages are still required.
+- Rechecked the GitHub backup path after publication. The connected GitHub app can again read `fixads/fix-ads-landing-page` and its existing `codex/fixads-multilingual-production` branch, but the local GitHub CLI remains unauthenticated and the local root repository has no remote, so no source commit, branch push, PR update, or protected GitHub file was attempted.
+- No `/transparency` or `/transparency/**` content, layout, styling, application logic, authentication, data, asset, or feature was changed.
+
+### 2026-07-19 — Kimi K3 agency-motion pass, mobile-menu repair, real client logos, and compact footer
+
+- Re-read this complete living specification before changing the marketing website and kept `/transparency` plus every descendant route outside the implementation and deployment package.
+- Reproduced the reported phone-menu failure on the live site after scrolling to the page bottom. Confirmed that the toggle changed state while the open menu's fixed box collapsed to the 68px scrolled header because the header's `backdrop-filter` established the containing block.
+- Sent Kimi K3 the real English, German, and Hebrew production URLs; the broken-after-scroll capture; current phone hero, client-area, and footer captures; all client destinations; and Clay, Cuberto, Locomotive, and BASIC/DEPT as bounded motion references.
+- Adopted Kimi's “precision with a pulse” guidance: a body-level direction-neutral menu overlay, a more legible animated menu toggle, a short once-per-session FixAds loader, linked real logos, and a one-time footer connection signal. Rejected heavy animation libraries, decorative scroll parallax on touch devices, a fixed back-to-top control that would compete with the existing contact action, and any copy or section rewrite.
+- Replaced all 15 temporary client wordmarks with authentic local SVG/PNG marks obtained from the businesses' own sites or verified domain icon source. Removed only empty canvas and solid source backgrounds needed for transparency, added the verified destination mapping to this specification and `content.js`, preserved the moving rail, hid its repeated copy from assistive technology and keyboard navigation, and added hover, focus, touch-pause, offscreen-pause, visibility-pause, and reduced-motion behavior.
+- Used Lampari's verified live Netlify deployment hostname because its public custom domain redirected to an HTTPS certificate that did not cover the domain; this avoids intentionally sending visitors into a certificate warning.
+- Moved the mobile menu outside the fixed header, strengthened its 48px button and visual state, retained focus containment and Escape/return-focus behavior, added responsive close behavior, and changed scroll locking so the viewport overlay remains exactly 100dvh without shifting at the top, middle, or bottom of the document.
+- Added the FixAds logo preloader with no-JavaScript safety, session-only display, deep-link and reduced-motion bypasses, a 620ms normal minimum, and a 900ms hard leave trigger. Hero title motion begins after the loader when it is shown.
+- Reworked the phone footer into compact two-column link groups while preserving every approved company link, Client Login, legal link, German `Impressum`, footer-only country/language control, copyright, email, and back-to-top action. Added only an existing-brand ghost word and a one-time transform/opacity signal reveal.
+- Updated the Sites packager to discover all source assets recursively, then verified the three locale documents, every client asset MIME type, and the non-delivering review-form response in the generated worker package.
+- Verified locally at 320–390px that English, German, and Hebrew have no horizontal overflow; German and Hebrew menus remain full-viewport after bottom-of-page scrolling; focus enters the first menu link; Hebrew remains mirrored RTL with LTR email/URL controls; all footers retain `Impressum`; every local client asset returns 200; and the client and footer layouts remain phone-readable.
+- Verified protected Netlify draft `6a5cd6b1d91a56c69235b77a` on real 320px and 390px phone viewports. All three locale documents and 15 client assets returned 200, both form definitions accepted localized POSTs, the menu remained exactly full-viewport after bottom-of-page scrolling, the client duplicate stayed outside keyboard navigation, and the footer kept its single locale control and German `Impressum`.
+- Confirmed the draft preserved the current protected transparency SHA-1 hashes exactly: `e2b26552c5fe4671ff5c7e12900d3a1ed63fc9a5` for HTML, `571ed211e6fa4cfef8f9efc4c7caff95c29521c9` for JavaScript, and `b5221647142c086c7607feac0a02ba0cfbfbdd9b` for CSS. The protected app rendered with its original root, bundle paths, and content rather than the marketing application.
+- Published production deploy `6a5cd9013cdc62cf3224c7b5` to `https://www.fixads.xyz`, retaining 32 redirects, nine Functions, and the three existing schedules. Repeated the live phone test after publishing; the menu, client rail, footer, locale rules, RTL/LTR controls, and marketing console all passed without horizontal overflow, errors, or warnings.
+- The connection audit found that `www.fixads.xyz` and its certificate were healthy but the bare apex was not assigned to the Netlify project, so one of the legacy apex load-balancer addresses rejected TLS. Added only `fixads.xyz` as a domain alias on the existing `fix-ads` project. Netlify generated managed apex and `www` records, and the authoritative apex route now terminates HTTPS and redirects to the canonical `www` host; cached legacy DNS answers may take up to their 3600-second TTL to expire.
+- Published Sites review version 6 from exact pushed source commit `ccd9a621c3ba569f471dd6433858e6458828cec4` through deployment `appgdep_6a5cdaf888788191ae1888de962eb36a`. Rechecked `/en/`, `/de/`, `/he/`, all 15 client assets, the non-delivering 204 review-form response, the bottom-scroll menu, the footer rules, and browser console output on the public review URL.
+- Attempted to update the existing GitHub backup branch and draft PR only after the website and Sites publication passed. The GitHub app rejected repository and branch reads with `HTTP 451 no_biscuit_no_service`, while `gh auth status` confirmed no local GitHub login. No GitHub branch, commit, PR, or protected file was changed, and this incomplete backup is recorded explicitly rather than being reported as successful.
 
 ### 2026-07-19 — Kimi K3 screenshot-based phone visual review
 
@@ -1014,8 +1149,5 @@ Every implementation change must be checked against the relevant items below:
 1. Provide the exact countries to block.
 2. Confirm whether a visitor's manual footer selection should be remembered for later visits.
 3. Arrange or approve a native-language review of the published German copy.
-4. Approve permanent legal-page content and canonical-host integration for Impressum, Privacy, and Terms.
-5. Supply approved client logo files and official client website URLs.
-6. Confirm the Accessibility Statement route and content.
-7. Confirm the notification recipients for the new `fixads-contact` Netlify form.
-8. Choose an explicit AI-crawler policy if training and retrieval bots should be handled differently from normal crawlers.
+4. Confirm the notification recipients for the new `fixads-contact` Netlify form.
+5. Choose an explicit AI-crawler policy if training and retrieval bots should be handled differently from normal crawlers.

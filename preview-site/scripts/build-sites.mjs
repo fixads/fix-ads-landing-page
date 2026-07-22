@@ -11,17 +11,40 @@ if (!projectId) {
   throw new Error("SITES_PROJECT_ID is required to build the Sites review package.");
 }
 
-const textFiles = ["index.html", "styles.css", "app.js", "content.js"];
-const assetFiles = [
-  "assets/fixads-logo.png",
-  "assets/hero-team.jpg",
-  "assets/ecommerce-growth.jpg",
-  "assets/hvac-leads.jpg",
-  "assets/platforms/meta.svg",
-  "assets/platforms/google-ads.svg",
-  "assets/platforms/yelp.svg",
-  "assets/platforms/amazon-ads.png",
+const textFiles = [
+  "index.html",
+  "styles.css",
+  "app.js",
+  "content.js",
+  "footer.js",
+  "legal.js",
+  "impressum/index.html",
+  "privacy/index.html",
+  "terms/index.html",
+  "accessibility/index.html",
 ];
+
+const collectFiles = async (directory, prefix = "") => {
+  const entries = await fs.readdir(directory, { withFileTypes: true });
+  const files = await Promise.all(
+    entries.map(async (entry) => {
+      const relative = path.join(prefix, entry.name);
+      const absolute = path.join(directory, entry.name);
+      return entry.isDirectory() ? collectFiles(absolute, relative) : relative;
+    }),
+  );
+  return files.flat();
+};
+
+const assetFiles = (await collectFiles(path.join(root, "assets"), "assets")).sort();
+const assetMimeType = (file) => {
+  const extension = path.extname(file).toLowerCase();
+  if (extension === ".svg") return "image/svg+xml";
+  if (extension === ".png") return "image/png";
+  if (extension === ".jpg" || extension === ".jpeg") return "image/jpeg";
+  if (extension === ".webp") return "image/webp";
+  return "application/octet-stream";
+};
 
 const textEntries = await Promise.all(
   textFiles.map(async (file) => [`/${file}`, await fs.readFile(path.join(root, file), "utf8")]),
@@ -29,25 +52,19 @@ const textEntries = await Promise.all(
 const assetEntries = await Promise.all(
   assetFiles.map(async (file) => [`/${file}`, (await fs.readFile(path.join(root, file))).toString("base64")]),
 );
+const mimeTypes = {
+  "/index.html": "text/html; charset=utf-8",
+  "/styles.css": "text/css; charset=utf-8",
+  "/app.js": "text/javascript; charset=utf-8",
+  "/content.js": "text/javascript; charset=utf-8",
+  ...Object.fromEntries(assetFiles.map((file) => [`/${file}`, assetMimeType(file)])),
+};
 
 const worker = `"use strict";
 
 const TEXT_FILES = ${JSON.stringify(Object.fromEntries(textEntries))};
 const BINARY_FILES = ${JSON.stringify(Object.fromEntries(assetEntries))};
-const MIME_TYPES = {
-  "/index.html": "text/html; charset=utf-8",
-  "/styles.css": "text/css; charset=utf-8",
-  "/app.js": "text/javascript; charset=utf-8",
-  "/content.js": "text/javascript; charset=utf-8",
-  "/assets/fixads-logo.png": "image/png",
-  "/assets/hero-team.jpg": "image/jpeg",
-  "/assets/ecommerce-growth.jpg": "image/jpeg",
-  "/assets/hvac-leads.jpg": "image/jpeg",
-  "/assets/platforms/meta.svg": "image/svg+xml",
-  "/assets/platforms/google-ads.svg": "image/svg+xml",
-  "/assets/platforms/yelp.svg": "image/svg+xml",
-  "/assets/platforms/amazon-ads.png": "image/png",
-};
+const MIME_TYPES = ${JSON.stringify(mimeTypes)};
 
 function response(body, init = {}) {
   return new Response(body, {
@@ -103,6 +120,14 @@ export default {
     if (/^\\/(en|de|he)\\/$/.test(pathname)) {
       return response(request.method === "HEAD" ? null : TEXT_FILES["/index.html"], {
         contentType: MIME_TYPES["/index.html"],
+      });
+    }
+
+    const legalPage = pathname.match(/^\\/(impressum|privacy|terms|accessibility)\\/?$/);
+    if (legalPage) {
+      const file = \`/\${legalPage[1]}/index.html\`;
+      return response(request.method === "HEAD" ? null : TEXT_FILES[file], {
+        contentType: "text/html; charset=utf-8",
       });
     }
 

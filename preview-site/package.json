@@ -5,7 +5,7 @@
   "scripts": {
     "build": "node scripts/build-sites.mjs",
     "dev": "npx netlify-cli@latest dev",
-    "serve": "npx serve -s . -l 4173",
+    "serve": "npx serve . -l 4173",
     "build:sites": "node scripts/build-sites.mjs",
     "build:netlify": "node scripts/build-netlify.mjs"
   },

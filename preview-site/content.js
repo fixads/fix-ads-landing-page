@@ -1,20 +1,139 @@
 export const clients = [
-  "Natasha Pet Store",
-  "Tool Eden",
-  "Li Vela Beauty Spa",
-  "Diamonds For All",
-  "Mayer Jewelry",
-  "BluYacht Israel",
-  "The Justice Group",
-  "Shira Custom Wigs",
-  "GA Luxury Judaica",
-  "Lampari",
-  "CB Fashion USA",
-  "HumanBeanz",
-  "David Roytman Couture",
-  "Flamingo Kosher",
-  "RoofPax",
+  {
+    name: "Natasha Pet Store",
+    href: "https://www.black-natasha.co.il/",
+    logo: "/assets/clients/natasha-pet-store.png",
+    width: 122,
+    height: 150,
+  },
+  {
+    name: "Tool Eden",
+    href: "https://tooleden.com/",
+    logo: "/assets/clients/tool-eden.png",
+    width: 242,
+    height: 97,
+  },
+  {
+    name: "Li Vela Beauty Spa",
+    href: "https://livelabeauty.com/",
+    logo: "/assets/clients/li-vela-beauty.png",
+    width: 191,
+    height: 150,
+  },
+  {
+    name: "Diamonds For All",
+    href: "https://diamonds-4-all.com/",
+    logo: "/assets/clients/diamonds-for-all.png",
+    width: 520,
+    height: 138,
+    className: "client-logo--bright",
+  },
+  {
+    name: "Mayer Jewelry",
+    href: "https://www.mayerjewellery.com/",
+    logo: "/assets/clients/mayer-jewellery.png",
+    width: 520,
+    height: 78,
+  },
+  {
+    name: "BluYacht Israel",
+    href: "https://www.bluyacht.com/en/",
+    logo: "/assets/clients/bluyacht-israel.png",
+    width: 363,
+    height: 150,
+  },
+  {
+    name: "The Justice Group",
+    href: "https://www.justicegroup.co.il/",
+    logo: "/assets/clients/the-justice-group.svg",
+    width: 107,
+    height: 45,
+  },
+  {
+    name: "Shira Custom Wigs",
+    href: "https://shiracustomwigsus.com/",
+    logo: "/assets/clients/shira-custom-wigs.png",
+    width: 148,
+    height: 150,
+  },
+  {
+    name: "GA Luxury Judaica",
+    href: "https://www.galuxuryjudaica.com/",
+    logo: "/assets/clients/ga-luxury-judaica.png",
+    width: 190,
+    height: 150,
+  },
+  {
+    name: "Lampari",
+    href: "https://dynamic-lily-ad468e.netlify.app/",
+    logo: "/assets/clients/lampari.png",
+    width: 126,
+    height: 62,
+  },
+  {
+    name: "CB Fashion USA",
+    href: "https://cbfashionusa.com/",
+    logo: "/assets/clients/cb-fashion-usa.png",
+    width: 454,
+    height: 105,
+  },
+  {
+    name: "HumanBeanz",
+    href: "https://humanbeanz.com/",
+    logo: "/assets/clients/humanbeanz.png",
+    width: 274,
+    height: 150,
+  },
+  {
+    name: "David Roytman Couture",
+    href: "https://davidroytmancouture.com/",
+    logo: "/assets/clients/david-roytman-couture.svg",
+    width: 1542,
+    height: 220,
+    className: "client-logo--light",
+  },
+  {
+    name: "Flamingo Kosher",
+    href: "https://flamingokosher.com/",
+    logo: "/assets/clients/flamingo-kosher.png",
+    width: 324,
+    height: 150,
+  },
+  {
+    name: "RoofPax",
+    href: "https://buyroofpax.com/",
+    logo: "/assets/clients/roofpax.png",
+    width: 150,
+    height: 67,
+  },
 ];
+
+export const sharedFooter = {
+  statement: "Marketing, technology, and data—connected for practical growth.",
+  company: "Company",
+  legal: "Legal",
+  locale: "Country & language",
+  locales: [
+    ["International — English", "/en/"],
+    ["Germany — German", "/de/"],
+    ["Israel — Hebrew", "/he/"],
+  ],
+  links: [
+    ["Services", "#services"],
+    ["Clients", "#clients"],
+    ["About", "#about"],
+    ["Contact", "#contact"],
+    ["Client Login", "https://www.fixads.xyz/transparency"],
+  ],
+  legalLinks: [
+    ["Privacy Policy", "/privacy/"],
+    ["Terms of Use", "/terms/"],
+    ["Accessibility Statement", "/accessibility/"],
+    ["Impressum", "/impressum/"],
+  ],
+  rights: "© 2026 FixAds™. All rights reserved.",
+  top: "Back to top",
+};
 
 const sharedServices = {
   paid: {
@@ -223,7 +342,7 @@ export const content = {
       title: "Built across markets and business models.",
       body:
         "We have worked with companies and brands across e-commerce, fashion, health and beauty, travel, legal services, food, retail, professional services, and lead generation.",
-      note: "Company names are shown as preview wordmarks. Official logo files and website links will be added after approval.",
+      note: "Select a logo to visit the company's official website.",
     },
     about: {
       eyebrow: "About FixAds",
@@ -254,7 +373,8 @@ export const content = {
         website: "Company website",
         service: "What can we help with?",
         message: "Tell us about the goal or challenge",
-        consent: "I agree that FixAds may contact me about this request.",
+        consent:
+          'I have read the <a href="/privacy/">Privacy Policy</a> and agree that FixAds may use my details to respond to this request.',
       },
       options: [
         "Select a service",
@@ -274,31 +394,8 @@ export const content = {
       required: "Required",
     },
     footer: {
-      statement: "Marketing, technology, and data—connected for practical growth.",
-      company: "Company",
-      legal: "Legal",
-      locale: "Country & language",
+      ...sharedFooter,
       current: "International — English",
-      locales: [
-        ["International — English", "/en/"],
-        ["Deutschland — Deutsch", "/de/"],
-        ["ישראל — עברית", "/he/"],
-      ],
-      links: [
-        ["Services", "#services"],
-        ["Clients", "#clients"],
-        ["About", "#about"],
-        ["Contact", "#contact"],
-        ["Client Login", "https://www.fixads.xyz/transparency"],
-      ],
-      legalLinks: [
-        ["Privacy Policy", "https://www.fixads.xyz/privacy"],
-        ["Terms of Use", "https://www.fixads.xyz/terms"],
-        ["Accessibility Statement", "/accessibility"],
-        ["Impressum", "https://www.fixads.xyz/impressum"],
-      ],
-      rights: "© 2026 FixAds™. All rights reserved.",
-      top: "Back to top",
     },
   },
 
@@ -471,7 +568,7 @@ export const content = {
       title: "Erfahrung über Märkte und Geschäftsmodelle hinweg.",
       body:
         "Wir haben mit Unternehmen und Marken in Deutschland, den USA, Israel und weiteren Märkten aus E-Commerce, Mode, Gesundheit und Beauty, Tourismus, Recht, Lebensmittel, Handel, Dienstleistungen und Leadgenerierung gearbeitet.",
-      note: "Unternehmensnamen werden in der Vorschau als Wortmarken gezeigt. Offizielle Logos und Links werden nach Freigabe ergänzt.",
+      note: "Ein Klick auf ein Logo führt zur offiziellen Website des jeweiligen Unternehmens.",
     },
     about: {
       eyebrow: "Über FixAds",
@@ -502,7 +599,8 @@ export const content = {
         website: "Unternehmenswebsite",
         service: "Wie können wir Sie unterstützen?",
         message: "Beschreiben Sie Ziel oder Herausforderung",
-        consent: "Ich stimme zu, dass FixAds mich zu dieser Anfrage kontaktieren darf.",
+        consent:
+          'Ich habe die <a href="/privacy/">Datenschutzerklärung</a> gelesen und stimme zu, dass FixAds meine Angaben zur Bearbeitung dieser Anfrage verwendet.',
       },
       options: [
         "Leistung auswählen",
@@ -522,31 +620,8 @@ export const content = {
       required: "Pflichtfeld",
     },
     footer: {
-      statement: "Marketing, Technologie und Daten – verbunden für praktisches Wachstum.",
-      company: "Unternehmen",
-      legal: "Rechtliches",
-      locale: "Land & Sprache",
-      current: "Deutschland — Deutsch",
-      locales: [
-        ["Deutschland — Deutsch", "/de/"],
-        ["International — English", "/en/"],
-        ["ישראל — עברית", "/he/"],
-      ],
-      links: [
-        ["Leistungen", "#services"],
-        ["Kunden", "#clients"],
-        ["Über uns", "#about"],
-        ["Kontakt", "#contact"],
-        ["Kunden-Login", "https://www.fixads.xyz/transparency"],
-      ],
-      legalLinks: [
-        ["Datenschutz", "https://www.fixads.xyz/privacy"],
-        ["Nutzungsbedingungen", "https://www.fixads.xyz/terms"],
-        ["Erklärung zur Barrierefreiheit", "/accessibility"],
-        ["Impressum", "https://www.fixads.xyz/impressum"],
-      ],
-      rights: "© 2026 FixAds™. Alle Rechte vorbehalten.",
-      top: "Nach oben",
+      ...sharedFooter,
+      current: "Germany — German",
     },
   },
 
@@ -719,7 +794,7 @@ export const content = {
       title: "ניסיון במגוון שווקים ומודלים עסקיים.",
       body:
         "עבדנו עם חברות ומותגים בישראל ובעולם, בתחומי המסחר האלקטרוני, האופנה, הבריאות, התיירות, היופי, המשפטים, המזון והקמעונאות.",
-      note: "שמות החברות מוצגים בתצוגה המקדימה. לוגואים וקישורים רשמיים יתווספו לאחר אישור.",
+      note: "לחיצה על כל לוגו תוביל לאתר הרשמי של החברה.",
     },
     about: {
       eyebrow: "אודות",
@@ -750,7 +825,8 @@ export const content = {
         website: "אתר החברה",
         service: "במה נוכל לעזור?",
         message: "ספרו לנו על המטרה או האתגר",
-        consent: "אני מאשר/ת ל־FixAds ליצור איתי קשר בנוגע לפנייה זו.",
+        consent:
+          'קראתי את <a href="/privacy/">מדיניות הפרטיות</a> ואני מאשר/ת ל־FixAds להשתמש בפרטים שלי כדי להשיב לפנייה זו.',
       },
       options: [
         "בחירת שירות",
@@ -770,31 +846,8 @@ export const content = {
       required: "שדה חובה",
     },
     footer: {
-      statement: "שיווק, טכנולוגיה ונתונים — מחוברים לצמיחה מעשית.",
-      company: "החברה",
-      legal: "מידע משפטי",
-      locale: "מדינה ושפה",
-      current: "ישראל — עברית",
-      locales: [
-        ["ישראל — עברית", "/he/"],
-        ["International — English", "/en/"],
-        ["Deutschland — Deutsch", "/de/"],
-      ],
-      links: [
-        ["השירותים שלנו", "#services"],
-        ["לקוחות", "#clients"],
-        ["אודות", "#about"],
-        ["צור קשר", "#contact"],
-        ["כניסת לקוחות", "https://www.fixads.xyz/transparency"],
-      ],
-      legalLinks: [
-        ["מדיניות פרטיות", "https://www.fixads.xyz/privacy"],
-        ["תנאי שימוש", "https://www.fixads.xyz/terms"],
-        ["הצהרת נגישות", "/accessibility"],
-        ["Impressum", "https://www.fixads.xyz/impressum"],
-      ],
-      rights: "© 2026 FixAds™. כל הזכויות שמורות.",
-      top: "חזרה למעלה",
+      ...sharedFooter,
+      current: "Israel — Hebrew",
     },
   },
 };
