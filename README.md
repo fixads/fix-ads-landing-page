@@ -923,6 +923,7 @@ Every implementation change must be checked against the relevant items below:
 - Repeated live checks on the custom domain: the root routes Germany to `/de/`; `/en/`, `/de/`, and `/he/` return `200`; the slashless legal paths normalize once with `301`; `/impressum/`, `/privacy/`, `/terms/`, and `/accessibility/` return `200`; the CRM leads endpoint remains protected with `401`; and HTTP/apex/`www` canonical connections are valid.
 - Repeated the 390 × 844 browser checks on live Hebrew and the German-only Impressum. Hebrew remains RTL with an English/LTR footer and zero horizontal overflow, the fixed mobile menu opens after deep scrolling, the Impressum remains `lang="de"`/LTR and contains the verified identity and W-IdNr., and the browser console is clear.
 - Reconfirmed the protected transparency hashes after publication: HTML `e2b26552c5fe4671ff5c7e12900d3a1ed63fc9a5`, JavaScript `571ed211e6fa4cfef8f9efc4c7caff95c29521c9`, and CSS `b5221647142c086c7607feac0a02ba0cfbfbdd9b`; both the root and a representative descendant return `200`.
+- Backed up the recovered production status and complete verification record to GitHub commit `241c3d928e0b8e65b00a8ee6b98bac9bd4380832` on branch `codex/fixads-multilingual-production`; the website source itself was unchanged by this recovery because production reused the already approved marketing/legal build.
 
 ### 2026-07-22 — Verified legal identity, permanent legal pages, and one English footer
 
