@@ -35,7 +35,7 @@ Before any deployment, verify that the protected transparency route and represen
 
 ## Project status
 
-The multilingual design was approved by the project owner and published to `https://www.fixads.xyz` on 2026-07-16 after protected Netlify drafts passed verification. The permanent legal pages and shared English footer were first published as verified deploy `6a60a81d3f96ee114dee1b30` on 2026-07-22. Later that day, CRM authentication deploy `6a60d74ac87da5183901b4c9` correctly updated the `bluyacht-leads` and callback Functions but was built from the older assistant package, removing the locale and legal routes. The site was recovered from that newer CRM baseline and republished as verified production deploy `6a60dbca19befec4b5c3d812`: the current CRM Function digests remain active, all ten Functions and three schedules are present, all approved marketing and legal routes are restored, and the protected transparency files remain byte-identical.
+The multilingual design was approved by the project owner and published to `https://www.fixads.xyz` on 2026-07-16 after protected Netlify drafts passed verification. The permanent legal pages and shared English footer were first published as verified deploy `6a60a81d3f96ee114dee1b30` on 2026-07-22. Later that day, CRM authentication deploy `6a60d74ac87da5183901b4c9` correctly updated the `bluyacht-leads` and callback Functions but was built from the older assistant package, removing the locale and legal routes. The site was recovered as verified deploy `6a60dbca19befec4b5c3d812`, but on 2026-07-23 the same older CRM deploy was republished and again removed the locale and legal files. The current production deploy is verified release `6a61caff3f05b61691da9938`: it restores the approved marketing and legal experience, adds localized service-detail pages, preserves all ten Functions and three schedules, and keeps the protected transparency files byte-identical. It is locked in Netlify to stop another automatic publication from replacing it; future planned production work must explicitly unlock it only after a protected replacement draft is ready.
 
 - The animated multilingual website source exists in `preview-site/` and remains available as a separate review build at `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site`.
 - Direct review paths are `/en/`, `/de/`, and `/he/`; the review root uses available edge country information to send Israel to Hebrew, Germany to German, and other visitors to English.
@@ -111,11 +111,10 @@ The owner authorized a search of local business records on 2026-07-22. The publi
 - Sole proprietor / operator: `Anton Goldberg`.
 - Business address: `Schönhauser Allee 108, 10439 Berlin, Germany`.
 - Public email: `info@fixads.xyz`.
-- Direct telephone: `+49 152 26215466`.
 - Wirtschafts-Identifikationsnummer: `DE419002120-00001`.
 - No commercial-register entry, corporate legal form, professional supervisory authority, or VAT identification number is asserted because the records do not establish one.
 
-Personal tax numbers, the personal tax identification number, bank details, client information, invoice data, passwords, and other private records must never be published in the repository or browser code. The German Impressum includes only the verified business identity, contact data, and Wirtschafts-Identifikationsnummer required for provider identification.
+Personal tax numbers, the personal tax identification number, direct personal telephone number, bank details, client information, invoice data, passwords, and other private records must never be published in the repository or browser code. The German Impressum includes the verified business identity, public email and contact-form route, and the Wirtschafts-Identifikationsnummer required for provider identification. The number must be labeled as a business Wirtschafts-Identifikationsnummer and must not be described as the owner's personal tax identification number.
 
 The canonical legal pages are:
 
@@ -710,9 +709,45 @@ Localized versions must preserve the core service scope, claims, calls to action
 
 ## Information architecture
 
-The localized page section sequence is defined by the Hebrew source and the English and German drafts above. The local preview currently implements one long-form marketing experience per language at `/en/`, `/de/`, and `/he/`.
+The localized page section sequence is defined by the Hebrew source and the English and German drafts above. The local preview implements one long-form marketing experience per language at `/en/`, `/de/`, and `/he/`, plus one focused service-detail page per language:
 
-Production interpretation approved on 2026-07-16: “three pages” means the three localized marketing experiences at `/en/`, `/de/`, and `/he/`. Remaining decisions concern permanent legal and accessibility content, form notifications, approved client assets, the country blocklist, and whether footer language selection should be remembered.
+- English: `/en/services/`
+- German: `/de/leistungen/`
+- Hebrew: `/he/services/`
+
+The service-detail pages reuse the approved eight service descriptions and four working-principle descriptions from each locale. Their only additional localized copy is:
+
+**English**
+
+- Eyebrow: `FixAds services`
+- Title: `Specialists where it matters. One connected system.`
+- Introduction: `Choose the capability you need today or connect the full journey—from demand and conversion to follow-up, retention, automation, and measurement.`
+- Detail title: `Eight services designed to work together.`
+- Approach title: `Clear ownership from first signal to next action.`
+- Closing title: `Need one service—or the whole system?`
+- Closing body: `Tell us where growth is getting stuck. We will look at the existing journey and identify the most useful place to begin.`
+
+**German**
+
+- Eyebrow: `FixAds Leistungen`
+- Title: `Spezialisiert in jedem Bereich. Verbunden im Gesamtsystem.`
+- Introduction: `Nutzen Sie eine einzelne Leistung oder verbinden Sie die gesamte Customer Journey – von Nachfrage und Conversion bis Follow-up, Kundenbindung, Automatisierung und Messung.`
+- Detail title: `Acht Leistungen, die strukturiert zusammenspielen.`
+- Approach title: `Klare Verantwortung vom ersten Signal bis zum nächsten Schritt.`
+- Closing title: `Eine Leistung oder das gesamte System?`
+- Closing body: `Beschreiben Sie uns, wo Wachstum aktuell ins Stocken gerät. Wir prüfen die bestehende Customer Journey und identifizieren einen sinnvollen Ausgangspunkt.`
+
+**Hebrew**
+
+- Eyebrow: `השירותים של FixAds`
+- Title: `מומחיות בכל תחום. מערכת אחת שעובדת יחד.`
+- Introduction: `אפשר להתחיל מהשירות שנדרש עכשיו או לחבר את כל מסע הלקוח — מחשיפה והמרה ועד Follow-up, שימור, אוטומציה ומדידה.`
+- Detail title: `שמונה שירותים שנבנו לעבוד יחד.`
+- Approach title: `אחריות ברורה מהסיגנל הראשון ועד לפעולה הבאה.`
+- Closing title: `צריכים שירות אחד או את כל המערכת?`
+- Closing body: `ספרו לנו איפה הצמיחה נעצרת. נבחן את המסע הקיים ונזהה את המקום הנכון להתחיל ממנו.`
+
+Production interpretation approved on 2026-07-16: “three pages” originally meant the three localized marketing experiences. The owner expanded the information architecture on 2026-07-23 by requesting a dedicated service explanation for SEO; this creates the three localized service-detail routes above without changing country routing or the footer-only language-control rule.
 
 ## Design and accessibility requirements
 
@@ -738,12 +773,13 @@ The implemented preview includes:
 - A platform ticker that keeps the existing continuous marquee motion while showing compact, transparent Meta, Google Ads, Yelp, and Amazon Ads brand marks beside or within their names. The cropped vector viewboxes remove unused wordmark space without redrawing the marks, and the Amazon Ads asset uses Amazon's official transparent press lockup. These third-party marks are used only to identify the advertising platforms and remain the property of their respective owners.
 - A continuously moving client rail using the authentic logo assets and official destination URLs recorded in the Client logo rail section below. Logos are transparently cropped and presented directly on the dark canvas without white cards; the repeated accessibility copy is hidden from assistive technology.
 - A phone-first layout tested from 320px through 430px widths, with safe-area support for modern notched devices, compact mobile data visuals, shorter vertical spacing, and typography that accommodates long German words and Hebrew RTL text without horizontal overflow.
-- Mobile controls with at least 44–48px practical touch targets, 16px form text to prevent unwanted iOS input zoom, a scroll-safe full-screen menu with contained keyboard focus, and a localized contact dock that disappears whenever an existing page call to action is substantially visible or the contact section or footer is reached.
+- Mobile controls with at least 44–48px practical touch targets, 16px form text to prevent unwanted iOS input zoom, a scroll-safe full-screen menu with contained keyboard focus, and a localized contact dock with one predictable state change: it appears after the hero actions have passed and stays visible until the contact section or footer begins.
 - The phone navigation overlay is a direct body child rather than a descendant of the blurred fixed header. This prevents `backdrop-filter` from turning the header into the menu's containing block after scroll. The overlay stays viewport-sized at the top, middle, and bottom of the page, locks background overflow without moving the document, traps focus, closes with Escape, restores focus, and keeps the header logo and animated 48px menu toggle available above it.
 - Mobile form fields use appropriate phone keyboards and next-action hints; email, URL, and telephone values remain left-to-right inside the Hebrew experience while names, companies, and messages automatically follow the entered script.
 - Touch-device performance rules that remove desktop hover states and hero parallax while retaining purposeful lightweight motion and the existing reduced-motion mode.
 - A Kimi K3-assisted mobile refinement that keeps the real hero call to action reachable earlier by using a smaller locale-aware title scale, tighter phone spacing, 16px primary hero copy, and a shorter version of the existing connected-system panel.
-- A compact floating contact action that is hidden in the initial HTML/CSS state and becomes available only after the real hero actions have scrolled above the viewport. It remains hidden while the mobile menu, closing action, contact section, or footer is present, preventing startup flashes and CTA collisions.
+- A compact floating contact action that is hidden in the initial HTML/CSS state and becomes available only after the real hero actions have scrolled above the viewport. It no longer checks every piece of underlying text or the closing call to action, which caused it to flicker while scrolling. It remains visible consistently through the content and hides only while the mobile menu, contact section, or footer is present.
+- Dedicated service-detail pages use the same brand system, semantic heading structure, localized direction, responsive service index, eight approved service explanations, working principles, static crawler-visible content, lightweight reveal motion, and full reduced-motion behavior.
 - A denser one-column phone form that keeps every field visible and preserves validation, autofill, mixed-direction values, 16px control text, 44px minimum controls, and a vertically resizable message field while reducing unnecessary empty space.
 - Purposeful mobile motion instead of one uniform long reveal: shorter section transitions, softer card/process entrances, a single final-word hero marker sweep, press and arrow feedback, and automatic pausing of both moving rails when offscreen or when the browser tab is hidden.
 - A screenshot-based Kimi K3 visual pass using the rendered English, German, Hebrew RTL, mobile-menu, services, and contact states. The accepted refinements keep the floating contact action from covering readable content, strengthen visual separation between phone form fields, present required markers as neutral instructions until a real validation error exists, and soften the platform rail at the viewport edges without changing its content or motion.
@@ -801,10 +837,11 @@ Known repository and hosting state on 2026-07-16:
 - Shared interface and interactions: `preview-site/app.js` and `preview-site/styles.css`.
 - Shared footer source: `preview-site/footer.js`, rendered from the single English `sharedFooter` model in `preview-site/content.js` on all marketing and legal pages.
 - Legal-page source: `preview-site/impressum/`, `preview-site/privacy/`, `preview-site/terms/`, `preview-site/accessibility/`, and `preview-site/legal.js`.
+- Localized service-page generation: `preview-site/scripts/service-pages.mjs` creates the static `/en/services/`, `/de/leistungen/`, and `/he/services/` documents from approved content in `preview-site/content.js`; `preview-site/service-page.js` supplies only progressive reveal, scroll-progress, and header-state behavior.
 - `npm run serve` uses normal static-directory routing rather than a single-page fallback so local legal-page requests resolve to their own documents instead of the marketing homepage.
 - Platform-mark assets: `preview-site/assets/platforms/`. Meta, Google Ads, and Yelp are transparent SVGs cropped through their viewboxes; Amazon Ads is the official transparent PNG lockup. All four appear in the English, German, and Hebrew ticker, with the second repeated rail hidden from assistive technology.
 - Client-mark assets: `preview-site/assets/clients/`. The 15 authentic SVG/PNG marks are local, transparently cropped, collectively about 264KB, and mapped to their verified destinations in `preview-site/content.js`. The visible links carry company-name accessibility labels; the repeated marquee copy is hidden and removed from keyboard order.
-- Stable preview paths: `/en/`, `/de/`, and `/he/`, with static rewrite rules in `preview-site/_redirects`.
+- Stable preview paths: `/en/`, `/de/`, `/he/`, `/en/services/`, `/de/leistungen/`, and `/he/services/`, with direct generated documents for every path.
 - Geographic entry routing: `preview-site/netlify/edge-functions/locale-router.ts` handles only `GET /` and redirects `IL` to `/he/`, `DE` to `/de/`, and every other allowed country to `/en/`.
 - The geographic edge function does not match `/transparency` or any descendant route, so it cannot intercept the protected area.
 - No speculative country blocklist is implemented because the exact approved ISO country list is still pending.
@@ -814,7 +851,7 @@ Known repository and hosting state on 2026-07-16:
 
 ### Netlify production integration
 
-- `preview-site/scripts/build-netlify.mjs` creates a marketing-and-legal package in `preview-site/netlify-dist/` with physical locale and legal HTML documents plus shared JavaScript, localized content, footer module, styles, logo, photographs, `robots.txt`, and `sitemap.xml`.
+- `preview-site/scripts/build-netlify.mjs` creates a marketing-and-legal package in `preview-site/netlify-dist/` with physical locale, localized service-detail, and legal HTML documents plus shared JavaScript, localized content, footer module, styles, logo, photographs, `robots.txt`, and `sitemap.xml`.
 - The current production root uses three ordered, root-only Netlify redirects with country conditions: `IL` redirects to `/he/`, `DE` redirects to `/de/`, and every other visitor redirects to `/en/`. Direct locale URLs remain stable. The source edge implementation in `preview-site/netlify/edge-functions/locale-router.ts` remains available, but the current function-bearing production baseline is intentionally deployed without an edge function.
 - The edge function matches only `GET /`. It cannot run for `/transparency`, `/transparency/**`, legal pages, assets, form submissions, or locale pages.
 - The deployment process begins from the exact currently published Netlify file map and adds only the marketing files, localized routes, SEO/GEO files, and root locale edge bundle.
@@ -833,6 +870,7 @@ Known repository and hosting state on 2026-07-16:
 - External deploy `6a5ce96568d9582068c7beec` later added a tenth Function for the Codex Meta MCP callback but replaced the approved locale documents. The protected recovery used that exact newer deployment as its baseline, rebuilt the callback with its existing custom route and runtime configuration, overlaid the previously approved marketing bytes, and retained the other nine Functions, three schedules, both Netlify form definitions, legacy files, and domain configuration. Corrected draft `6a5e0dec3cf3704ef174e93e` passed verification before production deploy `6a5e10227f04475923d79b23` was published to `https://www.fixads.xyz` with exactly 32 redirect rules and all ten Functions.
 - `www.fixads.xyz` remains the primary custom domain. The bare apex `fixads.xyz` is registered on the same Netlify project as a domain alias so HTTP and HTTPS requests can terminate safely and redirect to the canonical `www` host. Netlify DNS manages both hostnames; do not remove the apex alias when changing domain configuration.
 - The permanent legal-page source was added on 2026-07-22 using only business facts verified from the owner's records and the actual marketing-site data flow. Production integration must remove the three obsolete immutable-legacy redirects for `/impressum`, `/privacy`, and `/terms`, serve the four canonical local legal pages, and allow Netlify's directory routing to normalize non-trailing-slash requests without a competing explicit redirect rule or any interception of `/transparency`.
+- The 2026-07-23 service/mobile/legal recovery used protected draft `6a61caff3f05b61691da9938`, verified it on the deploy URL, rechecked production against CRM baseline `6a60d74ac87da5183901b4c9`, and published the exact draft at `2026-07-23T08:06:31.543Z`. The live release remains pinned with Netlify's deploy lock. Unlock production only as the final deliberate step of a future protected release, then lock the newly verified published deploy after its live checks pass.
 
 ### GitHub source backup
 
@@ -875,10 +913,11 @@ Known repository and hosting state on 2026-07-16:
 - Every locale has a market-specific title and meta description drawn only from approved visible claims; no rankings, guarantees, ratings, certifications, or unsupported performance numbers were added.
 - English targets `performance marketing agency`; German targets `Performance-Marketing-Agentur`; Hebrew describes the same connected digital marketing and growth scope in natural Hebrew.
 - `/en/`, `/de/`, and `/he/` have static self-referencing canonicals, reciprocal absolute `hreflang` links, and an English `x-default` URL.
+- `/en/services/`, `/de/leistungen/`, and `/he/services/` are static, crawlable service-detail pages with localized titles, descriptions, canonicals, reciprocal `hreflang`, an English `x-default`, a visible eight-service index, and internal links from each localized homepage.
 - Open Graph and Twitter metadata use the canonical locale URL, localized title and description, the existing hero photograph, and the FixAds site name.
-- Crawler-visible JSON-LD identifies `FixAds` as an `Organization` and the multilingual property as a `WebSite`. Only visible and verified properties are included; no placeholder, review, rating, phone, address, or social-profile data is published.
+- Crawler-visible JSON-LD identifies `FixAds` as an `Organization` and the multilingual property as a `WebSite`; service-detail pages add only a `CollectionPage` and an `ItemList` matching their visible service content. Only visible and verified properties are included; no placeholder, review, rating, phone, address, or social-profile data is published.
 - `robots.txt` allows normal crawling and declares `https://www.fixads.xyz/sitemap.xml`. No AI-crawler-specific allow or block policy is added because the owner has not selected a training/retrieval stance.
-- `sitemap.xml` lists the three canonical marketing locales with reciprocal `hreflang` alternates plus the four canonical legal pages, using the real 2026-07-22 modification date. Protected transparency routes are intentionally excluded and retain `noindex, nofollow`.
+- `sitemap.xml` lists the three canonical marketing locales, the three localized service-detail pages with reciprocal `hreflang` alternates, and the four canonical legal pages, using the real 2026-07-23 modification date. Protected transparency routes are intentionally excluded and retain `noindex, nofollow`.
 - GEO improvements are limited to accurate entity markup, clear headings, direct service explanations, structured lists, and extractable market-specific descriptions. No sourced statistics or FAQ schema were invented.
 - Connection checks measured after publication confirmed: plain HTTP redirects to HTTPS, the HTTPS apex redirects to `https://www.fixads.xyz`, the `www` root redirects by country, and both apex and `www` are covered by the same valid Let's Encrypt certificate for `fixads.xyz` and `*.fixads.xyz` (valid through 2026-09-30).
 
@@ -910,6 +949,20 @@ Every implementation change must be checked against the relevant items below:
 
 ## Change Log
 
+### 2026-07-23 — Restore the multilingual release, clarify the Impressum, stabilize mobile contact, and add localized service pages
+
+- Re-read this complete living specification and `TRANSPARENCY_README.md` before changing the site or deployment.
+- Reproduced the owner's “old website” report: production had been switched back at `2026-07-23T07:39:39.744Z` to older deploy `6a60d74ac87da5183901b4c9`, titled `Fix CRM backup authentication`. Its 21-file assistant package served the old AI chat homepage while `/en/`, `/de/`, `/he/`, and the four local legal pages returned 404. The ten Functions, three schedules, and protected transparency application remained present.
+- Kept the legally required business Wirtschafts-Identifikationsnummer in the German Impressum, labeled it explicitly as a business identifier rather than a personal tax ID, and gave it a clearer visual treatment. Removed the owner's direct personal telephone number from the Impressum, Privacy Policy, Accessibility Statement, and current living specification; public contact now uses `info@fixads.xyz` and the localized website contact form.
+- Simplified the phone contact dock to one predictable scroll lifecycle: hidden in the hero, consistently visible after the hero actions pass, and hidden only for the open menu, contact section, and footer. Removed per-element collision sampling and the closing-action blocker that caused visible flicker during normal scrolling.
+- Added static, localized service-detail pages at `/en/services/`, `/de/leistungen/`, and `/he/services/`. Each page uses the already approved eight service descriptions and working principles, adds only the localized framing copy recorded in this specification, and includes responsive navigation, purposeful motion, reduced-motion support, internal contact links, canonical URLs, reciprocal `hreflang`, Open Graph/Twitter metadata, and visible-content `CollectionPage`/`ItemList` JSON-LD.
+- Added direct homepage navigation and service-section links to the localized detail pages, and added all three routes to the sitemap without changing country routing or placing a language control outside the footer.
+- Extended both the Netlify and Sites packaging scripts to include the static localized service documents and their small shared interaction script.
+- Prepared the release from the exact current CRM production baseline so the existing Function bundles, schedules, forms, custom routes, non-marketing files, and protected transparency bytes remain intact.
+- Verified protected draft `6a61caff3f05b61691da9938`: all three homepages, three service pages, four legal pages, SEO files, legacy page, transparency root and descendant returned successfully; the three protected hashes stayed exact; transparency rendered in a JavaScript-capable browser; all ten Functions, three schedules, and both forms remained present; and 390 × 844 English, German, Hebrew RTL, service, menu, Impressum, and contact-dock checks completed without overflow or console errors.
+- Rechecked that production was still CRM baseline `6a60d74ac87da5183901b4c9`, then published that exact draft at `2026-07-23T08:06:31.543Z`. Live HTTP/HTTPS, apex/`www`, German root routing, all localized and legal routes, mobile behavior, SEO routes, legacy files, Functions, schedules, forms, and protected hashes passed after publication.
+- Locked published deploy `6a61caff3f05b61691da9938` in Netlify after verification so future builds cannot automatically replace the corrected production site. A future intentional production release must use the protected draft process and explicitly unlock only for that controlled cutover.
+
 ### 2026-07-22 — Recover multilingual and legal routes after the CRM authentication deploy
 
 - Re-read this complete living specification and the dedicated transparency specification after the owner reported that the live legal links showed no content.
@@ -929,7 +982,7 @@ Every implementation change must be checked against the relevant items below:
 
 - Re-read this complete living specification and the dedicated transparency specification before changing the site.
 - Used the project owner's explicit authorization to inspect local business records and corroborated the publishable legal identity across official ELSTER material, FixAds invoices through 2026, the owner's CV, and a FixAds-billed communications record.
-- Added only the verified public business facts: Anton Goldberg trading as FixAds, Schönhauser Allee 108 in 10439 Berlin, `info@fixads.xyz`, direct telephone `+49 152 26215466`, and Wirtschafts-Identifikationsnummer `DE419002120-00001`.
+- Added the verified public business identity, address, public email, then-authorized direct telephone, and Wirtschafts-Identifikationsnummer. The direct telephone was later removed from public pages and this living specification at the owner's request on 2026-07-23.
 - Deliberately excluded the personal tax number, personal tax identification number, banking information, client records, invoice transactions, passwords, and unrelated personal documents.
 - Replaced the three localized footer models with one shared English footer component across English, German, Hebrew, and all legal pages. Kept it left-to-right inside Hebrew while leaving the Hebrew document and marketing layout right-to-left. The footer remains the only country/language control.
 - Added a German-only `/impressum/`, bilingual English/German `/privacy/`, English `/terms/`, and English `/accessibility/`, all with direct canonical routes and the same footer.
