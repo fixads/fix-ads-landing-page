@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { content } from "../content.js";
+import { servicePageEntries } from "./service-pages.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const output = path.join(root, "netlify-dist");
@@ -46,10 +47,17 @@ await Promise.all(
     await fs.writeFile(path.join(localeDirectory, "index.html"), localizeHtml(template, content[locale]));
   }),
 );
+await Promise.all(
+  servicePageEntries.map(async ({ relativePath, html }) => {
+    const destination = path.join(output, relativePath);
+    await fs.mkdir(path.dirname(destination), { recursive: true });
+    await fs.writeFile(destination, html);
+  }),
+);
 
 await fs.writeFile(path.join(output, "index.html"), localizeHtml(template, content.en));
 await Promise.all(
-  ["app.js", "content.js", "footer.js", "legal.js", "styles.css", "robots.txt", "sitemap.xml"].map((file) =>
+  ["app.js", "content.js", "footer.js", "legal.js", "service-page.js", "styles.css", "robots.txt", "sitemap.xml"].map((file) =>
     fs.copyFile(path.join(root, file), path.join(output, file)),
   ),
 );
