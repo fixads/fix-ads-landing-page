@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { servicePageEntries } from "./service-pages.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const output = path.join(root, "dist");
@@ -18,6 +19,7 @@ const textFiles = [
   "content.js",
   "footer.js",
   "legal.js",
+  "service-page.js",
   "impressum/index.html",
   "privacy/index.html",
   "terms/index.html",
@@ -49,6 +51,7 @@ const assetMimeType = (file) => {
 const textEntries = await Promise.all(
   textFiles.map(async (file) => [`/${file}`, await fs.readFile(path.join(root, file), "utf8")]),
 );
+textEntries.push(...servicePageEntries.map(({ route, html }) => [route, html]));
 const assetEntries = await Promise.all(
   assetFiles.map(async (file) => [`/${file}`, (await fs.readFile(path.join(root, file))).toString("base64")]),
 );
@@ -57,6 +60,10 @@ const mimeTypes = {
   "/styles.css": "text/css; charset=utf-8",
   "/app.js": "text/javascript; charset=utf-8",
   "/content.js": "text/javascript; charset=utf-8",
+  "/footer.js": "text/javascript; charset=utf-8",
+  "/legal.js": "text/javascript; charset=utf-8",
+  "/service-page.js": "text/javascript; charset=utf-8",
+  ...Object.fromEntries(servicePageEntries.map(({ route }) => [route, "text/html; charset=utf-8"])),
   ...Object.fromEntries(assetFiles.map((file) => [`/${file}`, assetMimeType(file)])),
 };
 
@@ -117,9 +124,20 @@ export default {
       return Response.redirect(new URL(\`/\${localeWithoutSlash[1]}/\`, request.url), 308);
     }
 
+    if (pathname === "/en/services" || pathname === "/de/leistungen" || pathname === "/he/services") {
+      return Response.redirect(new URL(\`\${pathname}/\`, request.url), 308);
+    }
+
     if (/^\\/(en|de|he)\\/$/.test(pathname)) {
       return response(request.method === "HEAD" ? null : TEXT_FILES["/index.html"], {
         contentType: MIME_TYPES["/index.html"],
+      });
+    }
+
+    if (TEXT_FILES[pathname]) {
+      return response(request.method === "HEAD" ? null : TEXT_FILES[pathname], {
+        contentType: MIME_TYPES[pathname],
+        cacheControl: pathname.endsWith("/") ? "no-cache" : "public, max-age=300",
       });
     }
 
@@ -128,13 +146,6 @@ export default {
       const file = \`/\${legalPage[1]}/index.html\`;
       return response(request.method === "HEAD" ? null : TEXT_FILES[file], {
         contentType: "text/html; charset=utf-8",
-      });
-    }
-
-    if (TEXT_FILES[pathname]) {
-      return response(request.method === "HEAD" ? null : TEXT_FILES[pathname], {
-        contentType: MIME_TYPES[pathname],
-        cacheControl: pathname === "/index.html" ? "no-cache" : "public, max-age=300",
       });
     }
 
