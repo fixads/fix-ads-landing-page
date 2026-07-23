@@ -214,7 +214,7 @@ app.innerHTML = `
           <p class="hero-care reveal">${page.hero.care}</p>
           <div class="hero-actions reveal">
             <a class="button button--primary" href="#contact">${page.hero.cta}${arrowIcon()}</a>
-            <a class="button button--ghost" href="#services">${page.hero.secondary}</a>
+            <a class="button button--ghost" href="${page.servicePage.path}">${page.hero.secondary}</a>
           </div>
         </div>
         <aside class="signal-card reveal" aria-label="${page.hero.signal}">
@@ -257,6 +257,9 @@ app.innerHTML = `
           <p>${page.servicesHeading.body}</p>
         </div>
         <div class="service-grid">${serviceCards}</div>
+        <div class="services-more reveal">
+          <a class="button button--primary" href="${page.servicePage.path}">${page.servicePage.explore}${arrowIcon()}</a>
+        </div>
       </div>
     </section>
 
@@ -332,7 +335,7 @@ app.innerHTML = `
         <p class="eyebrow">${page.closing.eyebrow}</p>
         <h2>${page.closing.title}</h2>
         <p>${page.closing.body}</p>
-        <a class="button button--light" href="#contact" data-dock-hide>${page.closing.cta}${arrowIcon()}</a>
+        <a class="button button--light" href="#contact">${page.closing.cta}${arrowIcon()}</a>
       </div>
     </section>
 
@@ -464,34 +467,8 @@ window.addEventListener("keydown", (event) => {
 if (mobileContactDock) {
   const heroActions = document.querySelector(".hero-actions");
   const dockBlockers = new Set();
-  const dockCollisionSelector = "p, h1, h2, h3, h4, li, a, button, label, input, select, textarea, img, figure";
   let hasPassedHeroActions = false;
   let dockRenderFrame = 0;
-
-  const dockWouldCoverContent = () => {
-    if (!window.matchMedia("(max-width: 620px)").matches) return false;
-    const style = window.getComputedStyle(mobileContactDock);
-    const width = mobileContactDock.offsetWidth || 170;
-    const height = mobileContactDock.offsetHeight || 48;
-    const bottom = Number.parseFloat(style.bottom) || 12;
-    const side = document.documentElement.dir === "rtl"
-      ? Number.parseFloat(style.left) || 14
-      : Number.parseFloat(style.right) || 14;
-    const left = document.documentElement.dir === "rtl" ? side : window.innerWidth - side - width;
-    const top = window.innerHeight - bottom - height;
-    const points = [
-      [left + 8, top + 8],
-      [left + width / 2, top + height / 2],
-      [left + width - 8, top + height - 8],
-    ];
-
-    return points.some(([x, y]) =>
-      document.elementsFromPoint(x, y).some((element) => {
-        if (element === mobileContactDock || mobileContactDock.contains(element)) return false;
-        return pageMain?.contains(element) && element.matches(dockCollisionSelector);
-      }),
-    );
-  };
 
   renderMobileDock = () => {
     const canShow =
@@ -499,10 +476,9 @@ if (mobileContactDock) {
       hasPassedHeroActions &&
       dockBlockers.size === 0 &&
       !document.body.classList.contains("menu-open");
-    const isVisible = canShow && !dockWouldCoverContent();
-    mobileContactDock.classList.toggle("is-visible", isVisible);
-    mobileContactDock.setAttribute("aria-hidden", String(!isVisible));
-    mobileContactDock.tabIndex = isVisible ? 0 : -1;
+    mobileContactDock.classList.toggle("is-visible", canShow);
+    mobileContactDock.setAttribute("aria-hidden", String(!canShow));
+    mobileContactDock.tabIndex = canShow ? 0 : -1;
   };
 
   const updateHeroPosition = () => {
@@ -540,7 +516,7 @@ if (mobileContactDock) {
       { rootMargin: "0px 0px -8% 0px", threshold: 0 },
     );
 
-    [document.querySelector("[data-dock-hide]"), document.querySelector("#contact"), siteFooter]
+    [document.querySelector("#contact"), siteFooter]
       .filter(Boolean)
       .forEach((element) => dockBlockerObserver.observe(element));
   } else {
