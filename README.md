@@ -35,7 +35,7 @@ Before any deployment, verify that the protected transparency route and represen
 
 ## Project status
 
-The multilingual design was approved by the project owner and published to `https://www.fixads.xyz` on 2026-07-16 after protected Netlify drafts passed verification. The permanent legal pages and shared English footer were first published as verified deploy `6a60a81d3f96ee114dee1b30` on 2026-07-22. Later that day, CRM authentication deploy `6a60d74ac87da5183901b4c9` correctly updated the `bluyacht-leads` and callback Functions but was built from the older assistant package, removing the locale and legal routes. The site was recovered as verified deploy `6a60dbca19befec4b5c3d812`, but on 2026-07-23 the same older CRM deploy was republished and again removed the locale and legal files. The current production deploy is verified release `6a61caff3f05b61691da9938`: it restores the approved marketing and legal experience, adds localized service-detail pages, preserves all ten Functions and three schedules, and keeps the protected transparency files byte-identical. It is locked in Netlify to stop another automatic publication from replacing it; future planned production work must explicitly unlock it only after a protected replacement draft is ready.
+The multilingual design was approved by the project owner and published to `https://www.fixads.xyz` on 2026-07-16 after protected Netlify drafts passed verification. Later CRM and recovery releases are recorded below. The current production deploy is locked release `6a7616783bceee5b93c19a09`, published on 2026-08-07 at `17:35:37.789Z`. It restores the approved multilingual marketing, localized service, and legal pages after production deploy `6a70ade1957ee024eae2d24c` had replaced them with the old AI Solution Assistant package. The recovery preserves the exact protected Transparency files from that newer production baseline, all ten Functions, all three schedules, both forms, the current legacy files, and the verified 29-rule route set. Future planned production work must explicitly unlock it only after a protected replacement draft is ready.
 
 - The animated multilingual website source exists in `preview-site/` and remains available as a separate review build at `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site`.
 - Direct review paths are `/en/`, `/de/`, and `/he/`; the review root uses available edge country information to send Israel to Hebrew, Germany to German, and other visitors to English.
@@ -871,6 +871,7 @@ Known repository and hosting state on 2026-07-16:
 - `www.fixads.xyz` remains the primary custom domain. The bare apex `fixads.xyz` is registered on the same Netlify project as a domain alias so HTTP and HTTPS requests can terminate safely and redirect to the canonical `www` host. Netlify DNS manages both hostnames; do not remove the apex alias when changing domain configuration.
 - The permanent legal-page source was added on 2026-07-22 using only business facts verified from the owner's records and the actual marketing-site data flow. Production integration must remove the three obsolete immutable-legacy redirects for `/impressum`, `/privacy`, and `/terms`, serve the four canonical local legal pages, and allow Netlify's directory routing to normalize non-trailing-slash requests without a competing explicit redirect rule or any interception of `/transparency`.
 - The 2026-07-23 service/mobile/legal recovery used protected draft `6a61caff3f05b61691da9938`, verified it on the deploy URL, rechecked production against CRM baseline `6a60d74ac87da5183901b4c9`, and published the exact draft at `2026-07-23T08:06:31.543Z`. The live release remains pinned with Netlify's deploy lock. Unlock production only as the final deliberate step of a future protected release, then lock the newly verified published deploy after its live checks pass.
+- The 2026-08-03 PW Perfection release used current production `6a706b6490023abb0dfa885c` as its exact baseline and overlaid only the new Transparency HTML, JavaScript, and CSS. Draft and production deploy `6a70839807b37e72c401d1b5` preserved every non-Transparency file, ten Function digests, three schedules, and 29 redirects. It was published at `2026-08-03T12:06:11.004Z` and locked after live verification.
 
 ### GitHub source backup
 
@@ -941,13 +942,47 @@ Every implementation change must be checked against the relevant items below:
 - [ ] The Impressum destination always remains German with `lang="de"`, regardless of detected country or selected website language.
 - [ ] The Privacy Policy accurately describes the current hosting, form fields, browser storage, cookies, analytics, and recipient flow; no unimplemented tracking is described.
 - [ ] The repository contains no personal tax number, personal tax identification number, banking data, client records, invoice transactions, passwords, or other source-record contents.
-- [ ] `/transparency` and all `/transparency/**` routes remain untouched and operational; any authorized shared-footer update is confined to the footer.
+- [ ] `/transparency` and all `/transparency/**` routes remain operational; changes are limited to the exact scope authorized by `TRANSPARENCY_README.md`.
 - [ ] Accessibility and keyboard behavior remain usable.
 - [ ] No secrets, private tokens, or personal data were added to browser code or the repository.
 - [ ] This README accurately documents the resulting website.
 - [ ] The Change Log contains an entry for the change.
 
 ## Change Log
+
+### 2026-08-07 — Restore the multilingual website after the old AI assistant overwrite
+
+- Re-read this complete living specification and `TRANSPARENCY_README.md` before inspecting or changing production.
+- Reproduced the owner's report in a real phone browser: production deploy `6a70ade1957ee024eae2d24c`, published on 2026-08-03 at `15:04:22.567Z` with title `Restore merged BluYacht notice and all leads after automatic overwrite`, served the old `FixAds - AI Solution Assistant` homepage while `/en/`, `/de/`, and `/he/` returned `404`.
+- Used that exact locked deployment as the recovery baseline rather than rolling back the newer application state. Preserved its ten Function digests, three schedules, both registered forms, current legacy files, and every protected Transparency file.
+- Confirmed that the protected files in the 15:04 UTC baseline are newer than the earlier 12:59 UTC Transparency release documented below. Froze the exact current production hashes before recovery: HTML `4865d5f3f14ec8562fd88e2b6055f7170bb84969`, JavaScript `e962f77c533b876be74ec7e505d5b458d35d0313`, CSS `0df759a1c5c46a21bd4d68a3795a9796580257b9`, legacy shell `560de3bbccebfd7d0ff7f87b5229521203dec8b4`, and protected logo `84e765aff19a5f9f95ce26dc53f8fb23c82fd703`.
+- Rebuilt the already approved marketing package from `preview-site/` without changing its source copy or design. Overlaid only those marketing files while retaining the production baseline's non-marketing file map and Function bundles.
+- Rejected ready draft `6a7615c587fb24488033bb73` because retaining the overwritten deploy's obsolete root rewrite produced 32 processed redirects and prevented country routing. It was never published.
+- Built corrected protected draft `6a7616783bceee5b93c19a09` with the previously verified clean deploy config and complete 29-rule route table. Germany routed to `/de/`; `/en/`, `/de/`, `/he/`, all three localized service pages, all four legal pages, SEO files, legacy routes, the Transparency root and descendant, and the protected JavaScript/CSS assets returned correctly.
+- Verified the corrected draft at 390 × 844: German had zero horizontal overflow; the menu remained exactly 844px high after scrolling to the bottom; Hebrew remained `lang="he"`/RTL with an English/LTR footer and `Impressum`; the Impressum remained `lang="de"`/LTR; and the marketing console had zero errors or warnings. A clearly labeled synthetic draft contact-form submission returned `200`.
+- Compared the draft Transparency HTML, JavaScript, and CSS byte-for-byte with the production baseline using `cmp` and SHA-1; all three comparisons matched. A real browser rendered the same protected sign-in interface.
+- Rechecked that production was still locked baseline `6a70ade1957ee024eae2d24c`, temporarily unlocked it only for the controlled cutover, published exact verified draft `6a7616783bceee5b93c19a09` at `2026-08-07T17:35:37.789Z`, and locked the new release immediately.
+- Repeated live checks after publication: HTTP redirects to HTTPS, the apex redirects to `www`, Germany routes to `/de/`, every localized home/service/legal route returns `200`, the protected BluYacht endpoint retains its expected unauthenticated `401`, both forms remain registered, all ten Functions and three schedules remain present, and the phone menu passes the bottom-scroll regression check with zero overflow or console errors.
+- Re-downloaded the live protected HTML, JavaScript, and CSS after publication. Their hashes remained exactly `4865d5f3f14ec8562fd88e2b6055f7170bb84969`, `e962f77c533b876be74ec7e505d5b458d35d0313`, and `0df759a1c5c46a21bd4d68a3795a9796580257b9`; byte comparisons against the pre-change captures all returned equal, and `/transparency` plus `/transparency/dashboard` rendered normally. No Transparency source, content, styling, script, asset, authentication, data, or feature was modified.
+
+### 2026-08-03 — Correct PW Perfection to Meta Ads and verify a live lead
+
+- Used the owner's correction that PW Perfection runs Meta Ads, not Google Ads, and limited the change to the PW-only presentation, API route, isolated ingest service, and landing-form attribution.
+- Added `fbclid` capture beside the existing UTM fields, submitted the clearly labeled live lead `TEST Meta Lead 2026-08-03`, and confirmed that the shared CRM returned it with `facebook / paid_social` attribution and the Meta click ID.
+- Published the landing page as deploy `6a7090825016e318dbb0df61`, shared Cloud Run revision `fixads-transparency-api-00051-545`, and isolated ingest revision `pw-perfection-crm-api-00004-z75`.
+- Built protected Transparency draft `6a708f472cace50bb97bc718` from exact locked baseline `6a708cc70845930483f7b3f3`, preserved all ten Functions, three schedules, and 29 redirects, then published and locked that same verified draft at `2026-08-03T12:59:31.912Z`.
+- Rechecked all ten account lists, confirmed all nine other active users still receive HTTP 403 from PW data, and left existing demo staleness and Meta upstream warnings unchanged.
+- Rotated only the PW credential after browser diagnostics exposed its test-time value, synchronized both isolated user hashes, and updated Apple Passwords. No other account password changed.
+
+### 2026-08-03 — Add isolated PW Perfection access inside Transparency
+
+- Re-read this complete living specification, `TRANSPARENCY_README.md`, and the production deployment guard before changing the protected application.
+- Used the owner's explicit instruction to create only the `pw-perfection` account inside the existing Transparency location, with its own password, phone call, prefilled editable WhatsApp, comments, lead statuses, and Google Ads connection state.
+- Kept PW leads in the named `pw-perfection-crm` Firestore database and enforced a server-reloaded `pwPerfectionAccess` entitlement; all nine other active users returned HTTP 403 from the PW route.
+- Built a protected draft from exact production baseline `6a706b6490023abb0dfa885c`. File-map comparison found only four changed Transparency paths and zero non-Transparency changes; all ten Functions, three schedules, and 29 redirects remained exact.
+- Published and locked verified deploy `6a70839807b37e72c401d1b5` at `2026-08-03T12:06:11.004Z`.
+- Live 390×844 testing loaded two isolated test leads, confirmed phone and WhatsApp destinations, saved a timestamped comment, and showed the Google Ads pending state without reusing another customer's ID.
+- Re-ran all ten user account-list checks, the shared Google/Meta health suite, public Transparency response, and existing Function routes. Existing demo age and Meta upstream warnings were unchanged; the preserved BluYacht/chat routes returned expected protected responses rather than 404.
 
 ### 2026-07-23 — Restore the multilingual release, clarify the Impressum, stabilize mobile contact, and add localized service pages
 
