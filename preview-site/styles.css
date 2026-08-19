@@ -1047,6 +1047,9 @@ html[lang="de"] .hero-title {
 }
 
 .ticker-track.is-paused,
+.ticker-track.is-touch-paused,
+.ticker:hover .ticker-track,
+.ticker:focus-within .ticker-track,
 .client-track.is-paused {
   animation-play-state: paused;
 }
@@ -1074,6 +1077,8 @@ html[lang="de"] .hero-title {
   display: inline-flex;
   align-items: center;
   gap: 9px;
+  color: inherit;
+  text-decoration: none;
   white-space: nowrap;
 }
 
@@ -1107,6 +1112,21 @@ html[lang="de"] .hero-title {
   width: 79px;
   height: 20px;
   filter: brightness(0);
+}
+
+.ticker-logo--klaviyo {
+  width: 68px;
+  height: 20px;
+}
+
+.ticker-logo--shopify {
+  width: 84px;
+  height: 24px;
+}
+
+.ticker-logo--odoo {
+  width: 64px;
+  height: 20px;
 }
 
 .ticker-label--sr {
@@ -3742,17 +3762,26 @@ html[lang="de"] .hero-title {
     animation: none;
   }
 
+  .ticker,
   .client-rail {
     overflow-x: auto;
     -webkit-mask-image: none;
     mask-image: none;
     scroll-snap-type: x mandatory;
+    scrollbar-width: none;
   }
 
+  .ticker::before,
+  .ticker::after {
+    display: none;
+  }
+
+  .ticker-item[aria-hidden="true"],
   .client-set[aria-hidden="true"] {
     display: none;
   }
 
+  .ticker-item,
   .client-logo-link {
     scroll-snap-align: start;
   }

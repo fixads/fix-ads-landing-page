@@ -50,18 +50,21 @@ const platformMarks = {
     className: "ticker-logo--meta",
     width: 290,
     height: 191,
+    href: "https://www.facebook.com/business/ads",
   },
   "Google Ads": {
     src: "/assets/platforms/google-ads.svg",
     className: "ticker-logo--google",
     width: 251,
     height: 230,
+    href: "https://ads.google.com/",
   },
   "Yelp Ads": {
     src: "/assets/platforms/yelp.svg",
     className: "ticker-logo--yelp",
     width: 40,
     height: 53,
+    href: "https://business.yelp.com/products/yelp-ads/",
   },
   "Amazon Ads": {
     src: "/assets/platforms/amazon-ads.png",
@@ -69,16 +72,45 @@ const platformMarks = {
     width: 4496,
     height: 1134,
     lockup: true,
+    href: "https://advertising.amazon.com/",
+  },
+  Klaviyo: {
+    src: "/assets/platforms/klaviyo.svg",
+    className: "ticker-logo--klaviyo",
+    width: 581,
+    height: 172,
+    lockup: true,
+    href: "https://www.klaviyo.com/",
+  },
+  Shopify: {
+    src: "/assets/platforms/shopify.svg",
+    className: "ticker-logo--shopify",
+    width: 304,
+    height: 87,
+    lockup: true,
+    href: "https://www.shopify.com/",
+  },
+  Odoo: {
+    src: "/assets/platforms/odoo.svg",
+    className: "ticker-logo--odoo",
+    width: 621,
+    height: 196,
+    lockup: true,
+    href: "https://www.odoo.com/",
   },
 };
 
 const tickerItem = (item, hidden = false) => {
   const mark = platformMarks[item];
+  const brandTag = mark?.href ? "a" : "span";
+  const brandAttrs = mark?.href
+    ? ` href="${mark.href}" rel="noreferrer" aria-label="${item}"${hidden ? ' tabindex="-1"' : ""}`
+    : "";
   const content = mark
-    ? `<span class="ticker-brand${mark.lockup ? " ticker-brand--lockup" : ""}">
+    ? `<${brandTag} class="ticker-brand${mark.lockup ? " ticker-brand--lockup" : ""}"${brandAttrs}>
         <img class="ticker-logo ${mark.className}" src="${mark.src}" alt="" aria-hidden="true" width="${mark.width}" height="${mark.height}" decoding="async" />
         ${mark.lockup ? `<span class="ticker-label--sr">${item}</span>` : `<span class="ticker-label">${item}</span>`}
-      </span>`
+      </${brandTag}>`
     : `<span class="ticker-label">${item}</span>`;
 
   return `<span class="ticker-item${mark ? " ticker-item--platform" : ""}"${hidden ? ' aria-hidden="true"' : ""}>${content}<i aria-hidden="true"></i></span>`;
@@ -597,13 +629,13 @@ document.addEventListener("visibilitychange", () => {
   marqueeTracks.forEach(updateMarquee);
 });
 
-document.querySelectorAll(".client-rail").forEach((rail) => {
+document.querySelectorAll(".client-rail, .ticker").forEach((rail) => {
   let resumeTimer = 0;
   rail.addEventListener(
     "pointerdown",
     (event) => {
       if (event.pointerType !== "touch") return;
-      const track = rail.querySelector(".client-track");
+      const track = rail.querySelector(".client-track, .ticker-track");
       if (!track) return;
       window.clearTimeout(resumeTimer);
       track.classList.add("is-touch-paused");
