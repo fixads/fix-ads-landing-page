@@ -965,6 +965,7 @@ Every implementation change must be checked against the relevant items below:
 - Rechecked that production was still locked baseline `6a85b9671986ca901f3b9b8f`, temporarily unlocked it only for the controlled cutover, published that exact verified draft at `2026-08-19T15:08:56.986Z`, and immediately locked production deploy `6a85c66c880b733039531073`; automatic Git builds remain paused.
 - Repeated live checks on `https://www.fixads.xyz`: all seven proper-brand marks load, Shopify renders at 84px wide, the 390px page has no horizontal overflow or console errors, every localized and legal route remains available, both Forms remain registered, and the `fixads-contact` email hook still targets the verified `anton@fixads.xyz` mailbox.
 - Re-downloaded the live Transparency HTML, JavaScript, and CSS after publication and reconfirmed the exact protected hashes above. `/transparency` and `/transparency/dashboard` return and render normally. No `/transparency` route, HTML, JavaScript, CSS, asset, redirect, Function, authentication, data, content, layout, or feature was modified.
+- Backed up the six source/specification files to GitHub branch `codex/fixads-multilingual-production` in commit `487d9c19509d28a91d7fe406f89a285e3c2ffa69`. This branch remains a source backup only and cannot trigger the paused Netlify production build.
 
 ### 2026-08-19 — Verify and repair production contact-form email delivery
 
