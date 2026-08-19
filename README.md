@@ -42,7 +42,7 @@ The multilingual design was approved by the project owner and published to `http
 - Hebrew website content has been supplied and is recorded verbatim in this README.
 - The project owner authorized publication of the market-adapted English and German versions on 2026-07-16; a native German language review remains recommended.
 - The preview uses the active FixAds brand and existing logo from `fixads.xyz`. The requested `myfixers.xyz` hostname did not resolve in DNS when checked on 2026-07-15, so it was not treated as the source site.
-- The approved country blocklist and final form notification setup remain pending. The verified legal identity, German Impressum, bilingual Privacy Policy, Terms of Use, and Accessibility Statement were added to the source on 2026-07-22.
+- The approved country blocklist remains pending. The production `fixads-contact` email notification was configured and live-delivery tested on 2026-08-19. The verified legal identity, German Impressum, bilingual Privacy Policy, Terms of Use, and Accessibility Statement were added to the source on 2026-07-22.
 - An additional application source folder, `acdt-source/`, exists and must not be assumed to be the production source until its role is confirmed.
 
 ## Product summary
@@ -908,7 +908,8 @@ Known repository and hosting state on 2026-07-16:
 - The live project currently has a separate existing `fixads-lead` form. The preview intentionally uses a different form name so current chat leads are not disrupted.
 - Netlify recognized the new `fixads-contact` form from the protected draft on 2026-07-16 with all ten expected fields and honeypot protection. A synthetic draft submission returned the localized success state.
 - The existing `fixads-lead` form remains separately registered with its historical submissions.
-- Notification recipients for `fixads-contact` must still be confirmed in the Netlify dashboard after production publication.
+- The active production email notification is scoped only to `fixads-contact` and delivers to the verified primary FixAds Google Workspace mailbox `anton@fixads.xyz`. The Netlify hook ID is `6a85c3a47cc1001b25959bde`; `fixads-lead` remains separate and unchanged.
+- `admin@fioxads.xyz` is invalid because `fioxads.xyz` has no DNS or MX records. The corrected alias `admin@fixads.xyz` did not receive either Netlify's form notification or a separate external delivery test on 2026-08-19, while the same form notification reached `anton@fixads.xyz` immediately. Do not change the notification back to the admin alias until its Google Workspace routing is repaired and externally retested.
 
 ### SEO and GEO baseline
 
@@ -950,6 +951,17 @@ Every implementation change must be checked against the relevant items below:
 - [ ] The Change Log contains an entry for the change.
 
 ## Change Log
+
+### 2026-08-19 — Verify and repair production contact-form email delivery
+
+- Re-read this complete living specification, the dedicated `TRANSPARENCY_README.md`, and the Netlify Forms workflow before changing the production notification configuration.
+- Confirmed that the live `fixads-contact` form was accepting and storing submissions but had no `submission_created` email notification. The separate historical `fixads-lead` form was left unchanged.
+- Checked the requested `admin@fioxads.xyz` destination and confirmed that the misspelled `fioxads.xyz` domain has no DNS or MX service. Confirmed that the canonical `fixads.xyz` domain uses Google mail.
+- Tested the corrected `admin@fixads.xyz` alias with a form-scoped Netlify notification and a separate external message. Neither reached the connected FixAds inbox, so the failed notification hook was removed instead of leaving a silent or duplicate route.
+- Added a form-scoped production email hook for `fixads-contact` to the verified primary FixAds Google Workspace mailbox `anton@fixads.xyz`.
+- Submitted clearly labeled synthetic production leads, confirmed Netlify stored them under `fixads-contact`, and confirmed the primary-mailbox test notification arrived from `formresponses@netlify.com` immediately with the submitted fields. Removed only the two synthetic Netlify submission records after verification; the form count returned to 13.
+- Re-listed the live configuration after cleanup: exactly one active `submission_created` email hook remains for `fixads-contact`, its recipient is `anton@fixads.xyz`, and both `fixads-contact` and `fixads-lead` remain registered with their prior real-submission counts.
+- This was a Netlify notification configuration change only. No website HTML, CSS, JavaScript, locale route, deployment, Function, schedule, legal page, form schema, or protected Transparency file was changed; production remains locked at deploy `6a85b9671986ca901f3b9b8f`.
 
 ### 2026-08-19 — Republish and lock the approved multilingual website as the main site
 
@@ -1269,5 +1281,4 @@ Every implementation change must be checked against the relevant items below:
 1. Provide the exact countries to block.
 2. Confirm whether a visitor's manual footer selection should be remembered for later visits.
 3. Arrange or approve a native-language review of the published German copy.
-4. Confirm the notification recipients for the new `fixads-contact` Netlify form.
-5. Choose an explicit AI-crawler policy if training and retrieval bots should be handled differently from normal crawlers.
+4. Choose an explicit AI-crawler policy if training and retrieval bots should be handled differently from normal crawlers.
