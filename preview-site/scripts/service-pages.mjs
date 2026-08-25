@@ -55,6 +55,13 @@ const renderProcessItem = (item) => `
   </article>
 `;
 
+const renderFaqItem = (item) => `
+  <article class="service-faq__item reveal reveal-soft">
+    <h3>${item.question}</h3>
+    <p class="service-faq__answer">${item.answer}</p>
+  </article>
+`;
+
 export const servicePageEntries = Object.entries(content).map(([locale, page]) => {
   const service = page.servicePage;
   const rtl = page.dir === "rtl";
@@ -64,27 +71,105 @@ export const servicePageEntries = Object.entries(content).map(([locale, page]) =
   const serviceItems = page.services.map((item, index) => ({
     "@type": "ListItem",
     position: index + 1,
-    name: item.title,
-    url: `${service.canonical}#service-${index + 1}`,
+    item: {
+      "@type": "Service",
+      "@id": `${service.canonical}#service-${index + 1}`,
+      name: item.title,
+      description: item.body.join(" "),
+      url: `${service.canonical}#service-${index + 1}`,
+      provider: { "@id": "https://www.fixads.xyz/#organization" },
+    },
+  }));
+  const faqItems = service.faqItems.map((item, index) => ({
+    "@type": "Question",
+    "@id": `${service.canonical}#question-${index + 1}`,
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
   }));
   const schema = JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "CollectionPage",
+        "@type": "Organization",
+        "@id": "https://www.fixads.xyz/#organization",
+        name: "FixAds",
+        url: "https://www.fixads.xyz/",
+        logo: "https://www.fixads.xyz/assets/fixads-logo.png",
+        image: "https://www.fixads.xyz/assets/hero-team.jpg",
+        email: "info@fixads.xyz",
+        description: page.seo.description,
+        sameAs: ["https://www.linkedin.com/company/fixads"],
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "sales and customer support",
+          email: "info@fixads.xyz",
+          url: `https://www.fixads.xyz/${locale}/#contact`,
+          availableLanguage: ["English", "German", "Hebrew"],
+        },
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.fixads.xyz/#anton-goldberg",
+        name: "Anton Goldberg",
+        jobTitle: "Owner",
+        worksFor: { "@id": "https://www.fixads.xyz/#organization" },
+        sameAs: ["https://www.linkedin.com/in/anton-goldberg-200052193"],
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.fixads.xyz/#website",
+        url: "https://www.fixads.xyz/",
+        name: "FixAds",
+        publisher: { "@id": "https://www.fixads.xyz/#organization" },
+        inLanguage: ["en", "de", "he"],
+      },
+      {
+        "@type": ["CollectionPage", "FAQPage"],
         "@id": `${service.canonical}#page`,
         url: service.canonical,
         name: service.seoTitle,
         description: service.seoDescription,
         inLanguage: locale,
+        dateModified: service.reviewedDate,
+        reviewedBy: { "@id": "https://www.fixads.xyz/#anton-goldberg" },
+        publisher: { "@id": "https://www.fixads.xyz/#organization" },
         isPartOf: { "@id": "https://www.fixads.xyz/#website" },
         about: { "@id": "https://www.fixads.xyz/#organization" },
+        breadcrumb: { "@id": `${service.canonical}#breadcrumb` },
+        hasPart: { "@id": `${service.canonical}#services` },
+        mainEntity: faqItems,
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: [".service-page-hero__intro", ".service-faq__answer"],
+        },
       },
       {
         "@type": "ItemList",
         "@id": `${service.canonical}#services`,
         name: service.detailTitle,
+        numberOfItems: serviceItems.length,
         itemListElement: serviceItems,
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${service.canonical}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: service.homeLabel,
+            item: `https://www.fixads.xyz/${locale}/`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: service.detailTitle,
+            item: service.canonical,
+          },
+        ],
       },
     ],
   }).replaceAll("<", "\\u003c");
@@ -170,6 +255,23 @@ export const servicePageEntries = Object.entries(content).map(([locale, page]) =
           </div>
           <div class="service-method__list">
             ${page.process.items.map(renderProcessItem).join("")}
+          </div>
+        </div>
+      </section>
+
+      <section class="section service-faq" id="faq">
+        <div class="shell">
+          <div class="section-heading service-faq__heading reveal">
+            <p class="eyebrow">${service.faqEyebrow}</p>
+            <h2>${service.faqTitle}</h2>
+            <p class="service-review">
+              ${service.reviewedBy}
+              <span aria-hidden="true">·</span>
+              <time datetime="${service.reviewedDate}">${service.reviewedDateLabel}</time>
+            </p>
+          </div>
+          <div class="service-faq__grid">
+            ${service.faqItems.map(renderFaqItem).join("")}
           </div>
         </div>
       </section>

@@ -86,7 +86,7 @@ Every localized website—Hebrew, English, and German—and every legal page mus
 The shared footer contains:
 
 - English `Company`, `Legal`, and `Country & language` headings.
-- English links for Services, Clients, About, Contact, Client Login, Privacy Policy, Terms of Use, Accessibility Statement, and Impressum.
+- English links for Services, Clients, About, Contact, Client Login, LinkedIn, Privacy Policy, Terms of Use, Accessibility Statement, and Impressum.
 - The same ordered locale choices: `International — English`, `Germany — German`, and `Israel — Hebrew`.
 - The existing FixAds logo, English positioning sentence, public email address, copyright line, and English Back to top action.
 - The only visible country/language control anywhere on the website.
@@ -747,6 +747,94 @@ The service-detail pages reuse the approved eight service descriptions and four 
 - Closing title: `צריכים שירות אחד או את כל המערכת?`
 - Closing body: `ספרו לנו איפה הצמיחה נעצרת. נבחן את המסע הקיים ונזהה את המקום הנכון להתחיל ממנו.`
 
+### Localized service FAQ and review layer
+
+The localized service pages include the following answer-first FAQ content. The visible questions and answers, JSON-LD `FAQPage` questions and answers, and this specification must remain verbatim matches. The FAQ is additive; it does not rewrite or replace the approved homepage or service descriptions.
+
+**English**
+
+- Eyebrow: `Common questions`
+- Title: `Clear answers about how the services connect.`
+- Reviewer: `Reviewed by Anton Goldberg, FixAds owner`
+- Review date label: `Last reviewed August 25, 2026`
+- Review date value: `2026-08-25`
+
+**What is performance marketing?**
+
+Performance marketing is a measurable approach to paid media in which campaigns are evaluated against business outcomes such as qualified inquiries, purchases, acquisition cost, and return on investment (ROI). FixAds connects those outcomes to the website, follow-up process, and reporting so channel metrics are not viewed in isolation.
+
+**How does FixAds choose between Meta Ads, Google Ads, Amazon Ads, and Yelp Ads?**
+
+FixAds chooses channels based on the target market, customer intent, offer, buying journey, available data, and the business's follow-up capacity. A platform is used when its audience and format match the action the business needs.
+
+**How does FixAds evaluate lead quality for HVAC and service businesses?**
+
+FixAds evaluates lead quality by connecting campaign targeting, landing-page context, qualification fields, customer relationship management (CRM), follow-up, appointment or estimate stage, and reporting. The exact workflow is based on the service area, sales process, and data the business can verify.
+
+**How do Shopify, Klaviyo, paid media, and analytics work together?**
+
+Shopify manages the storefront and transaction journey, while Klaviyo supports lifecycle email marketing—messages triggered by stages such as signup, cart abandonment, purchase, and win-back. Paid media creates demand, and analytics connects spend with customer actions and purchases.
+
+**When does an Odoo integration make sense?**
+
+An Odoo integration makes sense when information from websites, lead forms, sales, orders, inventory, or customer service must move through one operational workflow. FixAds maps the required data and actions first, then selects a standard connector or a focused custom integration.
+
+**German**
+
+- Eyebrow: `Häufige Fragen`
+- Title: `Klare Antworten zum Zusammenspiel der Leistungen.`
+- Reviewer: `Geprüft von Anton Goldberg, Inhaber von FixAds`
+- Review date label: `Zuletzt geprüft am 25. August 2026`
+- Review date value: `2026-08-25`
+
+**Was ist Performance Marketing?**
+
+Performance Marketing ist ein messbarer Ansatz für bezahlte Werbung, bei dem Kampagnen anhand geschäftlicher Ergebnisse wie qualifizierten Anfragen, Käufen, Akquisitionskosten und Return on Investment (ROI) bewertet werden. FixAds verbindet diese Ergebnisse mit Website, Follow-up und Reporting, damit Kanalmetriken nicht isoliert betrachtet werden.
+
+**Wie wählt FixAds zwischen Meta Ads, Google Ads, Amazon Ads und Yelp Ads?**
+
+FixAds wählt Kanäle anhand von Zielmarkt, Such- und Kaufintention, Angebot, Customer Journey, verfügbarer Datenbasis und Follow-up-Kapazität des Unternehmens. Eine Plattform wird eingesetzt, wenn Zielgruppe und Format zur gewünschten Kundenaktion passen.
+
+**Wie bewertet FixAds die Leadqualität bei HVAC- und Dienstleistungsunternehmen?**
+
+FixAds bewertet Leadqualität, indem Kampagnen-Targeting, Landingpage-Kontext, Qualifizierungsfelder, Customer Relationship Management (CRM), Follow-up, Termin- oder Angebotsphase und Reporting miteinander verbunden werden. Der genaue Ablauf richtet sich nach Einzugsgebiet, Vertriebsprozess und den verifizierbaren Daten des Unternehmens.
+
+**Wie arbeiten Shopify, Klaviyo, Paid Media und Analytics zusammen?**
+
+Shopify steuert Storefront und Kaufprozess, während Klaviyo das Lifecycle-E-Mail-Marketing unterstützt—also Nachrichten zu Phasen wie Anmeldung, Warenkorbabbruch, Kauf und Reaktivierung. Paid Media erzeugt Nachfrage; Analytics verbindet Werbeausgaben mit Kundenaktionen und Käufen.
+
+**Wann ist eine Odoo-Integration sinnvoll?**
+
+Eine Odoo-Integration ist sinnvoll, wenn Informationen aus Website, Leadformularen, Vertrieb, Aufträgen, Lager oder Kundenservice in einem operativen Ablauf zusammengeführt werden müssen. FixAds definiert zuerst Daten und Aktionen und wählt danach einen Standard-Connector oder eine gezielte individuelle Integration.
+
+**Hebrew**
+
+- Eyebrow: `שאלות נפוצות`
+- Title: `תשובות ברורות על הדרך שבה השירותים מתחברים.`
+- Reviewer: `נבדק על ידי אנטון גולדברג, הבעלים של FixAds`
+- Review date label: `נבדק לאחרונה ב־25 באוגוסט 2026`
+- Review date value: `2026-08-25`
+
+**מהו Performance Marketing?**
+
+Performance Marketing הוא גישה מדידה לפרסום ממומן, שבה קמפיינים נבחנים לפי תוצאות עסקיות כמו פניות איכותיות, רכישות, עלות רכישה והחזר על ההשקעה (ROI). FixAds מחברת את התוצאות לאתר, לתהליך ה־Follow-up ולדיווח, כך שמדדי הערוצים אינם נבחנים בנפרד.
+
+**איך FixAds בוחרת בין Meta Ads, Google Ads, Amazon Ads ו־Yelp Ads?**
+
+FixAds בוחרת ערוצים לפי שוק היעד, כוונת הלקוח, ההצעה, מסע הרכישה, הנתונים הזמינים ויכולת ה־Follow-up של העסק. פלטפורמה נבחרת כאשר הקהל והפורמט שלה מתאימים לפעולה שהעסק רוצה לייצר.
+
+**איך FixAds בוחנת את איכות הלידים בעסקי HVAC ושירותים?**
+
+FixAds בוחנת את איכות הלידים באמצעות חיבור בין מיקוד הקמפיין, ההקשר בדף הנחיתה, שדות סינון, מערכת ניהול קשרי לקוחות (CRM), Follow-up, שלב הפגישה או הצעת המחיר והדיווח. התהליך המדויק נקבע לפי אזור השירות, תהליך המכירה והנתונים שהעסק יכול לאמת.
+
+**איך Shopify, Klaviyo, פרסום ממומן ואנליטיקה עובדים יחד?**
+
+Shopify מנהלת את החנות ואת מסע הרכישה, ו־Klaviyo תומכת בשיווק אימייל לאורך מחזור חיי הלקוח—הודעות לפי שלבים כמו הרשמה, נטישת עגלה, רכישה והחזרת לקוחות. הפרסום הממומן מייצר ביקוש, והאנליטיקה מחברת בין ההוצאה לפעולות הלקוח ולרכישות.
+
+**מתי נכון לחבר את Odoo?**
+
+חיבור ל־Odoo מתאים כאשר מידע מהאתר, מטפסי לידים, מכירות, הזמנות, מלאי או שירות לקוחות צריך לעבור בתהליך תפעולי אחד. FixAds מגדירה תחילה את הנתונים והפעולות הנדרשים, ולאחר מכן בוחרת מחבר קיים או אינטגרציה מותאמת וממוקדת.
+
 Production interpretation approved on 2026-07-16: “three pages” originally meant the three localized marketing experiences. The owner expanded the information architecture on 2026-07-23 by requesting a dedicated service explanation for SEO; this creates the three localized service-detail routes above without changing country routing or the footer-only language-control rule.
 
 ## Design and accessibility requirements
@@ -780,6 +868,7 @@ The implemented preview includes:
 - A Kimi K3-assisted mobile refinement that keeps the real hero call to action reachable earlier by using a smaller locale-aware title scale, tighter phone spacing, 16px primary hero copy, and a shorter version of the existing connected-system panel.
 - A compact floating contact action that is hidden in the initial HTML/CSS state and becomes available only after the real hero actions have scrolled above the viewport. It no longer checks every piece of underlying text or the closing call to action, which caused it to flicker while scrolling. It remains visible consistently through the content and hides only while the mobile menu, contact section, or footer is present.
 - Dedicated service-detail pages use the same brand system, semantic heading structure, localized direction, responsive service index, eight approved service explanations, working principles, static crawler-visible content, lightweight reveal motion, and full reduced-motion behavior.
+- Each localized service-detail page adds a dark, responsive five-question FAQ grid with answer-first definitions and a visible owner-reviewer/date line. The grid collapses to one column below 880px, preserves Hebrew RTL, and its content remains static and readable without JavaScript.
 - A denser one-column phone form that keeps every field visible and preserves validation, autofill, mixed-direction values, 16px control text, 44px minimum controls, and a vertically resizable message field while reducing unnecessary empty space.
 - Purposeful mobile motion instead of one uniform long reveal: shorter section transitions, softer card/process entrances, a single final-word hero marker sweep, press and arrow feedback, and automatic pausing of both moving rails when offscreen or when the browser tab is hidden.
 - A screenshot-based Kimi K3 visual pass using the rendered English, German, Hebrew RTL, mobile-menu, services, and contact states. The accepted refinements keep the floating contact action from covering readable content, strengthen visual separation between phone form fields, present required markers as neutral instructions until a real validation error exists, and soften the platform rail at the viewport edges without changing its content or motion.
@@ -829,6 +918,7 @@ Known repository and hosting state on 2026-07-16:
 - Canonical production host: `https://www.fixads.xyz`.
 - `acdt-source/` contains a separate application scaffold; its relationship to the root deployment requires confirmation before production development starts.
 - `preview-site/` is the living multilingual marketing source. Its Netlify marketing build is generated separately so protected production files can be merged without rebuilding or modifying the transparency application.
+- `preview-site/llms.txt` is the factual AI-discovery summary. It lists only canonical public routes, approved service scope, public contact information, and the current locale policy; it excludes protected Transparency routes and makes no inferred country-blocking claims.
 
 ### Preview architecture
 
@@ -837,7 +927,7 @@ Known repository and hosting state on 2026-07-16:
 - Shared interface and interactions: `preview-site/app.js` and `preview-site/styles.css`.
 - Shared footer source: `preview-site/footer.js`, rendered from the single English `sharedFooter` model in `preview-site/content.js` on all marketing and legal pages.
 - Legal-page source: `preview-site/impressum/`, `preview-site/privacy/`, `preview-site/terms/`, `preview-site/accessibility/`, and `preview-site/legal.js`.
-- Localized service-page generation: `preview-site/scripts/service-pages.mjs` creates the static `/en/services/`, `/de/leistungen/`, and `/he/services/` documents from approved content in `preview-site/content.js`; `preview-site/service-page.js` supplies only progressive reveal, scroll-progress, and header-state behavior.
+- Localized service-page generation: `preview-site/scripts/service-pages.mjs` creates the static `/en/services/`, `/de/leistungen/`, and `/he/services/` documents from approved content in `preview-site/content.js`; it renders the visible localized FAQ/reviewer layer and matching JSON-LD. `preview-site/service-page.js` supplies only progressive reveal, scroll-progress, and header-state behavior.
 - `npm run serve` uses normal static-directory routing rather than a single-page fallback so local legal-page requests resolve to their own documents instead of the marketing homepage.
 - Platform-mark assets: `preview-site/assets/platforms/`. Meta, Google Ads, Yelp, Klaviyo, Shopify, and Odoo are transparent SVGs sourced from the brands' official websites; Amazon Ads is the official transparent PNG lockup. The seven proper-brand entries appear as authentic marks in the English, German, and Hebrew ticker, while generic capability entries remain text. The second repeated rail is hidden from assistive technology and its duplicated links are removed from keyboard order.
 - Client-mark assets: `preview-site/assets/clients/`. The 15 authentic SVG/PNG marks are local, transparently cropped, collectively about 264KB, and mapped to their verified destinations in `preview-site/content.js`. The visible links carry company-name accessibility labels; the repeated marquee copy is hidden and removed from keyboard order.
@@ -851,7 +941,7 @@ Known repository and hosting state on 2026-07-16:
 
 ### Netlify production integration
 
-- `preview-site/scripts/build-netlify.mjs` creates a marketing-and-legal package in `preview-site/netlify-dist/` with physical locale, localized service-detail, and legal HTML documents plus shared JavaScript, localized content, footer module, styles, logo, photographs, `robots.txt`, and `sitemap.xml`.
+- `preview-site/scripts/build-netlify.mjs` creates a marketing-and-legal package in `preview-site/netlify-dist/` with physical locale, localized service-detail, and legal HTML documents plus shared JavaScript, localized content, footer module, styles, logo, photographs, `robots.txt`, `sitemap.xml`, and `llms.txt`.
 - The current production root uses three ordered, root-only Netlify redirects with country conditions: `IL` redirects to `/he/`, `DE` redirects to `/de/`, and every other visitor redirects to `/en/`. Direct locale URLs remain stable. The source edge implementation in `preview-site/netlify/edge-functions/locale-router.ts` remains available, but the current function-bearing production baseline is intentionally deployed without an edge function.
 - The edge function matches only `GET /`. It cannot run for `/transparency`, `/transparency/**`, legal pages, assets, form submissions, or locale pages.
 - The deployment process begins from the exact currently published Netlify file map and adds only the marketing files, localized routes, SEO/GEO files, and root locale edge bundle.
@@ -888,7 +978,7 @@ Known repository and hosting state on 2026-07-16:
 - Direct review URLs: `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site/en/`, `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site/de/`, and `https://fixads-multilingual-preview.anton-goldberg.chatgpt.site/he/`.
 - Current saved and published review release: Sites version 7, source commit `4a6943163813e29b35a1fdd5038508951c4a6179`, deployment `appgdep_6a60a99f412481918084553452e4e439`.
 - The Sites review project is `appgprj_6a58733e0cbc81919c68610515ea07ca`; it is separate from the Netlify production project and does not deploy to or modify `fixads.xyz`.
-- `preview-site/.openai/hosting.json` binds the review source to the Sites project. `preview-site/scripts/build-sites.mjs` packages the shared HTML, localized content, CSS, JavaScript, exact logo, review photographs, advertising-platform marks, and all current client assets into the Sites worker output under `preview-site/dist/`; asset discovery is recursive so an approved asset added under `preview-site/assets/` is not silently omitted from the review build.
+- `preview-site/.openai/hosting.json` binds the review source to the Sites project. `preview-site/scripts/build-sites.mjs` packages the shared HTML, localized content, CSS, JavaScript, `llms.txt`, exact logo, review photographs, advertising-platform marks, and all current client assets into the Sites worker output under `preview-site/dist/`; asset discovery is recursive so an approved asset added under `preview-site/assets/` is not silently omitted from the review build.
 - `npm run build` and `npm run build:sites` create the same Sites review package. Generated `preview-site/dist/` output is not source content and may be removed or regenerated.
 - The Sites review root mirrors the intended country fallback using hosting-edge country data when available. Stable locale paths remain the authoritative way to inspect a specific language.
 - The Sites review worker accepts test submissions on `/en/`, `/de/`, and `/he/` and returns a review-only success response; it does not deliver leads. Production lead delivery remains the responsibility of the Netlify Forms workflow on `fixads.xyz`.
@@ -918,10 +1008,12 @@ Known repository and hosting state on 2026-07-16:
 - `/en/`, `/de/`, and `/he/` have static self-referencing canonicals, reciprocal absolute `hreflang` links, and an English `x-default` URL.
 - `/en/services/`, `/de/leistungen/`, and `/he/services/` are static, crawlable service-detail pages with localized titles, descriptions, canonicals, reciprocal `hreflang`, an English `x-default`, a visible eight-service index, and internal links from each localized homepage.
 - Open Graph and Twitter metadata use the canonical locale URL, localized title and description, the existing hero photograph, and the FixAds site name.
-- Crawler-visible JSON-LD identifies `FixAds` as an `Organization` and the multilingual property as a `WebSite`; service-detail pages add only a `CollectionPage` and an `ItemList` matching their visible service content. Only visible and verified properties are included; no placeholder, review, rating, phone, address, or social-profile data is published.
+- Crawler-visible homepage JSON-LD identifies `FixAds` as an `Organization`, the multilingual property as a `WebSite`, and verified operator Anton Goldberg as a `Person`. The Organization includes the public `info@fixads.xyz` contact point, available English/German/Hebrew languages, and the verified FixAds LinkedIn company `sameAs`; the Person uses the verified public owner LinkedIn profile. No private phone, rating, review, certification, guarantee, or platform-partner claim is included.
+- Each localized service page embeds its Organization, Person, and WebSite nodes and represents the same visible document as both `CollectionPage` and `FAQPage`. Its graph includes exactly eight visible-matching `Service` entries inside an `ItemList`, a localized `BreadcrumbList`, five exact visible-matching questions and accepted answers, the visible review date and reviewer, and `SpeakableSpecification` selectors for the concise introduction and FAQ answers.
 - `robots.txt` allows normal crawling and declares `https://www.fixads.xyz/sitemap.xml`. No AI-crawler-specific allow or block policy is added because the owner has not selected a training/retrieval stance.
+- `/llms.txt` provides a concise factual AI-discovery summary with canonical locale/service/legal routes, the approved eight-service scope, public contact route, company LinkedIn, and the current Israel/Germany/allowed-world language policy. It excludes `/transparency` and does not implement or infer a country blocklist.
 - `sitemap.xml` lists the three canonical marketing locales, the three localized service-detail pages with reciprocal `hreflang` alternates, and the four canonical legal pages, using the real 2026-07-23 modification date. Protected transparency routes are intentionally excluded and retain `noindex, nofollow`.
-- GEO improvements are limited to accurate entity markup, clear headings, direct service explanations, structured lists, and extractable market-specific descriptions. No sourced statistics or FAQ schema were invented.
+- GEO improvements are limited to accurate entity markup, clear headings, direct service explanations, structured lists, visible answer-first FAQs, contextual definitions, reviewer/date signals, and extractable market-specific descriptions. FAQ schema exists only because the exact same Q&A is visible. No sourced statistic, customer result, rating, certification, or guarantee was invented.
 - Connection checks measured after publication confirmed: plain HTTP redirects to HTTPS, the HTTPS apex redirects to `https://www.fixads.xyz`, the `www` root redirects by country, and both apex and `www` are covered by the same valid Let's Encrypt certificate for `fixads.xyz` and `*.fixads.xyz` (valid through 2026-09-30).
 
 ## Verification checklist
@@ -935,6 +1027,9 @@ Every implementation change must be checked against the relevant items below:
 - [ ] English copy preserves its U.S.-market, customer-care, e-commerce, HVAC, lead-generation, paid-media, automation, Odoo, and measurable-growth positioning.
 - [ ] German copy preserves its Germany-market, German-company experience, reliability, customer-care, structured execution, innovation, automation, Odoo, and measurable-growth positioning.
 - [ ] Unsupported numbers, guarantees, certifications, or platform-partner claims have not been introduced.
+- [ ] Each localized service page contains five visible FAQ questions and answers that match its `FAQPage` JSON-LD verbatim.
+- [ ] Each localized service page contains eight `Service` entities matching its eight visible service entries, plus localized breadcrumbs and the visible reviewer/date.
+- [ ] `/llms.txt` contains only approved public information and does not list or describe protected Transparency routes.
 - [ ] Israel, Germany, fallback, and blocked-country routing behaviors are covered when routing is affected.
 - [ ] Language routing does not loop or discard the requested path.
 - [ ] The footer is the only visible place where country or language can be viewed or changed.
@@ -951,6 +1046,21 @@ Every implementation change must be checked against the relevant items below:
 - [ ] The Change Log contains an entry for the change.
 
 ## Change Log
+
+### 2026-08-25 — GEO content, entity schema, and AI-discovery improvements prepared
+
+- Re-read this complete living specification before changing the marketing source and used the requested `geo-fix-content` and `geo-fix-schema` workflows with their required reference material.
+- Added five localized, visible, answer-first FAQs to each of `/en/services/`, `/de/leistungen/`, and `/he/services/`. The questions explain performance marketing, paid-channel selection, HVAC/service-business lead quality, Shopify/Klaviyo/paid-media/analytics coordination, and Odoo integrations without adding guarantees, rankings, ratings, certifications, platform-partner claims, invented statistics, or unverifiable outcomes.
+- Added a visible localized reviewer and `2026-08-25` review date to each service page using only the verified public identity of FixAds owner Anton Goldberg.
+- Expanded service-page JSON-LD with self-contained `Organization`, `Person`, and `WebSite` nodes; a dual `CollectionPage`/`FAQPage`; eight visible-matching `Service` entities inside the existing `ItemList`; localized `BreadcrumbList`; exact visible-matching questions and answers; reviewer/date properties; and `SpeakableSpecification` selectors that point only to concise visible text.
+- Completed the homepage Organization graph with the public `info@fixads.xyz` contact point, available languages, verified FixAds LinkedIn `sameAs`, and the verified public owner Person/LinkedIn node. No search action was added because the website has no real site search.
+- Added `preview-site/llms.txt` with the canonical localized and legal routes, approved eight-service scope, public contact channel, and current locale policy. Added it to both Netlify and Sites packaging while deliberately excluding all protected Transparency routes.
+- Added the verified FixAds company LinkedIn link to the single shared English footer used by English, German, Hebrew, and legal marketing pages. This source change does not propagate into or authorize a protected Transparency footer deployment.
+- Created the requested workflow artifacts `content-fix-fixads.xyz-2026-08-25.md` and `schema-fixads.xyz.json`; the schema artifact contains copy-ready script blocks extracted from the successfully generated documents.
+- Rebuilt both `preview-site/netlify-dist/` and `preview-site/dist/`. JSON validation confirmed the homepage Organization/Person/WebSite graph and, in all three service documents, eight Services, five exact visible-matching FAQs, localized breadcrumbs, contact point, `sameAs`, reviewer/date, and valid parseable JSON-LD.
+- Checked English, German, and Hebrew service pages in a real 390 × 844 browser. English and German remained LTR, Hebrew remained RTL, every page exposed five FAQ items, horizontal overflow remained zero, and browser console errors and warnings remained zero.
+- Preserved the geographic logic exactly: Israel continues to route to Hebrew, Germany to German, and every other allowed country to English. No approved blocklist entry was removed, no speculative country was added, the pending country limitation was not cancelled, and the edge-router SHA-256 remained `af5560800742e1f2c081b55b078d5116668f9d077ad54f414739b25fe8256cb0`.
+- Kept `/transparency`, every `/transparency/**` descendant, protected files, bundles, content, routing, authentication, data, and behavior outside the source and generated marketing packages. No production or Sites publication was performed as part of this preparation.
 
 ### 2026-08-19 — Add authentic Shopify, Klaviyo, and Odoo marks to the moving platform rail
 

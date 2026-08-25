@@ -20,6 +20,7 @@ const textFiles = [
   "footer.js",
   "legal.js",
   "service-page.js",
+  "llms.txt",
   "impressum/index.html",
   "privacy/index.html",
   "terms/index.html",
@@ -63,6 +64,7 @@ const mimeTypes = {
   "/footer.js": "text/javascript; charset=utf-8",
   "/legal.js": "text/javascript; charset=utf-8",
   "/service-page.js": "text/javascript; charset=utf-8",
+  "/llms.txt": "text/plain; charset=utf-8",
   ...Object.fromEntries(servicePageEntries.map(({ route }) => [route, "text/html; charset=utf-8"])),
   ...Object.fromEntries(assetFiles.map((file) => [`/${file}`, assetMimeType(file)])),
 };

@@ -2517,6 +2517,72 @@ html[lang="de"] .hero-title {
   line-height: 1.7;
 }
 
+.service-faq {
+  background:
+    radial-gradient(circle at 88% 12%, rgba(21, 82, 255, 0.24), transparent 28%),
+    var(--ink);
+  color: var(--white);
+}
+
+[dir="rtl"] .service-faq {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(21, 82, 255, 0.24), transparent 28%),
+    var(--ink);
+}
+
+.service-faq__heading {
+  margin-block-end: clamp(42px, 6vw, 78px);
+}
+
+.service-faq__heading h2 {
+  max-width: 930px;
+}
+
+.service-review {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  margin: 24px 0 0 !important;
+  color: rgba(255, 255, 255, 0.62) !important;
+  font-size: 0.82rem !important;
+  line-height: 1.5 !important;
+}
+
+.service-faq__grid {
+  display: grid;
+  border-block-start: 1px solid var(--line-light);
+  border-inline-start: 1px solid var(--line-light);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.service-faq__item {
+  min-height: 280px;
+  border-block-end: 1px solid var(--line-light);
+  border-inline-end: 1px solid var(--line-light);
+  padding: clamp(28px, 4.5vw, 58px);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.service-faq__item h3 {
+  margin: 0 0 22px;
+  font-size: clamp(1.4rem, 2.6vw, 2.35rem);
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+}
+
+[dir="rtl"] .service-faq__item h3 {
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.service-faq__answer {
+  max-width: 680px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.75;
+}
+
 .service-page-cta {
   position: relative;
   overflow: hidden;
@@ -3562,6 +3628,14 @@ html[lang="de"] .hero-title {
     position: static;
     margin-block-end: 54px;
   }
+
+  .service-faq__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-faq__item {
+    min-height: 0;
+  }
 }
 
 @media (max-width: 620px) {
@@ -3690,6 +3764,28 @@ html[lang="de"] .hero-title {
     gap: 14px;
     padding-block: 28px;
     grid-template-columns: 36px 1fr;
+  }
+
+  .service-faq__heading {
+    margin-block-end: 34px;
+  }
+
+  .service-review {
+    display: grid;
+    gap: 4px;
+  }
+
+  .service-review > span {
+    display: none;
+  }
+
+  .service-faq__item {
+    padding: 30px 22px;
+  }
+
+  .service-faq__item h3 {
+    margin-block-end: 16px;
+    font-size: clamp(1.35rem, 6.8vw, 1.8rem);
   }
 
   .service-page-cta__inner {

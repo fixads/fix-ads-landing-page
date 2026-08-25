@@ -124,6 +124,7 @@ export const sharedFooter = {
     ["About", "#about"],
     ["Contact", "#contact"],
     ["Client Login", "https://www.fixads.xyz/transparency"],
+    ["LinkedIn", "https://www.linkedin.com/company/fixads"],
   ],
   legalLinks: [
     ["Privacy Policy", "/privacy/"],
@@ -199,6 +200,39 @@ export const content = {
       detailTitle: "Eight services designed to work together.",
       approachEyebrow: "How the work connects",
       approachTitle: "Clear ownership from first signal to next action.",
+      faqEyebrow: "Common questions",
+      faqTitle: "Clear answers about how the services connect.",
+      faqItems: [
+        {
+          question: "What is performance marketing?",
+          answer:
+            "Performance marketing is a measurable approach to paid media in which campaigns are evaluated against business outcomes such as qualified inquiries, purchases, acquisition cost, and return on investment (ROI). FixAds connects those outcomes to the website, follow-up process, and reporting so channel metrics are not viewed in isolation.",
+        },
+        {
+          question: "How does FixAds choose between Meta Ads, Google Ads, Amazon Ads, and Yelp Ads?",
+          answer:
+            "FixAds chooses channels based on the target market, customer intent, offer, buying journey, available data, and the business's follow-up capacity. A platform is used when its audience and format match the action the business needs.",
+        },
+        {
+          question: "How does FixAds evaluate lead quality for HVAC and service businesses?",
+          answer:
+            "FixAds evaluates lead quality by connecting campaign targeting, landing-page context, qualification fields, customer relationship management (CRM), follow-up, appointment or estimate stage, and reporting. The exact workflow is based on the service area, sales process, and data the business can verify.",
+        },
+        {
+          question: "How do Shopify, Klaviyo, paid media, and analytics work together?",
+          answer:
+            "Shopify manages the storefront and transaction journey, while Klaviyo supports lifecycle email marketing—messages triggered by stages such as signup, cart abandonment, purchase, and win-back. Paid media creates demand, and analytics connects spend with customer actions and purchases.",
+        },
+        {
+          question: "When does an Odoo integration make sense?",
+          answer:
+            "An Odoo integration makes sense when information from websites, lead forms, sales, orders, inventory, or customer service must move through one operational workflow. FixAds maps the required data and actions first, then selects a standard connector or a focused custom integration.",
+        },
+      ],
+      reviewedBy: "Reviewed by Anton Goldberg, FixAds owner",
+      reviewedDate: "2026-08-25",
+      reviewedDateLabel: "Last reviewed August 25, 2026",
+      homeLabel: "Home",
       ctaTitle: "Need one service—or the whole system?",
       ctaBody:
         "Tell us where growth is getting stuck. We will look at the existing journey and identify the most useful place to begin.",
@@ -447,6 +481,39 @@ export const content = {
       detailTitle: "Acht Leistungen, die strukturiert zusammenspielen.",
       approachEyebrow: "So greift die Arbeit ineinander",
       approachTitle: "Klare Verantwortung vom ersten Signal bis zum nächsten Schritt.",
+      faqEyebrow: "Häufige Fragen",
+      faqTitle: "Klare Antworten zum Zusammenspiel der Leistungen.",
+      faqItems: [
+        {
+          question: "Was ist Performance Marketing?",
+          answer:
+            "Performance Marketing ist ein messbarer Ansatz für bezahlte Werbung, bei dem Kampagnen anhand geschäftlicher Ergebnisse wie qualifizierten Anfragen, Käufen, Akquisitionskosten und Return on Investment (ROI) bewertet werden. FixAds verbindet diese Ergebnisse mit Website, Follow-up und Reporting, damit Kanalmetriken nicht isoliert betrachtet werden.",
+        },
+        {
+          question: "Wie wählt FixAds zwischen Meta Ads, Google Ads, Amazon Ads und Yelp Ads?",
+          answer:
+            "FixAds wählt Kanäle anhand von Zielmarkt, Such- und Kaufintention, Angebot, Customer Journey, verfügbarer Datenbasis und Follow-up-Kapazität des Unternehmens. Eine Plattform wird eingesetzt, wenn Zielgruppe und Format zur gewünschten Kundenaktion passen.",
+        },
+        {
+          question: "Wie bewertet FixAds die Leadqualität bei HVAC- und Dienstleistungsunternehmen?",
+          answer:
+            "FixAds bewertet Leadqualität, indem Kampagnen-Targeting, Landingpage-Kontext, Qualifizierungsfelder, Customer Relationship Management (CRM), Follow-up, Termin- oder Angebotsphase und Reporting miteinander verbunden werden. Der genaue Ablauf richtet sich nach Einzugsgebiet, Vertriebsprozess und den verifizierbaren Daten des Unternehmens.",
+        },
+        {
+          question: "Wie arbeiten Shopify, Klaviyo, Paid Media und Analytics zusammen?",
+          answer:
+            "Shopify steuert Storefront und Kaufprozess, während Klaviyo das Lifecycle-E-Mail-Marketing unterstützt—also Nachrichten zu Phasen wie Anmeldung, Warenkorbabbruch, Kauf und Reaktivierung. Paid Media erzeugt Nachfrage; Analytics verbindet Werbeausgaben mit Kundenaktionen und Käufen.",
+        },
+        {
+          question: "Wann ist eine Odoo-Integration sinnvoll?",
+          answer:
+            "Eine Odoo-Integration ist sinnvoll, wenn Informationen aus Website, Leadformularen, Vertrieb, Aufträgen, Lager oder Kundenservice in einem operativen Ablauf zusammengeführt werden müssen. FixAds definiert zuerst Daten und Aktionen und wählt danach einen Standard-Connector oder eine gezielte individuelle Integration.",
+        },
+      ],
+      reviewedBy: "Geprüft von Anton Goldberg, Inhaber von FixAds",
+      reviewedDate: "2026-08-25",
+      reviewedDateLabel: "Zuletzt geprüft am 25. August 2026",
+      homeLabel: "Startseite",
       ctaTitle: "Eine Leistung oder das gesamte System?",
       ctaBody:
         "Beschreiben Sie uns, wo Wachstum aktuell ins Stocken gerät. Wir prüfen die bestehende Customer Journey und identifizieren einen sinnvollen Ausgangspunkt.",
@@ -695,6 +762,39 @@ export const content = {
       detailTitle: "שמונה שירותים שנבנו לעבוד יחד.",
       approachEyebrow: "איך העבודה מתחברת",
       approachTitle: "אחריות ברורה מהסיגנל הראשון ועד לפעולה הבאה.",
+      faqEyebrow: "שאלות נפוצות",
+      faqTitle: "תשובות ברורות על הדרך שבה השירותים מתחברים.",
+      faqItems: [
+        {
+          question: "מהו Performance Marketing?",
+          answer:
+            "Performance Marketing הוא גישה מדידה לפרסום ממומן, שבה קמפיינים נבחנים לפי תוצאות עסקיות כמו פניות איכותיות, רכישות, עלות רכישה והחזר על ההשקעה (ROI). FixAds מחברת את התוצאות לאתר, לתהליך ה־Follow-up ולדיווח, כך שמדדי הערוצים אינם נבחנים בנפרד.",
+        },
+        {
+          question: "איך FixAds בוחרת בין Meta Ads, Google Ads, Amazon Ads ו־Yelp Ads?",
+          answer:
+            "FixAds בוחרת ערוצים לפי שוק היעד, כוונת הלקוח, ההצעה, מסע הרכישה, הנתונים הזמינים ויכולת ה־Follow-up של העסק. פלטפורמה נבחרת כאשר הקהל והפורמט שלה מתאימים לפעולה שהעסק רוצה לייצר.",
+        },
+        {
+          question: "איך FixAds בוחנת את איכות הלידים בעסקי HVAC ושירותים?",
+          answer:
+            "FixAds בוחנת את איכות הלידים באמצעות חיבור בין מיקוד הקמפיין, ההקשר בדף הנחיתה, שדות סינון, מערכת ניהול קשרי לקוחות (CRM), Follow-up, שלב הפגישה או הצעת המחיר והדיווח. התהליך המדויק נקבע לפי אזור השירות, תהליך המכירה והנתונים שהעסק יכול לאמת.",
+        },
+        {
+          question: "איך Shopify, Klaviyo, פרסום ממומן ואנליטיקה עובדים יחד?",
+          answer:
+            "Shopify מנהלת את החנות ואת מסע הרכישה, ו־Klaviyo תומכת בשיווק אימייל לאורך מחזור חיי הלקוח—הודעות לפי שלבים כמו הרשמה, נטישת עגלה, רכישה והחזרת לקוחות. הפרסום הממומן מייצר ביקוש, והאנליטיקה מחברת בין ההוצאה לפעולות הלקוח ולרכישות.",
+        },
+        {
+          question: "מתי נכון לחבר את Odoo?",
+          answer:
+            "חיבור ל־Odoo מתאים כאשר מידע מהאתר, מטפסי לידים, מכירות, הזמנות, מלאי או שירות לקוחות צריך לעבור בתהליך תפעולי אחד. FixAds מגדירה תחילה את הנתונים והפעולות הנדרשים, ולאחר מכן בוחרת מחבר קיים או אינטגרציה מותאמת וממוקדת.",
+        },
+      ],
+      reviewedBy: "נבדק על ידי אנטון גולדברג, הבעלים של FixAds",
+      reviewedDate: "2026-08-25",
+      reviewedDateLabel: "נבדק לאחרונה ב־25 באוגוסט 2026",
+      homeLabel: "ראשי",
       ctaTitle: "צריכים שירות אחד או את כל המערכת?",
       ctaBody:
         "ספרו לנו איפה הצמיחה נעצרת. נבחן את המסע הקיים ונזהה את המקום הנכון להתחיל ממנו.",

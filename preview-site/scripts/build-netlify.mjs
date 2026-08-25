@@ -57,7 +57,7 @@ await Promise.all(
 
 await fs.writeFile(path.join(output, "index.html"), localizeHtml(template, content.en));
 await Promise.all(
-  ["app.js", "content.js", "footer.js", "legal.js", "service-page.js", "styles.css", "robots.txt", "sitemap.xml"].map((file) =>
+  ["app.js", "content.js", "footer.js", "legal.js", "service-page.js", "styles.css", "robots.txt", "sitemap.xml", "llms.txt"].map((file) =>
     fs.copyFile(path.join(root, file), path.join(output, file)),
   ),
 );
