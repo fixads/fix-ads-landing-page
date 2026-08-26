@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { optimizeTextAsset } from "./optimize-assets.mjs";
 import { servicePageEntries } from "./service-pages.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -50,7 +51,10 @@ const assetMimeType = (file) => {
 };
 
 const textEntries = await Promise.all(
-  textFiles.map(async (file) => [`/${file}`, await fs.readFile(path.join(root, file), "utf8")]),
+  textFiles.map(async (file) => {
+    const source = await fs.readFile(path.join(root, file), "utf8");
+    return [`/${file}`, await optimizeTextAsset(file, source)];
+  }),
 );
 textEntries.push(...servicePageEntries.map(({ route, html }) => [route, html]));
 const assetEntries = await Promise.all(

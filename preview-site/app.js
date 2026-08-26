@@ -162,7 +162,7 @@ const processItems = page.process.items
   .join("");
 
 const clientSet = (hidden = false) => `
-  <div class="client-set" role="list"${hidden ? ' aria-hidden="true"' : ""}>
+  <div class="client-set"${hidden ? ' aria-hidden="true"' : ""}>
     ${clients
       .map(
         (client) => `
@@ -173,7 +173,6 @@ const clientSet = (hidden = false) => `
             rel="noopener noreferrer"
             aria-label="${client.name}"
             ${hidden ? 'tabindex="-1"' : ""}
-            role="listitem"
           >
             <img
               class="client-logo${client.className ? ` ${client.className}` : ""}"

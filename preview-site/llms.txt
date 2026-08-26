@@ -2,20 +2,20 @@
 
 > FixAds is a Berlin-based performance marketing and digital growth agency that connects paid media, e-commerce, lead generation, websites, lifecycle email, automation, integrations, and analytics into one measurable operating system.
 
-FixAds works with businesses in Germany, Israel, the United States, and other allowed markets. The agency supports e-commerce brands, HVAC and service businesses, professional services, local businesses, and other lead-driven organizations. FixAds is operated by Anton Goldberg. Public inquiries can be sent to info@fixads.xyz or through the localized contact form.
+FixAds works with businesses in Germany, Israel, the United States, and other allowed markets. The agency supports e-commerce brands, HVAC and service businesses, professional services, local businesses, and other lead-driven organizations. FixAds is operated by Anton Goldberg. Public inquiries can be sent to [info@fixads.xyz](mailto:info@fixads.xyz) or through the localized contact form.
 
 ## Canonical pages
 
-- English website: https://www.fixads.xyz/en/
-- German website: https://www.fixads.xyz/de/
-- Hebrew website: https://www.fixads.xyz/he/
-- English services: https://www.fixads.xyz/en/services/
-- German services: https://www.fixads.xyz/de/leistungen/
-- Hebrew services: https://www.fixads.xyz/he/services/
-- German Impressum: https://www.fixads.xyz/impressum/
-- Privacy Policy and Datenschutzerklärung: https://www.fixads.xyz/privacy/
-- Terms of Use: https://www.fixads.xyz/terms/
-- Accessibility Statement: https://www.fixads.xyz/accessibility/
+- [English website](https://www.fixads.xyz/en/)
+- [German website](https://www.fixads.xyz/de/)
+- [Hebrew website](https://www.fixads.xyz/he/)
+- [English services](https://www.fixads.xyz/en/services/)
+- [German services](https://www.fixads.xyz/de/leistungen/)
+- [Hebrew services](https://www.fixads.xyz/he/services/)
+- [German Impressum](https://www.fixads.xyz/impressum/)
+- [Privacy Policy and Datenschutzerklärung](https://www.fixads.xyz/privacy/)
+- [Terms of Use](https://www.fixads.xyz/terms/)
+- [Accessibility Statement](https://www.fixads.xyz/accessibility/)
 
 ## Core services
 
@@ -38,6 +38,6 @@ The English, German, and Hebrew pages contain equivalent service scope adapted t
 
 ## Contact
 
-- Website: https://www.fixads.xyz/
-- Email: info@fixads.xyz
-- LinkedIn: https://www.linkedin.com/company/fixads
+- [Website](https://www.fixads.xyz/)
+- [Email](mailto:info@fixads.xyz)
+- [LinkedIn](https://www.linkedin.com/company/fixads)

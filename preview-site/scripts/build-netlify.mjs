@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { content } from "../content.js";
+import { optimizeTextAsset } from "./optimize-assets.mjs";
 import { servicePageEntries } from "./service-pages.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -56,8 +57,15 @@ await Promise.all(
 );
 
 await fs.writeFile(path.join(output, "index.html"), localizeHtml(template, content.en));
+const optimizedAssets = ["app.js", "content.js", "footer.js", "legal.js", "service-page.js", "styles.css"];
 await Promise.all(
-  ["app.js", "content.js", "footer.js", "legal.js", "service-page.js", "styles.css", "robots.txt", "sitemap.xml", "llms.txt"].map((file) =>
+  optimizedAssets.map(async (file) => {
+    const source = await fs.readFile(path.join(root, file), "utf8");
+    await fs.writeFile(path.join(output, file), await optimizeTextAsset(file, source));
+  }),
+);
+await Promise.all(
+  ["robots.txt", "sitemap.xml", "llms.txt"].map((file) =>
     fs.copyFile(path.join(root, file), path.join(output, file)),
   ),
 );

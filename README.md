@@ -871,6 +871,7 @@ The implemented preview includes:
 - Each localized service-detail page adds a dark, responsive five-question FAQ grid with answer-first definitions and a visible owner-reviewer/date line. The grid collapses to one column below 880px, preserves Hebrew RTL, and its content remains static and readable without JavaScript.
 - A denser one-column phone form that keeps every field visible and preserves validation, autofill, mixed-direction values, 16px control text, 44px minimum controls, and a vertically resizable message field while reducing unnecessary empty space.
 - Purposeful mobile motion instead of one uniform long reveal: shorter section transitions, softer card/process entrances, a single final-word hero marker sweep, press and arrow feedback, and automatic pausing of both moving rails when offscreen or when the browser tab is hidden.
+- Performance-sensitive decorative motion uses compositor-safe `transform` and `opacity` animation. The loader no longer transitions `visibility`, the live-status pulse uses a scaled/opacity pseudo-element instead of animated `box-shadow`, and the analytics chart line is static instead of animating SVG `stroke-dashoffset`; reduced-motion behavior remains unchanged.
 - A screenshot-based Kimi K3 visual pass using the rendered English, German, Hebrew RTL, mobile-menu, services, and contact states. The accepted refinements keep the floating contact action from covering readable content, strengthen visual separation between phone form fields, present required markers as neutral instructions until a real validation error exists, and soften the platform rail at the viewport edges without changing its content or motion.
 - A short FixAds preloader uses the existing logo and brand name with a blue-to-red progress sweep. It runs only once per browser session on a direct locale page, bypasses hash deep links and reduced-motion visitors, remains hidden without JavaScript, begins leaving after the page loads and never waits longer than 900ms to leave.
 - The shared footer keeps the approved links, Client Login, legal destinations, German `Impressum`, and the only country/language control. On phones its company and legal links use compact two-column grids, all controls retain practical 44px targets, and a one-time connected signal line plus a low-opacity FixAds word backdrop add motion and depth without another ambient loop.
@@ -919,6 +920,7 @@ Known repository and hosting state on 2026-07-16:
 - `acdt-source/` contains a separate application scaffold; its relationship to the root deployment requires confirmation before production development starts.
 - `preview-site/` is the living multilingual marketing source. Its Netlify marketing build is generated separately so protected production files can be merged without rebuilding or modifying the transparency application.
 - `preview-site/llms.txt` is the factual AI-discovery summary. It lists only canonical public routes, approved service scope, public contact information, and the current locale policy; it excludes protected Transparency routes and makes no inferred country-blocking claims.
+- `preview-site/llms.txt` uses a Markdown H1 and descriptive Markdown links so Chrome's experimental Lighthouse Agentic Browsing audit can identify its canonical routes.
 
 ### Preview architecture
 
@@ -942,6 +944,7 @@ Known repository and hosting state on 2026-07-16:
 ### Netlify production integration
 
 - `preview-site/scripts/build-netlify.mjs` creates a marketing-and-legal package in `preview-site/netlify-dist/` with physical locale, localized service-detail, and legal HTML documents plus shared JavaScript, localized content, footer module, styles, logo, photographs, `robots.txt`, `sitemap.xml`, and `llms.txt`.
+- Both Netlify and Sites packaging minify the six shared external JavaScript/CSS assets with the pinned `esbuild` development dependency while keeping the authored source readable. Generated HTML, copy, routes, forms, and protected Transparency files are not passed through this optimization.
 - The current production root uses three ordered, root-only Netlify redirects with country conditions: `IL` redirects to `/he/`, `DE` redirects to `/de/`, and every other visitor redirects to `/en/`. Direct locale URLs remain stable. The source edge implementation in `preview-site/netlify/edge-functions/locale-router.ts` remains available, but the current function-bearing production baseline is intentionally deployed without an edge function.
 - The edge function matches only `GET /`. It cannot run for `/transparency`, `/transparency/**`, legal pages, assets, form submissions, or locale pages.
 - The deployment process begins from the exact currently published Netlify file map and adds only the marketing files, localized routes, SEO/GEO files, and root locale edge bundle.
@@ -1046,6 +1049,18 @@ Every implementation change must be checked against the relevant items below:
 - [ ] The Change Log contains an entry for the change.
 
 ## Change Log
+
+### 2026-08-26 — Agentic Browsing and front-end payload optimization
+
+- Re-read the complete living specification and Google's official Lighthouse Agentic Browsing, WebMCP, minification, and non-composited-animation guidance before changing the marketing source.
+- Measured the live English homepage with Lighthouse in Chrome 151. The baseline reported 2,475 bytes of estimated CSS minification savings, 2,534 bytes of estimated JavaScript savings, and three non-composited elements: loader `visibility`, status-pulse `box-shadow`, and chart-line `stroke-dashoffset`.
+- Measured the experimental Agentic Browsing baseline at one of three weighted checks: CLS passed at `0`, while an invalid `listitem` role on client-logo links failed accessibility-tree integrity and bare URLs caused `llms.txt` link discovery to fail. WebMCP checks were not applicable because the origin trial is not registered; no unverified origin-trial token or imperative tool was added.
+- Added one shared build helper using pinned `esbuild` `0.28.2` and made both Netlify and Sites packages minify the authored external CSS and JavaScript without bundling modules or changing readable source files.
+- Removed only the invalid client-link ARIA role overrides, converted the factual `llms.txt` route list to descriptive Markdown links, and replaced the three flagged paint/non-compositor effects with compositor-safe or static presentation while preserving the approved visual system and reduced-motion mode.
+- Rebuilt both packages and ran Lighthouse against the generated Netlify output in Chrome 151. CSS and JavaScript minification both scored `1` with empty opportunity lists, the non-composited-animation audit returned no applicable elements, CLS remained `0`, and the experimental Agentic Browsing category improved from one of three to all three weighted checks (`1.0`). The accessibility tree and `llms.txt` both passed; WebMCP remained correctly not applicable without origin-trial registration.
+- Checked the generated English, German, Hebrew, Hebrew service, and German Impressum documents in a real 390 × 844 browser. All had zero horizontal overflow and zero console warnings/errors; Hebrew remained RTL with an English/LTR footer and LTR email/URL inputs; the bottom-scroll menu remained exactly viewport-height; each homepage retained all contact fields and one footer-only three-link locale control; the service page retained eight services and five FAQs; and the Impressum remained German/LTR.
+- Kept locale routing unchanged: Israel remains Hebrew, Germany remains German, and every other allowed country remains English. No country limitation was removed and no speculative country was added.
+- Kept `/transparency`, every descendant route, its HTML, JavaScript, CSS, assets, routing, authentication, data, and behavior outside the source change and generated marketing package.
 
 ### 2026-08-25 — Publish GEO content, entity schema, and AI-discovery improvements
 

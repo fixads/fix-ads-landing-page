@@ -157,22 +157,24 @@ button:disabled {
   visibility: hidden;
   transition:
     opacity 180ms ease,
-    transform 180ms var(--ease-out),
-    visibility 0s linear 180ms;
+    transform 180ms var(--ease-out);
 }
 
 .loader-wanted .site-loader {
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
-  transition-delay: 0s;
 }
 
 .site-loader.is-leaving {
   opacity: 0;
   pointer-events: none;
   transform: scale(1.02);
-  visibility: hidden;
+  visibility: visible;
+}
+
+.site-loader[hidden] {
+  display: none;
 }
 
 .site-loader__brand {
@@ -919,11 +921,22 @@ html[lang="de"] .hero-title {
 }
 
 .status-dot {
+  position: relative;
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: #41e27d;
-  box-shadow: 0 0 0 6px rgba(65, 226, 125, 0.1);
+}
+
+.status-dot::after {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(65, 226, 125, 0.32);
+  content: "";
+  opacity: 0.7;
+  transform: scale(1);
+  will-change: opacity, transform;
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -1550,9 +1563,8 @@ html[lang="de"] .hero-title {
   stroke: #5b85ff;
   stroke-width: 3;
   vector-effect: non-scaling-stroke;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: draw 3.2s var(--ease) infinite alternate;
+  stroke-dasharray: none;
+  stroke-dashoffset: 0;
 }
 
 .dashboard-card ul {
@@ -2898,7 +2910,7 @@ html[lang="de"] .hero-title {
 }
 
 @keyframes pulse {
-  50% { opacity: 0.55; box-shadow: 0 0 0 10px rgba(65, 226, 125, 0.02); }
+  50% { opacity: 0; transform: scale(3.4); }
 }
 
 @keyframes signal {
@@ -2909,10 +2921,6 @@ html[lang="de"] .hero-title {
 
 @keyframes orbit {
   to { transform: rotate(360deg); }
-}
-
-@keyframes draw {
-  to { stroke-dashoffset: 0; }
 }
 
 @keyframes meter {
