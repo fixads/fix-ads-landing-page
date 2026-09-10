@@ -2899,6 +2899,11 @@ html[lang="de"] .hero-title {
   transform: translateY(0);
 }
 
+/* Shared English footer contrast, including legal and service pages. */
+.site-footer .footer-links h2,
+.site-footer .locale-control h2,
+.site-footer .footer-bottom > span { color: #aab6d0; }
+
 @keyframes marquee {
   to { transform: translateX(-50%); }
 }

@@ -4,38 +4,13 @@ import { fileURLToPath } from "node:url";
 import { content } from "../content.js";
 import { optimizeTextAsset } from "./optimize-assets.mjs";
 import { servicePageEntries } from "./service-pages.mjs";
+import { localizeHomepage } from "./home-pages.mjs";
+import { responsiveImageEntries } from "./responsive-images.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const output = path.join(root, "netlify-dist");
 const locales = ["en", "de", "he"];
 
-const escapeAttribute = (value) => String(value).replaceAll("&", "&amp;").replaceAll('"', "&quot;");
-
-const replaceMeta = (html, attribute, name, value) => {
-  const pattern = new RegExp(`<meta(?=[^>]*${attribute}="${name}")[^>]*>`, "i");
-  return html.replace(pattern, (tag) =>
-    tag.replace(/content="[^"]*"/i, `content="${escapeAttribute(value)}"`),
-  );
-};
-
-const localizeHtml = (template, page) => {
-  let html = template
-    .replace(/<html lang="[^"]+" dir="[^"]+">/i, `<html lang="${page.locale}" dir="${page.dir}">`)
-    .replace(/<title>[^<]*<\/title>/i, `<title>${page.seo.title}</title>`)
-    .replace(
-      /<link rel="canonical" href="[^"]+"\s*\/>/i,
-      `<link rel="canonical" href="${page.seo.canonical}" />`,
-    );
-
-  html = replaceMeta(html, "name", "description", page.seo.description);
-  html = replaceMeta(html, "property", "og:url", page.seo.canonical);
-  html = replaceMeta(html, "property", "og:title", page.seo.title);
-  html = replaceMeta(html, "property", "og:description", page.seo.description);
-  html = replaceMeta(html, "property", "og:locale", page.seo.ogLocale);
-  html = replaceMeta(html, "name", "twitter:title", page.seo.title);
-  html = replaceMeta(html, "name", "twitter:description", page.seo.description);
-  return html;
-};
 
 await fs.rm(output, { recursive: true, force: true });
 await fs.mkdir(output, { recursive: true });
@@ -45,7 +20,7 @@ await Promise.all(
   locales.map(async (locale) => {
     const localeDirectory = path.join(output, locale);
     await fs.mkdir(localeDirectory, { recursive: true });
-    await fs.writeFile(path.join(localeDirectory, "index.html"), localizeHtml(template, content[locale]));
+    await fs.writeFile(path.join(localeDirectory, "index.html"), localizeHomepage(template, content[locale]));
   }),
 );
 await Promise.all(
@@ -56,8 +31,8 @@ await Promise.all(
   }),
 );
 
-await fs.writeFile(path.join(output, "index.html"), localizeHtml(template, content.en));
-const optimizedAssets = ["app.js", "content.js", "footer.js", "legal.js", "service-page.js", "styles.css"];
+await fs.writeFile(path.join(output, "index.html"), localizeHomepage(template, content.en));
+const optimizedAssets = ["app.js", "render-home.js", "content.js", "footer.js", "legal.js", "service-page.js", "styles.css", "growth.css"];
 await Promise.all(
   optimizedAssets.map(async (file) => {
     const source = await fs.readFile(path.join(root, file), "utf8");
@@ -75,5 +50,10 @@ await Promise.all(
   ),
 );
 await fs.cp(path.join(root, "assets"), path.join(output, "assets"), { recursive: true });
+for (const { relativePath, bytes } of await responsiveImageEntries(root)) {
+  const destination = path.join(output, relativePath);
+  await fs.mkdir(path.dirname(destination), { recursive: true });
+  await fs.writeFile(destination, bytes);
+}
 
 console.log(`Built Netlify marketing package at ${output}`);

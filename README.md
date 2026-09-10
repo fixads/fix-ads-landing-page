@@ -707,6 +707,335 @@ Erzählen Sie uns von Ihrem Unternehmen, Ihren Zielen und den aktuellen Herausfo
 
 Localized versions must preserve the core service scope, claims, calls to action, legal meaning, and customer-care positioning while sounding natural in their market. English and German drafts remain subject to project-owner approval; German should also receive a native-language review before publication.
 
+
+### Lead-focused homepage revision — 2026-09-10
+
+The owner's optimization/publication request supersedes the earlier homepage hero wording, long card presentation, section order, and form-required-message rule. Existing eight service descriptions remain unchanged and appear in native disclosure rows plus the dedicated service pages. The current homepage order is: concise hero with interactive goal selector → original platform rail → original client-logo rail → eight expandable services → working principles → marketing transparency explanation → about → four common questions → contact and next steps → the unchanged shared English footer. This changes marketing pages only, never the protected Transparency application.
+
+The original FixAds logo and verified platform/client marks remain unchanged. Existing illustrative agency photographs are reused; no stock image is presented as proof of actual staff or a named client's results. There are no fabricated metrics, reviews, guarantees, time-to-result claims, or partner credentials.
+
+The hero selector offers three business goals and keeps each goal's image, short explanation, and three-stage journey together. Choosing its contact link preselects the corresponding existing service field. Service disclosure rows have detailed-page and preselected-contact links. Homepage FAQs use native disclosures. The hero's former decorative LIVE system panel is replaced by this useful interaction.
+
+The contact form requires full name, email, service, and inquiry consent. Message is optional. Optional company, website, and phone remain available together in an expandable group; all existing Netlify field names and both registered Forms are preserved. A bare website domain is normalized to HTTPS on blur; an invalid optional field opens its group before validation. Success is announced and focused; network failure keeps entered details. No new analytics, cookies, browser storage, tracking pixels, third-party scripts, notification recipients, or CRM changes are introduced.
+
+All localized homepages are now rendered to static HTML by `scripts/home-pages.mjs` and the shared `render-home.js`; `app.js` attaches behavior to the existing document. Both packaging pipelines use the same renderer. New homepage-only `growth.css` is minified separately and is not included by legal or service documents. The FixAds loader keeps its brand animation but begins leaving after 180ms at load, with a 450ms hard leave trigger. Motion is transform/opacity only and respects reduced motion.
+
+Both builds generate 640px and 1040px WebP derivatives of the three existing agency photographs and a 320px lossless Amazon lockup using pinned `sharp` 0.35.4 in `scripts/responsive-images.mjs`. Original images and logo source files are retained unchanged; responsive `srcset` selects the smaller payload on phones. Shared footer headings/copyright receive a contrast correction without changing footer content. The contact service options include the existing eighth service, Creative / Creative / קריאייטיב, before the fallback option. The no-JavaScript honeypot is clipped to a bounded 1px box so it cannot cause RTL horizontal overflow.
+
+Exact localized homepage copy follows. The property names map directly to `growthContent` in `preview-site/content.js`; the headline, intro, care, CTA, and form values replace the previous homepage values at render time. All copy in these models is website copy; URLs, image paths, and service indices are implementation mappings.
+
+#### en
+
+```json
+{
+  "headline": "Better leads. Stronger sales. Connected.",
+  "intro": "Performance marketing, websites, and automation for e-commerce brands, HVAC companies, and ambitious service businesses.",
+  "care": "Your goals matter to us. We connect the work, explain the numbers, and stay involved.",
+  "cta": "Let's talk about your growth",
+  "note": "Start with a conversation about your business.",
+  "choose": "What would you like to improve?",
+  "focusLabel": "Choose your focus",
+  "approach": "A connected approach",
+  "selected": "Discuss this goal",
+  "goals": [
+    {
+      "label": "E-commerce sales",
+      "title": "From first click to the next purchase.",
+      "body": "Connect your ads, Shopify store, Klaviyo flows, and customer data around the whole buying journey.",
+      "steps": [
+        "Attract",
+        "Convert",
+        "Retain"
+      ],
+      "image": "/assets/ecommerce-growth.jpg",
+      "alt": "E-commerce products and a storefront workflow",
+      "service": 2
+    },
+    {
+      "label": "Qualified leads",
+      "title": "Turn interest into a real conversation.",
+      "body": "Connect Google, Meta, or Yelp campaigns with a clear landing page, lead qualification, and reliable follow-up.",
+      "steps": [
+        "Reach",
+        "Qualify",
+        "Follow up"
+      ],
+      "image": "/assets/hvac-leads.jpg",
+      "alt": "HVAC technician at work",
+      "service": 3
+    },
+    {
+      "label": "Smarter automation",
+      "title": "Keep the work moving between your tools.",
+      "body": "Connect forms, bots, CRM, Odoo, and reporting so valuable inquiries and everyday tasks keep moving.",
+      "steps": [
+        "Capture",
+        "Connect",
+        "Act"
+      ],
+      "image": "/assets/hero-team.jpg",
+      "alt": "Digital workflows being planned in a studio",
+      "service": 6
+    }
+  ],
+  "trust": "Businesses we have worked with",
+  "servicesTitle": "The right expertise. Right where you need it.",
+  "servicesBody": "Start with one service or connect the entire customer journey. Explore what each capability brings to your business.",
+  "readMore": "Explore this service",
+  "discussService": "Discuss this service",
+  "servicePrompt": "Select a service below to see how it works.",
+  "nextTitle": "What happens after you get in touch?",
+  "nextSteps": [
+    [
+      "We understand the business.",
+      "We review your goals, current activity, and the problem you want to solve."
+    ],
+    [
+      "We find a useful starting point.",
+      "Together, we look at the journey from first visit to inquiry, sale, or repeat purchase."
+    ],
+    [
+      "We agree on the next step.",
+      "Scope, priorities, and the way we will measure progress are discussed before work begins."
+    ]
+  ],
+  "formTitle": "Let's find your next growth move.",
+  "formBody": "Tell us where you want to go. A few details are enough to start the conversation.",
+  "optional": "Optional",
+  "extra": "Add company, website, or phone (optional)",
+  "messagePlaceholder": "For example: We need more qualified HVAC inquiries, or more repeat purchases from our store.",
+  "formSubmit": "Start the conversation",
+  "formNote": "Your details are used to respond to your inquiry.",
+  "faqTitle": "A few things you might be wondering.",
+  "faqs": [
+    [
+      "Can we start with one service?",
+      "Yes. We can focus on a specific need, such as Google Ads, a Shopify improvement, Klaviyo flows, or an automation, and connect other parts when they are useful."
+    ],
+    [
+      "Can you work with our existing website and tools?",
+      "We review your current setup first. The work can include improving what you already use or connecting it to advertising, CRM, Odoo, email, and reporting."
+    ],
+    [
+      "Do you work with e-commerce and local service businesses?",
+      "Yes. Our experience includes e-commerce brands, HVAC and home services, professional services, and other businesses that depend on qualified inquiries or online sales."
+    ],
+    [
+      "How will we know what is happening?",
+      "We communicate clearly and give clients access to an interface for following activity, results, completed work, and next steps."
+    ]
+  ]
+}
+```
+
+#### de
+
+```json
+{
+  "headline": "Bessere Anfragen. Stärkere Umsätze. Verbunden.",
+  "intro": "Performance Marketing, Websites und Automatisierung für E-Commerce, Fachbetriebe und ambitionierte Dienstleistungsunternehmen.",
+  "care": "Ihre Ziele sind uns wichtig. Wir verbinden die Arbeit, erklären die Zahlen und bleiben an Ihrer Seite.",
+  "cta": "Wachstum gemeinsam besprechen",
+  "note": "Der erste Schritt ist ein Gespräch über Ihr Unternehmen.",
+  "choose": "Was möchten Sie verbessern?",
+  "focusLabel": "Schwerpunkt wählen",
+  "approach": "Ein vernetzter Ansatz",
+  "selected": "Dieses Ziel besprechen",
+  "goals": [
+    {
+      "label": "E-Commerce",
+      "title": "Vom ersten Klick bis zum nächsten Kauf.",
+      "body": "Verbinden Sie Werbung, Shopify-Shop, Klaviyo-Flows und Kundendaten entlang der gesamten Customer Journey.",
+      "steps": [
+        "Erreichen",
+        "Überzeugen",
+        "Binden"
+      ],
+      "image": "/assets/ecommerce-growth.jpg",
+      "alt": "Produkte und Arbeitsabläufe im E-Commerce",
+      "service": 2
+    },
+    {
+      "label": "Qualifizierte Anfragen",
+      "title": "Aus Interesse wird ein echtes Gespräch.",
+      "body": "Verbinden Sie Google- oder Meta-Kampagnen mit einer klaren Landingpage, Qualifizierung und einem zuverlässigen Folgeprozess.",
+      "steps": [
+        "Erreichen",
+        "Qualifizieren",
+        "Nachfassen"
+      ],
+      "image": "/assets/hvac-leads.jpg",
+      "alt": "Techniker bei der Arbeit an einer Klimaanlage",
+      "service": 3
+    },
+    {
+      "label": "Automatisierung",
+      "title": "Damit Ihre Systeme zusammenarbeiten.",
+      "body": "Verbinden Sie Formulare, Bots, CRM, Odoo und Reporting, damit Anfragen und alltägliche Aufgaben verlässlich weiterlaufen.",
+      "steps": [
+        "Erfassen",
+        "Verbinden",
+        "Handeln"
+      ],
+      "image": "/assets/hero-team.jpg",
+      "alt": "Planung digitaler Arbeitsabläufe in einem Studio",
+      "service": 6
+    }
+  ],
+  "trust": "Unternehmen, mit denen wir gearbeitet haben",
+  "servicesTitle": "Die passende Expertise. Genau dort, wo sie hilft.",
+  "servicesBody": "Beginnen Sie mit einer Leistung oder verbinden Sie die gesamte Customer Journey. Entdecken Sie den Beitrag jedes Bereichs für Ihr Unternehmen.",
+  "readMore": "Leistung im Detail",
+  "discussService": "Leistung besprechen",
+  "servicePrompt": "Wählen Sie eine Leistung und erfahren Sie mehr.",
+  "nextTitle": "Was passiert nach Ihrer Anfrage?",
+  "nextSteps": [
+    [
+      "Wir verstehen Ihr Unternehmen.",
+      "Wir betrachten Ihre Ziele, die laufenden Aktivitäten und die Herausforderung, die Sie lösen möchten."
+    ],
+    [
+      "Wir finden einen sinnvollen Einstieg.",
+      "Gemeinsam prüfen wir den Weg vom ersten Besuch zur Anfrage, zum Kauf oder zur Wiederbestellung."
+    ],
+    [
+      "Wir stimmen den nächsten Schritt ab.",
+      "Umfang, Prioritäten und Erfolgsmessung werden besprochen, bevor die Umsetzung beginnt."
+    ]
+  ],
+  "formTitle": "Besprechen wir Ihren nächsten Wachstumsschritt.",
+  "formBody": "Wohin möchten Sie Ihr Unternehmen entwickeln? Ein paar Angaben reichen für den ersten Kontakt.",
+  "optional": "Optional",
+  "extra": "Unternehmen, Website oder Telefon ergänzen (optional)",
+  "messagePlaceholder": "Zum Beispiel: Wir benötigen qualifiziertere Anfragen oder mehr Wiederkäufe in unserem Shop.",
+  "formSubmit": "Gespräch anstoßen",
+  "formNote": "Ihre Angaben werden zur Beantwortung Ihrer Anfrage verwendet.",
+  "faqTitle": "Antworten auf Ihre ersten Fragen.",
+  "faqs": [
+    [
+      "Können wir mit einer einzelnen Leistung starten?",
+      "Ja. Wir können uns auf einen konkreten Bedarf konzentrieren, etwa Google Ads, Shopify-Optimierung, Klaviyo-Flows oder eine Automatisierung, und weitere Bereiche bei Bedarf verbinden."
+    ],
+    [
+      "Arbeiten Sie mit unserer bestehenden Website und unseren Tools?",
+      "Wir prüfen zuerst Ihre vorhandene Umgebung. Anschließend können wir bestehende Lösungen verbessern oder mit Werbung, CRM, Odoo, E-Mail und Reporting verbinden."
+    ],
+    [
+      "Betreuen Sie E-Commerce und lokale Dienstleister?",
+      "Ja. Unsere Erfahrung umfasst E-Commerce-Marken, Klima-, Heizungs- und Gebäudetechnik, professionelle Dienstleistungen und weitere Unternehmen, die qualifizierte Anfragen oder Onlineverkäufe benötigen."
+    ],
+    [
+      "Wie behalten wir den Überblick?",
+      "Wir kommunizieren verständlich und stellen Kunden eine Oberfläche bereit, über die Aktivitäten, Ergebnisse, erledigte Aufgaben und nächste Schritte nachvollzogen werden können."
+    ]
+  ]
+}
+```
+
+#### he
+
+```json
+{
+  "headline": "לידים איכותיים. יותר מכירות. הכול מחובר.",
+  "intro": "פרסום ממומן, אתרים ואוטומציות למותגי E-commerce, לעסקי שירותים ולחברות שרוצות לצמוח.",
+  "care": "המטרות שלכם חשובות לנו. אנחנו מחברים את הפעילות, מסבירים את הנתונים ונשארים מעורבים.",
+  "cta": "בואו נדבר על הצמיחה שלכם",
+  "note": "מתחילים בשיחה על העסק שלכם.",
+  "choose": "מה תרצו לשפר?",
+  "focusLabel": "בחירת תחום",
+  "approach": "גישה שמחברת הכול",
+  "selected": "בואו נדבר על המטרה",
+  "goals": [
+    {
+      "label": "מכירות אונליין",
+      "title": "מהקליק הראשון ועד הרכישה הבאה.",
+      "body": "מחברים בין הפרסום, חנות Shopify, תהליכי Klaviyo ונתוני הלקוחות לאורך כל מסע הרכישה.",
+      "steps": [
+        "חשיפה",
+        "רכישה",
+        "שימור"
+      ],
+      "image": "/assets/ecommerce-growth.jpg",
+      "alt": "מוצרים ותהליכי עבודה בחנות אונליין",
+      "service": 2
+    },
+    {
+      "label": "לידים איכותיים",
+      "title": "מהתעניינות לשיחה עם לקוח.",
+      "body": "מחברים קמפיינים ב־Google או Meta לדף נחיתה ברור, סינון פניות ותהליך מסודר לחזרה ללקוחות.",
+      "steps": [
+        "חשיפה",
+        "סינון",
+        "מעקב"
+      ],
+      "image": "/assets/hvac-leads.jpg",
+      "alt": "טכנאי מיזוג אוויר בזמן עבודה",
+      "service": 3
+    },
+    {
+      "label": "אוטומציות חכמות",
+      "title": "כדי שהמערכות שלכם יעבדו יחד.",
+      "body": "מחברים טפסים, בוטים, CRM, Odoo ודוחות כדי שפניות ומשימות חשובות ימשיכו להתקדם.",
+      "steps": [
+        "איסוף",
+        "חיבור",
+        "פעולה"
+      ],
+      "image": "/assets/hero-team.jpg",
+      "alt": "תכנון תהליכי עבודה דיגיטליים בסטודיו",
+      "service": 6
+    }
+  ],
+  "trust": "חברות ומותגים שעבדנו איתם",
+  "servicesTitle": "המומחיות הנכונה. בדיוק במקום שצריך.",
+  "servicesBody": "אפשר להתחיל משירות אחד או לחבר את כל מסע הלקוח. גלו איך כל תחום יכול לתרום לעסק שלכם.",
+  "readMore": "לפרטים על השירות",
+  "discussService": "בואו נדבר על השירות",
+  "servicePrompt": "בחרו שירות כדי לקרוא איך הוא עובד.",
+  "nextTitle": "מה קורה אחרי שפונים אלינו?",
+  "nextSteps": [
+    [
+      "מכירים את העסק.",
+      "נבחן את המטרות, הפעילות הקיימת והאתגר שתרצו לפתור."
+    ],
+    [
+      "מזהים נקודת התחלה מועילה.",
+      "יחד נבחן את הדרך מהביקור הראשון לפנייה, לרכישה או לרכישה חוזרת."
+    ],
+    [
+      "מסכמים את הצעד הבא.",
+      "נדבר על היקף העבודה, סדרי העדיפויות ודרך המדידה לפני שמתחילים."
+    ]
+  ],
+  "formTitle": "בואו נמצא את הצעד הבא לצמיחה.",
+  "formBody": "ספרו לנו לאן תרצו להגיע. כמה פרטים מספיקים כדי להתחיל בשיחה.",
+  "optional": "רשות",
+  "extra": "הוספת חברה, אתר או טלפון (רשות)",
+  "messagePlaceholder": "לדוגמה: אנחנו צריכים פניות איכותיות יותר, או רוצים להגדיל רכישות חוזרות בחנות.",
+  "formSubmit": "בואו נתחיל בשיחה",
+  "formNote": "הפרטים שלכם ישמשו כדי להשיב לפנייה.",
+  "faqTitle": "כמה דברים שאולי רציתם לשאול.",
+  "faqs": [
+    [
+      "אפשר להתחיל משירות אחד?",
+      "כן. אפשר להתמקד בצורך מסוים, כמו Google Ads, שיפור חנות Shopify, תהליכי Klaviyo או אוטומציה, ולחבר תחומים נוספים לפי הצורך."
+    ],
+    [
+      "אפשר לעבוד עם האתר והכלים שכבר יש לנו?",
+      "נבחן קודם את המערכת הקיימת. אפשר לשפר את מה שכבר עובד או לחבר אותו לפרסום, CRM, Odoo, אימייל ודוחות."
+    ],
+    [
+      "אתם עובדים עם חנויות אונליין ועסקי שירותים?",
+      "כן. הניסיון שלנו כולל מותגי E-commerce, עסקי שירותים מקומיים, מיזוג אוויר, שירותים מקצועיים ועסקים נוספים שמתבססים על פניות איכותיות או מכירות אונליין."
+    ],
+    [
+      "איך נדע מה קורה בפעילות?",
+      "אנחנו מתקשרים בצורה ברורה ומעניקים ללקוחות גישה לממשק שבו אפשר לעקוב אחרי הפעילות, התוצאות, המשימות שבוצעו והשלבים הבאים."
+    ]
+  ]
+}
+```
+
 ## Information architecture
 
 The localized page section sequence is defined by the Hebrew source and the English and German drafts above. The local preview implements one long-form marketing experience per language at `/en/`, `/de/`, and `/he/`, plus one focused service-detail page per language:
@@ -994,7 +1323,7 @@ Known repository and hosting state on 2026-07-16:
 - Shared Netlify form name: `fixads-contact`.
 - Localized form labels, options, validation messages, consent text, success state, and failure state exist for English, Hebrew, and German.
 - Captured fields: full name, company, phone, email, company website, requested service, message, locale, consent, and honeypot.
-- Required fields: full name, email, service, message, and contact consent.
+- Required fields: full name, email, service, and contact consent. Message is optional as of the owner's 2026-09-10 lead-flow optimization; optional company, phone, and website are grouped in a disclosure.
 - Every localized consent sentence links directly to `/privacy/` and explains that submitted details are used to answer the request.
 - The static HTML contains Netlify's form-detection schema and a honeypot; the visible form submits URL-encoded data without navigating away.
 - The visible form posts to its active physical locale route (`/en/`, `/de/`, or `/he/`) so the root country redirects cannot intercept the POST before Netlify Forms processes it.
@@ -1049,6 +1378,17 @@ Every implementation change must be checked against the relevant items below:
 - [ ] The Change Log contains an entry for the change.
 
 ## Change Log
+
+### 2026-09-10 — Lead-focused agency presentation and simpler inquiries
+
+- The owner authorized a more engaging agency website, lead-conversion improvements, and production publication while keeping every protected Transparency page untouched.
+- Backed up the complete marketing source and specifications before edits at `output/backups/fixads-before-growth-20260910.tar.gz`.
+- Added a shared, static homepage renderer so each localized page contains its actual content before JavaScript loads; browser scripts enhance the same markup without replacing it on startup. Both Netlify and Sites builds pass.
+- Replaced the decorative LIVE panel with a three-goal selector, moved genuine client logos closer to the hero, introduced eight compact service disclosures and four FAQs, and simplified the phone-first inquiry form. All new localized copy and behavior are recorded in the Lead-focused homepage revision section above; no invented results or guarantees were added.
+- Optimized existing photographs into responsive WebP assets, retained original logos, corrected text/footer contrast and no-JavaScript RTL overflow, and retained transform/opacity motion with reduced-motion support. `npm audit` reports zero vulnerabilities with pinned `sharp` 0.35.4.
+- Tested all three homepages at 320, 390, 768, and 1440px: no horizontal overflow, correct text direction, one footer-only locale control, eight services, and the German Impressum link. Verified goal/service selection, bottom-scroll mobile menu, optional field disclosure, localized form success/error behavior with mocked responses, preserved entries on failure, and no-JavaScript content. No real lead or email-delivery test is implied by these mocked form checks.
+- Local mobile Lighthouse measured Performance 99, Accessibility 100, Best Practices 100, and SEO 100; LCP approximately 1.61 seconds, CLS 0, and zero non-composited animation elements. These are laboratory measurements, not guarantees of traffic or lead growth.
+- Discovered and preserved the newer locked production baseline `6a9494ff3f9488ae3a1c127a` (2026-08-30), including its BluYacht secret-refresh release, rather than restoring the older release previously recorded here. Created ready draft `6aa2e27f837681e698369aee` by cloning its exact 67-file map and overlaying only the 55 marketing files. All five protected Transparency file hashes, all ten Function digests and per-function region/memory overrides, three schedules, both Forms, and 29 routing rules match that live baseline. Production remains locked and automatic Git builds remain paused pending verified cutover.
 
 ### 2026-08-26 — Agentic Browsing and front-end payload optimization
 

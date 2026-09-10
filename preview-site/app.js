@@ -1,5 +1,6 @@
-import { clients, content } from "./content.js";
-import { renderFooter } from "./footer.js";
+import { content } from "./content.js";
+
+async function initializeHomepage() {
 
 const localeMatch = window.location.pathname.match(/^\/(en|de|he)(?:\/|$)/);
 const locale = localeMatch?.[1] || document.documentElement.dataset.locale || "en";
@@ -28,389 +29,12 @@ updateMetaContent('meta[name="twitter:description"]', page.seo.description);
 const skipLink = document.querySelector(".skip-link");
 if (skipLink) skipLink.textContent = page.skip;
 
-const arrowIcon = (direction = "forward") => {
-  const shouldFlip = page.dir === "rtl" && direction === "forward";
-  return `<svg class="arrow-icon${shouldFlip ? " is-flipped" : ""}" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5"/></svg>`;
-};
-
-const externalAttrs = (href) =>
-  href.startsWith("http") ? ' rel="noreferrer"' : "";
-
-const linkList = (links, className = "") =>
-  links
-    .map(
-      ([label, href]) =>
-        `<a class="${className}" href="${href}"${externalAttrs(href)}>${label}</a>`,
-    )
-    .join("");
-
-const platformMarks = {
-  "Meta Ads": {
-    src: "/assets/platforms/meta.svg",
-    className: "ticker-logo--meta",
-    width: 290,
-    height: 191,
-    href: "https://www.facebook.com/business/ads",
-  },
-  "Google Ads": {
-    src: "/assets/platforms/google-ads.svg",
-    className: "ticker-logo--google",
-    width: 251,
-    height: 230,
-    href: "https://ads.google.com/",
-  },
-  "Yelp Ads": {
-    src: "/assets/platforms/yelp.svg",
-    className: "ticker-logo--yelp",
-    width: 40,
-    height: 53,
-    href: "https://business.yelp.com/products/yelp-ads/",
-  },
-  "Amazon Ads": {
-    src: "/assets/platforms/amazon-ads.png",
-    className: "ticker-logo--amazon",
-    width: 4496,
-    height: 1134,
-    lockup: true,
-    href: "https://advertising.amazon.com/",
-  },
-  Klaviyo: {
-    src: "/assets/platforms/klaviyo.svg",
-    className: "ticker-logo--klaviyo",
-    width: 581,
-    height: 172,
-    lockup: true,
-    href: "https://www.klaviyo.com/",
-  },
-  Shopify: {
-    src: "/assets/platforms/shopify.svg",
-    className: "ticker-logo--shopify",
-    width: 304,
-    height: 87,
-    lockup: true,
-    href: "https://www.shopify.com/",
-  },
-  Odoo: {
-    src: "/assets/platforms/odoo.svg",
-    className: "ticker-logo--odoo",
-    width: 621,
-    height: 196,
-    lockup: true,
-    href: "https://www.odoo.com/",
-  },
-};
-
-const tickerItem = (item, hidden = false) => {
-  const mark = platformMarks[item];
-  const brandTag = mark?.href ? "a" : "span";
-  const brandAttrs = mark?.href
-    ? ` href="${mark.href}" rel="noreferrer" aria-label="${item}"${hidden ? ' tabindex="-1"' : ""}`
-    : "";
-  const content = mark
-    ? `<${brandTag} class="ticker-brand${mark.lockup ? " ticker-brand--lockup" : ""}"${brandAttrs}>
-        <img class="ticker-logo ${mark.className}" src="${mark.src}" alt="" aria-hidden="true" width="${mark.width}" height="${mark.height}" decoding="async" />
-        ${mark.lockup ? `<span class="ticker-label--sr">${item}</span>` : `<span class="ticker-label">${item}</span>`}
-      </${brandTag}>`
-    : `<span class="ticker-label">${item}</span>`;
-
-  return `<span class="ticker-item${mark ? " ticker-item--platform" : ""}"${hidden ? ' aria-hidden="true"' : ""}>${content}<i aria-hidden="true"></i></span>`;
-};
-
-const tickerRail = [
-  ...page.ticker.map((item) => tickerItem(item)),
-  ...page.ticker.map((item) => tickerItem(item, true)),
-].join("");
-
-const serviceCards = page.services
-  .map(
-    (service, index) => `
-      <article class="service-card reveal reveal-soft" data-accent="${service.accent}">
-        <div class="service-card__top">
-          <span class="service-number">${service.visual}</span>
-          <span class="service-line" aria-hidden="true"></span>
-        </div>
-        ${
-          service.image
-            ? `<figure class="service-image-wrap">
-                <img class="service-image" src="${service.image}" alt="${service.imageAlt}" loading="lazy" width="1400" height="1050" />
-                <span class="image-index" aria-hidden="true">0${index + 1}</span>
-              </figure>`
-            : `<div class="service-visual" aria-hidden="true">
-                <span></span><span></span><span></span><span></span>
-              </div>`
-        }
-        <h3>${service.title}</h3>
-        <div class="service-copy">${service.body.map((paragraph) => `<p>${paragraph}</p>`).join("")}</div>
-        <ul class="tag-list" aria-label="Capabilities">
-          ${service.tags.map((tag) => `<li>${tag}</li>`).join("")}
-        </ul>
-      </article>`,
-  )
-  .join("");
-
-const processItems = page.process.items
-  .map(
-    (item) => `
-      <article class="process-item reveal reveal-soft">
-        <span class="process-number">${item.number}</span>
-        <div>
-          <h3>${item.title}</h3>
-          <p>${item.body}</p>
-        </div>
-      </article>`,
-  )
-  .join("");
-
-const clientSet = (hidden = false) => `
-  <div class="client-set"${hidden ? ' aria-hidden="true"' : ""}>
-    ${clients
-      .map(
-        (client) => `
-          <a
-            class="client-logo-link"
-            href="${client.href}"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="${client.name}"
-            ${hidden ? 'tabindex="-1"' : ""}
-          >
-            <img
-              class="client-logo${client.className ? ` ${client.className}` : ""}"
-              src="${client.logo}"
-              alt=""
-              width="${client.width}"
-              height="${client.height}"
-              loading="lazy"
-              decoding="async"
-            />
-          </a>`,
-      )
-      .join("")}
-  </div>`;
-
-const clientRail = `${clientSet()}${clientSet(true)}`;
-
-const formOptions = page.form.options
-  .map(
-    (option, index) =>
-      `<option value="${index === 0 ? "" : option}"${index === 0 ? " disabled selected" : ""}>${option}</option>`,
-  )
-  .join("");
-
 const app = document.querySelector("#app");
-
-app.innerHTML = `
-  <header class="site-header" data-header>
-    <div class="shell header-inner">
-      <a class="brand" href="/${page.locale}/" aria-label="FixAds home">
-        <span class="brand-mark"><img src="/assets/fixads-logo.png" alt="" width="72" height="72" /></span>
-        <span class="brand-name">FixAds</span>
-      </a>
-      <nav class="desktop-nav" aria-label="Primary navigation">
-        ${linkList(page.nav)}
-      </nav>
-      <div class="header-actions">
-        <a class="text-link desktop-only" href="https://www.fixads.xyz/transparency">${page.login}</a>
-        <a class="button button--small button--light desktop-only" href="#contact">${page.headerCta}${arrowIcon()}</a>
-        <button class="menu-button" type="button" aria-label="${page.menu}" aria-expanded="false" aria-controls="mobile-menu">
-          <span>${page.menu}</span><i></i><i></i>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="${page.menu}" aria-hidden="true">
-    <div class="mobile-menu__visual" aria-hidden="true"><span></span><span></span><i></i></div>
-    <div class="shell mobile-menu__inner">
-      <div class="mobile-menu__links">${linkList(page.nav, "mobile-nav-link")}</div>
-      <div class="mobile-menu__bottom">
-        <a href="https://www.fixads.xyz/transparency">${page.login}</a>
-        <a class="button button--light" href="#contact">${page.headerCta}${arrowIcon()}</a>
-      </div>
-    </div>
-  </div>
-
-  <main id="main-content">
-    <section class="hero" id="home">
-      <div class="hero-image" aria-hidden="true">
-        <img src="/assets/hero-team.jpg" alt="" width="1920" height="1080" fetchpriority="high" />
-        <div class="hero-image__veil"></div>
-      </div>
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="shell hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow hero-eyebrow reveal">${page.hero.eyebrow}</p>
-          <h1 class="hero-title" data-split>${page.hero.title}</h1>
-          <p class="hero-body reveal">${page.hero.body}</p>
-          <p class="hero-care reveal">${page.hero.care}</p>
-          <div class="hero-actions reveal">
-            <a class="button button--primary" href="#contact">${page.hero.cta}${arrowIcon()}</a>
-            <a class="button button--ghost" href="${page.servicePage.path}">${page.hero.secondary}</a>
-          </div>
-        </div>
-        <aside class="signal-card reveal" aria-label="${page.hero.signal}">
-          <div class="signal-card__header">
-            <span class="status-dot"></span>
-            <span>${page.hero.signal}</span>
-            <strong>LIVE</strong>
-          </div>
-          <div class="signal-map" aria-hidden="true">
-            <span class="signal-node node-a"></span>
-            <span class="signal-node node-b"></span>
-            <span class="signal-node node-c"></span>
-            <span class="signal-node node-d"></span>
-            <span class="signal-path path-a"></span>
-            <span class="signal-path path-b"></span>
-            <span class="signal-path path-c"></span>
-          </div>
-          <ol class="signal-list">
-            ${page.hero.metrics.map((metric, index) => `<li><span>0${index + 1}</span>${metric}<i aria-hidden="true"></i></li>`).join("")}
-          </ol>
-        </aside>
-      </div>
-      <div class="hero-caption shell">
-        <span>FixAds / 2026</span>
-        <span>${page.hero.photoAlt}</span>
-      </div>
-    </section>
-
-    <section class="ticker" aria-label="Platforms and capabilities">
-      <div class="ticker-track">
-        ${tickerRail}
-      </div>
-    </section>
-
-    <section class="section services" id="services">
-      <div class="shell">
-        <div class="section-heading reveal">
-          <p class="eyebrow">${page.servicesHeading.eyebrow}</p>
-          <h2>${page.servicesHeading.title}</h2>
-          <p>${page.servicesHeading.body}</p>
-        </div>
-        <div class="service-grid">${serviceCards}</div>
-        <div class="services-more reveal">
-          <a class="button button--primary" href="${page.servicePage.path}">${page.servicePage.explore}${arrowIcon()}</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section process" id="process">
-      <div class="shell process-layout">
-        <div class="process-intro reveal">
-          <p class="eyebrow">${page.process.eyebrow}</p>
-          <h2>${page.process.title}</h2>
-          <div class="orbit-mark" aria-hidden="true">
-            <span></span><span></span><span></span><i></i>
-          </div>
-        </div>
-        <div class="process-list">${processItems}</div>
-      </div>
-    </section>
-
-    <section class="section transparency-section">
-      <div class="transparency-grid" aria-hidden="true"></div>
-      <div class="shell transparency-layout">
-        <div class="transparency-copy reveal">
-          <p class="eyebrow">${page.transparency.eyebrow}</p>
-          <h2>${page.transparency.title}</h2>
-          <p>${page.transparency.body}</p>
-          <a class="button button--light" href="https://www.fixads.xyz/transparency">${page.transparency.cta}${arrowIcon()}</a>
-        </div>
-        <div class="dashboard-card reveal" aria-label="Transparency dashboard preview">
-          <div class="dashboard-top"><span>FIXADS / OVERVIEW</span><i></i></div>
-          <div class="dashboard-chart" aria-hidden="true">
-            <svg viewBox="0 0 600 190" preserveAspectRatio="none">
-              <defs><linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3264ff" stop-opacity=".5"/><stop offset="1" stop-color="#3264ff" stop-opacity="0"/></linearGradient></defs>
-              <path class="chart-area" d="M0 160 C70 150 75 115 140 124 S230 75 290 96 S365 65 405 72 S485 24 600 34 L600 190 L0 190 Z" />
-              <path class="chart-line" d="M0 160 C70 150 75 115 140 124 S230 75 290 96 S365 65 405 72 S485 24 600 34" />
-            </svg>
-          </div>
-          <ul>${page.transparency.list.map((item, index) => `<li><span>0${index + 1}</span><strong>${item}</strong><i></i></li>`).join("")}</ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section clients" id="clients">
-      <div class="shell section-heading section-heading--center reveal">
-        <p class="eyebrow">${page.clients.eyebrow}</p>
-        <h2>${page.clients.title}</h2>
-        <p>${page.clients.body}</p>
-      </div>
-      <div class="client-rail" aria-label="${page.clients.eyebrow}"><div class="client-track">${clientRail}</div></div>
-      <p class="shell client-note">${page.clients.note}</p>
-    </section>
-
-    <section class="section about" id="about">
-      <div class="shell about-layout">
-        <div class="about-title reveal">
-          <p class="eyebrow">${page.about.eyebrow}</p>
-          <h2>${page.about.title}</h2>
-        </div>
-        <div class="about-copy reveal">
-          ${page.about.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("")}
-        </div>
-      </div>
-      <div class="shell system-diagram reveal" aria-label="Connected digital system">
-        <div class="system-core"><img src="/assets/fixads-logo.png" alt="" width="72" height="72" /><strong>FixAds</strong></div>
-        ${page.hero.metrics.map((metric, index) => `<div class="system-node system-node--${index + 1}"><span>0${index + 1}</span>${metric}</div>`).join("")}
-        <svg viewBox="0 0 1000 330" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M500 165 C365 165 360 55 185 55"/><path d="M500 165 C635 165 640 55 815 55"/>
-          <path d="M500 165 C365 165 360 275 185 275"/><path d="M500 165 C635 165 640 275 815 275"/>
-        </svg>
-      </div>
-    </section>
-
-    <section class="closing-cta">
-      <div class="closing-orb" aria-hidden="true"></div>
-      <div class="shell closing-inner reveal">
-        <p class="eyebrow">${page.closing.eyebrow}</p>
-        <h2>${page.closing.title}</h2>
-        <p>${page.closing.body}</p>
-        <a class="button button--light" href="#contact">${page.closing.cta}${arrowIcon()}</a>
-      </div>
-    </section>
-
-    <section class="section contact" id="contact">
-      <div class="shell contact-layout">
-        <div class="contact-intro reveal">
-          <p class="eyebrow">${page.form.eyebrow}</p>
-          <h2>${page.form.title}</h2>
-          <p>${page.form.body}</p>
-          <a href="mailto:info@fixads.xyz">info@fixads.xyz</a>
-        </div>
-        <form class="contact-form reveal" id="contact-form" name="fixads-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-          <input type="hidden" name="form-name" value="fixads-contact" />
-          <input type="hidden" name="locale" value="${page.locale}" />
-          <p class="honeypot" aria-hidden="true"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
-          <div class="field-row">
-            <label class="field"><span>${page.form.fields.name} <i>${page.form.required}</i></span><input name="full-name" autocomplete="name" dir="auto" enterkeyhint="next" required /></label>
-            <label class="field"><span>${page.form.fields.company}</span><input name="company" autocomplete="organization" dir="auto" enterkeyhint="next" /></label>
-          </div>
-          <div class="field-row">
-            <label class="field"><span>${page.form.fields.phone}</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" dir="ltr" enterkeyhint="next" /></label>
-            <label class="field"><span>${page.form.fields.email} <i>${page.form.required}</i></span><input name="email" type="email" autocomplete="email" dir="ltr" enterkeyhint="next" required /></label>
-          </div>
-          <div class="field-row">
-            <label class="field"><span>${page.form.fields.website}</span><input name="website" type="url" autocomplete="url" dir="ltr" enterkeyhint="next" placeholder="https://" /></label>
-            <label class="field"><span>${page.form.fields.service} <i>${page.form.required}</i></span><select name="service" required>${formOptions}</select></label>
-          </div>
-          <label class="field"><span>${page.form.fields.message} <i>${page.form.required}</i></span><textarea name="message" rows="5" dir="auto" enterkeyhint="enter" required></textarea></label>
-          <label class="consent"><input name="consent" type="checkbox" value="yes" required /><span>${page.form.fields.consent}</span></label>
-          <div class="form-footer">
-            <button class="button button--primary" type="submit"><span>${page.form.submit}</span>${arrowIcon()}</button>
-            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <a class="mobile-contact-dock button button--primary" href="#contact" aria-hidden="true" tabindex="-1">
-    ${page.headerCta}${arrowIcon()}
-  </a>
-
-  ${renderFooter({ footer: page.footer, activeLocale: page.locale })}
-`;
+if (app.dataset.renderedLocale !== page.locale) {
+  const { renderHomePage } = await import("./render-home.js");
+  app.innerHTML = renderHomePage(page);
+  app.dataset.renderedLocale = page.locale;
+}
 
 const menuButton = document.querySelector(".menu-button");
 const mobileMenu = document.querySelector(".mobile-menu");
@@ -686,11 +310,40 @@ if (glow && !reducedMotion && window.matchMedia("(pointer: fine)").matches) {
 
 const contactForm = document.querySelector("#contact-form");
 const formStatus = document.querySelector("#form-status");
+if (contactForm) contactForm.noValidate = true;
+
+document.querySelectorAll("[data-goal]").forEach((choice) => {
+  choice.addEventListener("click", (event) => {
+    event.preventDefault();
+    document.querySelectorAll("[data-goal]").forEach((item) => {
+      if (item === choice) item.setAttribute("aria-current", "true");
+      else item.removeAttribute("aria-current");
+    });
+    document.querySelectorAll("[data-goal-panel]").forEach((panel) => {
+      panel.hidden = panel.dataset.goalPanel !== choice.dataset.goal;
+    });
+  });
+});
+
+document.querySelectorAll("[data-service]").forEach((link) => {
+  link.addEventListener("click", () => {
+    const select = contactForm?.querySelector('[name="service"]');
+    if (select) select.selectedIndex = Number(link.dataset.service);
+  });
+});
+
+contactForm?.querySelector('[name="website"]')?.addEventListener("blur", (event) => {
+  const value = event.target.value.trim();
+  if (value && !/^[a-z][a-z\d+.-]*:/i.test(value)) event.target.value = `https://${value}`;
+});
 
 contactForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   if (!contactForm.checkValidity()) {
+    const firstInvalid = contactForm.querySelector(":invalid");
+    const details = firstInvalid?.closest("details");
+    if (details) details.open = true;
     contactForm.reportValidity();
     return;
   }
@@ -714,6 +367,7 @@ contactForm?.addEventListener("submit", async (event) => {
     contactForm.reset();
     formStatus.textContent = page.form.success;
     formStatus.classList.add("is-success");
+    formStatus.focus({ preventScroll: true });
   } catch (error) {
     console.error(error);
     formStatus.textContent = page.form.error;
@@ -723,3 +377,6 @@ contactForm?.addEventListener("submit", async (event) => {
     label.textContent = page.form.submit;
   }
 });
+}
+
+initializeHomepage();

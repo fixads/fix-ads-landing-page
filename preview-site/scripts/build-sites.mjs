@@ -3,6 +3,9 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { optimizeTextAsset } from "./optimize-assets.mjs";
 import { servicePageEntries } from "./service-pages.mjs";
+import { localizeHomepage } from "./home-pages.mjs";
+import { content } from "../content.js";
+import { responsiveImageEntries } from "./responsive-images.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const output = path.join(root, "dist");
@@ -16,7 +19,9 @@ if (!projectId) {
 const textFiles = [
   "index.html",
   "styles.css",
+  "growth.css",
   "app.js",
+  "render-home.js",
   "content.js",
   "footer.js",
   "legal.js",
@@ -57,13 +62,17 @@ const textEntries = await Promise.all(
   }),
 );
 textEntries.push(...servicePageEntries.map(({ route, html }) => [route, html]));
+const homepageTemplate = await fs.readFile(path.join(root, "index.html"), "utf8");
+for (const [locale, page] of Object.entries(content)) textEntries.push([`/${locale}/`, localizeHomepage(homepageTemplate, page)]);
 const assetEntries = await Promise.all(
   assetFiles.map(async (file) => [`/${file}`, (await fs.readFile(path.join(root, file))).toString("base64")]),
 );
 const mimeTypes = {
   "/index.html": "text/html; charset=utf-8",
   "/styles.css": "text/css; charset=utf-8",
+  "/growth.css": "text/css; charset=utf-8",
   "/app.js": "text/javascript; charset=utf-8",
+  "/render-home.js": "text/javascript; charset=utf-8",
   "/content.js": "text/javascript; charset=utf-8",
   "/footer.js": "text/javascript; charset=utf-8",
   "/legal.js": "text/javascript; charset=utf-8",
@@ -72,6 +81,10 @@ const mimeTypes = {
   ...Object.fromEntries(servicePageEntries.map(({ route }) => [route, "text/html; charset=utf-8"])),
   ...Object.fromEntries(assetFiles.map((file) => [`/${file}`, assetMimeType(file)])),
 };
+for (const { relativePath, bytes, mime } of await responsiveImageEntries(root)) {
+  assetEntries.push([`/${relativePath}`, bytes.toString("base64")]);
+  mimeTypes[`/${relativePath}`] = mime;
+}
 
 const worker = `"use strict";
 
@@ -135,7 +148,7 @@ export default {
     }
 
     if (/^\\/(en|de|he)\\/$/.test(pathname)) {
-      return response(request.method === "HEAD" ? null : TEXT_FILES["/index.html"], {
+      return response(request.method === "HEAD" ? null : TEXT_FILES[pathname], {
         contentType: MIME_TYPES["/index.html"],
       });
     }
