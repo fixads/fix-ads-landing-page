@@ -134,7 +134,7 @@ export const servicePageEntries = Object.entries(content).map(([locale, page]) =
         description: service.seoDescription,
         inLanguage: locale,
         dateModified: service.reviewedDate,
-        reviewedBy: { "@id": "https://www.fixads.xyz/#anton-goldberg" },
+        ...(service.reviewedById === null ? {} : { reviewedBy: { "@id": service.reviewedById || "https://www.fixads.xyz/#anton-goldberg" } }),
         publisher: { "@id": "https://www.fixads.xyz/#organization" },
         isPartOf: { "@id": "https://www.fixads.xyz/#website" },
         about: { "@id": "https://www.fixads.xyz/#organization" },

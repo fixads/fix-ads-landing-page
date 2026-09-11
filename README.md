@@ -709,6 +709,139 @@ Erzählen Sie uns von Ihrem Unternehmen, Ihren Zielen und den aktuellen Herausfo
 Localized versions must preserve the core service scope, claims, calls to action, legal meaning, and customer-care positioning while sounding natural in their market. English and German drafts remain subject to project-owner approval; German should also receive a native-language review before publication.
 
 
+### Hebrew-only language refinement — 2026-09-11
+
+The owner's follow-up requested research into larger Israeli agencies and better Hebrew. This revision takes precedence for Hebrew copy only; the September 11 current homepage model below is updated in place. Full research evidence and writing decisions: `preview-site/docs/israeli-agency-research-20260911.md`.
+
+Use natural professional Hebrew: business goals before tool lists, concrete examples of work, customer care expressed as actions, and ordinary Hebrew for follow-up and lead handling. Retain familiar platform names, but explain professional concepts such as performance marketing and CRM in context. Do not import enterprise-agency budgets, staffing claims, clients, certifications, rankings or promises into FixAds. These are established-agency reference examples, not an audited ranking of Israel's largest agencies.
+
+The homepage headline is now `שיווק דיגיטלי. עם חשיבה עסקית.`; its introduction identifies FixAds and its Israel/international audience. Refined goal panels and contact steps name the business need, the work and the next step. The service page removes unexplained Follow-up, HVAC and signal wording; the original eight service body paragraphs remain unchanged. Hebrew service titles/tags and the e-commerce form option are localized, without changing option order or field names. Neutral publisher/update wording replaces the old personal-review claim for the rewritten Hebrew service page, and its schema omits `reviewedBy` when `reviewedById` is explicitly null. English/German schema output remains unchanged. Only the Hebrew service sitemap date changes; homepage dates are already current.
+
+Exact additional Hebrew overrides (relative to the historical sections below):
+
+```json
+{
+  "servicePage": {
+    "path": "/he/services/",
+    "canonical": "https://www.fixads.xyz/he/services/",
+    "seoTitle": "שירותי שיווק דיגיטלי, פרסום ממומן ואוטומציות | FixAds",
+    "seoDescription": "שירותי FixAds לעסקים בישראל ובעולם: ניהול קמפיינים, חנויות אונליין, פניות איכותיות, אתרים, Klaviyo, אוטומציות ומדידה. גלו מה כל שירות כולל.",
+    "eyebrow": "השירותים של FixAds",
+    "title": "השירותים שמחברים בין שיווק לתוצאות עסקיות.",
+    "intro": "מפרסום ממומן ובניית אתרים ועד שימור לקוחות, אוטומציות ומדידה. אפשר להתחיל משירות אחד או לבנות תהליך שמחבר בין הפרסום, הפנייה והמכירה.",
+    "indexLabel": "מפת השירותים",
+    "detailEyebrow": "יכולות",
+    "detailTitle": "שמונה שירותים שנבנו לעבוד יחד.",
+    "approachEyebrow": "איך העבודה מתחברת",
+    "approachTitle": "תהליך עבודה ברור, מהתכנון ועד לשיפור השוטף.",
+    "faqEyebrow": "שאלות נפוצות",
+    "faqTitle": "שאלות על פרסום, לידים וחיבור בין מערכות.",
+    "faqItems": [
+      {
+        "question": "מה זה פרפורמנס (Performance Marketing)?",
+        "answer": "פרפורמנס הוא שיווק שנבחן לפי תוצאות מדידות, כמו פניות איכותיות, רכישות ועלות גיוס לקוח. ב־FixAds בודקים גם את מה שקורה אחרי הקליק — באתר, בטיפול בפנייה ובתהליך המכירה — כדי להבין איך הפרסום תורם לעסק."
+      },
+      {
+        "question": "איך בוחרים איפה לפרסם?",
+        "answer": "בוחרים לפי קהל היעד, המוצר או השירות, שוק הפעילות והתקציב. בוחנים היכן הלקוחות מחפשים או מגלים את ההצעה שלכם, ואיך העסק יטפל בפניות או בהזמנות. הניסיון שלנו כולל Google, Meta, Amazon ו־Yelp; לא כל פלטפורמה מתאימה לכל עסק או לכל שוק."
+      },
+      {
+        "question": "איך בודקים אם הפניות באמת מתאימות לעסק?",
+        "answer": "לא מסתפקים במספר הטפסים שנשלחו. מגדירים עם העסק מהי פנייה רלוונטית — למשל לפי השירות המבוקש ואזור הפעילות — ובודקים מה התקדם לשיחה, לפגישה, להצעת מחיר או למכירה. משלבים את המידע הזמין מהקמפיין וממערכת ניהול הלקוחות, בהתאם לתהליך ולנתונים שאפשר לאמת."
+      },
+      {
+        "question": "איך Shopify, Klaviyo, פרסום ממומן ואנליטיקה עובדים יחד?",
+        "answer": "Shopify משמשת לניהול החנות, ו־Klaviyo מאפשרת לבנות אימיילים ותהליכים לפי פעולות הלקוח, כמו הרשמה, נטישת עגלה ורכישה. הפרסום מביא קהל לחנות, והמדידה עוזרת להבין אילו ביקורים הפכו לרכישות והיכן כדאי לשפר את התהליך."
+      },
+      {
+        "question": "מתי נכון לחבר את Odoo?",
+        "answer": "כשיש צורך להעביר מידע בין האתר, פניות הלקוחות, המכירות או התפעול, אפשר לבחון חיבור ל־Odoo. קודם מגדירים איזה מידע צריך לעבור ומי ישתמש בו, ואז בודקים אם מתאים חיבור קיים או פיתוח ממוקד. היקף החיבור תלוי במערכת ובצרכים שלכם."
+      }
+    ],
+    "reviewedBy": "תוכן השירותים של FixAds",
+    "reviewedDate": "2026-09-11",
+    "reviewedById": null,
+    "reviewedDateLabel": "עודכן ב־11 בספטמבר 2026",
+    "homeLabel": "ראשי",
+    "ctaTitle": "צריכים שירות אחד או את כל המערכת?",
+    "ctaBody": "ספרו לנו מה העסק צריך עכשיו. נבחן את הפעילות הקיימת ונגדיר יחד מטרה, היקף עבודה ונקודת התחלה.",
+    "cta": "בואו נדבר",
+    "back": "חזרה לאתר",
+    "explore": "לשירותים"
+  },
+  "serviceTitles": [
+    "פרסום ממומן ופרפורמנס",
+    "מסחר אלקטרוני",
+    "יצירת לידים",
+    "פיתוח אתרים",
+    "Klaviyo ואימייל מרקטינג",
+    "בוטים ואוטומציות",
+    "אנליטיקה ומדידה",
+    "קריאייטיב"
+  ],
+  "serviceTags": [
+    [
+      "Meta",
+      "Google",
+      "Amazon"
+    ],
+    [
+      "Shopify",
+      "CRO",
+      "שימור לקוחות"
+    ],
+    [
+      "לידים",
+      "שירותים",
+      "איכות"
+    ],
+    [
+      "Shopify",
+      "WordPress",
+      "דפי נחיתה"
+    ],
+    [
+      "Klaviyo",
+      "מסע לקוח",
+      "שימור לקוחות"
+    ],
+    [
+      "Odoo",
+      "בוטים",
+      "אינטגרציות"
+    ],
+    [
+      "דאטה",
+      "דשבורדים",
+      "ROI"
+    ],
+    [
+      "קונספט",
+      "מודעות",
+      "טסטים"
+    ]
+  ],
+  "formOptions": [
+    "בחירת שירות",
+    "פרסום ממומן",
+    "מסחר אלקטרוני",
+    "יצירת לידים",
+    "פיתוח אתרים",
+    "אימייל מרקטינג",
+    "בוטים ואוטומציות",
+    "אנליטיקה",
+    "קריאייטיב",
+    "משהו אחר"
+  ],
+  "seo": {
+    "title": "סוכנות שיווק דיגיטלי לעסקים | פרסום, לידים ומכירות | FixAds",
+    "description": "FixAds לעסקים בישראל ובעולם: פרסום ב־Google וב־Meta, חנויות אונליין, Klaviyo, בוטים ואוטומציות. מחברים שיווק, אתרים וטיפול בפניות סביב המטרות שלכם.",
+    "canonical": "https://www.fixads.xyz/he/",
+    "ogLocale": "he_IL"
+  }
+}
+```
+
 ### Market-specific homepage refinement — 2026-09-11
 
 This section is the current source of truth for the homepage additions and overrides. It supersedes matching values in the September 10 revision below; the original eight service descriptions, client list, legal pages, shared English footer, country policy, and protected Transparency application are unchanged. The owner authorized research-led content refinement and new visual assets, not fabricated performance claims.
@@ -1077,20 +1210,20 @@ Exact current localized homepage content model:
 
 ```json
 {
-  "headline": "מהקליק הראשון ללקוח הבא.",
-  "intro": "מחברים פרסום ממומן, אתרים ואוטומציות כדי לעזור לחנויות אונליין ולעסקי שירותים לייצר פניות איכותיות ומכירות.",
-  "care": "אכפת לנו מהעסק שלכם, לא רק מהקמפיין. אנחנו מבינים את המטרות, מסבירים את ההחלטות ונשארים מעורבים.",
+  "headline": "שיווק דיגיטלי. עם חשיבה עסקית.",
+  "intro": "FixAds היא סוכנות דיגיטל לעסקים בישראל ובעולם. אנחנו מחברים פרסום ממומן, אתרים, קריאייטיב ואוטומציות כדי לעזור לכם להגיע ללקוחות הנכונים, לייצר פניות איכותיות ולהגדיל מכירות.",
+  "care": "העסק שלכם חשוב לנו. אנחנו לומדים את המטרות, מסבירים מה עושים ולמה, ונשארים מעורבים גם אחרי שהקמפיין עולה לאוויר.",
   "cta": "בואו נדבר על העסק שלכם",
-  "note": "אפשר להתחיל מפרויקט ממוקד או לחבר את כל מסע הלקוח.",
-  "choose": "איפה תרצו להתקדם?",
+  "note": "מתחילים בצורך של העסק: שירות ממוקד או ליווי של כל הפעילות הדיגיטלית.",
+  "choose": "מה העסק שלכם צריך עכשיו?",
   "focusLabel": "בחירת מטרה עסקית",
-  "approach": "גישה שמחברת הכול",
-  "selected": "בואו נדבר על הכיוון הזה",
+  "approach": "מהפרסום ועד הטיפול בלקוח",
+  "selected": "בואו נבדוק מה מתאים לעסק",
   "goals": [
     {
       "label": "מכירות אונליין",
-      "title": "מהביקור בחנות לרכישה—ולרכישה הבאה.",
-      "body": "לחנויות שמביאות תנועה אבל רוצות לשפר את תהליך הרכישה ולחזק את הקשר עם לקוחות שכבר קנו.",
+      "title": "מהמודעה ועד הרכישה החוזרת.",
+      "body": "לחנויות אונליין שרוצות לשפר את תהליך הרכישה ולעודד לקוחות לחזור. מחברים את הקמפיינים, עמודי המוצר והאימיילים לאותה מטרה.",
       "steps": [
         "חשיפה",
         "רכישה",
@@ -1100,31 +1233,31 @@ Exact current localized homepage content model:
       "alt": "צילום קונספט של אריזה, בקבוק, בד וטבעת כסף לחנות אונליין",
       "service": 2,
       "scope": [
-        "קמפיינים + שיפור עמודי מוצר",
-        "תהליכי Klaviyo + רכישות חוזרות"
+        "קמפיינים ושיפור עמודי מוצר",
+        "אימיילים ב־Klaviyo ושימור לקוחות"
       ]
     },
     {
       "label": "פניות איכותיות",
-      "title": "פניות שמתאימות לעסק ולשירות שלכם.",
-      "body": "לעסקי שירותים, נדל״ן ושירותים מקצועיים שצריכים לחבר בין הפרסום, סינון הפניות והחזרה ללקוח.",
+      "title": "לא רק יותר פניות. פניות שמתאימות לעסק.",
+      "body": "לעסקי שירותים, נדל״ן ושירותים מקצועיים. מתאימים את הפרסום לקהל ולאזור הפעילות, ומחברים את הפנייה לתהליך מסודר של מענה ומעקב.",
       "steps": [
-        "חשיפה",
-        "סינון",
-        "מעקב"
+        "פרסום",
+        "פנייה",
+        "המשך טיפול"
       ],
       "image": "/assets/market-services.png",
       "alt": "צילום להמחשה של טכנאי בזמן עבודה על יחידת מיזוג אוויר",
       "service": 3,
       "scope": [
-        "Google או Meta + דפי נחיתה",
-        "סינון פניות + מעקב במערכת CRM"
+        "פרסום ב־Google וב־Meta ודפי נחיתה",
+        "סינון פניות ומעקב במערכת ניהול לקוחות"
       ]
     },
     {
       "label": "פחות עבודה ידנית",
-      "title": "שהמידע יתקדם, בלי להעתיק אותו שוב.",
-      "body": "לעסקים שמעבירים נתונים בין כלים, רודפים אחרי עדכונים או מאבדים פניות בדרך.",
+      "title": "פחות העתקות ועדכונים. יותר זמן לעסק.",
+      "body": "מחברים בין הטפסים, מערכת ניהול הלקוחות והכלים שלכם, כדי לצמצם עבודה ידנית ולשמור על רצף הטיפול בפניות ובמשימות.",
       "steps": [
         "איסוף",
         "חיבור",
@@ -1134,117 +1267,117 @@ Exact current localized homepage content model:
       "alt": "צילום קונספט של רצועת מתכת המחברת שלוש מסגרות כחולות",
       "service": 6,
       "scope": [
-        "טפסים, בוטים, CRM + Odoo",
-        "התראות, משימות + דוחות"
+        "חיבור טפסים ובוטים למערכות CRM ו־Odoo",
+        "התראות, משימות ודוחות אוטומטיים"
       ]
     }
   ],
   "trust": "חברות ומותגים שעבדנו איתם",
-  "servicesTitle": "המומחיות שצריך בשביל הצעד הבא.",
-  "servicesBody": "קמפיינים, שיפור המרות, שימור לקוחות ותהליכי עבודה. אפשר לשפר תחום אחד או לחבר את כל המערכת.",
+  "servicesTitle": "מה צריך כדי שהשיווק יעבוד טוב יותר?",
+  "servicesBody": "פרסום שמגיע לקהל הנכון, אתר שמקל על הפנייה או הרכישה, ותהליך מסודר להמשך הטיפול. בוחרים את השירותים לפי המטרות, התקציב והפעילות שכבר קיימת.",
   "readMore": "לפרטים על השירות",
   "discussService": "בואו נדבר על השירות",
-  "servicePrompt": "בחרו שירות כדי לקרוא איך הוא עובד.",
+  "servicePrompt": "בחרו שירות כדי לראות מה הוא כולל.",
   "nextTitle": "מה קורה אחרי שפונים אלינו?",
   "nextSteps": [
     [
       "מכירים את העסק.",
-      "נבחן את המטרות, הפעילות הקיימת והאתגר שתרצו לפתור."
+      "מדברים על הקהל, המטרות והפעילות הקיימת — ומה תרצו לשפר."
     ],
     [
-      "מזהים נקודת התחלה מועילה.",
-      "יחד נבחן את הדרך מהביקור הראשון לפנייה, לרכישה או לרכישה חוזרת."
+      "מגדירים מה צריך לשפר.",
+      "בודקים את הדרך מהמודעה לאתר, לפנייה או לרכישה, ומזהים במה כדאי להתמקד."
     ],
     [
-      "מסכמים את הצעד הבא.",
-      "נדבר על היקף העבודה, סדרי העדיפויות ודרך המדידה לפני שמתחילים."
+      "מסכמים איך מתקדמים.",
+      "מגדירים את היקף העבודה, תחומי האחריות, התקציב והמדדים לפני שמתחילים."
     ]
   ],
-  "formTitle": "מה תרצו לשפר בעסק?",
-  "formBody": "ספרו לנו בקצרה על האתגר. נדבר על הפעילות הקיימת, סדרי העדיפויות ונקודת התחלה שמתאימה לכם.",
+  "formTitle": "בואו נדבר על הצעד הבא של העסק.",
+  "formBody": "ספרו לנו מה אתם עושים ומה תרצו להשיג. כמה פרטים יעזרו לנו להבין את הצורך ולהתחיל שיחה ממוקדת.",
   "optional": "רשות",
   "extra": "הוספת חברה, אתר או טלפון (רשות)",
-  "messagePlaceholder": "לדוגמה: אנחנו צריכים פניות איכותיות יותר, או רוצים להגדיל רכישות חוזרות בחנות.",
+  "messagePlaceholder": "למשל: אנחנו מקבלים פניות שלא מתאימות לשירות שלנו, או רוצים להגדיל מכירות בחנות.",
   "formSubmit": "שליחת פנייה",
   "formNote": "הפרטים שלכם ישמשו כדי להשיב לפנייה.",
-  "faqTitle": "כמה דברים שאולי רציתם לשאול.",
+  "faqTitle": "לפני שמתחילים לעבוד יחד.",
   "faqs": [
     [
       "אפשר להתחיל משירות אחד?",
-      "כן. אפשר להתמקד בצורך מסוים, כמו Google Ads, שיפור חנות Shopify, תהליכי Klaviyo או אוטומציה, ולחבר תחומים נוספים לפי הצורך."
+      "כן. אפשר להתחיל מניהול קמפיינים, שיפור חנות Shopify, אימיילים ב־Klaviyo או אוטומציה ממוקדת. נבחן מה נדרש עכשיו ואיך הוא משתלב בפעילות הקיימת."
     ],
     [
-      "אפשר לעבוד עם האתר והכלים שכבר יש לנו?",
-      "נבחן קודם את המערכת הקיימת. אפשר לשפר את מה שכבר עובד או לחבר אותו לפרסום, CRM, Odoo, אימייל ודוחות."
+      "צריך לבנות אתר חדש כדי לעבוד איתכם?",
+      "לא בהכרח. קודם בודקים את האתר, הכלים והנתונים שכבר יש לכם. לפי הצורך, נציע שיפור ממוקד או חיבור לפרסום, למערכת ניהול לקוחות, לאימיילים ולדוחות."
     ],
     [
-      "אתם עובדים עם חנויות אונליין ועסקי שירותים?",
-      "כן. הניסיון שלנו כולל מותגי E-commerce, עסקי שירותים מקומיים, מיזוג אוויר, שירותים מקצועיים ועסקים נוספים שמתבססים על פניות איכותיות או מכירות אונליין."
+      "לאילו עסקים השירות מתאים?",
+      "אנחנו עובדים עם חנויות אונליין, עסקים מקומיים, נדל״ן ושירותים מקצועיים בישראל ובעולם. הניסיון שלנו כולל גם חברות מיזוג אוויר ושירותים בשוק האמריקאי. את הפעילות מתאימים לקהל, לאזור השירות ולתהליך המכירה."
     ],
     [
-      "איך נדע מה קורה בפעילות?",
-      "אנחנו מתקשרים בצורה ברורה ומעניקים ללקוחות גישה לממשק שבו אפשר לעקוב אחרי הפעילות, התוצאות, המשימות שבוצעו והשלבים הבאים."
+      "איך נדע על מה עובדים ומה התוצאות?",
+      "כל לקוח מקבל גישה לממשק אישי למעקב אחר הפעילות והתוצאות. מציגים את ההוצאות, הפניות או הרכישות, המשימות והצעדים הבאים — ומסבירים מה עובד ומה דורש שיפור."
     ],
     [
-      "איזה תקציב צריך?",
-      "זה תלוי במטרות, בשוק, במערכת הקיימת ובהיקף העבודה. נדבר על השירות והתשלום בנפרד מתקציב הפרסום, לפני שתחליטו איך להתקדם."
+      "איך קובעים את תקציב העבודה והפרסום?",
+      "מתחילים במטרות, בשוק ובהיקף העבודה הנדרש. מציגים בנפרד את שכר הטרחה ואת תקציב המדיה שמשולם לפלטפורמות הפרסום, ומסכמים את המסגרת לפני שמתחילים."
     ],
     [
-      "אפשר לעבוד לצד הצוות שלנו או סוכנות קיימת?",
-      "אפשר לדבר על פרויקט ממוקד או על צורך מסוים במערכת. נסכם מראש את תחומי האחריות, הגישות והעברת העבודה בין הצדדים."
+      "אפשר לעבוד לצד צוות שיווק או סוכנות קיימת?",
+      "כן. אפשר להשתלב בפרויקט מוגדר או לטפל בתחום מסוים. מתאמים מראש מי אחראי לכל חלק, אילו הרשאות נדרשות ואיך מעבירים מידע בין הצדדים."
     ]
   ],
   "market": {
     "introPoints": [
-      "המטרות שלכם קודם",
-      "היקף עבודה ברור",
-      "התקדמות שאפשר לראות"
+      "המטרות שלכם במרכז",
+      "היקף עבודה מוסכם",
+      "נתונים ותהליך עבודה גלויים"
     ],
     "scopeLabel": "במה אפשר להתמקד",
-    "processTitle": "אנחנו רואים את העסק, לא רק את חשבון הפרסום.",
-    "processIntro": "שיווק טוב מתחיל בהבנת העסק וממשיך גם אחרי הקליק. כך אנחנו מחברים את העבודה למה שבאמת חשוב לכם.",
+    "processTitle": "יש מי שמכיר את העסק ונשאר בתמונה.",
+    "processIntro": "אנחנו מחברים בין התכנון לביצוע, עם סדרי עדיפויות ברורים ושיח פתוח לאורך העבודה.",
     "principles": [
       [
-        "מגדירים מה נחשב לתוצאה טובה.",
-        "פניות רלוונטיות, עסקאות, רכישות או לקוחות חוזרים—מסכמים מה חשוב ואיך נבחן את ההתקדמות."
+        "מתחילים במטרה העסקית.",
+        "מגדירים יחד מה חשוב לכם: פניות מתאימות, מכירות, לקוחות חוזרים או חיסכון בעבודה ידנית — ואיך בודקים התקדמות."
       ],
       [
-        "מחברים את השלב הבא.",
-        "המודעה, האתר, הטופס והחזרה ללקוח צריכים לעבוד לאותה מטרה. נזהה איפה המעבר ביניהם דורש שיפור."
+        "מחברים בין השיווק למכירה.",
+        "בודקים שהמסר במודעה, החוויה באתר והטיפול בפנייה ממשיכים זה את זה. מזהים איפה לקוחות נתקעים ומה אפשר לשפר."
       ],
       [
-        "נשארים בתמונה.",
-        "אתם רואים את העבודה ואת סדרי העדיפויות. אנחנו מסבירים החלטות, מציפים בעיות וממשיכים לשפר."
+        "עובדים בשקיפות ובשיתוף פעולה.",
+        "מסבירים את ההחלטות, מעדכנים על העבודה ומשקפים גם בעיות. אתם יודעים מה נעשה, מי מטפל ומה מתוכנן בהמשך."
       ]
     ],
     "ownerLabel": "בהובלת אנטון גולדברג",
     "ownerBody": "ממוקמים בברלין, עם ניסיון בעבודה עם עסקים בישראל, בגרמניה, בארה״ב ובשווקים נוספים.",
     "ownerLink": "היכרות עם הבעלים ב־LinkedIn",
-    "workflowTitle": "לכל פנייה צריך להיות צעד הבא.",
-    "workflowIntro": "דוגמה לתהליך מחובר שאפשר לבנות. את הכלים, הנתונים ותחומי האחריות מתאימים לעסק שלכם.",
+    "workflowTitle": "מה קורה אחרי שלקוח משאיר פרטים?",
+    "workflowIntro": "כך יכול להיראות תהליך שמחבר בין הפרסום, מערכת ניהול הלקוחות והצוות שלכם. את השלבים והכלים מתאימים לעסק.",
     "workflowLabel": "תהליך לדוגמה",
     "workflowAlt": "מסגרות כחולות המחוברות ברצועת מתכת, להמחשת חיבור בין מערכות עסקיות",
     "workflowSteps": [
       [
-        "אוספים את הפנייה",
-        "טופס באתר או בוט אוספים את הפרטים שצריך כדי להבין את הבקשה."
+        "הפנייה מתקבלת",
+        "טופס באתר או בוט אוספים את הפרטים הדרושים להבנת הבקשה."
       ],
       [
-        "מעבירים למקום הנכון",
-        "המידע עובר למערכת ה־CRM או ל־Odoo, עם השדות שהצוות שלכם צריך."
+        "המידע מגיע למערכת ניהול הלקוחות",
+        "הפרטים עוברים ל־CRM או ל־Odoo, עם השדות ומקור הפנייה שהוגדרו מראש."
       ],
       [
-        "מגדירים את הפעולה הבאה",
-        "התראה, משימה לאדם המתאים או תשובה שסוכמה מראש עוזרות להמשיך את הטיפול."
+        "מישהו אחראי להמשך הטיפול",
+        "הגורם המתאים מקבל התראה או משימה, ואפשר לשלב תשובה אוטומטית בנוסח שסוכם מראש."
       ],
       [
-        "לומדים מהתוצאה",
-        "מחברים בין מצב הפנייה למקור הקמפיין, כדי להבין אילו מקורות מביאים שיחות רלוונטיות."
+        "בודקים מה התקדם לשיחה או למכירה",
+        "מחברים את מצב הפנייה למקור הפרסום, כדי להבין אילו קמפיינים מביאים הזדמנויות רלוונטיות."
       ]
     ],
     "workflowCta": "בואו נדבר על אוטומציה",
     "imageNote": "תמונות קונספט מקוריות. אינן מציגות תוצאות של לקוחות.",
-    "aboutTitle": "שותף אחד לשיווק ולמערכות שמאחוריו."
+    "aboutTitle": "פרסום, אתרים ואוטומציות. עם אחריות על החיבור ביניהם."
   }
 }
 ```
@@ -1945,6 +2078,17 @@ Every implementation change must be checked against the relevant items below:
 - [ ] The Change Log contains an entry for the change.
 
 ## Change Log
+
+### 2026-09-11 — Israeli agency research and Hebrew language refinement
+
+- The owner requested further research into larger Israeli agencies to improve the Hebrew experience, continuing the approved research-and-publication workflow. Reviewed McCann Digital, Angora Media and Twisted as established agency benchmarks, not a verified size or revenue ranking.
+- Limited implementation to Hebrew wording on the homepage and service page. English/German content, layout, imagery, brand/client marks, shared English footer, forms, country rules and protected Transparency remain unchanged. Archived the prior source at `output/backups/fixads-before-hebrew-refinement-20260911.tar.gz`.
+- Replaced translation-like wording with natural Hebrew, clarified performance marketing and lead quality, explained follow-up as ongoing handling of inquiries, and kept platform names where they are useful. No competitor claims, results, slogans, prices, partner badges or response-time promises were adopted.
+- The refreshed Hebrew service page uses a neutral FixAds content byline and the real update date, without claiming Anton personally reviewed today's AI-assisted rewrite. Its visible FAQs and Service schema are still generated from the same content source. Exact wording, research evidence and final checks are recorded below as this release is completed.
+- Both builds passed. Exact before/after comparisons show only four changed deployment files: `/content.js`, `/he/index.html`, `/he/services/index.html` and `/sitemap.xml`. Every English/German and legal document, all assets, CSS and interaction scripts remain byte-identical. English/German content objects are also identical.
+- Hebrew home and services pages passed 320/390/768/1440px RTL checks with zero overflow and no JavaScript page errors. Goal preselection and the full-height phone menu after deep scrolling passed. The five service FAQs match their visible copy and schema; all eight services and ten form options remain in the original order. Current homepage copy matches the README exactly.
+- Local Hebrew mobile Lighthouse scored 100 Performance, 100 Accessibility, 100 Best Practices and 100 SEO; LCP about 1.6 seconds and CLS 0. Report: `output/lighthouse-israeli-local-20260911.json`.
+- Ready draft `6aa3ffe6d48b541dee4302a5` was cloned from locked production `6aa3fc97f28be5009d1bb142`, preserving its 85-file map. All five Transparency hashes and sampled protected responses, ten Function digests/overrides, three schedules, both form registrations and all 29 routing rules match the baseline. The three homepages, three service pages, four legal pages and protected root/descendant routes returned 200 on the draft. Production remained unchanged pending verified cutover.
 
 ### 2026-09-11 — Market-specific lead messaging and original visuals
 
