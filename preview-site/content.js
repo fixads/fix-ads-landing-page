@@ -1021,59 +1021,71 @@ export const content = {
 // Lead-focused homepage copy approved through the 2026-09-10 optimization request.
 const growthContent = {
   "en": {
-    "headline": "Better leads. Stronger sales. Connected.",
-    "intro": "Performance marketing, websites, and automation for e-commerce brands, HVAC companies, and ambitious service businesses.",
-    "care": "Your goals matter to us. We connect the work, explain the numbers, and stay involved.",
-    "cta": "Let's talk about your growth",
-    "note": "Start with a conversation about your business.",
-    "choose": "What would you like to improve?",
-    "focusLabel": "Choose your focus",
+    "headline": "Turn more clicks into customers.",
+    "intro": "Paid ads, websites, and follow-up that work together—for e-commerce brands, HVAC companies, and service businesses.",
+    "care": "Your business gets our attention, not just your campaigns. We connect the work, explain the decisions, and stay involved.",
+    "cta": "Discuss your marketing",
+    "note": "Start with a focused project or connect the full customer journey.",
+    "choose": "Where do you want to grow?",
+    "focusLabel": "Choose a business goal",
     "approach": "A connected approach",
-    "selected": "Discuss this goal",
+    "selected": "Talk through this opportunity",
     "goals": [
       {
-        "label": "E-commerce sales",
-        "title": "From first click to the next purchase.",
-        "body": "Connect your ads, Shopify store, Klaviyo flows, and customer data around the whole buying journey.",
+        "label": "Online sales",
+        "title": "Make the whole buying journey work harder.",
+        "body": "For stores getting traffic but losing sales—or customers who buy once and disappear.",
         "steps": [
           "Attract",
           "Convert",
           "Retain"
         ],
-        "image": "/assets/ecommerce-growth.jpg",
-        "alt": "E-commerce products and a storefront workflow",
-        "service": 2
+        "image": "/assets/market-commerce.png",
+        "alt": "Conceptual product photography with retail packaging, a bottle, fabric, and a silver ring",
+        "service": 2,
+        "scope": [
+          "Ads + product-page improvements",
+          "Klaviyo flows + repeat-purchase journeys"
+        ]
       },
       {
-        "label": "Qualified leads",
-        "title": "Turn interest into a real conversation.",
-        "body": "Connect Google, Meta, or Yelp campaigns with a clear landing page, lead qualification, and reliable follow-up.",
+        "label": "Better leads",
+        "title": "Build a clearer path from inquiry to booked work.",
+        "body": "For HVAC and service businesses that need relevant inquiries, clearer qualification, and a reliable next step.",
         "steps": [
           "Reach",
           "Qualify",
           "Follow up"
         ],
-        "image": "/assets/hvac-leads.jpg",
-        "alt": "HVAC technician at work",
-        "service": 3
+        "image": "/assets/market-services.png",
+        "alt": "Illustrative photograph of a technician working on an outdoor HVAC unit",
+        "service": 3,
+        "scope": [
+          "Google, Meta, or Yelp + landing pages",
+          "Lead qualification + CRM follow-up"
+        ]
       },
       {
-        "label": "Smarter automation",
-        "title": "Keep the work moving between your tools.",
-        "body": "Connect forms, bots, CRM, Odoo, and reporting so valuable inquiries and everyday tasks keep moving.",
+        "label": "Less manual work",
+        "title": "Let your tools pass the work forward.",
+        "body": "For businesses copying details between systems, chasing updates, or losing track of new inquiries.",
         "steps": [
           "Capture",
           "Connect",
           "Act"
         ],
-        "image": "/assets/hero-team.jpg",
-        "alt": "Digital workflows being planned in a studio",
-        "service": 6
+        "image": "/assets/market-automation.png",
+        "alt": "Conceptual photograph of a silver ribbon connecting three blue frames",
+        "service": 6,
+        "scope": [
+          "Forms, bots, CRM + Odoo integrations",
+          "Notifications, handoffs + reporting"
+        ]
       }
     ],
     "trust": "Businesses we have worked with",
-    "servicesTitle": "The right expertise. Right where you need it.",
-    "servicesBody": "Start with one service or connect the entire customer journey. Explore what each capability brings to your business.",
+    "servicesTitle": "The expertise behind the next step.",
+    "servicesBody": "Campaigns, conversion, customer retention, and operations. Choose one area to improve, or bring them together.",
     "readMore": "Explore this service",
     "discussService": "Discuss this service",
     "servicePrompt": "Select a service below to see how it works.",
@@ -1092,12 +1104,12 @@ const growthContent = {
         "Scope, priorities, and the way we will measure progress are discussed before work begins."
       ]
     ],
-    "formTitle": "Let's find your next growth move.",
-    "formBody": "Tell us where you want to go. A few details are enough to start the conversation.",
+    "formTitle": "What would make a difference to your business?",
+    "formBody": "Tell us what you want to improve. We will discuss your current setup, priorities, and a useful place to start.",
     "optional": "Optional",
     "extra": "Add company, website, or phone (optional)",
     "messagePlaceholder": "For example: We need more qualified HVAC inquiries, or more repeat purchases from our store.",
-    "formSubmit": "Start the conversation",
+    "formSubmit": "Send my inquiry",
     "formNote": "Your details are used to respond to your inquiry.",
     "faqTitle": "A few things you might be wondering.",
     "faqs": [
@@ -1116,63 +1128,135 @@ const growthContent = {
       [
         "How will we know what is happening?",
         "We communicate clearly and give clients access to an interface for following activity, results, completed work, and next steps."
+      ],
+      [
+        "What budget do we need?",
+        "It depends on your goals, market, existing setup, and the work involved. We discuss the service scope and fees separately from advertising spend before you decide how to proceed."
+      ],
+      [
+        "What if we already work with an agency or an internal team?",
+        "We can discuss a focused project or a specific gap in your setup. Responsibilities, access, and handoffs are agreed before work begins."
       ]
-    ]
+    ],
+    "market": {
+      "introPoints": [
+        "Your goals first",
+        "Clear scope",
+        "Visible progress"
+      ],
+      "scopeLabel": "What we can work on",
+      "processTitle": "Your business is more than an ad account.",
+      "processIntro": "Good marketing depends on understanding what happens before and after the click. Here is how we keep the work grounded in your business.",
+      "principles": [
+        [
+          "Define a useful result.",
+          "Qualified inquiries, booked work, purchases, or repeat customers—we agree what matters and how to assess it."
+        ],
+        [
+          "Connect the next step.",
+          "The ad, website, form, and follow-up need to support the same goal. We look for the handoffs that need attention."
+        ],
+        [
+          "Stay involved.",
+          "You can see the work and the next priorities. We explain decisions, flag issues, and keep improving the setup."
+        ]
+      ],
+      "ownerLabel": "Led by Anton Goldberg",
+      "ownerBody": "Based in Berlin. Experience with businesses in the US, Israel, Germany, and other markets.",
+      "ownerLink": "Meet the owner on LinkedIn",
+      "workflowTitle": "A new inquiry should have somewhere to go.",
+      "workflowIntro": "An example of the connected workflows we can build. The tools, data, and handoffs are agreed around your business.",
+      "workflowLabel": "Example workflow",
+      "workflowAlt": "Conceptual blue frames joined by a silver ribbon, representing connected business systems",
+      "workflowSteps": [
+        [
+          "Capture the inquiry",
+          "A website form or bot collects the details needed to understand the request."
+        ],
+        [
+          "Put it in the right place",
+          "The information moves into your CRM or Odoo, with the fields your team needs."
+        ],
+        [
+          "Make the next action clear",
+          "A notification, assigned task, or agreed reply helps the right person follow up."
+        ],
+        [
+          "Learn from the outcome",
+          "Bring inquiry status and campaign context together to see which sources lead to useful conversations."
+        ]
+      ],
+      "workflowCta": "Discuss an automation",
+      "imageNote": "Original conceptual imagery. No client results are depicted.",
+      "aboutTitle": "One partner for marketing and the systems behind it."
+    }
   },
   "de": {
-    "headline": "Bessere Anfragen. Stärkere Umsätze. Verbunden.",
-    "intro": "Performance Marketing, Websites und Automatisierung für E-Commerce, Fachbetriebe und ambitionierte Dienstleistungsunternehmen.",
-    "care": "Ihre Ziele sind uns wichtig. Wir verbinden die Arbeit, erklären die Zahlen und bleiben an Ihrer Seite.",
-    "cta": "Wachstum gemeinsam besprechen",
-    "note": "Der erste Schritt ist ein Gespräch über Ihr Unternehmen.",
-    "choose": "Was möchten Sie verbessern?",
-    "focusLabel": "Schwerpunkt wählen",
+    "headline": "Kunden gewinnen. Mit einem klaren System.",
+    "intro": "Performance Marketing, Websites und Automatisierung für Onlineshops, Fachbetriebe und Dienstleister—von der ersten Anzeige bis zur nächsten Kundenanfrage.",
+    "care": "Wir nehmen Ihr Unternehmen, Ihre Ziele und Ihr Budget ernst. Wir verbinden die Maßnahmen, erklären Entscheidungen und bleiben ansprechbar.",
+    "cta": "Erstgespräch anfragen",
+    "note": "Starten Sie mit einem klar abgegrenzten Projekt oder verbinden Sie den gesamten Kundenprozess.",
+    "choose": "Wo möchten Sie vorankommen?",
+    "focusLabel": "Geschäftliches Ziel wählen",
     "approach": "Ein vernetzter Ansatz",
-    "selected": "Dieses Ziel besprechen",
+    "selected": "Diesen Ansatz besprechen",
     "goals": [
       {
-        "label": "E-Commerce",
-        "title": "Vom ersten Klick bis zum nächsten Kauf.",
-        "body": "Verbinden Sie Werbung, Shopify-Shop, Klaviyo-Flows und Kundendaten entlang der gesamten Customer Journey.",
+        "label": "Online-Umsatz",
+        "title": "Vom Shopbesuch zum Kauf und Wiederkauf.",
+        "body": "Für Onlineshops, die aus ihrer Reichweite mehr machen und bestehende Kunden gezielter wieder ansprechen möchten.",
         "steps": [
           "Erreichen",
           "Überzeugen",
           "Binden"
         ],
-        "image": "/assets/ecommerce-growth.jpg",
-        "alt": "Produkte und Arbeitsabläufe im E-Commerce",
-        "service": 2
+        "image": "/assets/market-commerce.png",
+        "alt": "Konzeptionelle Produktaufnahme mit Verpackung, Flasche, Stoff und einem Silberring",
+        "service": 2,
+        "scope": [
+          "Kampagnen + bessere Produktseiten",
+          "Klaviyo-Flows + Kundenbindung"
+        ]
       },
       {
-        "label": "Qualifizierte Anfragen",
-        "title": "Aus Interesse wird ein echtes Gespräch.",
-        "body": "Verbinden Sie Google- oder Meta-Kampagnen mit einer klaren Landingpage, Qualifizierung und einem zuverlässigen Folgeprozess.",
+        "label": "Passende Anfragen",
+        "title": "Anfragen, die zu Ihrem Betrieb passen.",
+        "body": "Für Dienstleister und Fachbetriebe: Zielgebiet, Leistungsangebot und Qualifizierung gehören genauso dazu wie die Kampagne.",
         "steps": [
           "Erreichen",
           "Qualifizieren",
           "Nachfassen"
         ],
-        "image": "/assets/hvac-leads.jpg",
-        "alt": "Techniker bei der Arbeit an einer Klimaanlage",
-        "service": 3
+        "image": "/assets/market-services.png",
+        "alt": "Illustrative Aufnahme eines Technikers bei der Arbeit an einem Klimagerät",
+        "service": 3,
+        "scope": [
+          "Google oder Meta + Landingpages",
+          "Qualifizierung + CRM-Folgeprozesse"
+        ]
       },
       {
-        "label": "Automatisierung",
-        "title": "Damit Ihre Systeme zusammenarbeiten.",
-        "body": "Verbinden Sie Formulare, Bots, CRM, Odoo und Reporting, damit Anfragen und alltägliche Aufgaben verlässlich weiterlaufen.",
+        "label": "Weniger Handarbeit",
+        "title": "Damit Informationen zuverlässig weiterkommen.",
+        "body": "Für Unternehmen, die Daten mehrfach eingeben, Rückmeldungen nachverfolgen oder Anfragen zwischen Tools verlieren.",
         "steps": [
           "Erfassen",
           "Verbinden",
           "Handeln"
         ],
-        "image": "/assets/hero-team.jpg",
-        "alt": "Planung digitaler Arbeitsabläufe in einem Studio",
-        "service": 6
+        "image": "/assets/market-automation.png",
+        "alt": "Konzeptionelle Aufnahme eines silbernen Bandes, das drei blaue Rahmen verbindet",
+        "service": 6,
+        "scope": [
+          "Formulare, Bots, CRM + Odoo",
+          "Benachrichtigungen, Aufgaben + Reporting"
+        ]
       }
     ],
     "trust": "Unternehmen, mit denen wir gearbeitet haben",
-    "servicesTitle": "Die passende Expertise. Genau dort, wo sie hilft.",
-    "servicesBody": "Beginnen Sie mit einer Leistung oder verbinden Sie die gesamte Customer Journey. Entdecken Sie den Beitrag jedes Bereichs für Ihr Unternehmen.",
+    "servicesTitle": "Die passende Leistung für Ihren nächsten Schritt.",
+    "servicesBody": "Kampagnen, Conversion, Kundenbindung und betriebliche Abläufe. Wir verbessern einen gezielten Bereich oder verbinden das Gesamtsystem.",
     "readMore": "Leistung im Detail",
     "discussService": "Leistung besprechen",
     "servicePrompt": "Wählen Sie eine Leistung und erfahren Sie mehr.",
@@ -1191,12 +1275,12 @@ const growthContent = {
         "Umfang, Prioritäten und Erfolgsmessung werden besprochen, bevor die Umsetzung beginnt."
       ]
     ],
-    "formTitle": "Besprechen wir Ihren nächsten Wachstumsschritt.",
-    "formBody": "Wohin möchten Sie Ihr Unternehmen entwickeln? Ein paar Angaben reichen für den ersten Kontakt.",
+    "formTitle": "Was möchten Sie konkret verbessern?",
+    "formBody": "Beschreiben Sie kurz Ihr Vorhaben. Wir besprechen Ihre bestehende Umgebung, die Prioritäten und einen sinnvollen Einstieg.",
     "optional": "Optional",
     "extra": "Unternehmen, Website oder Telefon ergänzen (optional)",
     "messagePlaceholder": "Zum Beispiel: Wir benötigen qualifiziertere Anfragen oder mehr Wiederkäufe in unserem Shop.",
-    "formSubmit": "Gespräch anstoßen",
+    "formSubmit": "Anfrage senden",
     "formNote": "Ihre Angaben werden zur Beantwortung Ihrer Anfrage verwendet.",
     "faqTitle": "Antworten auf Ihre ersten Fragen.",
     "faqs": [
@@ -1215,63 +1299,135 @@ const growthContent = {
       [
         "Wie behalten wir den Überblick?",
         "Wir kommunizieren verständlich und stellen Kunden eine Oberfläche bereit, über die Aktivitäten, Ergebnisse, erledigte Aufgaben und nächste Schritte nachvollzogen werden können."
+      ],
+      [
+        "Welches Budget sollten wir einplanen?",
+        "Das hängt von Ziel, Markt, bestehender Umgebung und Leistungsumfang ab. Wir besprechen den Umfang und das Honorar getrennt vom Werbebudget, bevor Sie über das weitere Vorgehen entscheiden."
+      ],
+      [
+        "Können Sie unser internes Team oder eine bestehende Agentur ergänzen?",
+        "Wir können ein klar abgegrenztes Projekt oder eine konkrete Lücke in Ihrer Umgebung besprechen. Zuständigkeiten, Zugänge und Übergaben werden vor dem Start abgestimmt."
       ]
-    ]
+    ],
+    "market": {
+      "introPoints": [
+        "Ihre Ziele zuerst",
+        "Klarer Umfang",
+        "Nachvollziehbarer Fortschritt"
+      ],
+      "scopeLabel": "Mögliche Schwerpunkte",
+      "processTitle": "Wir betrachten Ihr Unternehmen, nicht nur das Werbekonto.",
+      "processIntro": "Gutes Marketing beginnt beim Geschäftsmodell und endet nicht mit dem Klick. So richten wir die Zusammenarbeit an Ihrem tatsächlichen Bedarf aus.",
+      "principles": [
+        [
+          "Das Ziel gemeinsam festlegen.",
+          "Qualifizierte Anfragen, Aufträge, Käufe oder Kundenbindung: Wir stimmen ab, welches Ergebnis relevant ist und wie es bewertet wird."
+        ],
+        [
+          "Die Abläufe verbinden.",
+          "Anzeige, Website, Formular und Folgeprozess müssen zum gleichen Ziel beitragen. Wir prüfen, wo Übergaben verbessert werden können."
+        ],
+        [
+          "Verantwortung sichtbar machen.",
+          "Sie erhalten Einblick in die Arbeit und die nächsten Prioritäten. Wir erläutern Entscheidungen, benennen Probleme und entwickeln die Lösung weiter."
+        ]
+      ],
+      "ownerLabel": "Inhabergeführt von Anton Goldberg",
+      "ownerBody": "Sitz in Berlin. Erfahrung mit Unternehmen in Deutschland, Israel, den USA und weiteren Märkten.",
+      "ownerLink": "Zum LinkedIn-Profil des Inhabers",
+      "workflowTitle": "Aus einer Anfrage wird ein klarer nächster Schritt.",
+      "workflowIntro": "Ein Beispiel für einen vernetzten Ablauf. Tools, Daten und Zuständigkeiten stimmen wir auf Ihr Unternehmen ab.",
+      "workflowLabel": "Beispielablauf",
+      "workflowAlt": "Konzeptionelle blaue Rahmen mit einem silbernen Band als Sinnbild verbundener Unternehmenssysteme",
+      "workflowSteps": [
+        [
+          "Anfrage erfassen",
+          "Ein Websiteformular oder Bot erfasst die Angaben, die zur Einordnung des Anliegens erforderlich sind."
+        ],
+        [
+          "Daten richtig zuordnen",
+          "Die Informationen gelangen in Ihr CRM oder Odoo—mit den Feldern, die Ihr Team benötigt."
+        ],
+        [
+          "Die nächste Aufgabe klären",
+          "Eine Benachrichtigung, zugewiesene Aufgabe oder abgestimmte Antwort unterstützt die zuständige Person beim Nachfassen."
+        ],
+        [
+          "Ergebnisse nachvollziehen",
+          "Anfragestatus und Kampagnenkontext lassen sich zusammenführen, um relevante Quellen besser zu erkennen."
+        ]
+      ],
+      "workflowCta": "Automatisierung besprechen",
+      "imageNote": "Eigene konzeptionelle Bildwelt. Keine Darstellung von Kundenergebnissen.",
+      "aboutTitle": "Ein Partner für Marketing und die Systeme dahinter."
+    }
   },
   "he": {
-    "headline": "לידים איכותיים. יותר מכירות. הכול מחובר.",
-    "intro": "פרסום ממומן, אתרים ואוטומציות למותגי E-commerce, לעסקי שירותים ולחברות שרוצות לצמוח.",
-    "care": "המטרות שלכם חשובות לנו. אנחנו מחברים את הפעילות, מסבירים את הנתונים ונשארים מעורבים.",
-    "cta": "בואו נדבר על הצמיחה שלכם",
-    "note": "מתחילים בשיחה על העסק שלכם.",
-    "choose": "מה תרצו לשפר?",
-    "focusLabel": "בחירת תחום",
+    "headline": "מהקליק הראשון ללקוח הבא.",
+    "intro": "מחברים פרסום ממומן, אתרים ואוטומציות כדי לעזור לחנויות אונליין ולעסקי שירותים לייצר פניות איכותיות ומכירות.",
+    "care": "אכפת לנו מהעסק שלכם, לא רק מהקמפיין. אנחנו מבינים את המטרות, מסבירים את ההחלטות ונשארים מעורבים.",
+    "cta": "בואו נדבר על העסק שלכם",
+    "note": "אפשר להתחיל מפרויקט ממוקד או לחבר את כל מסע הלקוח.",
+    "choose": "איפה תרצו להתקדם?",
+    "focusLabel": "בחירת מטרה עסקית",
     "approach": "גישה שמחברת הכול",
-    "selected": "בואו נדבר על המטרה",
+    "selected": "בואו נדבר על הכיוון הזה",
     "goals": [
       {
         "label": "מכירות אונליין",
-        "title": "מהקליק הראשון ועד הרכישה הבאה.",
-        "body": "מחברים בין הפרסום, חנות Shopify, תהליכי Klaviyo ונתוני הלקוחות לאורך כל מסע הרכישה.",
+        "title": "מהביקור בחנות לרכישה—ולרכישה הבאה.",
+        "body": "לחנויות שמביאות תנועה אבל רוצות לשפר את תהליך הרכישה ולחזק את הקשר עם לקוחות שכבר קנו.",
         "steps": [
           "חשיפה",
           "רכישה",
           "שימור"
         ],
-        "image": "/assets/ecommerce-growth.jpg",
-        "alt": "מוצרים ותהליכי עבודה בחנות אונליין",
-        "service": 2
+        "image": "/assets/market-commerce.png",
+        "alt": "צילום קונספט של אריזה, בקבוק, בד וטבעת כסף לחנות אונליין",
+        "service": 2,
+        "scope": [
+          "קמפיינים + שיפור עמודי מוצר",
+          "תהליכי Klaviyo + רכישות חוזרות"
+        ]
       },
       {
-        "label": "לידים איכותיים",
-        "title": "מהתעניינות לשיחה עם לקוח.",
-        "body": "מחברים קמפיינים ב־Google או Meta לדף נחיתה ברור, סינון פניות ותהליך מסודר לחזרה ללקוחות.",
+        "label": "פניות איכותיות",
+        "title": "פניות שמתאימות לעסק ולשירות שלכם.",
+        "body": "לעסקי שירותים, נדל״ן ושירותים מקצועיים שצריכים לחבר בין הפרסום, סינון הפניות והחזרה ללקוח.",
         "steps": [
           "חשיפה",
           "סינון",
           "מעקב"
         ],
-        "image": "/assets/hvac-leads.jpg",
-        "alt": "טכנאי מיזוג אוויר בזמן עבודה",
-        "service": 3
+        "image": "/assets/market-services.png",
+        "alt": "צילום להמחשה של טכנאי בזמן עבודה על יחידת מיזוג אוויר",
+        "service": 3,
+        "scope": [
+          "Google או Meta + דפי נחיתה",
+          "סינון פניות + מעקב במערכת CRM"
+        ]
       },
       {
-        "label": "אוטומציות חכמות",
-        "title": "כדי שהמערכות שלכם יעבדו יחד.",
-        "body": "מחברים טפסים, בוטים, CRM, Odoo ודוחות כדי שפניות ומשימות חשובות ימשיכו להתקדם.",
+        "label": "פחות עבודה ידנית",
+        "title": "שהמידע יתקדם, בלי להעתיק אותו שוב.",
+        "body": "לעסקים שמעבירים נתונים בין כלים, רודפים אחרי עדכונים או מאבדים פניות בדרך.",
         "steps": [
           "איסוף",
           "חיבור",
           "פעולה"
         ],
-        "image": "/assets/hero-team.jpg",
-        "alt": "תכנון תהליכי עבודה דיגיטליים בסטודיו",
-        "service": 6
+        "image": "/assets/market-automation.png",
+        "alt": "צילום קונספט של רצועת מתכת המחברת שלוש מסגרות כחולות",
+        "service": 6,
+        "scope": [
+          "טפסים, בוטים, CRM + Odoo",
+          "התראות, משימות + דוחות"
+        ]
       }
     ],
     "trust": "חברות ומותגים שעבדנו איתם",
-    "servicesTitle": "המומחיות הנכונה. בדיוק במקום שצריך.",
-    "servicesBody": "אפשר להתחיל משירות אחד או לחבר את כל מסע הלקוח. גלו איך כל תחום יכול לתרום לעסק שלכם.",
+    "servicesTitle": "המומחיות שצריך בשביל הצעד הבא.",
+    "servicesBody": "קמפיינים, שיפור המרות, שימור לקוחות ותהליכי עבודה. אפשר לשפר תחום אחד או לחבר את כל המערכת.",
     "readMore": "לפרטים על השירות",
     "discussService": "בואו נדבר על השירות",
     "servicePrompt": "בחרו שירות כדי לקרוא איך הוא עובד.",
@@ -1290,12 +1446,12 @@ const growthContent = {
         "נדבר על היקף העבודה, סדרי העדיפויות ודרך המדידה לפני שמתחילים."
       ]
     ],
-    "formTitle": "בואו נמצא את הצעד הבא לצמיחה.",
-    "formBody": "ספרו לנו לאן תרצו להגיע. כמה פרטים מספיקים כדי להתחיל בשיחה.",
+    "formTitle": "מה תרצו לשפר בעסק?",
+    "formBody": "ספרו לנו בקצרה על האתגר. נדבר על הפעילות הקיימת, סדרי העדיפויות ונקודת התחלה שמתאימה לכם.",
     "optional": "רשות",
     "extra": "הוספת חברה, אתר או טלפון (רשות)",
     "messagePlaceholder": "לדוגמה: אנחנו צריכים פניות איכותיות יותר, או רוצים להגדיל רכישות חוזרות בחנות.",
-    "formSubmit": "בואו נתחיל בשיחה",
+    "formSubmit": "שליחת פנייה",
     "formNote": "הפרטים שלכם ישמשו כדי להשיב לפנייה.",
     "faqTitle": "כמה דברים שאולי רציתם לשאול.",
     "faqs": [
@@ -1314,8 +1470,68 @@ const growthContent = {
       [
         "איך נדע מה קורה בפעילות?",
         "אנחנו מתקשרים בצורה ברורה ומעניקים ללקוחות גישה לממשק שבו אפשר לעקוב אחרי הפעילות, התוצאות, המשימות שבוצעו והשלבים הבאים."
+      ],
+      [
+        "איזה תקציב צריך?",
+        "זה תלוי במטרות, בשוק, במערכת הקיימת ובהיקף העבודה. נדבר על השירות והתשלום בנפרד מתקציב הפרסום, לפני שתחליטו איך להתקדם."
+      ],
+      [
+        "אפשר לעבוד לצד הצוות שלנו או סוכנות קיימת?",
+        "אפשר לדבר על פרויקט ממוקד או על צורך מסוים במערכת. נסכם מראש את תחומי האחריות, הגישות והעברת העבודה בין הצדדים."
       ]
-    ]
+    ],
+    "market": {
+      "introPoints": [
+        "המטרות שלכם קודם",
+        "היקף עבודה ברור",
+        "התקדמות שאפשר לראות"
+      ],
+      "scopeLabel": "במה אפשר להתמקד",
+      "processTitle": "אנחנו רואים את העסק, לא רק את חשבון הפרסום.",
+      "processIntro": "שיווק טוב מתחיל בהבנת העסק וממשיך גם אחרי הקליק. כך אנחנו מחברים את העבודה למה שבאמת חשוב לכם.",
+      "principles": [
+        [
+          "מגדירים מה נחשב לתוצאה טובה.",
+          "פניות רלוונטיות, עסקאות, רכישות או לקוחות חוזרים—מסכמים מה חשוב ואיך נבחן את ההתקדמות."
+        ],
+        [
+          "מחברים את השלב הבא.",
+          "המודעה, האתר, הטופס והחזרה ללקוח צריכים לעבוד לאותה מטרה. נזהה איפה המעבר ביניהם דורש שיפור."
+        ],
+        [
+          "נשארים בתמונה.",
+          "אתם רואים את העבודה ואת סדרי העדיפויות. אנחנו מסבירים החלטות, מציפים בעיות וממשיכים לשפר."
+        ]
+      ],
+      "ownerLabel": "בהובלת אנטון גולדברג",
+      "ownerBody": "ממוקמים בברלין, עם ניסיון בעבודה עם עסקים בישראל, בגרמניה, בארה״ב ובשווקים נוספים.",
+      "ownerLink": "היכרות עם הבעלים ב־LinkedIn",
+      "workflowTitle": "לכל פנייה צריך להיות צעד הבא.",
+      "workflowIntro": "דוגמה לתהליך מחובר שאפשר לבנות. את הכלים, הנתונים ותחומי האחריות מתאימים לעסק שלכם.",
+      "workflowLabel": "תהליך לדוגמה",
+      "workflowAlt": "מסגרות כחולות המחוברות ברצועת מתכת, להמחשת חיבור בין מערכות עסקיות",
+      "workflowSteps": [
+        [
+          "אוספים את הפנייה",
+          "טופס באתר או בוט אוספים את הפרטים שצריך כדי להבין את הבקשה."
+        ],
+        [
+          "מעבירים למקום הנכון",
+          "המידע עובר למערכת ה־CRM או ל־Odoo, עם השדות שהצוות שלכם צריך."
+        ],
+        [
+          "מגדירים את הפעולה הבאה",
+          "התראה, משימה לאדם המתאים או תשובה שסוכמה מראש עוזרות להמשיך את הטיפול."
+        ],
+        [
+          "לומדים מהתוצאה",
+          "מחברים בין מצב הפנייה למקור הקמפיין, כדי להבין אילו מקורות מביאים שיחות רלוונטיות."
+        ]
+      ],
+      "workflowCta": "בואו נדבר על אוטומציה",
+      "imageNote": "תמונות קונספט מקוריות. אינן מציגות תוצאות של לקוחות.",
+      "aboutTitle": "שותף אחד לשיווק ולמערכות שמאחוריו."
+    }
   }
 };
 for (const [locale, growth] of Object.entries(growthContent)) {
@@ -1324,4 +1540,9 @@ for (const [locale, growth] of Object.entries(growthContent)) {
   page.form.options.splice(8, 0, { en: "Creative", de: "Creative", he: "קריאייטיב" }[locale]);
   Object.assign(page.hero, { title: growth.headline, body: growth.intro, care: growth.care, cta: growth.cta });
   Object.assign(page.form, { title: growth.formTitle, body: growth.formBody, submit: growth.formSubmit });
+  Object.assign(page.seo, {
+    en: { title: "Performance Marketing for E-commerce & Leads | FixAds", description: "FixAds connects paid ads, websites, Klaviyo, CRM and automation for e-commerce, HVAC and service businesses. Discuss a focused project or your full customer journey." },
+    de: { title: "Performance-Marketing-Agentur für Shops & Dienstleister | FixAds", description: "FixAds aus Berlin verbindet Google Ads, Meta, Websites, Klaviyo und Odoo. Für Onlineshops, Fachbetriebe und Dienstleister. Jetzt Erstgespräch anfragen." },
+    he: { title: "סוכנות שיווק דיגיטלי ללידים ולמכירות אונליין | FixAds", description: "FixAds מחברת פרסום ממומן, אתרים, Klaviyo, CRM ואוטומציות לחנויות אונליין ולעסקי שירותים. בואו נדבר על פניות איכותיות, מכירות והצעד הבא לעסק שלכם." }
+  }[locale]);
 }

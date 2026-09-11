@@ -2,9 +2,10 @@ import { clients } from "./content.js";
 import { renderFooter } from "./footer.js";
 
 export function renderHomePage(page, { optimizedAssets = false } = {}) {
+const market = page.growth.market;
 const photoAttrs = (src) => {
   if (!optimizedAssets) return `src="${src}"`;
-  const name = src.split("/").at(-1).replace(".jpg", "");
+  const name = src.split("/").at(-1).replace(/\.(jpg|png)$/, "");
   return `src="/assets/optimized/${name}-640.webp" srcset="/assets/optimized/${name}-640.webp 640w, /assets/optimized/${name}-1040.webp 1040w" sizes="(max-width: 760px) calc(100vw - 64px), 40vw"`;
 };
 const arrowIcon = (direction = "forward") => {
@@ -113,14 +114,14 @@ const serviceCards = page.services.map((service, index) => `
     </div>
   </details>`).join("");
 
-const processItems = page.process.items
+const processItems = market.principles
   .map(
-    (item) => `
+    ([title, body], index) => `
       <article class="process-item reveal reveal-soft">
-        <span class="process-number">${item.number}</span>
+        <span class="process-number">0${index + 1}</span>
         <div>
-          <h3>${item.title}</h3>
-          <p>${item.body}</p>
+          <h3>${title}</h3>
+          <p>${body}</p>
         </div>
       </article>`,
   )
@@ -207,6 +208,7 @@ return `
             <a class="button button--ghost" href="${page.servicePage.path}">${page.hero.secondary}</a>
           </div>
           <p class="hero-note">${page.growth.note}</p>
+          <ul class="hero-assurances">${market.introPoints.map(item => `<li>${item}</li>`).join("")}</ul>
         </div>
         <aside class="growth-picker" aria-labelledby="growth-question">
           <h2 id="growth-question">${page.growth.choose}</h2>
@@ -219,6 +221,7 @@ return `
             </div>
             <div class="growth-panel__copy">
               <h3>${goal.title}</h3><p>${goal.body}</p>
+              <ul class="goal-scope" aria-label="${market.scopeLabel}">${goal.scope.map(item => `<li>${item}</li>`).join("")}</ul>
               <a class="growth-panel__cta" href="#contact" data-service="${goal.service}">${page.growth.selected}${arrowIcon()}</a>
             </div>
           </div>`).join("")}
@@ -251,7 +254,7 @@ return `
         </div>
         <div class="capabilities-layout">
           <div class="capabilities-visual">
-            <img ${photoAttrs('/assets/hero-team.jpg')} alt="${page.hero.photoAlt}" loading="lazy" width="1920" height="1080" />
+            <img ${photoAttrs('/assets/market-automation.png')} alt="${market.workflowAlt}" loading="lazy" width="1536" height="1024" />
             <div><strong>FixAds</strong><p>${page.growth.servicePrompt}</p></div>
           </div>
           <div class="capabilities-list">${serviceCards}</div>
@@ -265,10 +268,13 @@ return `
     <section class="section process" id="process">
       <div class="shell process-layout">
         <div class="process-intro reveal">
-          <p class="eyebrow">${page.process.eyebrow}</p>
-          <h2>${page.process.title}</h2>
-          <div class="orbit-mark" aria-hidden="true">
-            <span></span><span></span><span></span><i></i>
+          <h2>${market.processTitle}</h2>
+          <p class="process-context">${market.processIntro}</p>
+          <div class="owner-intro">
+            <img src="/assets/fixads-logo.png" alt="" width="48" height="48" />
+            <div><strong>${market.ownerLabel}</strong><p>${market.ownerBody}</p>
+              <a href="https://www.linkedin.com/in/anton-goldberg-200052193" target="_blank" rel="noopener noreferrer">${market.ownerLink}${arrowIcon()}</a>
+            </div>
           </div>
         </div>
         <div class="process-list">${processItems}</div>
@@ -302,20 +308,26 @@ return `
       <div class="shell about-layout">
         <div class="about-title reveal">
           <p class="eyebrow">${page.about.eyebrow}</p>
-          <h2>${page.about.title}</h2>
+          <h2>${market.aboutTitle}</h2>
         </div>
         <div class="about-copy reveal">
           ${page.about.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("")}
         </div>
       </div>
-      <div class="shell system-diagram reveal" aria-label="Connected digital system">
-        <div class="system-core"><img src="/assets/fixads-logo.png" alt="" width="72" height="72" /><strong>FixAds</strong></div>
-        ${page.hero.metrics.map((metric, index) => `<div class="system-node system-node--${index + 1}"><span>0${index + 1}</span>${metric}</div>`).join("")}
-        <svg viewBox="0 0 1000 330" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M500 165 C365 165 360 55 185 55"/><path d="M500 165 C635 165 640 55 815 55"/>
-          <path d="M500 165 C365 165 360 275 185 275"/><path d="M500 165 C635 165 640 275 815 275"/>
-        </svg>
-      </div>
+      <section class="shell workflow-story" aria-labelledby="workflow-title">
+        <div class="workflow-visual">
+          <img ${photoAttrs('/assets/market-automation.png')} alt="${market.workflowAlt}" loading="lazy" width="1536" height="1024" />
+          <p>${market.workflowLabel}</p>
+        </div>
+        <div class="workflow-copy">
+          <h2 id="workflow-title">${market.workflowTitle}</h2>
+          <p>${market.workflowIntro}</p>
+          <div class="workflow-steps">${market.workflowSteps.map(([title, body], index) => `<details class="workflow-step" name="workflow"${index === 0 ? ' open' : ''}>
+            <summary><span class="workflow-number">${index + 1}</span><h3>${title}</h3><span class="workflow-toggle" aria-hidden="true">+</span></summary><p>${body}</p>
+          </details>`).join("")}</div>
+          <a class="workflow-cta" href="#contact" data-service="6">${market.workflowCta}${arrowIcon()}</a>
+        </div>
+      </section>
     </section>
 
     <section class="section home-faq">
