@@ -1,0 +1,1548 @@
+export const clients = [
+  {
+    name: "Natasha Pet Store",
+    href: "https://www.black-natasha.co.il/",
+    logo: "/assets/clients/natasha-pet-store.png",
+    width: 122,
+    height: 150,
+  },
+  {
+    name: "Tool Eden",
+    href: "https://tooleden.com/",
+    logo: "/assets/clients/tool-eden.png",
+    width: 242,
+    height: 97,
+  },
+  {
+    name: "Li Vela Beauty Spa",
+    href: "https://livelabeauty.com/",
+    logo: "/assets/clients/li-vela-beauty.png",
+    width: 191,
+    height: 150,
+  },
+  {
+    name: "Diamonds For All",
+    href: "https://diamonds-4-all.com/",
+    logo: "/assets/clients/diamonds-for-all.png",
+    width: 520,
+    height: 138,
+    className: "client-logo--bright",
+  },
+  {
+    name: "Mayer Jewelry",
+    href: "https://www.mayerjewellery.com/",
+    logo: "/assets/clients/mayer-jewellery.png",
+    width: 520,
+    height: 78,
+  },
+  {
+    name: "BluYacht Israel",
+    href: "https://www.bluyacht.com/en/",
+    logo: "/assets/clients/bluyacht-israel.png",
+    width: 363,
+    height: 150,
+  },
+  {
+    name: "The Justice Group",
+    href: "https://www.justicegroup.co.il/",
+    logo: "/assets/clients/the-justice-group.svg",
+    width: 107,
+    height: 45,
+  },
+  {
+    name: "Shira Custom Wigs",
+    href: "https://shiracustomwigsus.com/",
+    logo: "/assets/clients/shira-custom-wigs.png",
+    width: 148,
+    height: 150,
+  },
+  {
+    name: "GA Luxury Judaica",
+    href: "https://www.galuxuryjudaica.com/",
+    logo: "/assets/clients/ga-luxury-judaica.png",
+    width: 190,
+    height: 150,
+  },
+  {
+    name: "Lampari",
+    href: "https://dynamic-lily-ad468e.netlify.app/",
+    logo: "/assets/clients/lampari.png",
+    width: 126,
+    height: 62,
+  },
+  {
+    name: "CB Fashion USA",
+    href: "https://cbfashionusa.com/",
+    logo: "/assets/clients/cb-fashion-usa.png",
+    width: 454,
+    height: 105,
+  },
+  {
+    name: "HumanBeanz",
+    href: "https://humanbeanz.com/",
+    logo: "/assets/clients/humanbeanz.png",
+    width: 274,
+    height: 150,
+  },
+  {
+    name: "David Roytman Couture",
+    href: "https://davidroytmancouture.com/",
+    logo: "/assets/clients/david-roytman-couture.svg",
+    width: 1542,
+    height: 220,
+    className: "client-logo--light",
+  },
+  {
+    name: "Flamingo Kosher",
+    href: "https://flamingokosher.com/",
+    logo: "/assets/clients/flamingo-kosher.png",
+    width: 324,
+    height: 150,
+  },
+  {
+    name: "RoofPax",
+    href: "https://buyroofpax.com/",
+    logo: "/assets/clients/roofpax.png",
+    width: 150,
+    height: 67,
+  },
+];
+
+export const sharedFooter = {
+  statement: "Marketing, technology, and data—connected for practical growth.",
+  company: "Company",
+  legal: "Legal",
+  locale: "Country & language",
+  locales: [
+    ["International — English", "/en/"],
+    ["Germany — German", "/de/"],
+    ["Israel — Hebrew", "/he/"],
+  ],
+  links: [
+    ["Services", "#services"],
+    ["Clients", "#clients"],
+    ["About", "#about"],
+    ["Contact", "#contact"],
+    ["Client Login", "https://www.fixads.xyz/transparency"],
+    ["LinkedIn", "https://www.linkedin.com/company/fixads"],
+  ],
+  legalLinks: [
+    ["Privacy Policy", "/privacy/"],
+    ["Terms of Use", "/terms/"],
+    ["Accessibility Statement", "/accessibility/"],
+    ["Impressum", "/impressum/"],
+  ],
+  rights: "© 2026 FixAds™. All rights reserved.",
+  top: "Back to top",
+};
+
+const sharedServices = {
+  paid: {
+    visual: "01",
+    accent: "blue",
+  },
+  ecommerce: {
+    visual: "02",
+    accent: "red",
+    image: "/assets/ecommerce-growth.jpg",
+  },
+  leads: {
+    visual: "03",
+    accent: "ice",
+    image: "/assets/hvac-leads.jpg",
+  },
+  websites: {
+    visual: "04",
+    accent: "blue",
+  },
+  email: {
+    visual: "05",
+    accent: "red",
+  },
+  automation: {
+    visual: "06",
+    accent: "ice",
+  },
+  analytics: {
+    visual: "07",
+    accent: "blue",
+  },
+  creative: {
+    visual: "08",
+    accent: "red",
+  },
+};
+
+export const content = {
+  en: {
+    locale: "en",
+    dir: "ltr",
+    title: "FixAds — Performance Marketing Agency for Connected Growth",
+    seo: {
+      title: "Performance Marketing Agency for Connected Growth | FixAds",
+      description:
+        "Connect paid media, e-commerce, lead generation, automation, and analytics with a performance marketing agency focused on practical, measurable growth.",
+      canonical: "https://www.fixads.xyz/en/",
+      ogLocale: "en_US",
+    },
+    servicePage: {
+      path: "/en/services/",
+      canonical: "https://www.fixads.xyz/en/services/",
+      seoTitle: "Performance Marketing Services | FixAds",
+      seoDescription:
+        "Explore FixAds services across paid media, e-commerce, lead generation, websites, Klaviyo, automation, analytics, and creative.",
+      eyebrow: "FixAds services",
+      title: "Specialists where it matters. One connected system.",
+      intro:
+        "Choose the capability you need today or connect the full journey—from demand and conversion to follow-up, retention, automation, and measurement.",
+      indexLabel: "Service index",
+      detailEyebrow: "Capabilities",
+      detailTitle: "Eight services designed to work together.",
+      approachEyebrow: "How the work connects",
+      approachTitle: "Clear ownership from first signal to next action.",
+      faqEyebrow: "Common questions",
+      faqTitle: "Clear answers about how the services connect.",
+      faqItems: [
+        {
+          question: "What is performance marketing?",
+          answer:
+            "Performance marketing is a measurable approach to paid media in which campaigns are evaluated against business outcomes such as qualified inquiries, purchases, acquisition cost, and return on investment (ROI). FixAds connects those outcomes to the website, follow-up process, and reporting so channel metrics are not viewed in isolation.",
+        },
+        {
+          question: "How does FixAds choose between Meta Ads, Google Ads, Amazon Ads, and Yelp Ads?",
+          answer:
+            "FixAds chooses channels based on the target market, customer intent, offer, buying journey, available data, and the business's follow-up capacity. A platform is used when its audience and format match the action the business needs.",
+        },
+        {
+          question: "How does FixAds evaluate lead quality for HVAC and service businesses?",
+          answer:
+            "FixAds evaluates lead quality by connecting campaign targeting, landing-page context, qualification fields, customer relationship management (CRM), follow-up, appointment or estimate stage, and reporting. The exact workflow is based on the service area, sales process, and data the business can verify.",
+        },
+        {
+          question: "How do Shopify, Klaviyo, paid media, and analytics work together?",
+          answer:
+            "Shopify manages the storefront and transaction journey, while Klaviyo supports lifecycle email marketing—messages triggered by stages such as signup, cart abandonment, purchase, and win-back. Paid media creates demand, and analytics connects spend with customer actions and purchases.",
+        },
+        {
+          question: "When does an Odoo integration make sense?",
+          answer:
+            "An Odoo integration makes sense when information from websites, lead forms, sales, orders, inventory, or customer service must move through one operational workflow. FixAds maps the required data and actions first, then selects a standard connector or a focused custom integration.",
+        },
+      ],
+      reviewedBy: "Reviewed by Anton Goldberg, FixAds owner",
+      reviewedDate: "2026-08-25",
+      reviewedDateLabel: "Last reviewed August 25, 2026",
+      homeLabel: "Home",
+      ctaTitle: "Need one service—or the whole system?",
+      ctaBody:
+        "Tell us where growth is getting stuck. We will look at the existing journey and identify the most useful place to begin.",
+      cta: "Discuss your project",
+      back: "Back to website",
+      explore: "Explore services",
+    },
+    skip: "Skip to content",
+    menu: "Menu",
+    close: "Close",
+    nav: [
+      ["Home", "#home"],
+      ["Services", "/en/services/"],
+      ["Clients", "#clients"],
+      ["How We Work", "#process"],
+      ["Transparency", "https://www.fixads.xyz/transparency"],
+      ["About", "#about"],
+    ],
+    headerCta: "Let's talk",
+    login: "Client login",
+    hero: {
+      eyebrow: "Performance / Technology / Growth",
+      title: "Digital marketing, technology, and measurable growth—connected.",
+      body:
+        "We help businesses in the United States and around the world turn paid media, customer journeys, automation, and data into one focused growth system.",
+      care:
+        "We care deeply about the businesses we support. We listen, communicate clearly, and stay close to the work after launch.",
+      cta: "Build your growth system",
+      secondary: "Explore our services",
+      photoAlt: "A digital marketing team collaborating in a modern studio",
+      signal: "Connected growth system",
+      metrics: ["Paid media", "Customer journey", "Automation", "Analytics"],
+    },
+    ticker: ["Meta Ads", "Google Ads", "Yelp Ads", "Amazon Ads", "Klaviyo", "Shopify", "Odoo", "Automation"],
+    servicesHeading: {
+      eyebrow: "What we connect",
+      title: "One team across the entire digital system.",
+      body:
+        "Campaigns work better when the website, follow-up, creative, email, sales process, and reporting are designed to work together.",
+    },
+    services: [
+      {
+        ...sharedServices.paid,
+        title: "Paid Media & Performance Marketing",
+        body: [
+          "We plan, build, and manage campaigns across Yelp Ads, Google Ads, Meta Ads, and Amazon Ads—from research and setup to testing, budget management, optimization, and clear reporting.",
+          "We focus on the outcome behind the metric: qualified demand, better acquisition efficiency, and a stronger path from click to customer.",
+        ],
+        tags: ["Google", "Meta", "Amazon", "Yelp"],
+      },
+      {
+        ...sharedServices.ecommerce,
+        title: "E-commerce Growth",
+        body: [
+          "We support e-commerce brands from first impression to purchase, repeat purchase, and long-term retention.",
+          "Paid media, storefront experience, creative, Klaviyo, automation, and analytics are connected to improve conversion and support more profitable revenue.",
+        ],
+        tags: ["Shopify", "CRO", "Retention"],
+        imageAlt: "A connected e-commerce system with product, storefront, and analytics",
+      },
+      {
+        ...sharedServices.leads,
+        title: "Lead Generation for HVAC & Services",
+        body: [
+          "We build lead-generation systems for HVAC, home services, real estate, professional services, and local businesses.",
+          "The objective is not simply more leads. We work toward better lead quality and a clearer journey from ad or search to inquiry, appointment, estimate, and customer.",
+        ],
+        tags: ["HVAC", "Local services", "Qualified leads"],
+        imageAlt: "An HVAC technician using a tablet while inspecting rooftop equipment",
+      },
+      {
+        ...sharedServices.websites,
+        title: "Websites & E-commerce Development",
+        body: [
+          "We build and improve websites, landing pages, and online stores with Shopify, WordPress, and other suitable platforms.",
+          "Every site is treated as part of the growth system—connected to advertising, analytics, lead capture, email, payments, CRM, and automation.",
+        ],
+        tags: ["Shopify", "WordPress", "Landing pages"],
+      },
+      {
+        ...sharedServices.email,
+        title: "Klaviyo & Email Marketing",
+        body: [
+          "We create lifecycle email programs including campaigns, welcome flows, abandoned-cart recovery, post-purchase communication, win-back, segmentation, and repeat-purchase programs.",
+          "The goal is a useful customer experience and a dependable part of the revenue system.",
+        ],
+        tags: ["Klaviyo", "Lifecycle", "Retention"],
+      },
+      {
+        ...sharedServices.automation,
+        title: "Bots, Automation & Integrations",
+        body: [
+          "We design bots and automations for lead response, customer support, qualification, scheduling, internal workflows, and follow-up.",
+          "We connect websites, stores, ad platforms, CRM tools, analytics, communications, Odoo, and other business systems—even when the workflow needs a custom solution.",
+        ],
+        tags: ["Odoo", "Bots", "Custom workflows"],
+      },
+      {
+        ...sharedServices.analytics,
+        title: "Analytics & Measurement",
+        body: [
+          "We bring advertising, website, store, lead, and sales data into a clearer view of spend, leads, purchases, acquisition costs, conversion, and return on investment.",
+          "That clarity helps teams understand what works, where performance is lost, and what deserves the next investment.",
+        ],
+        tags: ["Attribution", "Dashboards", "ROI"],
+      },
+      {
+        ...sharedServices.creative,
+        title: "Creative",
+        body: [
+          "We develop creative directions and image-based marketing assets designed for the platforms where they run.",
+          "When professional video production is required, we collaborate with external specialists suited to the project.",
+        ],
+        tags: ["Concepts", "Static ads", "Testing"],
+      },
+    ],
+    process: {
+      eyebrow: "How we work",
+      title: "Fast enough to learn. Structured enough to trust.",
+      items: [
+        {
+          number: "01",
+          title: "Customer care comes first",
+          body:
+            "We take time to understand the business, respond thoughtfully, communicate in plain language, and treat every client's goals and budget with care.",
+        },
+        {
+          number: "02",
+          title: "Practical innovation",
+          body:
+            "New tools matter when they solve a real problem. A bot, Odoo workflow, custom integration, or better report must make the operation clearer, faster, or more effective.",
+        },
+        {
+          number: "03",
+          title: "Professional execution",
+          body:
+            "A campaign, website, or automation should be correctly structured, measurable, maintainable, and ready to improve—not merely live.",
+        },
+        {
+          number: "04",
+          title: "Honest communication",
+          body:
+            "We show the data as it is. When something works, we explain why. When there is a problem, we surface it and define the next action.",
+        },
+      ],
+    },
+    transparency: {
+      eyebrow: "Full transparency",
+      title: "Your business. Your data. Always open to you.",
+      body:
+        "Clients receive access to a personal interface where activity, results, completed work, current issues, and next steps can be followed without waiting for a monthly report.",
+      list: [
+        "Advertising budgets and spend",
+        "Leads, purchases, and conversions",
+        "Cost per lead and acquisition cost",
+        "Performance by channel and campaign",
+        "Tasks, changes, issues, and next steps",
+      ],
+      cta: "View transparency",
+    },
+    clients: {
+      eyebrow: "Selected experience",
+      title: "Built across markets and business models.",
+      body:
+        "We have worked with companies and brands across e-commerce, fashion, health and beauty, travel, legal services, food, retail, professional services, and lead generation.",
+      note: "Select a logo to visit the company's official website.",
+    },
+    about: {
+      eyebrow: "About FixAds",
+      title: "The campaign is only one part of the system.",
+      paragraphs: [
+        "Our work began with Meta Ads and expanded into Google Ads, Yelp Ads, Amazon Ads, e-commerce, Shopify, WordPress, Klaviyo, lifecycle marketing, bots, automation, Odoo, platform integrations, and analytics.",
+        "Sustainable growth rarely comes from managing one channel in isolation. Advertising must connect with the website, lead process, customer experience, creative, email, sales workflow, payments, and business data.",
+        "That is why we take responsibility for the full digital system—from the first interaction to measurement, follow-up, and continuous improvement.",
+      ],
+    },
+    closing: {
+      eyebrow: "Next step",
+      title: "Ready to build a growth system that works together?",
+      body:
+        "Tell us about your business, goals, and current challenges. We will look at the existing customer journey and identify where marketing, technology, automation, and data can connect more effectively.",
+      cta: "Tell us what you're building",
+    },
+    form: {
+      eyebrow: "Contact",
+      title: "Let's start with the real challenge.",
+      body:
+        "Share a little context. We will review it carefully and follow up with a useful first conversation.",
+      fields: {
+        name: "Full name",
+        company: "Company name",
+        phone: "Phone",
+        email: "Email",
+        website: "Company website",
+        service: "What can we help with?",
+        message: "Tell us about the goal or challenge",
+        consent:
+          'I have read the <a href="/privacy/">Privacy Policy</a> and agree that FixAds may use my details to respond to this request.',
+      },
+      options: [
+        "Select a service",
+        "Paid media",
+        "E-commerce growth",
+        "Lead generation",
+        "Website development",
+        "Email marketing",
+        "Bots and automation",
+        "Analytics",
+        "Something else",
+      ],
+      submit: "Send details",
+      sending: "Sending…",
+      success: "Thank you. Your message is on its way, and we will be in touch.",
+      error: "Something went wrong. Please email info@fixads.xyz or try again.",
+      required: "Required",
+    },
+    footer: {
+      ...sharedFooter,
+      current: "International — English",
+    },
+  },
+
+  de: {
+    locale: "de",
+    dir: "ltr",
+    title: "FixAds — Performance-Marketing-Agentur für messbares Wachstum",
+    seo: {
+      title: "Performance-Marketing-Agentur für Wachstum | FixAds",
+      description:
+        "Wir verbinden Performance Marketing, E-Commerce, Leadgenerierung, Automatisierung und Analytics zu einem klaren digitalen Wachstumssystem in Deutschland.",
+      canonical: "https://www.fixads.xyz/de/",
+      ogLocale: "de_DE",
+    },
+    servicePage: {
+      path: "/de/leistungen/",
+      canonical: "https://www.fixads.xyz/de/leistungen/",
+      seoTitle: "Performance-Marketing-Leistungen | FixAds",
+      seoDescription:
+        "Entdecken Sie FixAds Leistungen für Paid Media, E-Commerce, Leadgenerierung, Websites, Klaviyo, Automatisierung, Analytics und Creative.",
+      eyebrow: "FixAds Leistungen",
+      title: "Spezialisiert in jedem Bereich. Verbunden im Gesamtsystem.",
+      intro:
+        "Nutzen Sie eine einzelne Leistung oder verbinden Sie die gesamte Customer Journey – von Nachfrage und Conversion bis Follow-up, Kundenbindung, Automatisierung und Messung.",
+      indexLabel: "Leistungsübersicht",
+      detailEyebrow: "Leistungen",
+      detailTitle: "Acht Leistungen, die strukturiert zusammenspielen.",
+      approachEyebrow: "So greift die Arbeit ineinander",
+      approachTitle: "Klare Verantwortung vom ersten Signal bis zum nächsten Schritt.",
+      faqEyebrow: "Häufige Fragen",
+      faqTitle: "Klare Antworten zum Zusammenspiel der Leistungen.",
+      faqItems: [
+        {
+          question: "Was ist Performance Marketing?",
+          answer:
+            "Performance Marketing ist ein messbarer Ansatz für bezahlte Werbung, bei dem Kampagnen anhand geschäftlicher Ergebnisse wie qualifizierten Anfragen, Käufen, Akquisitionskosten und Return on Investment (ROI) bewertet werden. FixAds verbindet diese Ergebnisse mit Website, Follow-up und Reporting, damit Kanalmetriken nicht isoliert betrachtet werden.",
+        },
+        {
+          question: "Wie wählt FixAds zwischen Meta Ads, Google Ads, Amazon Ads und Yelp Ads?",
+          answer:
+            "FixAds wählt Kanäle anhand von Zielmarkt, Such- und Kaufintention, Angebot, Customer Journey, verfügbarer Datenbasis und Follow-up-Kapazität des Unternehmens. Eine Plattform wird eingesetzt, wenn Zielgruppe und Format zur gewünschten Kundenaktion passen.",
+        },
+        {
+          question: "Wie bewertet FixAds die Leadqualität bei HVAC- und Dienstleistungsunternehmen?",
+          answer:
+            "FixAds bewertet Leadqualität, indem Kampagnen-Targeting, Landingpage-Kontext, Qualifizierungsfelder, Customer Relationship Management (CRM), Follow-up, Termin- oder Angebotsphase und Reporting miteinander verbunden werden. Der genaue Ablauf richtet sich nach Einzugsgebiet, Vertriebsprozess und den verifizierbaren Daten des Unternehmens.",
+        },
+        {
+          question: "Wie arbeiten Shopify, Klaviyo, Paid Media und Analytics zusammen?",
+          answer:
+            "Shopify steuert Storefront und Kaufprozess, während Klaviyo das Lifecycle-E-Mail-Marketing unterstützt—also Nachrichten zu Phasen wie Anmeldung, Warenkorbabbruch, Kauf und Reaktivierung. Paid Media erzeugt Nachfrage; Analytics verbindet Werbeausgaben mit Kundenaktionen und Käufen.",
+        },
+        {
+          question: "Wann ist eine Odoo-Integration sinnvoll?",
+          answer:
+            "Eine Odoo-Integration ist sinnvoll, wenn Informationen aus Website, Leadformularen, Vertrieb, Aufträgen, Lager oder Kundenservice in einem operativen Ablauf zusammengeführt werden müssen. FixAds definiert zuerst Daten und Aktionen und wählt danach einen Standard-Connector oder eine gezielte individuelle Integration.",
+        },
+      ],
+      reviewedBy: "Geprüft von Anton Goldberg, Inhaber von FixAds",
+      reviewedDate: "2026-08-25",
+      reviewedDateLabel: "Zuletzt geprüft am 25. August 2026",
+      homeLabel: "Startseite",
+      ctaTitle: "Eine Leistung oder das gesamte System?",
+      ctaBody:
+        "Beschreiben Sie uns, wo Wachstum aktuell ins Stocken gerät. Wir prüfen die bestehende Customer Journey und identifizieren einen sinnvollen Ausgangspunkt.",
+      cta: "Projekt besprechen",
+      back: "Zur Website",
+      explore: "Leistungen entdecken",
+    },
+    skip: "Zum Inhalt springen",
+    menu: "Menü",
+    close: "Schließen",
+    nav: [
+      ["Startseite", "#home"],
+      ["Leistungen", "/de/leistungen/"],
+      ["Kunden", "#clients"],
+      ["Unsere Arbeitsweise", "#process"],
+      ["Transparenz", "https://www.fixads.xyz/transparency"],
+      ["Über uns", "#about"],
+    ],
+    headerCta: "Kontakt",
+    login: "Kunden-Login",
+    hero: {
+      eyebrow: "Performance / Technologie / Wachstum",
+      title: "Digitales Marketing, Technologie und messbares Wachstum aus einer Hand.",
+      body:
+        "Wir unterstützen Unternehmen in Deutschland und internationalen Märkten dabei, Marketing, Technologie und Daten zu einem funktionierenden Gesamtsystem zu verbinden.",
+      care:
+        "Unsere Kunden sind uns wichtig. Wir hören genau zu, kommunizieren klar und bleiben auch nach dem Start aufmerksam an der Arbeit.",
+      cta: "Wachstumssystem aufbauen",
+      secondary: "Leistungen ansehen",
+      photoAlt: "Ein Digitalmarketing-Team arbeitet gemeinsam in einem modernen Studio",
+      signal: "Vernetztes Wachstumssystem",
+      metrics: ["Paid Media", "Customer Journey", "Automatisierung", "Analytics"],
+    },
+    ticker: ["Meta Ads", "Google Ads", "Yelp Ads", "Amazon Ads", "Klaviyo", "Shopify", "Odoo", "Automatisierung"],
+    servicesHeading: {
+      eyebrow: "Was wir verbinden",
+      title: "Ein Team für das gesamte digitale System.",
+      body:
+        "Kampagnen funktionieren besser, wenn Website, Follow-up, Creative, E-Mail, Vertrieb und Reporting strukturiert zusammenspielen.",
+    },
+    services: [
+      {
+        ...sharedServices.paid,
+        title: "Performance Marketing & bezahlte Werbung",
+        body: [
+          "Wir planen, erstellen und steuern Kampagnen auf Google Ads, Meta Ads, Amazon Ads und – wo es sinnvoll ist – Yelp Ads. Dazu gehören Strategie, Recherche, Kampagnenaufbau, Tests, Budgetsteuerung, Optimierung und verständliche Auswertungen.",
+          "Im Mittelpunkt stehen relevante Nachfrage, qualifizierte Kontakte, effizientere Kundengewinnung und ein klarer Weg vom ersten Kontakt bis zum Abschluss.",
+        ],
+        tags: ["Google", "Meta", "Amazon", "Yelp"],
+      },
+      {
+        ...sharedServices.ecommerce,
+        title: "E-Commerce",
+        body: [
+          "Wir begleiten E-Commerce-Unternehmen von der ersten Anzeige über den Kauf bis zur Wiederbestellung und langfristigen Kundenbindung.",
+          "Kampagnen, Onlineshop, Creative, Klaviyo, Automatisierungen und Daten werden verbunden, um Conversion-Potenziale zu nutzen und Umsätze wirtschaftlicher zu entwickeln.",
+        ],
+        tags: ["Shopify", "CRO", "Kundenbindung"],
+        imageAlt: "Ein verbundenes E-Commerce-System mit Produkt, Shop und Analytics",
+      },
+      {
+        ...sharedServices.leads,
+        title: "Leadgenerierung für Dienstleister & Fachbetriebe",
+        body: [
+          "Wir entwickeln Systeme zur Leadgenerierung für Dienstleistungsunternehmen, Immobilien, lokale Betriebe sowie HVAC-, Klima-, Heizungs- und Gebäudetechnikunternehmen.",
+          "Entscheidend sind relevante Anfragen und eine nachvollziehbare Verbindung zwischen Anzeige, Suche, Kontaktaufnahme, Termin, Angebot und Auftrag.",
+        ],
+        tags: ["HVAC", "Lokale Betriebe", "Qualifizierte Leads"],
+        imageAlt: "Ein HVAC-Techniker prüft eine Dachanlage mit einem Tablet",
+      },
+      {
+        ...sharedServices.websites,
+        title: "Websites & Onlineshops",
+        body: [
+          "Wir entwickeln und optimieren Unternehmenswebsites, Landingpages und Onlineshops mit Shopify, WordPress und weiteren geeigneten Lösungen.",
+          "Die Website wird sauber mit Werbung, Analytics, Formularen, E-Mail-Marketing, CRM, Zahlungsprozessen und Automatisierungen verbunden.",
+        ],
+        tags: ["Shopify", "WordPress", "Landingpages"],
+      },
+      {
+        ...sharedServices.email,
+        title: "Klaviyo & E-Mail-Marketing",
+        body: [
+          "Wir konzipieren und betreuen Kampagnen, Welcome-Flows, Warenkorbabbruch, Post-Purchase-Kommunikation, Reaktivierung, Segmentierung und Maßnahmen für Wiederkäufe.",
+          "E-Mail soll die Kundenerfahrung verbessern und einen verlässlichen Beitrag zum Umsatz leisten.",
+        ],
+        tags: ["Klaviyo", "Lifecycle", "Retention"],
+      },
+      {
+        ...sharedServices.automation,
+        title: "Bots, Automatisierung & Integrationen",
+        body: [
+          "Wir entwickeln Bots und Automatisierungen für Leadbearbeitung, Kundenservice, Qualifizierung, Terminvereinbarung, interne Abläufe und Follow-up.",
+          "Wir verbinden Websites, Shops, Werbeplattformen, CRM, Analytics, Kommunikationstools, Odoo und weitere Systeme – bei Bedarf mit einem individuellen Workflow.",
+        ],
+        tags: ["Odoo", "Bots", "Individuelle Workflows"],
+      },
+      {
+        ...sharedServices.analytics,
+        title: "Analytics & Erfolgsmessung",
+        body: [
+          "Wir führen Daten aus Werbung, Websites, Shops, Lead-Systemen und Vertrieb zu einem verständlichen Gesamtbild zusammen.",
+          "So werden Ausgaben, Leads, Käufe, Akquisitionskosten, Conversions und Rentabilität nachvollziehbar.",
+        ],
+        tags: ["Attribution", "Dashboards", "ROI"],
+      },
+      {
+        ...sharedServices.creative,
+        title: "Creative",
+        body: [
+          "Wir entwickeln Creative-Konzepte sowie bildbasierte Anzeigen und Marketingmaterialien für die jeweilige Plattform und Zielgruppe.",
+          "Für professionelle Videoproduktion arbeiten wir mit passenden externen Spezialisten zusammen.",
+        ],
+        tags: ["Konzepte", "Static Ads", "Testing"],
+      },
+    ],
+    process: {
+      eyebrow: "Unsere Arbeitsweise",
+      title: "Schnell genug zum Lernen. Strukturiert genug für Vertrauen.",
+      items: [
+        {
+          number: "01",
+          title: "Kundenorientierung",
+          body:
+            "Wir nehmen Ziele, Budgets und Herausforderungen ernst, hören genau zu und bleiben auch nach dem Kampagnenstart zuverlässig erreichbar.",
+        },
+        {
+          number: "02",
+          title: "Sinnvolle Innovation",
+          body:
+            "Ein Bot, Odoo-Workflow, eine individuelle Integration oder ein neues Reporting muss Abläufe verständlicher, schneller oder wirksamer machen.",
+        },
+        {
+          number: "03",
+          title: "Struktur & Qualität",
+          body:
+            "Kampagnen, Websites und Automatisierungen sollten korrekt strukturiert, messbar, wartbar und kontinuierlich verbesserbar sein.",
+        },
+        {
+          number: "04",
+          title: "Ehrlichkeit & Transparenz",
+          body:
+            "Wir zeigen Daten so, wie sie sind. Probleme werden offen benannt und die nächsten Schritte klar definiert.",
+        },
+      ],
+    },
+    transparency: {
+      eyebrow: "Volle Transparenz",
+      title: "Ihr Geschäft. Ihre Daten. Für Sie jederzeit transparent.",
+      body:
+        "Kunden erhalten Zugang zu einer persönlichen Oberfläche, über die Aktivitäten, Ergebnisse, erledigte Arbeit, aktuelle Themen und nächste Schritte nachvollzogen werden können.",
+      list: [
+        "Werbebudgets und Ausgaben",
+        "Leads, Käufe und Conversions",
+        "Kosten pro Lead und Akquisitionskosten",
+        "Ergebnisse nach Kanal und Kampagne",
+        "Aufgaben, Änderungen, Themen und nächste Schritte",
+      ],
+      cta: "Transparenz ansehen",
+    },
+    clients: {
+      eyebrow: "Ausgewählte Erfahrung",
+      title: "Erfahrung über Märkte und Geschäftsmodelle hinweg.",
+      body:
+        "Wir haben mit Unternehmen und Marken in Deutschland, den USA, Israel und weiteren Märkten aus E-Commerce, Mode, Gesundheit und Beauty, Tourismus, Recht, Lebensmittel, Handel, Dienstleistungen und Leadgenerierung gearbeitet.",
+      note: "Ein Klick auf ein Logo führt zur offiziellen Website des jeweiligen Unternehmens.",
+    },
+    about: {
+      eyebrow: "Über FixAds",
+      title: "Die Kampagne ist nur ein Teil des Systems.",
+      paragraphs: [
+        "Unsere Arbeit begann mit Meta Ads und wurde um Google Ads, Yelp Ads, Amazon Ads, E-Commerce, Shopify, WordPress, Klaviyo, E-Mail-Marketing, Bots, Automatisierungen, Odoo, Plattformintegrationen und Analytics erweitert.",
+        "Die Zusammenarbeit mit deutschen Unternehmen hat uns gezeigt, wie wichtig klare Prozesse, zuverlässige Umsetzung, nachvollziehbare Daten und direkte Kommunikation sind. Gleichzeitig bringen wir internationale Erfahrung und neue technologische Ansätze ein.",
+        "Deshalb übernehmen wir Verantwortung für das digitale Gesamtsystem – vom ersten Kontakt über Follow-up und Messung bis zur kontinuierlichen Weiterentwicklung.",
+      ],
+    },
+    closing: {
+      eyebrow: "Nächster Schritt",
+      title: "Bereit für ein digitales System, das wirklich zusammenspielt?",
+      body:
+        "Erzählen Sie uns von Ihrem Unternehmen, Ihren Zielen und Herausforderungen. Wir prüfen, wie Marketing, Technologie, Automatisierung und Daten wirksamer verbunden werden können.",
+      cta: "Projekt besprechen",
+    },
+    form: {
+      eyebrow: "Kontakt",
+      title: "Beginnen wir mit der echten Herausforderung.",
+      body:
+        "Geben Sie uns ein wenig Kontext. Wir lesen Ihre Anfrage sorgfältig und melden uns für ein hilfreiches erstes Gespräch.",
+      fields: {
+        name: "Vor- und Nachname",
+        company: "Unternehmen",
+        phone: "Telefon",
+        email: "E-Mail",
+        website: "Unternehmenswebsite",
+        service: "Wie können wir Sie unterstützen?",
+        message: "Beschreiben Sie Ziel oder Herausforderung",
+        consent:
+          'Ich habe die <a href="/privacy/">Datenschutzerklärung</a> gelesen und stimme zu, dass FixAds meine Angaben zur Bearbeitung dieser Anfrage verwendet.',
+      },
+      options: [
+        "Leistung auswählen",
+        "Performance Marketing",
+        "E-Commerce",
+        "Leadgenerierung",
+        "Website-Entwicklung",
+        "E-Mail-Marketing",
+        "Bots und Automatisierung",
+        "Analytics",
+        "Sonstiges",
+      ],
+      submit: "Anfrage senden",
+      sending: "Wird gesendet…",
+      success: "Vielen Dank. Ihre Nachricht ist unterwegs und wir melden uns bei Ihnen.",
+      error: "Es ist ein Fehler aufgetreten. Bitte schreiben Sie an info@fixads.xyz oder versuchen Sie es erneut.",
+      required: "Pflichtfeld",
+    },
+    footer: {
+      ...sharedFooter,
+      current: "Germany — German",
+    },
+  },
+
+  he: {
+    locale: "he",
+    dir: "rtl",
+    title: "FixAds — שיווק, טכנולוגיה ותוצאות במקום אחד",
+    seo: {
+      title: "סוכנות שיווק דיגיטלי ו־Performance Marketing | FixAds",
+      description:
+        "FixAds מחברת פרסום ממומן, אתרי מסחר, יצירת לידים, אוטומציות ואנליטיקה למערכת צמיחה דיגיטלית ברורה ומדידה לעסקים בישראל ובעולם.",
+      canonical: "https://www.fixads.xyz/he/",
+      ogLocale: "he_IL",
+    },
+    servicePage: {
+      path: "/he/services/",
+      canonical: "https://www.fixads.xyz/he/services/",
+      seoTitle: "שירותי שיווק דיגיטלי ו־Performance | FixAds",
+      seoDescription:
+        "כל שירותי FixAds: פרסום ממומן, E-commerce, יצירת לידים, אתרים, Klaviyo, אוטומציות, אנליטיקה וקריאייטיב.",
+      eyebrow: "השירותים של FixAds",
+      title: "מומחיות בכל תחום. מערכת אחת שעובדת יחד.",
+      intro:
+        "אפשר להתחיל מהשירות שנדרש עכשיו או לחבר את כל מסע הלקוח — מחשיפה והמרה ועד Follow-up, שימור, אוטומציה ומדידה.",
+      indexLabel: "מפת השירותים",
+      detailEyebrow: "יכולות",
+      detailTitle: "שמונה שירותים שנבנו לעבוד יחד.",
+      approachEyebrow: "איך העבודה מתחברת",
+      approachTitle: "אחריות ברורה מהסיגנל הראשון ועד לפעולה הבאה.",
+      faqEyebrow: "שאלות נפוצות",
+      faqTitle: "תשובות ברורות על הדרך שבה השירותים מתחברים.",
+      faqItems: [
+        {
+          question: "מהו Performance Marketing?",
+          answer:
+            "Performance Marketing הוא גישה מדידה לפרסום ממומן, שבה קמפיינים נבחנים לפי תוצאות עסקיות כמו פניות איכותיות, רכישות, עלות רכישה והחזר על ההשקעה (ROI). FixAds מחברת את התוצאות לאתר, לתהליך ה־Follow-up ולדיווח, כך שמדדי הערוצים אינם נבחנים בנפרד.",
+        },
+        {
+          question: "איך FixAds בוחרת בין Meta Ads, Google Ads, Amazon Ads ו־Yelp Ads?",
+          answer:
+            "FixAds בוחרת ערוצים לפי שוק היעד, כוונת הלקוח, ההצעה, מסע הרכישה, הנתונים הזמינים ויכולת ה־Follow-up של העסק. פלטפורמה נבחרת כאשר הקהל והפורמט שלה מתאימים לפעולה שהעסק רוצה לייצר.",
+        },
+        {
+          question: "איך FixAds בוחנת את איכות הלידים בעסקי HVAC ושירותים?",
+          answer:
+            "FixAds בוחנת את איכות הלידים באמצעות חיבור בין מיקוד הקמפיין, ההקשר בדף הנחיתה, שדות סינון, מערכת ניהול קשרי לקוחות (CRM), Follow-up, שלב הפגישה או הצעת המחיר והדיווח. התהליך המדויק נקבע לפי אזור השירות, תהליך המכירה והנתונים שהעסק יכול לאמת.",
+        },
+        {
+          question: "איך Shopify, Klaviyo, פרסום ממומן ואנליטיקה עובדים יחד?",
+          answer:
+            "Shopify מנהלת את החנות ואת מסע הרכישה, ו־Klaviyo תומכת בשיווק אימייל לאורך מחזור חיי הלקוח—הודעות לפי שלבים כמו הרשמה, נטישת עגלה, רכישה והחזרת לקוחות. הפרסום הממומן מייצר ביקוש, והאנליטיקה מחברת בין ההוצאה לפעולות הלקוח ולרכישות.",
+        },
+        {
+          question: "מתי נכון לחבר את Odoo?",
+          answer:
+            "חיבור ל־Odoo מתאים כאשר מידע מהאתר, מטפסי לידים, מכירות, הזמנות, מלאי או שירות לקוחות צריך לעבור בתהליך תפעולי אחד. FixAds מגדירה תחילה את הנתונים והפעולות הנדרשים, ולאחר מכן בוחרת מחבר קיים או אינטגרציה מותאמת וממוקדת.",
+        },
+      ],
+      reviewedBy: "נבדק על ידי אנטון גולדברג, הבעלים של FixAds",
+      reviewedDate: "2026-08-25",
+      reviewedDateLabel: "נבדק לאחרונה ב־25 באוגוסט 2026",
+      homeLabel: "ראשי",
+      ctaTitle: "צריכים שירות אחד או את כל המערכת?",
+      ctaBody:
+        "ספרו לנו איפה הצמיחה נעצרת. נבחן את המסע הקיים ונזהה את המקום הנכון להתחיל ממנו.",
+      cta: "בואו נדבר",
+      back: "חזרה לאתר",
+      explore: "לשירותים",
+    },
+    skip: "דילוג לתוכן",
+    menu: "תפריט",
+    close: "סגירה",
+    nav: [
+      ["ראשי", "#home"],
+      ["השירותים שלנו", "/he/services/"],
+      ["לקוחות", "#clients"],
+      ["איך אנחנו עובדים", "#process"],
+      ["שקיפות", "https://www.fixads.xyz/transparency"],
+      ["אודות", "#about"],
+    ],
+    headerCta: "בואו נדבר",
+    login: "כניסת לקוחות",
+    hero: {
+      eyebrow: "שיווק / טכנולוגיה / צמיחה",
+      title: "שיווק, טכנולוגיה ותוצאות — במקום אחד",
+      body:
+        "אנחנו סוכנות דיגיטל ו־Performance Marketing המספקת לעסקים בישראל ובעולם מעטפת מלאה לצמיחה.",
+      care:
+        "אנחנו מנהלים קמפיינים ב־Meta, Google ו־Amazon, מפתחים אתרים וחנויות אונליין, בונים מערכי אימייל מרקטינג, בוטים ואוטומציות ומחברים את כל הפעילות למערכת אנליטיקה ברורה ומדידה.",
+      cta: "בואו נדבר",
+      secondary: "לשירותים שלנו",
+      photoAlt: "צוות שיווק דיגיטלי עובד יחד בסטודיו מודרני",
+      signal: "מערכת צמיחה מחוברת",
+      metrics: ["פרסום", "מסע לקוח", "אוטומציה", "אנליטיקה"],
+    },
+    ticker: ["Meta Ads", "Google Ads", "Yelp Ads", "Amazon Ads", "Klaviyo", "Shopify", "Odoo", "אוטומציות", "אנליטיקה"],
+    servicesHeading: {
+      eyebrow: "השירותים שלנו",
+      title: "כל המערכת הדיגיטלית, מחוברת לצמיחה.",
+      body:
+        "המטרה שלנו היא לחבר בין השיווק, הטכנולוגיה והנתונים כדי לבנות מערכת אחת שמייצרת תוצאות עסקיות אמיתיות.",
+    },
+    services: [
+      {
+        ...sharedServices.paid,
+        title: "פרסום ממומן ו־Performance Marketing",
+        body: [
+          "אנחנו מתכננים, מקימים ומנהלים קמפיינים ממומנים ב־Meta, Google ו־Amazon.",
+          "העבודה כוללת בניית אסטרטגיה, מחקר קהלים, הקמת קמפיינים, אופטימיזציה, ניהול תקציבים ומעקב אחר התוצאות.",
+        ],
+        tags: ["Meta", "Google", "Amazon"],
+      },
+      {
+        ...sharedServices.ecommerce,
+        title: "E-commerce",
+        body: [
+          "אנחנו מלווים מותגים וחנויות אונליין לאורך כל מסע הלקוח — מהמודעה הראשונה ועד לרכישה ולשימור הלקוח.",
+          "אנחנו מחברים בין הקמפיינים, החנות, הקריאייטיב, האימייל מרקטינג, האוטומציות והנתונים כדי להגדיל מכירות ולשפר את הרווחיות.",
+        ],
+        tags: ["Shopify", "CRO", "Retention"],
+        imageAlt: "מערכת מסחר אלקטרוני מחוברת הכוללת מוצר, חנות ואנליטיקה",
+      },
+      {
+        ...sharedServices.leads,
+        title: "יצירת לידים",
+        body: [
+          "אנחנו מנהלים מערכי לידים עבור נדל״ן, שירותים מקצועיים, עסקים מקומיים ותחומים נוספים.",
+          "המטרה היא לא רק לייצר כמה שיותר לידים, אלא להביא פניות איכותיות ולבנות תהליך מסודר שממשיך משלב המודעה ועד לשיחה או למכירה.",
+        ],
+        tags: ["לידים", "שירותים", "איכות"],
+        imageAlt: "טכנאי מיזוג בודק מערכת על גג באמצעות טאבלט",
+      },
+      {
+        ...sharedServices.websites,
+        title: "פיתוח אתרים",
+        body: [
+          "אנחנו מקימים ומשפרים אתרים, חנויות אונליין ודפי נחיתה באמצעות Shopify, WordPress ופתרונות נוספים.",
+          "כל אתר נבנה כחלק מהמערכת השיווקית ומתחבר לפרסום, לאנליטיקה, לאימייל מרקטינג, ללידים ולאוטומציות.",
+        ],
+        tags: ["Shopify", "WordPress", "דפי נחיתה"],
+      },
+      {
+        ...sharedServices.email,
+        title: "Klaviyo ואימייל מרקטינג",
+        body: [
+          "אנחנו בונים ומנהלים מערכי אימייל מרקטינג, עם התמחות ב־Klaviyo ובמותגי E-commerce.",
+          "השירות כולל קמפיינים, סדרות הצטרפות, שחזור עגלות נטושות, אימיילים לאחר רכישה, החזרת לקוחות ויצירת רכישות חוזרות.",
+        ],
+        tags: ["Klaviyo", "Lifecycle", "Retention"],
+      },
+      {
+        ...sharedServices.automation,
+        title: "בוטים ואוטומציות",
+        body: [
+          "אנחנו בונים בוטים ואוטומציות לטיפול בלידים, שירות לקוחות, איסוף מידע, סינון פניות, קביעת פגישות וחיבור בין מערכות.",
+          "המטרה היא לחסוך זמן, לשפר את חוויית הלקוח ולמנוע מפניות ומשימות חשובות ללכת לאיבוד.",
+        ],
+        tags: ["Odoo", "בוטים", "אינטגרציות"],
+      },
+      {
+        ...sharedServices.analytics,
+        title: "אנליטיקה ומדידה",
+        body: [
+          "אנחנו מחברים את מקורות הנתונים השונים ומציגים תמונה ברורה של ההוצאות, הלידים, המכירות, עלויות הרכישה והחזר ההשקעה.",
+          "כך ניתן להבין מה עובד, מה דורש שיפור והיכן נמצאות ההזדמנויות הבאות לצמיחה.",
+        ],
+        tags: ["דאטה", "דשבורדים", "ROI"],
+      },
+      {
+        ...sharedServices.creative,
+        title: "קריאייטיב",
+        body: [
+          "אנחנו מפתחים כיוונים קריאייטיביים ומייצרים מודעות מבוססות תמונה וחומרים שיווקיים המותאמים לפלטפורמות הפרסום.",
+          "כאשר נדרשת הפקת וידאו מקצועית, אנחנו עובדים עם אנשי מקצוע חיצוניים המתאימים לפרויקט.",
+        ],
+        tags: ["קונספט", "מודעות", "טסטים"],
+      },
+    ],
+    process: {
+      eyebrow: "איך אנחנו עובדים",
+      title: "מהירות, למידה והסתגלות. מקצועיות ללא פשרות.",
+      items: [
+        {
+          number: "01",
+          title: "מהירות, למידה והסתגלות",
+          body:
+            "עולם הדיגיטל משתנה במהירות, ולכן אנחנו נשארים בתנועה מתמדת. אנחנו לומדים כלים וטכנולוגיות חדשות, מגיבים לנתונים ומתאימים את הפעילות לשינויים בשוק.",
+        },
+        {
+          number: "02",
+          title: "מקצועיות ללא פשרות",
+          body:
+            "כל תחום שבו אנחנו עוסקים מקבל את מלוא תשומת הלב המקצועית. אנחנו רוצים שהמערכת תהיה בנויה נכון, מדידה וניתנת לשיפור.",
+        },
+        {
+          number: "03",
+          title: "אמינות ושקיפות",
+          body:
+            "אנחנו מדברים בצורה ברורה, מציגים את הנתונים כפי שהם ולא מבטיחים הבטחות שאי אפשר לקיים.",
+        },
+        {
+          number: "04",
+          title: "אחריות",
+          body:
+            "כאשר משהו עובד, אנחנו מסבירים מדוע. כאשר קיימת בעיה, אנחנו מציגים אותה, לוקחים אחריות ומגדירים כיצד מטפלים בה.",
+        },
+      ],
+    },
+    transparency: {
+      eyebrow: "שקיפות מלאה",
+      title: "הפעילות שלכם. הנתונים שלכם. תמיד פתוחים בפניכם.",
+      body:
+        "כל לקוח מקבל גישה לממשק אישי שבו ניתן לעקוב אחר הפעילות והתוצאות. הלקוח אינו צריך להמתין לדוח החודשי כדי להבין מה קורה.",
+      list: [
+        "תקציבי פרסום והוצאות",
+        "לידים, רכישות והמרות",
+        "עלויות רכישה ועלויות לליד",
+        "ביצועים לפי ערוץ וקמפיין",
+        "משימות, שינויים, בעיות והשלבים הבאים",
+      ],
+      cta: "לממשק השקיפות",
+    },
+    clients: {
+      eyebrow: "הלקוחות שלנו",
+      title: "ניסיון במגוון שווקים ומודלים עסקיים.",
+      body:
+        "עבדנו עם חברות ומותגים בישראל ובעולם, בתחומי המסחר האלקטרוני, האופנה, הבריאות, התיירות, היופי, המשפטים, המזון והקמעונאות.",
+      note: "לחיצה על כל לוגו תוביל לאתר הרשמי של החברה.",
+    },
+    about: {
+      eyebrow: "אודות",
+      title: "הקמפיין הוא רק חלק אחד מהמערכת.",
+      paragraphs: [
+        "אנחנו סוכנות דיגיטל שמחברת בין פרסום, טכנולוגיה ונתונים.",
+        "התחלנו בניהול קמפיינים ב־Meta, ובהמשך הרחבנו את הפעילות ל־Google, Amazon, פיתוח אתרים, Shopify, WordPress, Klaviyo, אימייל מרקטינג, בוטים, אוטומציות ואנליטיקה.",
+        "הבנו שכדי לייצר צמיחה אמיתית, לא מספיק לנהל קמפיין. הקמפיין צריך להתחבר לאתר, למערכת הלידים, לקריאייטיב, לאימיילים ולנתונים העסקיים. לכן אנחנו לוקחים אחריות על כל המערכת הדיגיטלית — מא׳ ועד ת׳.",
+      ],
+    },
+    closing: {
+      eyebrow: "השלב הבא",
+      title: "מוכנים לבנות מערכת שמייצרת צמיחה?",
+      body:
+        "ספרו לנו על העסק, המטרות והאתגרים שלכם. אנחנו נבחן את הפעילות הקיימת ונבין כיצד ניתן לחבר בין השיווק, הטכנולוגיה והנתונים כדי להתקדם.",
+      cta: "בואו נדבר",
+    },
+    form: {
+      eyebrow: "צור קשר",
+      title: "נתחיל מהאתגר האמיתי.",
+      body:
+        "ספרו לנו בקצרה על העסק והמטרה. נקרא את הפרטים בעיון ונחזור לשיחה ראשונה ומועילה.",
+      fields: {
+        name: "שם מלא",
+        company: "שם החברה",
+        phone: "טלפון",
+        email: "אימייל",
+        website: "אתר החברה",
+        service: "במה נוכל לעזור?",
+        message: "ספרו לנו על המטרה או האתגר",
+        consent:
+          'קראתי את <a href="/privacy/">מדיניות הפרטיות</a> ואני מאשר/ת ל־FixAds להשתמש בפרטים שלי כדי להשיב לפנייה זו.',
+      },
+      options: [
+        "בחירת שירות",
+        "פרסום ממומן",
+        "E-commerce",
+        "יצירת לידים",
+        "פיתוח אתרים",
+        "אימייל מרקטינג",
+        "בוטים ואוטומציות",
+        "אנליטיקה",
+        "משהו אחר",
+      ],
+      submit: "שליחת פרטים",
+      sending: "שולח…",
+      success: "תודה. ההודעה נשלחה ואנחנו נחזור אליכם.",
+      error: "משהו השתבש. אפשר לכתוב אל info@fixads.xyz או לנסות שוב.",
+     required: "שדה חובה",
+    },
+    footer: {
+      ...sharedFooter,
+      current: "Israel — Hebrew",
+    },
+  },
+};
+
+// Lead-focused homepage copy approved through the 2026-09-10 optimization request.
+const growthContent = {
+  "en": {
+    "headline": "Turn more clicks into customers.",
+    "intro": "Paid ads, websites, and follow-up that work together—for e-commerce brands, HVAC companies, and service businesses.",
+    "care": "Your business gets our attention, not just your campaigns. We connect the work, explain the decisions, and stay involved.",
+    "cta": "Discuss your marketing",
+    "note": "Start with a focused project or connect the full customer journey.",
+    "choose": "Where do you want to grow?",
+    "focusLabel": "Choose a business goal",
+    "approach": "A connected approach",
+    "selected": "Talk through this opportunity",
+    "goals": [
+      {
+        "label": "Online sales",
+        "title": "Make the whole buying journey work harder.",
+        "body": "For stores getting traffic but losing sales—or customers who buy once and disappear.",
+        "steps": [
+          "Attract",
+          "Convert",
+          "Retain"
+        ],
+        "image": "/assets/market-commerce.png",
+        "alt": "Conceptual product photography with retail packaging, a bottle, fabric, and a silver ring",
+        "service": 2,
+        "scope": [
+          "Ads + product-page improvements",
+          "Klaviyo flows + repeat-purchase journeys"
+        ]
+      },
+      {
+        "label": "Better leads",
+        "title": "Build a clearer path from inquiry to booked work.",
+        "body": "For HVAC and service businesses that need relevant inquiries, clearer qualification, and a reliable next step.",
+        "steps": [
+          "Reach",
+          "Qualify",
+          "Follow up"
+        ],
+        "image": "/assets/market-services.png",
+        "alt": "Illustrative photograph of a technician working on an outdoor HVAC unit",
+        "service": 3,
+        "scope": [
+          "Google, Meta, or Yelp + landing pages",
+          "Lead qualification + CRM follow-up"
+        ]
+      },
+      {
+        "label": "Less manual work",
+        "title": "Let your tools pass the work forward.",
+        "body": "For businesses copying details between systems, chasing updates, or losing track of new inquiries.",
+        "steps": [
+          "Capture",
+          "Connect",
+          "Act"
+        ],
+        "image": "/assets/market-automation.png",
+        "alt": "Conceptual photograph of a silver ribbon connecting three blue frames",
+        "service": 6,
+        "scope": [
+          "Forms, bots, CRM + Odoo integrations",
+          "Notifications, handoffs + reporting"
+        ]
+      }
+    ],
+    "trust": "Businesses we have worked with",
+    "servicesTitle": "The expertise behind the next step.",
+    "servicesBody": "Campaigns, conversion, customer retention, and operations. Choose one area to improve, or bring them together.",
+    "readMore": "Explore this service",
+    "discussService": "Discuss this service",
+    "servicePrompt": "Select a service below to see how it works.",
+    "nextTitle": "What happens after you get in touch?",
+    "nextSteps": [
+      [
+        "We understand the business.",
+        "We review your goals, current activity, and the problem you want to solve."
+      ],
+      [
+        "We find a useful starting point.",
+        "Together, we look at the journey from first visit to inquiry, sale, or repeat purchase."
+      ],
+      [
+        "We agree on the next step.",
+        "Scope, priorities, and the way we will measure progress are discussed before work begins."
+      ]
+    ],
+    "formTitle": "What would make a difference to your business?",
+    "formBody": "Tell us what you want to improve. We will discuss your current setup, priorities, and a useful place to start.",
+    "optional": "Optional",
+    "extra": "Add company, website, or phone (optional)",
+    "messagePlaceholder": "For example: We need more qualified HVAC inquiries, or more repeat purchases from our store.",
+    "formSubmit": "Send my inquiry",
+    "formNote": "Your details are used to respond to your inquiry.",
+    "faqTitle": "A few things you might be wondering.",
+    "faqs": [
+      [
+        "Can we start with one service?",
+        "Yes. We can focus on a specific need, such as Google Ads, a Shopify improvement, Klaviyo flows, or an automation, and connect other parts when they are useful."
+      ],
+      [
+        "Can you work with our existing website and tools?",
+        "We review your current setup first. The work can include improving what you already use or connecting it to advertising, CRM, Odoo, email, and reporting."
+      ],
+      [
+        "Do you work with e-commerce and local service businesses?",
+        "Yes. Our experience includes e-commerce brands, HVAC and home services, professional services, and other businesses that depend on qualified inquiries or online sales."
+      ],
+      [
+        "How will we know what is happening?",
+        "We communicate clearly and give clients access to an interface for following activity, results, completed work, and next steps."
+      ],
+      [
+        "What budget do we need?",
+        "It depends on your goals, market, existing setup, and the work involved. We discuss the service scope and fees separately from advertising spend before you decide how to proceed."
+      ],
+      [
+        "What if we already work with an agency or an internal team?",
+        "We can discuss a focused project or a specific gap in your setup. Responsibilities, access, and handoffs are agreed before work begins."
+      ]
+    ],
+    "market": {
+      "introPoints": [
+        "Your goals first",
+        "Clear scope",
+        "Visible progress"
+      ],
+      "scopeLabel": "What we can work on",
+      "processTitle": "Your business is more than an ad account.",
+      "processIntro": "Good marketing depends on understanding what happens before and after the click. Here is how we keep the work grounded in your business.",
+      "principles": [
+        [
+          "Define a useful result.",
+          "Qualified inquiries, booked work, purchases, or repeat customers—we agree what matters and how to assess it."
+        ],
+        [
+          "Connect the next step.",
+          "The ad, website, form, and follow-up need to support the same goal. We look for the handoffs that need attention."
+        ],
+        [
+          "Stay involved.",
+          "You can see the work and the next priorities. We explain decisions, flag issues, and keep improving the setup."
+        ]
+      ],
+      "ownerLabel": "Led by Anton Goldberg",
+      "ownerBody": "Based in Berlin. Experience with businesses in the US, Israel, Germany, and other markets.",
+      "ownerLink": "Meet the owner on LinkedIn",
+      "workflowTitle": "A new inquiry should have somewhere to go.",
+      "workflowIntro": "An example of the connected workflows we can build. The tools, data, and handoffs are agreed around your business.",
+      "workflowLabel": "Example workflow",
+      "workflowAlt": "Conceptual blue frames joined by a silver ribbon, representing connected business systems",
+      "workflowSteps": [
+        [
+          "Capture the inquiry",
+          "A website form or bot collects the details needed to understand the request."
+        ],
+        [
+          "Put it in the right place",
+          "The information moves into your CRM or Odoo, with the fields your team needs."
+        ],
+        [
+          "Make the next action clear",
+          "A notification, assigned task, or agreed reply helps the right person follow up."
+        ],
+        [
+          "Learn from the outcome",
+          "Bring inquiry status and campaign context together to see which sources lead to useful conversations."
+        ]
+      ],
+      "workflowCta": "Discuss an automation",
+      "imageNote": "Original conceptual imagery. No client results are depicted.",
+      "aboutTitle": "One partner for marketing and the systems behind it."
+    }
+  },
+  "de": {
+    "headline": "Kunden gewinnen. Mit einem klaren System.",
+    "intro": "Performance Marketing, Websites und Automatisierung für Onlineshops, Fachbetriebe und Dienstleister—von der ersten Anzeige bis zur nächsten Kundenanfrage.",
+    "care": "Wir nehmen Ihr Unternehmen, Ihre Ziele und Ihr Budget ernst. Wir verbinden die Maßnahmen, erklären Entscheidungen und bleiben ansprechbar.",
+    "cta": "Erstgespräch anfragen",
+    "note": "Starten Sie mit einem klar abgegrenzten Projekt oder verbinden Sie den gesamten Kundenprozess.",
+    "choose": "Wo möchten Sie vorankommen?",
+    "focusLabel": "Geschäftliches Ziel wählen",
+    "approach": "Ein vernetzter Ansatz",
+    "selected": "Diesen Ansatz besprechen",
+    "goals": [
+      {
+        "label": "Online-Umsatz",
+        "title": "Vom Shopbesuch zum Kauf und Wiederkauf.",
+        "body": "Für Onlineshops, die aus ihrer Reichweite mehr machen und bestehende Kunden gezielter wieder ansprechen möchten.",
+        "steps": [
+          "Erreichen",
+          "Überzeugen",
+          "Binden"
+        ],
+        "image": "/assets/market-commerce.png",
+        "alt": "Konzeptionelle Produktaufnahme mit Verpackung, Flasche, Stoff und einem Silberring",
+        "service": 2,
+        "scope": [
+          "Kampagnen + bessere Produktseiten",
+          "Klaviyo-Flows + Kundenbindung"
+        ]
+      },
+      {
+        "label": "Passende Anfragen",
+        "title": "Anfragen, die zu Ihrem Betrieb passen.",
+        "body": "Für Dienstleister und Fachbetriebe: Zielgebiet, Leistungsangebot und Qualifizierung gehören genauso dazu wie die Kampagne.",
+        "steps": [
+          "Erreichen",
+          "Qualifizieren",
+          "Nachfassen"
+        ],
+        "image": "/assets/market-services.png",
+        "alt": "Illustrative Aufnahme eines Technikers bei der Arbeit an einem Klimagerät",
+        "service": 3,
+        "scope": [
+          "Google oder Meta + Landingpages",
+          "Qualifizierung + CRM-Folgeprozesse"
+        ]
+      },
+      {
+        "label": "Weniger Handarbeit",
+        "title": "Damit Informationen zuverlässig weiterkommen.",
+        "body": "Für Unternehmen, die Daten mehrfach eingeben, Rückmeldungen nachverfolgen oder Anfragen zwischen Tools verlieren.",
+        "steps": [
+          "Erfassen",
+          "Verbinden",
+          "Handeln"
+        ],
+        "image": "/assets/market-automation.png",
+        "alt": "Konzeptionelle Aufnahme eines silbernen Bandes, das drei blaue Rahmen verbindet",
+        "service": 6,
+        "scope": [
+          "Formulare, Bots, CRM + Odoo",
+          "Benachrichtigungen, Aufgaben + Reporting"
+        ]
+      }
+    ],
+    "trust": "Unternehmen, mit denen wir gearbeitet haben",
+    "servicesTitle": "Die passende Leistung für Ihren nächsten Schritt.",
+    "servicesBody": "Kampagnen, Conversion, Kundenbindung und betriebliche Abläufe. Wir verbessern einen gezielten Bereich oder verbinden das Gesamtsystem.",
+    "readMore": "Leistung im Detail",
+    "discussService": "Leistung besprechen",
+    "servicePrompt": "Wählen Sie eine Leistung und erfahren Sie mehr.",
+    "nextTitle": "Was passiert nach Ihrer Anfrage?",
+    "nextSteps": [
+      [
+        "Wir verstehen Ihr Unternehmen.",
+        "Wir betrachten Ihre Ziele, die laufenden Aktivitäten und die Herausforderung, die Sie lösen möchten."
+      ],
+      [
+        "Wir finden einen sinnvollen Einstieg.",
+        "Gemeinsam prüfen wir den Weg vom ersten Besuch zur Anfrage, zum Kauf oder zur Wiederbestellung."
+      ],
+      [
+        "Wir stimmen den nächsten Schritt ab.",
+        "Umfang, Prioritäten und Erfolgsmessung werden besprochen, bevor die Umsetzung beginnt."
+      ]
+    ],
+    "formTitle": "Was möchten Sie konkret verbessern?",
+    "formBody": "Beschreiben Sie kurz Ihr Vorhaben. Wir besprechen Ihre bestehende Umgebung, die Prioritäten und einen sinnvollen Einstieg.",
+    "optional": "Optional",
+    "extra": "Unternehmen, Website oder Telefon ergänzen (optional)",
+    "messagePlaceholder": "Zum Beispiel: Wir benötigen qualifiziertere Anfragen oder mehr Wiederkäufe in unserem Shop.",
+    "formSubmit": "Anfrage senden",
+    "formNote": "Ihre Angaben werden zur Beantwortung Ihrer Anfrage verwendet.",
+    "faqTitle": "Antworten auf Ihre ersten Fragen.",
+    "faqs": [
+      [
+        "Können wir mit einer einzelnen Leistung starten?",
+        "Ja. Wir können uns auf einen konkreten Bedarf konzentrieren, etwa Google Ads, Shopify-Optimierung, Klaviyo-Flows oder eine Automatisierung, und weitere Bereiche bei Bedarf verbinden."
+      ],
+      [
+        "Arbeiten Sie mit unserer bestehenden Website und unseren Tools?",
+        "Wir prüfen zuerst Ihre vorhandene Umgebung. Anschließend können wir bestehende Lösungen verbessern oder mit Werbung, CRM, Odoo, E-Mail und Reporting verbinden."
+      ],
+      [
+        "Betreuen Sie E-Commerce und lokale Dienstleister?",
+        "Ja. Unsere Erfahrung umfasst E-Commerce-Marken, Klima-, Heizungs- und Gebäudetechnik, professionelle Dienstleistungen und weitere Unternehmen, die qualifizierte Anfragen oder Onlineverkäufe benötigen."
+      ],
+      [
+        "Wie behalten wir den Überblick?",
+        "Wir kommunizieren verständlich und stellen Kunden eine Oberfläche bereit, über die Aktivitäten, Ergebnisse, erledigte Aufgaben und nächste Schritte nachvollzogen werden können."
+      ],
+      [
+        "Welches Budget sollten wir einplanen?",
+        "Das hängt von Ziel, Markt, bestehender Umgebung und Leistungsumfang ab. Wir besprechen den Umfang und das Honorar getrennt vom Werbebudget, bevor Sie über das weitere Vorgehen entscheiden."
+      ],
+      [
+        "Können Sie unser internes Team oder eine bestehende Agentur ergänzen?",
+        "Wir können ein klar abgegrenztes Projekt oder eine konkrete Lücke in Ihrer Umgebung besprechen. Zuständigkeiten, Zugänge und Übergaben werden vor dem Start abgestimmt."
+      ]
+    ],
+    "market": {
+      "introPoints": [
+        "Ihre Ziele zuerst",
+        "Klarer Umfang",
+        "Nachvollziehbarer Fortschritt"
+      ],
+      "scopeLabel": "Mögliche Schwerpunkte",
+      "processTitle": "Wir betrachten Ihr Unternehmen, nicht nur das Werbekonto.",
+      "processIntro": "Gutes Marketing beginnt beim Geschäftsmodell und endet nicht mit dem Klick. So richten wir die Zusammenarbeit an Ihrem tatsächlichen Bedarf aus.",
+      "principles": [
+        [
+          "Das Ziel gemeinsam festlegen.",
+          "Qualifizierte Anfragen, Aufträge, Käufe oder Kundenbindung: Wir stimmen ab, welches Ergebnis relevant ist und wie es bewertet wird."
+        ],
+        [
+          "Die Abläufe verbinden.",
+          "Anzeige, Website, Formular und Folgeprozess müssen zum gleichen Ziel beitragen. Wir prüfen, wo Übergaben verbessert werden können."
+        ],
+        [
+          "Verantwortung sichtbar machen.",
+          "Sie erhalten Einblick in die Arbeit und die nächsten Prioritäten. Wir erläutern Entscheidungen, benennen Probleme und entwickeln die Lösung weiter."
+        ]
+      ],
+      "ownerLabel": "Inhabergeführt von Anton Goldberg",
+      "ownerBody": "Sitz in Berlin. Erfahrung mit Unternehmen in Deutschland, Israel, den USA und weiteren Märkten.",
+      "ownerLink": "Zum LinkedIn-Profil des Inhabers",
+      "workflowTitle": "Aus einer Anfrage wird ein klarer nächster Schritt.",
+      "workflowIntro": "Ein Beispiel für einen vernetzten Ablauf. Tools, Daten und Zuständigkeiten stimmen wir auf Ihr Unternehmen ab.",
+      "workflowLabel": "Beispielablauf",
+      "workflowAlt": "Konzeptionelle blaue Rahmen mit einem silbernen Band als Sinnbild verbundener Unternehmenssysteme",
+      "workflowSteps": [
+        [
+          "Anfrage erfassen",
+          "Ein Websiteformular oder Bot erfasst die Angaben, die zur Einordnung des Anliegens erforderlich sind."
+        ],
+        [
+          "Daten richtig zuordnen",
+          "Die Informationen gelangen in Ihr CRM oder Odoo—mit den Feldern, die Ihr Team benötigt."
+        ],
+        [
+          "Die nächste Aufgabe klären",
+          "Eine Benachrichtigung, zugewiesene Aufgabe oder abgestimmte Antwort unterstützt die zuständige Person beim Nachfassen."
+        ],
+        [
+          "Ergebnisse nachvollziehen",
+          "Anfragestatus und Kampagnenkontext lassen sich zusammenführen, um relevante Quellen besser zu erkennen."
+        ]
+      ],
+      "workflowCta": "Automatisierung besprechen",
+      "imageNote": "Eigene konzeptionelle Bildwelt. Keine Darstellung von Kundenergebnissen.",
+      "aboutTitle": "Ein Partner für Marketing und die Systeme dahinter."
+    }
+  },
+  "he": {
+    "headline": "מהקליק הראשון ללקוח הבא.",
+    "intro": "מחברים פרסום ממומן, אתרים ואוטומציות כדי לעזור לחנויות אונליין ולעסקי שירותים לייצר פניות איכותיות ומכירות.",
+    "care": "אכפת לנו מהעסק שלכם, לא רק מהקמפיין. אנחנו מבינים את המטרות, מסבירים את ההחלטות ונשארים מעורבים.",
+    "cta": "בואו נדבר על העסק שלכם",
+    "note": "אפשר להתחיל מפרויקט ממוקד או לחבר את כל מסע הלקוח.",
+    "choose": "איפה תרצו להתקדם?",
+    "focusLabel": "בחירת מטרה עסקית",
+    "approach": "גישה שמחברת הכול",
+    "selected": "בואו נדבר על הכיוון הזה",
+    "goals": [
+      {
+        "label": "מכירות אונליין",
+        "title": "מהביקור בחנות לרכישה—ולרכישה הבאה.",
+        "body": "לחנויות שמביאות תנועה אבל רוצות לשפר את תהליך הרכישה ולחזק את הקשר עם לקוחות שכבר קנו.",
+        "steps": [
+          "חשיפה",
+          "רכישה",
+          "שימור"
+        ],
+        "image": "/assets/market-commerce.png",
+        "alt": "צילום קונספט של אריזה, בקבוק, בד וטבעת כסף לחנות אונליין",
+        "service": 2,
+        "scope": [
+          "קמפיינים + שיפור עמודי מוצר",
+          "תהליכי Klaviyo + רכישות חוזרות"
+        ]
+      },
+      {
+        "label": "פניות איכותיות",
+        "title": "פניות שמתאימות לעסק ולשירות שלכם.",
+        "body": "לעסקי שירותים, נדל״ן ושירותים מקצועיים שצריכים לחבר בין הפרסום, סינון הפניות והחזרה ללקוח.",
+        "steps": [
+          "חשיפה",
+          "סינון",
+          "מעקב"
+        ],
+        "image": "/assets/market-services.png",
+        "alt": "צילום להמחשה של טכנאי בזמן עבודה על יחידת מיזוג אוויר",
+        "service": 3,
+        "scope": [
+          "Google או Meta + דפי נחיתה",
+          "סינון פניות + מעקב במערכת CRM"
+        ]
+      },
+      {
+        "label": "פחות עבודה ידנית",
+        "title": "שהמידע יתקדם, בלי להעתיק אותו שוב.",
+        "body": "לעסקים שמעבירים נתונים בין כלים, רודפים אחרי עדכונים או מאבדים פניות בדרך.",
+        "steps": [
+          "איסוף",
+          "חיבור",
+          "פעולה"
+        ],
+        "image": "/assets/market-automation.png",
+        "alt": "צילום קונספט של רצועת מתכת המחברת שלוש מסגרות כחולות",
+        "service": 6,
+        "scope": [
+          "טפסים, בוטים, CRM + Odoo",
+          "התראות, משימות + דוחות"
+        ]
+      }
+    ],
+    "trust": "חברות ומותגים שעבדנו איתם",
+    "servicesTitle": "המומחיות שצריך בשביל הצעד הבא.",
+    "servicesBody": "קמפיינים, שיפור המרות, שימור לקוחות ותהליכי עבודה. אפשר לשפר תחום אחד או לחבר את כל המערכת.",
+    "readMore": "לפרטים על השירות",
+    "discussService": "בואו נדבר על השירות",
+    "servicePrompt": "בחרו שירות כדי לקרוא איך הוא עובד.",
+    "nextTitle": "מה קורה אחרי שפונים אלינו?",
+    "nextSteps": [
+      [
+        "מכירים את העסק.",
+        "נבחן את המטרות, הפעילות הקיימת והאתגר שתרצו לפתור."
+      ],
+      [
+        "מזהים נקודת התחלה מועילה.",
+        "יחד נבחן את הדרך מהביקור הראשון לפנייה, לרכישה או לרכישה חוזרת."
+      ],
+      [
+        "מסכמים את הצעד הבא.",
+        "נדבר על היקף העבודה, סדרי העדיפויות ודרך המדידה לפני שמתחילים."
+      ]
+    ],
+    "formTitle": "מה תרצו לשפר בעסק?",
+    "formBody": "ספרו לנו בקצרה על האתגר. נדבר על הפעילות הקיימת, סדרי העדיפויות ונקודת התחלה שמתאימה לכם.",
+    "optional": "רשות",
+    "extra": "הוספת חברה, אתר או טלפון (רשות)",
+    "messagePlaceholder": "לדוגמה: אנחנו צריכים פניות איכותיות יותר, או רוצים להגדיל רכישות חוזרות בחנות.",
+    "formSubmit": "שליחת פנייה",
+    "formNote": "הפרטים שלכם ישמשו כדי להשיב לפנייה.",
+    "faqTitle": "כמה דברים שאולי רציתם לשאול.",
+    "faqs": [
+      [
+        "אפשר להתחיל משירות אחד?",
+        "כן. אפשר להתמקד בצורך מסוים, כמו Google Ads, שיפור חנות Shopify, תהליכי Klaviyo או אוטומציה, ולחבר תחומים נוספים לפי הצורך."
+      ],
+      [
+        "אפשר לעבוד עם האתר והכלים שכבר יש לנו?",
+        "נבחן קודם את המערכת הקיימת. אפשר לשפר את מה שכבר עובד או לחבר אותו לפרסום, CRM, Odoo, אימייל ודוחות."
+      ],
+      [
+        "אתם עובדים עם חנויות אונליין ועסקי שירותים?",
+        "כן. הניסיון שלנו כולל מותגי E-commerce, עסקי שירותים מקומיים, מיזוג אוויר, שירותים מקצועיים ועסקים נוספים שמתבססים על פניות איכותיות או מכירות אונליין."
+      ],
+      [
+        "איך נדע מה קורה בפעילות?",
+        "אנחנו מתקשרים בצורה ברורה ומעניקים ללקוחות גישה לממשק שבו אפשר לעקוב אחרי הפעילות, התוצאות, המשימות שבוצעו והשלבים הבאים."
+      ],
+      [
+        "איזה תקציב צריך?",
+        "זה תלוי במטרות, בשוק, במערכת הקיימת ובהיקף העבודה. נדבר על השירות והתשלום בנפרד מתקציב הפרסום, לפני שתחליטו איך להתקדם."
+      ],
+      [
+        "אפשר לעבוד לצד הצוות שלנו או סוכנות קיימת?",
+        "אפשר לדבר על פרויקט ממוקד או על צורך מסוים במערכת. נסכם מראש את תחומי האחריות, הגישות והעברת העבודה בין הצדדים."
+      ]
+    ],
+    "market": {
+      "introPoints": [
+        "המטרות שלכם קודם",
+        "היקף עבודה ברור",
+        "התקדמות שאפשר לראות"
+      ],
+      "scopeLabel": "במה אפשר להתמקד",
+      "processTitle": "אנחנו רואים את העסק, לא רק את חשבון הפרסום.",
+      "processIntro": "שיווק טוב מתחיל בהבנת העסק וממשיך גם אחרי הקליק. כך אנחנו מחברים את העבודה למה שבאמת חשוב לכם.",
+      "principles": [
+        [
+          "מגדירים מה נחשב לתוצאה טובה.",
+          "פניות רלוונטיות, עסקאות, רכישות או לקוחות חוזרים—מסכמים מה חשוב ואיך נבחן את ההתקדמות."
+        ],
+        [
+          "מחברים את השלב הבא.",
+          "המודעה, האתר, הטופס והחזרה ללקוח צריכים לעבוד לאותה מטרה. נזהה איפה המעבר ביניהם דורש שיפור."
+        ],
+        [
+          "נשארים בתמונה.",
+          "אתם רואים את העבודה ואת סדרי העדיפויות. אנחנו מסבירים החלטות, מציפים בעיות וממשיכים לשפר."
+        ]
+      ],
+      "ownerLabel": "בהובלת אנטון גולדברג",
+      "ownerBody": "ממוקמים בברלין, עם ניסיון בעבודה עם עסקים בישראל, בגרמניה, בארה״ב ובשווקים נוספים.",
+      "ownerLink": "היכרות עם הבעלים ב־LinkedIn",
+      "workflowTitle": "לכל פנייה צריך להיות צעד הבא.",
+      "workflowIntro": "דוגמה לתהליך מחובר שאפשר לבנות. את הכלים, הנתונים ותחומי האחריות מתאימים לעסק שלכם.",
+      "workflowLabel": "תהליך לדוגמה",
+      "workflowAlt": "מסגרות כחולות המחוברות ברצועת מתכת, להמחשת חיבור בין מערכות עסקיות",
+      "workflowSteps": [
+        [
+          "אוספים את הפנייה",
+          "טופס באתר או בוט אוספים את הפרטים שצריך כדי להבין את הבקשה."
+        ],
+        [
+          "מעבירים למקום הנכון",
+          "המידע עובר למערכת ה־CRM או ל־Odoo, עם השדות שהצוות שלכם צריך."
+        ],
+        [
+          "מגדירים את הפעולה הבאה",
+          "התראה, משימה לאדם המתאים או תשובה שסוכמה מראש עוזרות להמשיך את הטיפול."
+        ],
+        [
+          "לומדים מהתוצאה",
+          "מחברים בין מצב הפנייה למקור הקמפיין, כדי להבין אילו מקורות מביאים שיחות רלוונטיות."
+        ]
+      ],
+      "workflowCta": "בואו נדבר על אוטומציה",
+      "imageNote": "תמונות קונספט מקוריות. אינן מציגות תוצאות של לקוחות.",
+      "aboutTitle": "שותף אחד לשיווק ולמערכות שמאחוריו."
+    }
+  }
+};
+for (const [locale, growth] of Object.entries(growthContent)) {
+  const page = content[locale];
+  page.growth = growth;
+  page.form.options.splice(8, 0, { en: "Creative", de: "Creative", he: "קריאייטיב" }[locale]);
+  Object.assign(page.hero, { title: growth.headline, body: growth.intro, care: growth.care, cta: growth.cta });
+  Object.assign(page.form, { title: growth.formTitle, body: growth.formBody, submit: growth.formSubmit });
+  Object.assign(page.seo, {
+    en: { title: "Performance Marketing for E-commerce & Leads | FixAds", description: "FixAds connects paid ads, websites, Klaviyo, CRM and automation for e-commerce, HVAC and service businesses. Discuss a focused project or your full customer journey." },
+    de: { title: "Performance-Marketing-Agentur für Shops & Dienstleister | FixAds", description: "FixAds aus Berlin verbindet Google Ads, Meta, Websites, Klaviyo und Odoo. Für Onlineshops, Fachbetriebe und Dienstleister. Jetzt Erstgespräch anfragen." },
+    he: { title: "סוכנות שיווק דיגיטלי ללידים ולמכירות אונליין | FixAds", description: "FixAds מחברת פרסום ממומן, אתרים, Klaviyo, CRM ואוטומציות לחנויות אונליין ולעסקי שירותים. בואו נדבר על פניות איכותיות, מכירות והצעד הבא לעסק שלכם." }
+  }[locale]);
+}

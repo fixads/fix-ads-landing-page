@@ -1,0 +1,43 @@
+# FixAds
+
+> FixAds is a Berlin-based performance marketing and digital growth agency that connects paid media, e-commerce, lead generation, websites, lifecycle email, automation, integrations, and analytics into one measurable operating system.
+
+FixAds works with businesses in Germany, Israel, the United States, and other allowed markets. The agency supports e-commerce brands, HVAC and service businesses, professional services, local businesses, and other lead-driven organizations. FixAds is operated by Anton Goldberg. Public inquiries can be sent to [info@fixads.xyz](mailto:info@fixads.xyz) or through the localized contact form.
+
+## Canonical pages
+
+- [English website](https://www.fixads.xyz/en/)
+- [German website](https://www.fixads.xyz/de/)
+- [Hebrew website](https://www.fixads.xyz/he/)
+- [English services](https://www.fixads.xyz/en/services/)
+- [German services](https://www.fixads.xyz/de/leistungen/)
+- [Hebrew services](https://www.fixads.xyz/he/services/)
+- [German Impressum](https://www.fixads.xyz/impressum/)
+- [Privacy Policy and Datenschutzerklärung](https://www.fixads.xyz/privacy/)
+- [Terms of Use](https://www.fixads.xyz/terms/)
+- [Accessibility Statement](https://www.fixads.xyz/accessibility/)
+
+## Core services
+
+1. Paid media and performance marketing across Meta Ads, Google Ads, Amazon Ads, and Yelp Ads where appropriate for the target market.
+2. E-commerce growth connecting advertising, storefront experience, creative, lifecycle email, automation, and analytics.
+3. Lead generation for HVAC, home-service, real-estate, professional-service, local, and other lead-driven businesses.
+4. Website, landing-page, and e-commerce development using Shopify, WordPress, and other suitable platforms.
+5. Klaviyo and lifecycle email marketing, including welcome, cart-recovery, post-purchase, retention, and win-back workflows.
+6. Bots, automation, and integrations connecting websites, advertising systems, customer relationship management tools, communication tools, Odoo, and other business platforms.
+7. Analytics and measurement connecting spend with leads, purchases, acquisition costs, conversion, and return on investment.
+8. Creative direction and image-based advertising assets, with external specialists used when professional video production is required.
+
+## Working approach
+
+FixAds evaluates channels and technology against the business's target market, customer journey, available data, sales or follow-up process, and operational needs. The agency emphasizes customer care, clear ownership, measurable implementation, honest communication, and practical innovation. FixAds does not publish guaranteed outcomes, unsupported performance statistics, certifications, or platform-partner claims.
+
+## Languages and routing
+
+The English, German, and Hebrew pages contain equivalent service scope adapted to their markets. Israel is routed to Hebrew, Germany to German, and visitors from other allowed countries to English. Hebrew pages use right-to-left layout. The only visible country and language control is in the shared footer. The exact country blocklist remains pending owner approval and must not be inferred from regions.
+
+## Contact
+
+- [Website](https://www.fixads.xyz/)
+- [Email](mailto:info@fixads.xyz)
+- [LinkedIn](https://www.linkedin.com/company/fixads)

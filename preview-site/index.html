@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#070b18" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="FixAds" />
+    <meta
+      name="description"
+      content="Connect paid media, e-commerce, lead generation, automation, and analytics with a performance marketing agency focused on practical, measurable growth."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.fixads.xyz/en/" />
+    <meta property="og:title" content="Performance Marketing Agency for Connected Growth | FixAds" />
+    <meta
+      property="og:description"
+      content="Connect paid media, e-commerce, lead generation, automation, and analytics with a performance marketing agency focused on practical, measurable growth."
+    />
+    <meta property="og:image" content="https://www.fixads.xyz/assets/optimized/market-automation-1040.webp" />
+    <meta property="og:site_name" content="FixAds" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Performance Marketing Agency for Connected Growth | FixAds" />
+    <meta
+      name="twitter:description"
+      content="Connect paid media, e-commerce, lead generation, automation, and analytics with a performance marketing agency focused on practical, measurable growth."
+    />
+    <meta name="twitter:image" content="https://www.fixads.xyz/assets/optimized/market-automation-1040.webp" />
+    <meta name="twitter:image:alt" content="Conceptual blue frames joined by a silver ribbon, representing connected business systems" />
+    <link rel="icon" type="image/png" href="/assets/fixads-logo.png" />
+    <link rel="apple-touch-icon" href="/assets/fixads-logo.png" />
+    <link rel="canonical" href="https://www.fixads.xyz/en/" />
+    <link rel="alternate" hreflang="en" href="https://www.fixads.xyz/en/" />
+    <link rel="alternate" hreflang="de" href="https://www.fixads.xyz/de/" />
+    <link rel="alternate" hreflang="he" href="https://www.fixads.xyz/he/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.fixads.xyz/en/" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/growth.css" />
+    <script>
+      (() => {
+        const match = location.pathname.match(/^\/(en|de|he)(?:\/|$)/);
+        const locale = match ? match[1] : "en";
+        document.documentElement.lang = locale;
+        document.documentElement.dir = locale === "he" ? "rtl" : "ltr";
+        document.documentElement.dataset.locale = locale;
+      })();
+    </script>
+    <script>
+      (() => {
+        const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const localePage = /^\/(en|de|he)\/?$/.test(location.pathname);
+        if (!reduced && localePage && !location.hash) {
+          document.documentElement.classList.add("loader-wanted");
+          window.__fixadsLoaderStarted = performance.now();
+        }
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.fixads.xyz/#organization",
+            "name": "FixAds",
+            "url": "https://www.fixads.xyz/",
+            "logo": "https://www.fixads.xyz/assets/fixads-logo.png",
+            "image": "https://www.fixads.xyz/assets/optimized/market-automation-1040.webp",
+            "email": "info@fixads.xyz",
+            "description": "FixAds connects paid media, e-commerce, lead generation, automation, and analytics into one measurable digital growth system.",
+            "sameAs": ["https://www.linkedin.com/company/fixads"],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "sales and customer support",
+              "email": "info@fixads.xyz",
+              "url": "https://www.fixads.xyz/en/#contact",
+              "availableLanguage": ["English", "German", "Hebrew"]
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://www.fixads.xyz/#anton-goldberg",
+            "name": "Anton Goldberg",
+            "jobTitle": "Owner",
+            "worksFor": { "@id": "https://www.fixads.xyz/#organization" },
+            "sameAs": ["https://www.linkedin.com/in/anton-goldberg-200052193"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.fixads.xyz/#website",
+            "url": "https://www.fixads.xyz/",
+            "name": "FixAds",
+            "publisher": { "@id": "https://www.fixads.xyz/#organization" },
+            "inLanguage": ["en", "de", "he"]
+          }
+        ]
+      }
+    </script>
+    <title>Performance Marketing Agency for Connected Growth | FixAds</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <div class="site-loader" id="site-loader" aria-hidden="true">
+      <div class="site-loader__brand">
+        <span class="site-loader__mark"><img src="/assets/fixads-logo.png" alt="" width="72" height="72" /></span>
+        <strong>FixAds</strong>
+      </div>
+      <div class="site-loader__line"><span></span></div>
+    </div>
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const loader = document.getElementById("site-loader");
+        if (!root.classList.contains("loader-wanted") || !loader) return;
+
+        loader.setAttribute("aria-hidden", "false");
+        requestAnimationFrame(() => loader.classList.add("is-active"));
+        let hidden = false;
+        const hide = () => {
+          if (hidden) return;
+          hidden = true;
+          root.classList.remove("loader-wanted");
+          root.classList.add("loader-done");
+          loader.classList.add("is-leaving");
+          loader.setAttribute("aria-hidden", "true");
+          window.dispatchEvent(new Event("fixads:ready"));
+          setTimeout(() => {
+            loader.hidden = true;
+          }, 220);
+        };
+        const start = window.__fixadsLoaderStarted || performance.now();
+        const afterMinimum = () => setTimeout(hide, Math.max(0, 180 - (performance.now() - start)));
+        addEventListener("load", afterMinimum, { once: true });
+        addEventListener("pageshow", (event) => {
+          if (event.persisted) hide();
+        });
+        setTimeout(hide, 450);
+      })();
+    </script>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div id="app"></div>
+
+    <form
+      name="fixads-contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+      aria-hidden="true"
+    >
+      <input type="hidden" name="form-name" value="fixads-contact" />
+      <input name="bot-field" />
+      <input name="full-name" />
+      <input name="company" />
+      <input name="phone" />
+      <input name="email" />
+      <input name="website" />
+      <input name="service" />
+      <textarea name="message"></textarea>
+      <input name="locale" />
+      <input name="consent" />
+    </form>
+
+    <noscript>
+      <div class="noscript">Please enable JavaScript to view this website.</div>
+    </noscript>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
