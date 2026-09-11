@@ -846,7 +846,7 @@ Exact additional Hebrew overrides (relative to the historical sections below):
 
 This section is the current source of truth for the homepage additions and overrides. It supersedes matching values in the September 10 revision below; the original eight service descriptions, client list, legal pages, shared English footer, country policy, and protected Transparency application are unchanged. The owner authorized research-led content refinement and new visual assets, not fabricated performance claims.
 
-Research and original image prompts are recorded in `preview-site/docs/market-research-20260911.md`. Key decisions: clearer business outcomes for Hebrew; defined scope, accountability, and an initial discussion for German; e-commerce sales and qualified/bookable service inquiries for English. All locales retain customer care, platform integrations and Odoo. Three concrete goal panels each list two examples of work; six FAQs address practical buying questions; the process names the customer-care practices; a public owner introduction identifies Anton Goldberg, Berlin, without adding personal contact or registration numbers.
+Research and original image prompts are recorded in `preview-site/docs/market-research-20260911.md`. Key decisions: clearer business outcomes for Hebrew; defined scope, accountability, and an initial discussion for German; e-commerce sales and qualified/bookable service inquiries for English. All locales retain customer care, platform integrations and Odoo. Three concrete goal panels each list two examples of work; six FAQs address practical buying questions; the process names the customer-care practices. The personal owner-led/Berlin introduction and its personal LinkedIn CTA were removed from all three homepages at the owner's subsequent request on September 11. Do not restore that block from the original research notes or historical Change Log.
 
 The old decorative system diagram is replaced by a four-step native HTML disclosure example: inquiry capture, CRM/Odoo handoff, agreed follow-up, and outcome review. It is illustrative, not a working CRM demo or a claim that a specific client used this exact system. It works without JavaScript, has keyboard-accessible summaries, and uses a single-column phone layout. The goal selector and service CTAs retain the existing form preselection. No form field contract, notification recipient, tracking, consent, country block rule, or protected route was changed.
 
@@ -998,9 +998,6 @@ Exact current localized homepage content model:
         "You can see the work and the next priorities. We explain decisions, flag issues, and keep improving the setup."
       ]
     ],
-    "ownerLabel": "Led by Anton Goldberg",
-    "ownerBody": "Based in Berlin. Experience with businesses in the US, Israel, Germany, and other markets.",
-    "ownerLink": "Meet the owner on LinkedIn",
     "workflowTitle": "A new inquiry should have somewhere to go.",
     "workflowIntro": "An example of the connected workflows we can build. The tools, data, and handoffs are agreed around your business.",
     "workflowLabel": "Example workflow",
@@ -1174,9 +1171,6 @@ Exact current localized homepage content model:
         "Sie erhalten Einblick in die Arbeit und die nächsten Prioritäten. Wir erläutern Entscheidungen, benennen Probleme und entwickeln die Lösung weiter."
       ]
     ],
-    "ownerLabel": "Inhabergeführt von Anton Goldberg",
-    "ownerBody": "Sitz in Berlin. Erfahrung mit Unternehmen in Deutschland, Israel, den USA und weiteren Märkten.",
-    "ownerLink": "Zum LinkedIn-Profil des Inhabers",
     "workflowTitle": "Aus einer Anfrage wird ein klarer nächster Schritt.",
     "workflowIntro": "Ein Beispiel für einen vernetzten Ablauf. Tools, Daten und Zuständigkeiten stimmen wir auf Ihr Unternehmen ab.",
     "workflowLabel": "Beispielablauf",
@@ -1350,9 +1344,6 @@ Exact current localized homepage content model:
         "מסבירים את ההחלטות, מעדכנים על העבודה ומשקפים גם בעיות. אתם יודעים מה נעשה, מי מטפל ומה מתוכנן בהמשך."
       ]
     ],
-    "ownerLabel": "בהובלת אנטון גולדברג",
-    "ownerBody": "ממוקמים בברלין, עם ניסיון בעבודה עם עסקים בישראל, בגרמניה, בארה״ב ובשווקים נוספים.",
-    "ownerLink": "היכרות עם הבעלים ב־LinkedIn",
     "workflowTitle": "מה קורה אחרי שלקוח משאיר פרטים?",
     "workflowIntro": "כך יכול להיראות תהליך שמחבר בין הפרסום, מערכת ניהול הלקוחות והצוות שלכם. את השלבים והכלים מתאימים לעסק.",
     "workflowLabel": "תהליך לדוגמה",
@@ -2078,6 +2069,15 @@ Every implementation change must be checked against the relevant items below:
 - [ ] The Change Log contains an entry for the change.
 
 ## Change Log
+
+### 2026-09-11 — Remove owner introduction and verify phone/language behavior
+
+- The owner requested removal of the personal owner-led/Berlin/market-experience introduction from every language and verification of phone friendliness and IP-based language selection.
+- Removed the complete homepage owner-introduction block, its personal LinkedIn CTA, all three localized content fields, and unused styles. The working principles remain. No replacement promotional block was added. Legal identity, Impressum, existing entity metadata, company footer, client list, other copy, imagery, form handling and all protected Transparency content remain outside this removal.
+- Updated the current exact homepage models above. This removal supersedes earlier references to adding an owner introduction; those Change Log entries remain historical. Archived prior source in `output/backups/fixads-before-owner-intro-removal-20260911.tar.gz`.
+- Automatic country selection applies at the root URL, not direct locale URLs: IL → `/he/`, DE → `/de/`, all other allowed countries → `/en/`. Explicit locale paths stay stable and the footer remains the only manual selector. Production uses Netlify GeoIP country-conditioned root redirects, not a browser geolocation API. VPNs/proxies can affect GeoIP accuracy. Existing country-access configuration is not changed.
+- Both builds passed. All three homepages passed browser checks at 320/390/768/1440px: no horizontal overflow or JavaScript page errors, no owner-introduction node, correct LTR/RTL document direction, 16px-or-larger form controls, and LTR email/phone/website fields. The mobile menu opens after scrolling, closes with Escape or a contact link, and the contact fields and English footer remain usable. The footer retains three language choices and its visible Impressum link. Hebrew process screenshot: `output/playwright/owner-removal-he-mobile-20260911.png`.
+- Ready draft `6aa4148ac5217ae21cb8549c` clones exact locked baseline `6aa3ffe6d48b541dee4302a5`. All five protected Transparency hashes and sampled protected responses, ten Function digests and region/memory overrides, three schedules, both Forms and all 29 routing rules are preserved. No country-routing change was necessary: production and draft root selection passed Netlify's documented `nf_country` test overrides for IL, DE, US, AT and FR; direct locale, Impressum and protected paths were not geo-redirected. These are hosting-layer country override tests, not physical remote-IP probes. Verification helper: `output/check-fixads-language-routing-20260911.mjs`.
 
 ### 2026-09-11 — Israeli agency research and Hebrew language refinement
 

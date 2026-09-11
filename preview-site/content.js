@@ -1162,9 +1162,6 @@ const growthContent = {
           "You can see the work and the next priorities. We explain decisions, flag issues, and keep improving the setup."
         ]
       ],
-      "ownerLabel": "Led by Anton Goldberg",
-      "ownerBody": "Based in Berlin. Experience with businesses in the US, Israel, Germany, and other markets.",
-      "ownerLink": "Meet the owner on LinkedIn",
       "workflowTitle": "A new inquiry should have somewhere to go.",
       "workflowIntro": "An example of the connected workflows we can build. The tools, data, and handoffs are agreed around your business.",
       "workflowLabel": "Example workflow",
@@ -1333,9 +1330,6 @@ const growthContent = {
           "Sie erhalten Einblick in die Arbeit und die nächsten Prioritäten. Wir erläutern Entscheidungen, benennen Probleme und entwickeln die Lösung weiter."
         ]
       ],
-      "ownerLabel": "Inhabergeführt von Anton Goldberg",
-      "ownerBody": "Sitz in Berlin. Erfahrung mit Unternehmen in Deutschland, Israel, den USA und weiteren Märkten.",
-      "ownerLink": "Zum LinkedIn-Profil des Inhabers",
       "workflowTitle": "Aus einer Anfrage wird ein klarer nächster Schritt.",
       "workflowIntro": "Ein Beispiel für einen vernetzten Ablauf. Tools, Daten und Zuständigkeiten stimmen wir auf Ihr Unternehmen ab.",
       "workflowLabel": "Beispielablauf",
@@ -1504,9 +1498,6 @@ const growthContent = {
           "מסבירים את ההחלטות, מעדכנים על העבודה ומשקפים גם בעיות. אתם יודעים מה נעשה, מי מטפל ומה מתוכנן בהמשך."
         ]
       ],
-      "ownerLabel": "בהובלת אנטון גולדברג",
-      "ownerBody": "ממוקמים בברלין, עם ניסיון בעבודה עם עסקים בישראל, בגרמניה, בארה״ב ובשווקים נוספים.",
-      "ownerLink": "היכרות עם הבעלים ב־LinkedIn",
       "workflowTitle": "מה קורה אחרי שלקוח משאיר פרטים?",
       "workflowIntro": "כך יכול להיראות תהליך שמחבר בין הפרסום, מערכת ניהול הלקוחות והצוות שלכם. את השלבים והכלים מתאימים לעסק.",
       "workflowLabel": "תהליך לדוגמה",

@@ -85,11 +85,6 @@
 .growth-home .process-item p { color: #3b465d; }
 .growth-home .process-intro h2 { font-size: clamp(2.1rem, 3.9vw, 3.7rem); line-height: 1.12; }
 .process-context { margin-top: 24px; color: #3b465d; max-width: 53ch; line-height: 1.65; }
-.owner-intro { display: flex; gap: 18px; align-items: start; padding-top: 26px; margin-top: 28px; border-top: 1px solid #b9c3d8; }
-.owner-intro img { width: 42px; height: 42px; flex: 0 0 42px; }
-.owner-intro strong { display: block; color: #101a31; font-size: 1rem; }
-.owner-intro p { margin: 8px 0; color: #3b465d; font-size: .88rem; line-height: 1.55; }
-.owner-intro a { display: inline-flex; gap: 12px; align-items: center; color: #1748c0; min-height: 44px; font-size: .8rem; font-weight: 700; }
 .workflow-story { margin-top: 64px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 70px); align-items: start; }
 .workflow-visual { position: sticky; top: 100px; overflow: hidden; border-radius: 10px; background: #102843; }
 .workflow-visual img { display: block; width: 100%; height: auto; aspect-ratio: 1.25; object-fit: cover; }
@@ -119,7 +114,6 @@
   .workflow-visual img { aspect-ratio: 1.8; }
   .workflow-visual > p { padding: 12px 18px; }
   .workflow-copy h2 { font-size: 2rem; }
-  .owner-intro { margin-bottom: 16px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .growth-panel__photo img, .workflow-step > p, .workflow-toggle { animation: none !important; transition: none !important; }

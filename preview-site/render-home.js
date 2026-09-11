@@ -270,12 +270,6 @@ return `
         <div class="process-intro reveal">
           <h2>${market.processTitle}</h2>
           <p class="process-context">${market.processIntro}</p>
-          <div class="owner-intro">
-            <img src="/assets/fixads-logo.png" alt="" width="48" height="48" />
-            <div><strong>${market.ownerLabel}</strong><p>${market.ownerBody}</p>
-              <a href="https://www.linkedin.com/in/anton-goldberg-200052193" target="_blank" rel="noopener noreferrer">${market.ownerLink}${arrowIcon()}</a>
-            </div>
-          </div>
         </div>
         <div class="process-list">${processItems}</div>
       </div>
